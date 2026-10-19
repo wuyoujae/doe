@@ -18,7 +18,7 @@
 
 <p>
   <a href="https://yrkie.com">
-    <img src="resources/readme/yrkie-editor.jpg" alt="基于 DOE 构建的 Yrkie 演示文稿编辑器" width="960" />
+    <img src="resources/readme/yrkie-homepage.png" alt="Yrkie 官网 — 在线体验 DOE" width="960" />
   </a>
 </p>
 

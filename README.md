@@ -17,7 +17,7 @@ and export to PDF or genuinely editable PowerPoint.
 
 <p>
   <a href="https://yrkie.com">
-    <img src="resources/readme/yrkie-editor.jpg" alt="Yrkie's DOE-powered presentation editor" width="960" />
+    <img src="resources/readme/yrkie-homepage.png" alt="Yrkie — try DOE online" width="960" />
   </a>
 </p>
 
