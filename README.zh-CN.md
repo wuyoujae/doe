@@ -11,6 +11,11 @@
 或导出为 PDF 与真正可编辑的 PowerPoint。
 </p>
 
+<p>
+  <a href="https://yrkie.com"><strong>Yrkie</strong></a> 基于 DOE 构建。<br />
+  无需本地部署，即可在线体验 DOE 的功能。
+</p>
+
 [English](./README.md) · **简体中文**
 
 <p>
@@ -166,6 +171,12 @@ DOE 内置 18 个经过艺术指导的设计 Skills。每个 Skill 都配有专�
 其他兼容服务可通过 **Custom（自定义）** 端点接入。预设只会填写官方 Base URL，不会替你选择模型，也不代表每个模型都支持所有参数。完整目录见 [`packages/model-catalog/providers.json`](packages/model-catalog/providers.json)。
 
 ## 快速开始
+
+如果你不想自己配置，可以复制下面的 prompt 发送至你的 Agent 工具：
+
+```text
+将项目 https://github.com/wuyoujae/doe.git 克隆到本地，配置其运行环境，最后将它运行起来。
+```
 
 ### 环境要求
 

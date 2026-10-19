@@ -10,6 +10,11 @@ Bring your own AI models, co-create slides with an agent, present live,<br />
 and export to PDF or genuinely editable PowerPoint.
 </p>
 
+<p>
+  <a href="https://yrkie.com"><strong>Yrkie</strong></a> is built on DOE.<br />
+  Try DOE's features online without setting up a local environment.
+</p>
+
 **English** · [简体中文](./README.zh-CN.md)
 
 <p>
@@ -165,6 +170,12 @@ DOE ships with 18 art-directed design Skills. Each one pairs a theme with native
 Any other compatible service works through a **Custom** endpoint. Presets only fill in the official Base URL — they never pick a model for you or imply that every model supports every parameter. The full catalog lives in [`packages/model-catalog/providers.json`](packages/model-catalog/providers.json).
 
 ## Quick Start
+
+If you prefer not to configure the environment yourself, copy the following prompt into your Agent tool:
+
+```text
+Clone https://github.com/wuyoujae/doe.git locally, configure its runtime environment, and run the project.
+```
 
 ### Prerequisites
 
