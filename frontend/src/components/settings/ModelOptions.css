@@ -1,0 +1,46 @@
+.settings-dialog .model-options { clear: both; min-width: 0; }
+.settings-dialog .model-options-action { display: flex; justify-content: flex-end; margin-top: var(--yrkie-gap-icon); }
+.settings-dialog .model-options-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--yrkie-gap-micro);
+  min-height: 2rem;
+  padding: var(--yrkie-gap-micro) var(--yrkie-gap-icon);
+  border: 0;
+  border-radius: var(--yrkie-radius-control);
+  background: transparent;
+  color: var(--yrkie-color-ink-muted);
+  font: inherit;
+  font-size: var(--yrkie-text-label);
+  line-height: 1.4;
+  cursor: pointer;
+  transition: color var(--yrkie-motion-control) ease, background-color var(--yrkie-motion-control) ease;
+}
+.settings-dialog .model-options-toggle:hover:not(:disabled) { background: var(--yrkie-color-hover); color: var(--yrkie-color-ink); }
+.settings-dialog .model-options-toggle:focus-visible { outline: var(--yrkie-border-width) solid var(--yrkie-color-border-focus); outline-offset: .125rem; }
+.settings-dialog .model-options-toggle:disabled { opacity: .55; cursor: default; }
+.settings-dialog .model-options-toggle svg { width: 1rem; height: 1rem; transition: transform var(--yrkie-motion-control) var(--yrkie-ease-control); }
+.settings-dialog .model-options-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.settings-dialog .model-options-content { padding-top: var(--yrkie-gap-content); animation: model-options-enter var(--yrkie-motion-panel) var(--settings-ease) both; }
+.settings-dialog .model-options-content[hidden] { display: none; }
+.settings-dialog .model-options-section + .model-options-section { margin-top: var(--yrkie-gap-section); padding-top: var(--yrkie-gap-section); border-top: var(--yrkie-border-width) solid var(--settings-panel-border); }
+.settings-dialog .model-options-section h4 { margin: 0 0 var(--yrkie-gap-control); color: var(--yrkie-color-ink); font-size: var(--yrkie-text-body); font-weight: var(--yrkie-weight-regular); line-height: 1.4; }
+.settings-dialog .model-options-hint { margin: 0; color: var(--yrkie-color-ink-muted); font-size: var(--yrkie-text-label); font-weight: var(--yrkie-weight-regular); line-height: 1.55; overflow-wrap: anywhere; }
+.settings-dialog .model-options-section > .model-options-hint { margin-bottom: var(--yrkie-gap-content); }
+.settings-dialog .model-options-select .ui-select { width: 100%; min-width: 0; }
+.settings-dialog .model-options-select .ui-select-trigger { width: 100%; min-height: 2.5rem; background: var(--yrkie-color-page); }
+.settings-dialog .model-options-select[aria-invalid="true"] .ui-select-trigger { border-color: var(--page-danger); }
+.settings-dialog .model-options-json { min-height: 6rem; resize: vertical; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, var(--yrkie-cjk-fallback), monospace; line-height: 1.55; }
+.settings-dialog .model-options .model-input:disabled { opacity: .55; cursor: default; }
+
+@media (max-width: 45rem) {
+  .settings-dialog .model-options .model-form-grid { grid-template-columns: minmax(0, 1fr); }
+  .settings-dialog .model-options-toggle { min-height: 2.75rem; }
+}
+
+@keyframes model-options-enter { from { opacity: 0; transform: translateY(-.25rem); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .settings-dialog .model-options-content { animation: none; }
+  .settings-dialog .model-options-toggle, .settings-dialog .model-options-toggle svg { transition: none; }
+}

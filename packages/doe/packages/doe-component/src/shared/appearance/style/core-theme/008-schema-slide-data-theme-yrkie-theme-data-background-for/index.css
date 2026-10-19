@@ -1,0 +1,5 @@
+.schema-slide[data-theme="yrkie-theme"][data-background-foreground="light"]
+  :is(.component-hero__subtitle,
+      .component-stat__description) {
+  color: var(--doe-background-foreground);
+}

@@ -1,0 +1,52 @@
+/* Search is opt-in; existing selectors and DOE controls retain their geometry. */
+.ui-select.is-searchable .ui-select-menu {
+  overflow: hidden;
+}
+.ui-select-search {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--yrkie-gap-icon);
+  padding: calc(var(--yrkie-space-unit) * 2.5) var(--yrkie-gap-control);
+  border-bottom: var(--yrkie-border-width) solid var(--yrkie-color-control-border);
+  color: var(--yrkie-color-body-secondary);
+}
+.ui-select-search:focus-within {
+  color: var(--yrkie-color-primary);
+  border-bottom-color: var(--yrkie-color-border-focus);
+}
+.ui-select-search input:focus-visible { outline: none; }
+.ui-select-search input {
+  min-width: 0;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  outline: none;
+  color: var(--yrkie-color-body);
+  background: transparent;
+  font: inherit;
+}
+.ui-select-search input::placeholder {
+  color: var(--yrkie-color-placeholder);
+}
+.ui-select-options {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  gap: var(--yrkie-gap-micro);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: calc(var(--yrkie-border-width) * 2);
+  scrollbar-width: thin;
+}
+.ui-select-options > button {
+  flex-shrink: 0;
+}
+.ui-select-empty {
+  padding: var(--yrkie-gap-control);
+  color: var(--yrkie-color-body-secondary);
+  font-size: var(--yrkie-text-label);
+}
+@media (max-width: 45rem) {
+  .ui-select-search input { font-size: 1rem; }
+}

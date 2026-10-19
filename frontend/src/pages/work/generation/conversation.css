@@ -1,0 +1,7 @@
+/* Host recovery controls; original messages and tools own their styles in conversation/. */
+.work-conversation-actions { width: 100%; flex: 0 0 auto; padding: 0.75rem 1.5rem; }
+.work-conversation-actions .message-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.work-conversation-actions .message-action-btn { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.375rem 0.625rem; border: 0; border-radius: 0.5rem; background: var(--bg-hover); color: var(--text-secondary); font: inherit; cursor: pointer; }
+.work-conversation-actions .message-action-btn svg { width: 1rem; height: 1rem; }
+.work-conversation-actions .message-action-btn:disabled { opacity: 0.5; cursor: default; }
+.work-conversation-actions .message-item-text { font-size: 0.875rem; }

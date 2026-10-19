@@ -1,0 +1,35 @@
+:root {
+  color-scheme: light;
+  --editor-bg: #f4f6f8;
+  --editor-line: #dce2e9;
+  --editor-ink: #182230;
+  --editor-muted: #667085;
+  --editor-blue: #2878ff;
+  --editor-scale: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--editor-bg);
+  color: var(--editor-ink);
+  font-family: var(--font-sans-cn);
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--editor-blue);
+  outline-offset: 2px;
+}
+

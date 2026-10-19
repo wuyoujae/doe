@@ -1,0 +1,6 @@
+/* Collection height is negotiated from content before typography is reduced.
+   JS first measures every item at the current semantic font size, then assigns
+   the tallest natural height to the whole cohort. `max-content` is important:
+   `1fr` plus the generic `min-height: 0` rule allowed a constrained parent to
+   shrink the tracks before their text had a chance to wrap, which made cards
+   clip while unused vertical space still existed elsewhere in the slide. */

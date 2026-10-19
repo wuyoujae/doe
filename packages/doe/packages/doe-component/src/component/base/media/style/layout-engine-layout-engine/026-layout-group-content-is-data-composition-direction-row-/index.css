@@ -1,0 +1,22 @@
+.layout-group__content:is(
+    [data-composition-direction="row"],
+    [data-layout-variant="row"]
+  )
+  > .group-item
+  > .block-content
+  > .component-media:not([data-media-fit="natural"]) {
+  min-height: 0 !important;
+}
+
+.layout-group__content:is(
+    [data-composition-direction="row"],
+    [data-layout-variant="row"]
+  )
+  > .group-item
+  > .block-content
+  > .component-media:not([data-media-fit="natural"])
+  .component-media__image {
+  position: absolute;
+  inset: 0;
+}
+

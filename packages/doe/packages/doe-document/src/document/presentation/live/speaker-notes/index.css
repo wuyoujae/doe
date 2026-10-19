@@ -1,0 +1,11 @@
+.speaker-notes-editor{display:flex;flex-direction:column;flex:1;min-height:0;gap:.5rem}
+.speaker-notes-input{display:block;flex:1;min-height:4rem;width:100%;resize:none;border:0;border-radius:.25rem;padding:.375rem;background:transparent;color:inherit;font:inherit;font-size:1.125rem;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere;box-sizing:border-box}
+.speaker-notes-input:focus-visible{outline:.125rem solid var(--yrkie-color-primary);outline-offset:.125rem}
+.speaker-notes-actions{display:flex;align-items:center;justify-content:space-between;gap:.5rem;font-size:.75rem;flex-shrink:0}
+.speaker-notes-editor button{font:inherit;color:inherit;background:transparent;border:.0625rem solid currentColor;border-radius:.375rem;padding:.25rem .625rem;cursor:pointer;flex-shrink:0}
+.speaker-notes-editor button:disabled{opacity:.45;cursor:default}
+.speaker-notes-conflict{max-height:12rem;overflow:auto;font-size:.75rem}
+.speaker-notes-conflict pre{font:inherit;white-space:pre-wrap;overflow-wrap:anywhere}
+.speaker-notes-conflict button{margin-right:.5rem}
+.live-sidebar .speaker-notes-editor p{display:block;margin:0;font-size:.75rem}
+@media(max-width:800px){.speaker-notes-input{font-size:.9375rem;min-height:3rem}.speaker-notes-conflict{max-height:6rem}}

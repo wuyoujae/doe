@@ -1,0 +1,106 @@
+.ppt-data-table {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: var(--yrkie-color-body);
+  background: transparent;
+  font-family: var(--font-sans-cn);
+  font-size: var(--typography-normal-size);
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+  /* One precomposited title-ink token keeps every horizontal and vertical rule
+     equally visible without letting the grid overpower the content. */
+  --table-rule-color: var(--yrkie-line-solid);
+  --table-inner-rule-color: var(--table-rule-color);
+  --table-radius: var(--yrkie-radius-component);
+  /* Horizontal cell padding is a readability boundary, not compression
+     space. Every cell keeps it on both sides at every density tier. */
+  --table-cell-padding-inline: 12pt;
+}
+
+.ppt-data-table__table {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.ppt-data-table[data-lines="grid"] {
+  border: 1px solid var(--table-rule-color);
+  border-radius: var(--table-radius);
+}
+
+.ppt-data-table[data-lines="grid"] .ppt-data-table__table {
+  border-radius: inherit;
+}
+
+.ppt-data-table[data-lines="three-line"] .ppt-data-table__table {
+  border-top: 2px solid var(--table-rule-color);
+  border-bottom: 2px solid var(--table-rule-color);
+}
+
+.ppt-data-table th,
+.ppt-data-table td {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 10pt var(--table-cell-padding-inline);
+  overflow-wrap: normal;
+  word-break: normal;
+  vertical-align: middle;
+  border: 0;
+}
+
+.ppt-data-table[data-space-density="compact"] th,
+.ppt-data-table[data-space-density="compact"] td {
+  padding: 8pt var(--table-cell-padding-inline);
+}
+
+.ppt-data-table[data-space-density="tight"] th,
+.ppt-data-table[data-space-density="tight"] td {
+  padding: 6pt var(--table-cell-padding-inline);
+}
+
+.ppt-data-table[data-space-density="minimum"] th,
+.ppt-data-table[data-space-density="minimum"] td {
+  padding: 4pt var(--table-cell-padding-inline);
+}
+
+/* Keep grid rules after the shared cell reset above. Otherwise `border: 0`
+   silently removes internal horizontal and vertical separators. All rules use
+   the same title-color token so no edge appears weaker than another. */
+.ppt-data-table[data-lines="three-line"] thead tr:last-child > th {
+  border-bottom: 1.5px solid var(--table-rule-color);
+}
+
+.ppt-data-table[data-lines="grid"] th,
+.ppt-data-table[data-lines="grid"] td {
+  border-right: 1px solid var(--table-inner-rule-color);
+  border-bottom: 1px solid var(--table-inner-rule-color);
+}
+
+.ppt-data-table[data-lines="grid"] tr > :last-child {
+  border-right: 0;
+}
+
+.ppt-data-table[data-lines="grid"] tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.ppt-data-table__cell--bold {
+  font-weight: var(--yrkie-font-weight-bold) !important;
+}
+
+.ppt-data-table__cell--muted,
+.ppt-data-table__cell--highlight {
+  background: var(--yrkie-color-soft-surface);
+}
+
+.ppt-data-table__cell--highlight {
+  color: var(--yrkie-color-title);
+}

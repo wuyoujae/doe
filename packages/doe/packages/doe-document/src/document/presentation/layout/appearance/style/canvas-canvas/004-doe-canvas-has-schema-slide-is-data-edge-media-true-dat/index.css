@@ -1,0 +1,8 @@
+.doe-canvas:has(
+  .schema-slide:is([data-edge-media="true"], [data-has-background="true"])
+) {
+  border: 0;
+  background: transparent;
+  clip-path: inset(0 round var(--yrkie-radius-canvas));
+}
+

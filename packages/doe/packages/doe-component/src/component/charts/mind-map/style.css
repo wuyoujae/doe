@@ -1,0 +1,8 @@
+.doe-mind-map { position: relative; }
+.doe-mind-map__lines { position: absolute; inset: 0; overflow: visible; pointer-events: none; fill: none; stroke: var(--yrkie-line-strong-solid); stroke-width: 1.5; }
+.doe-mind-map__node { position: absolute; box-sizing: border-box; box-shadow: inset 0 0 0 1.5px var(--mind-color); border-radius: var(--radius-card, 8px); padding: 10px 70px 10px 16px; background: var(--yrkie-color-background); color: var(--yrkie-color-body); }
+.doe-mind-map__node--filled { background: var(--mind-color); color: var(--yrkie-color-light); }
+.doe-mind-map__title { margin: 0 0 var(--space-6pt); color: inherit; }
+.doe-mind-map__text { margin: 0; color: inherit; }
+.doe-mind-map__icon { position: absolute; right: 16px; top: 50%; width: 38px; height: 38px; transform: translateY(-50%); color: inherit; }
+.doe-mind-map__icon svg { width: 100%; height: 100%; stroke: currentColor; }

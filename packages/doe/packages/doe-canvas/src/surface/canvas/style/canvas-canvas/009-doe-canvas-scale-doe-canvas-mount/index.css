@@ -1,0 +1,27 @@
+.doe-canvas__scale,
+.doe-canvas__mount {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 1280px;
+  height: 720px;
+}
+
+.doe-canvas__scale {
+  transform: scale(var(--editor-scale));
+  transform-origin: top left;
+}
+
+.doe-canvas__mount {
+  overflow: hidden;
+  border-radius: inherit;
+  background: transparent;
+}
+
+/* Read-only staging must shape text exactly like the eventual canvas host. */
+.doe-canvas__mount,
+.doe-canvas__staging {
+  font-family: var(--font-sans-cn);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+

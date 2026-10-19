@@ -1,0 +1,22 @@
+{
+  "name": "yrkie",
+  "version": "0.1.0",
+  "description": "An open-source alternative to Gamma. Create editable presentations with your own AI models, then present or export to PDF and PPTX.",
+  "license": "Apache-2.0",
+  "private": true,
+  "workspaces": ["frontend"],
+  "packageManager": "npm@11.6.2",
+  "engines": { "node": ">=22.19.0" },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:frontend": "npm run dev --workspace @yrkie/frontend",
+    "dev:backend": "cargo run --locked --manifest-path backend/Cargo.toml",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "npm run build --workspace @yrkie/frontend",
+    "build:backend": "cargo build --locked --release --manifest-path backend/Cargo.toml",
+    "check": "npm run check:frontend && cargo check --locked --manifest-path backend/Cargo.toml",
+    "check:frontend": "npm run check --workspace @yrkie/frontend",
+    "test:backend": "cargo test --locked --manifest-path backend/Cargo.toml",
+    "audit:source": "node scripts/audit-open-source.mjs"
+  }
+}

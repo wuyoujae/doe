@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yrkie:doe-outline:v1:external-authoring:2",
+  "title": "Yrkie DOE Outline V1 — external authoring edition 1",
+  "description": "The existing DOE V1 content format. Server semantic and security validation is also required. Byte limits are UTF-8; x-maxUtf8Bytes documents constraints outside standard JSON Schema.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "page_count", "body"],
+  "x-maxUtf8Bytes": 1048576,
+  "properties": {
+    "title": {
+      "type": "string", "minLength": 1, "maxLength": 300, "x-maxUtf8Bytes": 300,
+      "description": "Nonempty plain-text presentation title. No leading/trailing whitespace. At most 300 UTF-8 bytes. This is the outline title; it does not rename an existing project."
+    },
+    "page_count": {
+      "type": "integer", "minimum": 1, "maximum": 100,
+      "description": "Must equal body.length exactly. This is authored page count, not authorization to run platform generation."
+    },
+    "body": {
+      "type": "array", "minItems": 1, "maxItems": 100,
+      "description": "Pages in their intended reading order. Cover, agenda and conclusion pages count if supplied; none are inserted automatically.",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["index", "page", "contents"],
+        "properties": {
+          "index": {"type": "integer", "minimum": 1, "maximum": 100, "description": "Exactly this array position plus 1. Not a stable identifier."},
+          "page": {"type": "integer", "minimum": 1, "maximum": 100, "description": "Exactly the same value as index."},
+          "contents": {
+            "type": "array", "minItems": 1, "maxItems": 100,
+            "description": "Complete page content as ordered strings: title, conclusion, facts, paragraphs, numbers and units, chart/table descriptions, references or typed image plans. Prefer a plain-text page title first. No nested component objects.",
+            "items": {
+              "type": "string", "minLength": 1, "maxLength": 8000, "x-maxUtf8Bytes": 8000,
+              "description": "Nonblank, trimmed plain text, at most 8000 UTF-8 bytes. Internal LF and tabs are permitted. HTML/SVG/scripts, active URI schemes, unsafe control characters and private references outside the complete image-reference contract are rejected. A standalone yrkie-asset-data:// reference with exactly 64 lowercase hex characters is accepted only when the server verifies its current user/project binding and availability; at most 256 placements. A standalone image plan uses this syntax: GENRATEIMG[type=content,ratio=4:3](A machine). Choose exactly one type (content or decorative) and one ratio (1:1, 4:3, 3:4, 4:5, 16:9 or 9:16); keep type before ratio without spaces in metadata. The description must be nonblank. At most 16 image plans per outline. Plans do not execute during creation."
+            }
+          }
+        }
+      }
+    }
+  }
+}

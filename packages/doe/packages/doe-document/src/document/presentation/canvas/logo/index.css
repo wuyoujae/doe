@@ -1,0 +1,14 @@
+/* Slide furniture is outside the flow solver and shares the page coordinate system. */
+.schema-slide-logo {
+  position: absolute;
+  z-index: 7;
+  right: var(--slide-page-padding, var(--space-36pt));
+  top: var(--slide-logo-center-y, calc(var(--slide-page-padding, var(--space-36pt)) / 2));
+  transform: translateY(-50%);
+  width: 138pt;
+  height: 30pt;
+  object-fit: contain;
+  object-position: right center;
+  pointer-events: none;
+  user-select: none;
+}

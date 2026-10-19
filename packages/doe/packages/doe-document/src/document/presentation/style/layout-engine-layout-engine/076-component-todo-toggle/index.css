@@ -1,0 +1,6 @@
+.component-todo__toggle { position: absolute; top: calc(0.2em + var(--doe-item-inset, 3pt)); left: 0; display: block; width: 1.1em; height: 1.1em; padding: 0; border: 0; background: transparent; color: var(--yrkie-color-primary); font: inherit; cursor: pointer; }
+.component-todo__toggle:disabled { cursor: default; opacity: 1; }
+.component-todo__toggle:focus-visible { outline: 2px solid var(--yrkie-color-primary); outline-offset: 2px; border-radius: var(--yrkie-radius-component); }
+.component-todo__toggle svg { display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2; }
+.component-todo__toggle[aria-checked="true"] rect { fill: currentColor; }
+.component-todo__toggle path { stroke: var(--yrkie-color-light); stroke-linecap: round; stroke-linejoin: round; }

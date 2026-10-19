@@ -1,0 +1,7 @@
+.component-list__items li {
+  position: relative;
+  box-sizing: border-box;
+  padding: var(--doe-item-inset, 3pt) 0;
+  padding-left: var(--space-18pt);
+}
+

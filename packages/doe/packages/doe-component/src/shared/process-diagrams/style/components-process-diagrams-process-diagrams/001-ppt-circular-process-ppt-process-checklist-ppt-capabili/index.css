@@ -1,0 +1,10 @@
+.ppt-capability-cards,
+.ppt-numbered-icon-cards {
+  margin: 0;
+  overflow: hidden;
+  color: var(--yrkie-color-body);
+  background: transparent;
+  border: 0;
+  font-family: var(--font-sans-cn);
+}
+

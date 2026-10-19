@@ -1,0 +1,3 @@
+/* Edge-media seam treatments are paint-only. The media/content tracks and the
+   resize boundary stay rectangular so decorative shapes never reduce the
+   content safety budget or change authored mediaRatio geometry. */

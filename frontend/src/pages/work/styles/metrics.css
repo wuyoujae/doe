@@ -1,0 +1,60 @@
+/* Original 2026-10-12 declarations retained for the extracted Work page. */
+:where(.work-shell) .message-group {
+  gap: calc(var(--yrkie-space-unit) * 2);
+}
+:where(.work-shell) .message-items-wrapper {
+  gap: calc(var(--yrkie-space-unit) * 4);
+}
+:where(.work-shell) .message-item-text {
+  font-size: var(--work-text-0-9375);
+}
+:where(.work-shell) .user-message>.message-items-wrapper>.message-item-text {
+  border: calc(var(--yrkie-space-unit) * 0.25) solid var(--border-user);
+  border-radius: calc(var(--yrkie-space-unit) * 3);
+  padding: calc(var(--yrkie-space-unit) * 4) calc(var(--yrkie-space-unit) * 5);
+}
+:where(.work-shell) .message-item-text p {
+  margin-bottom: calc(var(--yrkie-space-unit) * 3);
+}
+:where(.work-shell) .message-item-text h3 {
+  margin: calc(var(--yrkie-space-unit) * 4) 0 calc(var(--yrkie-space-unit) * 2) 0;
+  font-size: var(--work-text-1);
+}
+:where(.work-shell) .message-item-text ul {
+  padding-left: calc(var(--yrkie-space-unit) * 5);
+  margin-bottom: calc(var(--yrkie-space-unit) * 3);
+}
+:where(.work-shell) .message-item-text li {
+  margin-bottom: calc(var(--yrkie-space-unit) * 1.5);
+}
+:where(.work-shell) .message-item-text code {
+  padding: calc(var(--yrkie-space-unit) * 0.75) calc(var(--yrkie-space-unit) * 1.5);
+  border-radius: var(--yrkie-space-unit);
+  font-size: var(--work-text-0-84375);
+}
+:where(.work-shell) .message-item-text pre {
+  margin: calc(var(--yrkie-space-unit) * 3) 0;
+}
+:where(.work-shell) .message-item-text pre code {
+  padding: calc(var(--yrkie-space-unit) * 3);
+}
+:where(.work-shell) .input-box {
+  max-width: calc(var(--yrkie-space-unit) * 200);
+  border: calc(var(--yrkie-space-unit) * 0.25) solid var(--border-color);
+  border-radius: calc(var(--yrkie-space-unit) * 4);
+  padding: calc(var(--yrkie-space-unit) * 3) calc(var(--yrkie-space-unit) * 4);
+  gap: calc(var(--yrkie-space-unit) * 2.5);
+  box-shadow: 0 calc(var(--yrkie-space-unit) * 0.25) calc(var(--yrkie-space-unit) * 3) var(--shadow-input);
+}
+:where(.work-shell) .input-box:focus-within {
+  box-shadow: 0 calc(var(--yrkie-space-unit) * 0.5) calc(var(--yrkie-space-unit) * 4.5) var(--shadow-input);
+}
+:where(.work-shell) .input-box textarea {
+  font-size: var(--work-text-0-9375);
+  min-height: calc(var(--yrkie-space-unit) * 8);
+  max-height: calc(var(--yrkie-space-unit) * 45);
+  padding-top: var(--yrkie-space-unit);
+}
+:where(.work-shell) .send-hint {
+  font-size: var(--work-text-0-6875);
+}

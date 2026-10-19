@@ -1,0 +1,14 @@
+.flow-block,
+.group-item,
+.block-content,
+.component-card {
+  min-width: 0;
+  min-height: 0;
+}
+
+.flow-block,
+.group-item {
+  position: relative;
+  width: 100%;
+}
+

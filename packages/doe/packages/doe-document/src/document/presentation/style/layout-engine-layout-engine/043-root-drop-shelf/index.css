@@ -1,0 +1,31 @@
+.root-drop-shelf {
+  position: absolute;
+  z-index: 40;
+  right: var(--space-36pt);
+  bottom: var(--space-12pt);
+  left: var(--space-36pt);
+  display: grid;
+  height: 42px;
+  place-items: center;
+  opacity: 0;
+  color: #ffffff;
+  border: 2px dashed rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  background: rgba(32, 55, 84, 0.92);
+  box-shadow: 0 8px 24px rgba(23, 32, 51, 0.24);
+  font: 800 11pt/1 var(--font-sans-cn);
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 120ms ease, transform 120ms ease, background 120ms ease;
+}
+
+.schema-slide.is-block-dragging.can-lift-to-root .root-drop-shelf {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.schema-slide.is-block-dragging.can-lift-to-root .root-drop-shelf.is-active {
+  background: var(--editor-blue);
+}
+

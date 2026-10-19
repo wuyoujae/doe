@@ -1,0 +1,1965 @@
+/* Origin: commercial features/work/messages.css; original appearance retained. */
+.chat-history-view {
+  overflow: hidden; /* Virtuoso 接管滚动，禁用外层 overflow */
+  padding: 0 1.5rem;
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+/* Virtuoso 虚拟滚动容器 — 填充父元素高度 */
+.message-panel-virtuoso {
+  height: 100%;
+  width: 100%;
+  /* Original tool expansion gutters stay intact; only code/table blocks scroll horizontally. */
+  overflow-x: hidden;
+}
+
+.message-panel-footer-spacer {
+  height: 10rem;
+}
+
+/* 独立渲染层 — 流式内容变化不触发外层 layout */
+.message-panel-row {
+  width: 100%;
+}
+
+.message-panel-row-spaced {
+  padding-top: 2rem;
+}
+
+.message-panel-row-compact {
+  padding-top: 0.875rem;
+}
+
+.chat-history-view .message-item-text {
+  contain: layout style;
+}
+
+/* ---- Turn anchor 容器 (timeline 锚点) ---- */
+.chat-turn {
+  scroll-margin-top: 2.5rem;
+  border-radius: 1rem;
+  transition: background-color 0.5s ease;
+}
+
+.chat-turn.target-highlight {
+  animation: turnHighlight 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes turnHighlight {
+  0%   { background-color: var(--bg-hover); }
+  100% { background-color: transparent; }
+}
+
+.chat-scroll-anchor {
+  width: 100%;
+  height: 0.0625rem;
+  flex: 0 0 auto;
+}
+
+.message-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.message-panel-empty {
+  width: 100%;
+  min-height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.message-panel-nested {
+  gap: 0.75rem;
+}
+
+/* ---- Beautiful UI loading state ---- */
+.generating-indicator {
+  margin-top: 0.25rem;
+  padding: 0.25rem 0;
+}
+
+.message-group.is-awaiting-response {
+  gap: 0;
+}
+
+.message-group.is-awaiting-response > .generating-indicator {
+  margin-top: 0;
+}
+
+.beautiful-loading-state,
+.beautiful-loading-visual {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+}
+
+.beautiful-loading-visual {
+  gap: 0.625rem;
+}
+
+.beautiful-loading-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 0.25rem);
+  gap: 0.09375rem;
+  flex: 0 0 auto;
+}
+
+.beautiful-loading-cell {
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 0.0625rem;
+  background: var(--text-primary);
+}
+
+.beautiful-loading-cell.is-round {
+  border-radius: 62.4375rem;
+}
+
+.beautiful-loading-label-window {
+  position: relative;
+  display: inline-grid;
+  height: 1.125rem;
+  overflow: hidden;
+  line-height: 1.125rem;
+}
+
+.beautiful-loading-label-sizer {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  white-space: nowrap;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.beautiful-loading-label {
+  position: absolute;
+  inset: 0 auto auto 0;
+  white-space: nowrap;
+  background-image: linear-gradient(
+    90deg,
+    var(--text-secondary) 35%,
+    var(--text-primary) 50%,
+    var(--text-secondary) 65%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  color: transparent;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-text 1.4s linear infinite;
+}
+
+.beautiful-loading-label.is-entering {
+  animation:
+    beautiful-label-enter 440ms cubic-bezier(0.22, 1, 0.36, 1) both,
+    shimmer-text 1.4s linear infinite;
+}
+
+.beautiful-loading-label.is-leaving {
+  animation:
+    beautiful-label-leave 440ms cubic-bezier(0.64, 0, 0.78, 0) both,
+    shimmer-text 1.4s linear infinite;
+}
+
+@keyframes beautiful-pixel-on {
+  0%,
+  100% { opacity: 0.15; }
+  50% { opacity: 1; }
+}
+
+@keyframes beautiful-label-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes beautiful-label-leave {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beautiful-loading-cell,
+  .beautiful-loading-label,
+  .thinking-state-label,
+  .thinking-state-query,
+  .thinking-state-source,
+  .thinking-state-more,
+  .thinking-state-reasoning-content {
+    animation: none !important;
+  }
+
+  .beautiful-loading-label.is-leaving {
+    display: none;
+  }
+
+  .thinking-state-body-wrapper,
+  .thinking-state-chevron,
+  .thinking-state-trigger,
+  .thinking-state-source,
+  .thinking-state-source-title {
+    transition: none !important;
+  }
+}
+
+.message-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.message-items-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.user-message .message-items-wrapper {
+  align-items: flex-end;
+}
+
+.ai-message .message-items-wrapper {
+  align-items: stretch;
+}
+
+.message-item-text {
+  width: 100%;
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.message-item-image {
+  position: relative;
+  width: min(100%, 35rem);
+  max-height: 32.5rem;
+  overflow: hidden;
+  border: 0.0625rem solid color-mix(in srgb, var(--border-user) 78%, transparent);
+  border-radius: 0.5rem;
+  background: color-mix(in srgb, var(--bg-secondary) 88%, var(--bg-primary));
+}
+
+.message-item-visual-command {
+  width: min(80%, 35rem);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 0.75rem;
+  border: 0.0625rem solid var(--border-user);
+  border-radius: 0.75rem;
+  background: var(--bg-user-msg);
+}
+
+.message-item-visual-command > p {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.message-item-visual-command > .message-item-image {
+  width: 100%;
+  max-height: 26.25rem;
+  border-color: color-mix(in srgb, var(--border-user) 86%, transparent);
+  background: var(--bg-primary);
+}
+
+.message-item-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #f3f5f8;
+}
+
+.message-item-image img.is-pending {
+  opacity: 0;
+}
+
+.message-item-image.is-loading {
+  min-height: 9.375rem;
+  background: linear-gradient(
+    105deg,
+    color-mix(in srgb, var(--bg-secondary) 90%, #fff) 28%,
+    color-mix(in srgb, var(--border-user) 55%, #fff) 42%,
+    color-mix(in srgb, var(--bg-secondary) 90%, #fff) 58%
+  );
+  background-size: 220% 100%;
+  animation: message-image-loading 1.5s ease-in-out infinite;
+}
+
+.message-image-spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.375rem;
+  height: 1.375rem;
+  color: var(--text-secondary);
+  transform: translate(-50%, -50%);
+  animation: spin 0.9s linear infinite;
+}
+
+.message-image-error {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.875rem;
+  padding: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.message-image-error-copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+}
+
+.message-image-error-copy svg {
+  width: 1.1875rem;
+  height: 1.1875rem;
+  flex: 0 0 auto;
+}
+
+.message-image-error button {
+  min-height: 2.75rem;
+  padding: 0 1.125rem;
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.5rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font: inherit;
+  cursor: pointer;
+}
+
+.message-image-error button:hover {
+  background: var(--bg-hover);
+}
+
+.message-image-error button:focus-visible {
+  outline: 0.125rem solid var(--border-focus);
+  outline-offset: 0.125rem;
+}
+
+@keyframes message-image-loading {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+.message-web-images {
+  width: min(100%, 45rem);
+}
+
+.message-web-images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.625rem;
+}
+
+.message-web-image-tile {
+  min-width: 0;
+}
+
+.message-web-image-media {
+  position: relative;
+  width: 100%;
+  min-height: 8.75rem;
+  overflow: hidden;
+  border: 0.0625rem solid color-mix(in srgb, var(--border-user) 78%, transparent);
+  border-radius: 0.5rem;
+  background: color-mix(in srgb, var(--bg-secondary) 88%, var(--bg-primary));
+}
+
+.message-web-image-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #f3f5f8;
+}
+
+.message-web-image-media img.is-pending {
+  opacity: 0;
+}
+
+.message-web-image-media.is-loading {
+  background: linear-gradient(
+    105deg,
+    color-mix(in srgb, var(--bg-secondary) 90%, #fff) 28%,
+    color-mix(in srgb, var(--border-user) 55%, #fff) 42%,
+    color-mix(in srgb, var(--bg-secondary) 90%, #fff) 58%
+  );
+  background-size: 220% 100%;
+  animation: message-image-loading 1.5s ease-in-out infinite;
+}
+
+.message-web-image-open {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.message-web-image-open:hover {
+  background: color-mix(in srgb, #000 5%, transparent);
+}
+
+.message-web-image-open:focus-visible,
+.message-web-image-source:focus-visible {
+  outline: 0.125rem solid var(--border-focus);
+  outline-offset: 0.125rem;
+}
+
+.message-web-image-source {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.4375rem;
+  padding: 0.4375rem 0.125rem 0;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.message-web-image-source span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.message-web-image-source span + span::before {
+  margin-right: 0.4375rem;
+  color: var(--text-tertiary);
+  content: '·';
+}
+
+.message-web-image-source:hover {
+  color: var(--text-primary);
+}
+
+.message-web-image-error {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.125rem;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.message-web-image-error svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.message-web-image-error button {
+  min-height: 2.25rem;
+  padding: 0 0.875rem;
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 0.5rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font: inherit;
+  cursor: pointer;
+}
+
+.message-web-image-error button:hover {
+  background: var(--bg-hover);
+}
+
+@media (max-width: 35rem) {
+  .message-web-images-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .message-item-image.is-loading,
+  .message-web-image-media.is-loading {
+    animation: none;
+  }
+}
+
+.user-message > .message-items-wrapper > .message-item-text {
+  width: fit-content;
+  max-width: 80%;
+  min-width: 0;
+  background-color: var(--bg-user-msg);
+  border: 0.0625rem solid var(--border-user);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.message-item-text p {
+  margin-bottom: 0.75rem;
+}
+
+.message-item-text p:last-child {
+  margin-bottom: 0;
+}
+
+.message-item-text h3 {
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.message-item-text ul {
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.message-item-text li {
+  margin-bottom: 0.375rem;
+}
+
+.message-item-text code {
+  background: var(--bg-code);
+  padding: 0.1875rem 0.375rem;
+  border-radius: 0.25rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, var(--yrkie-cjk-fallback), monospace;
+  font-size: 0.84375rem;
+}
+
+/* ================================================================
+   Otherone Markdown 渲染体系 (.otherone-md)
+   复刻 propertypes/markdown.html 的完整样式
+   ================================================================ */
+
+.otherone-md {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--text-primary);
+  word-wrap: break-word;
+}
+
+/* ---- 段落与基础内联 ---- */
+.otherone-md p {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.otherone-md p:last-child {
+  margin-bottom: 0;
+}
+
+.otherone-md strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.otherone-md em {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.otherone-md del {
+  color: var(--text-muted);
+  text-decoration-color: var(--text-muted);
+}
+
+.otherone-md a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--border-focus);
+  text-underline-offset: 0.25rem;
+  transition: text-decoration-color 0.2s, color 0.2s;
+}
+
+.otherone-md a:hover {
+  text-decoration-color: var(--text-primary);
+}
+
+/* ---- 标题 ---- */
+.otherone-md h1,
+.otherone-md h2,
+.otherone-md h3,
+.otherone-md h4,
+.otherone-md h5,
+.otherone-md h6 {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.otherone-md h1:first-child,
+.otherone-md h2:first-child {
+  margin-top: 0;
+}
+
+.otherone-md h1 {
+  font-size: 2em;
+  border-bottom: 0.0625rem solid var(--border-color);
+  padding-bottom: 0.3em;
+}
+
+.otherone-md h2 {
+  font-size: 1.5em;
+  border-bottom: 0.0625rem solid var(--border-color);
+  padding-bottom: 0.3em;
+}
+
+.otherone-md h3 { font-size: 1.25em; }
+.otherone-md h4 { font-size: 1.1em; }
+
+.otherone-md h5 {
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+/* ---- 列表 ---- */
+.otherone-md ul,
+.otherone-md ol {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  padding-left: 2em;
+}
+
+.otherone-md li {
+  margin-bottom: 0.375rem;
+}
+
+.otherone-md li > p {
+  margin-bottom: 0.375rem;
+}
+
+/* 任务列表 */
+.otherone-md ul.contains-task-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.otherone-md .task-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.otherone-md input[type="checkbox"] {
+  margin-top: 0.3125rem;
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--text-primary);
+  cursor: pointer;
+}
+
+/* ---- 引用块 ---- */
+.otherone-md blockquote {
+  margin: 0 0 1.25rem 0;
+  padding: 1rem 1.25rem;
+  color: var(--text-secondary);
+  background-color: var(--bg-hover);
+  border-left: 0.25rem solid var(--border-color);
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+}
+
+.otherone-md blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- 行内代码 ---- */
+.otherone-md code:not(pre code) {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, var(--yrkie-cjk-fallback), monospace;
+  font-size: 0.85em;
+  color: var(--danger-color);
+  background-color: var(--bg-code);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid var(--border-color);
+}
+
+/* ---- 多行代码块 ---- */
+.otherone-md .code-wrapper {
+  margin: 1.5rem 0;
+  border-radius: 0.75rem;
+  background-color: #0d0d0d;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+
+.otherone-md .code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  padding: 0.625rem 1rem;
+  border-bottom: 0.0625rem solid #2a2a2a;
+}
+
+.otherone-md .code-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.otherone-md .mac-controls {
+  display: flex;
+  gap: 0.375rem;
+}
+
+.otherone-md .mac-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+}
+
+.otherone-md .mac-dot.red    { background: #ff5f56; }
+.otherone-md .mac-dot.yellow { background: #ffbd2e; }
+.otherone-md .mac-dot.green  { background: #27c93f; }
+
+.otherone-md .code-lang {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, var(--yrkie-cjk-fallback), monospace;
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.otherone-md .code-copy-btn {
+  background: transparent;
+  border: none;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.otherone-md .code-copy-btn:hover {
+  color: #fff;
+}
+
+.otherone-md pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #444 #0d0d0d;
+}
+
+.otherone-md pre::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+.otherone-md pre::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+.otherone-md pre::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 0.25rem;
+}
+
+.otherone-md pre code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, var(--yrkie-cjk-fallback), monospace;
+  font-size: 0.84375rem;
+  line-height: 1.6;
+  color: #e6e6e6;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+/* ---- 表格 ---- */
+.otherone-md table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.otherone-md th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-hover);
+  border-bottom: 0.125rem solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.otherone-md td {
+  padding: 0.75rem 1rem;
+  border-bottom: 0.0625rem solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.otherone-md tr:last-child td {
+  border-bottom: none;
+}
+
+.otherone-md tbody tr:hover td {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* ---- 分割线与图片 ---- */
+.otherone-md hr {
+  height: 0.0625rem;
+  background-color: var(--border-color);
+  border: none;
+  margin: 2rem 0;
+}
+
+.otherone-md img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  border: 0.0625rem solid var(--border-color);
+  margin-bottom: 1.25rem;
+}
+
+/* ---- 修复 Markdown 内容在 message-item-text 中的间距 ---- */
+.message-item-text .otherone-md {
+  /* 移除任何与 message-item-text 冲突的样式 */
+}
+
+/* ---- 在 thinking 折叠面板中的适配 ---- */
+.thinking-collapsible-content .otherone-md {
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.message-item-text pre {
+  margin: 0.75rem 0;
+  overflow-x: auto;
+}
+
+.message-item-text pre code {
+  display: block;
+  padding: 0.75rem;
+  line-height: 1.5;
+}
+
+/* Cinematic Blur Reveal — 流式文本入场动画 */
+/* 每个词独立 <span>，进入 DOM 时从模糊状态聚焦清晰 */
+.blur-word {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(0.5rem);
+  transform: translateY(0.25rem) scale(0.98);
+  animation: focusIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  white-space: pre-wrap;
+  will-change: transform, opacity, filter; /* GPU 加速，减少重绘开销 */
+}
+
+@keyframes focusIn {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---- 打字光标效果 — 流式文本末尾的闪烁光标 ---- */
+.message-item-text p:last-child::after {
+  content: '';
+  display: none;
+}
+
+/* 仅在流式输出中的最后一个 p 上显示光标 */
+.ai-message .message-item-text p:last-child .blur-word:last-child::after {
+  content: '';
+  display: inline-block;
+  width: 0.125rem;
+  height: 1.1em;
+  background: var(--text-primary);
+  margin-left: 0.0625rem;
+  vertical-align: text-bottom;
+  animation: cursorBlink 1s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%,
+  100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.message-tool-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  max-width: 100%;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.message-tool-row.is-embedded {
+  min-width: 0;
+}
+
+.tool-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 1rem;
+}
+
+.tool-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@keyframes shimmer-text {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.state-running .tool-text {
+  color: var(--text-secondary);
+}
+
+.state-running .tool-icon svg {
+  color: var(--text-primary);
+}
+
+.state-completed .tool-text {
+  color: var(--text-secondary);
+}
+
+.state-completed .tool-icon svg {
+  color: var(--text-muted);
+}
+
+.message-item-collapsible {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.collapsible-trigger {
+  width: fit-content;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+.collapsible-trigger:hover {
+  opacity: 0.82;
+}
+
+.chevron-icon {
+  color: var(--text-secondary);
+  flex: 0 0 auto;
+  margin-left: 0.125rem;
+  transition: transform 0.25s ease;
+}
+
+.is-open > .collapsible-trigger .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.collapsible-body-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.is-open > .collapsible-body-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.collapsible-body {
+  overflow: hidden;
+}
+
+.collapsible-content {
+  margin-left: 0.5rem;
+  padding: 0.5rem 0 0.5rem 1rem;
+  border-left: 0.0625rem solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.84375rem;
+}
+
+.agent-collapsible-content {
+  border-left-width: 0.125rem;
+}
+
+.message-item-agent {
+  width: min(100%, 35rem);
+}
+
+.message-item-agent > .collapsible-trigger {
+  gap: 0.625rem;
+  padding: 0.125rem 0;
+}
+
+.agent-message-summary {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.agent-message-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.1875rem;
+  line-height: 1.25;
+}
+
+.agent-message-name,
+.agent-message-activity {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.agent-message-name {
+  color: var(--text-primary);
+  font-size: 0.90625rem;
+  font-weight: 650;
+}
+
+.agent-message-activity {
+  color: var(--text-muted);
+  font-size: 0.78125rem;
+  font-weight: 400;
+}
+
+.message-item-agent.state-running .agent-message-activity {
+  color: var(--text-secondary);
+}
+
+.message-item-agent .agent-collapsible-content {
+  margin-left: 1.625rem;
+  padding-top: 0.625rem;
+  padding-left: 2.375rem;
+}
+
+.agent-trace-unavailable {
+  color: var(--text-muted);
+  font-size: 0.78125rem;
+  line-height: 1.5;
+}
+
+.agent-activity-item {
+  min-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.agent-activity-icon {
+  width: 0.8125rem;
+  height: 0.8125rem;
+  flex: 0 0 0.8125rem;
+  stroke-width: 1.8;
+}
+
+.agent-activity-item.state-running {
+  color: var(--text-secondary);
+}
+
+.agent-activity-item.state-running .agent-activity-icon {
+  animation: spin 0.9s linear infinite;
+}
+
+.agent-activity-item.state-failed,
+.agent-activity-item.state-cancelled {
+  color: var(--danger-color, #dc2626);
+}
+
+.sub-agent-avatar {
+  width: 2.125rem;
+  height: 2.125rem;
+  flex: 0 0 2.125rem;
+  display: inline-grid;
+  place-items: center;
+  overflow: visible;
+}
+
+.sub-agent-avatar svg {
+  display: block;
+  width: 2.125rem;
+  height: 2.125rem;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.sub-agent-avatar.is-running svg {
+  transform-origin: 50% 58%;
+  animation: sub-agent-avatar-working 2.4s ease-in-out infinite;
+}
+
+@keyframes sub-agent-avatar-working {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  45% {
+    transform: translateY(-0.125rem) scale(1.025);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sub-agent-avatar.is-running svg {
+    animation: none;
+  }
+}
+
+.message-item-thinking .collapsible-trigger {
+  width: fit-content;
+}
+
+/* Beautiful UI Tool Chips — generic tools are grouped; file-diff chips are intentionally omitted. */
+.tool-chips {
+  width: min(100%, 32.5rem);
+  padding-bottom: 0.25rem;
+}
+
+.tool-chips-summary {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.375rem;
+  margin-left: -0.375rem;
+  padding: 0.25rem 0.375rem;
+  border: 0;
+  border-radius: 0.4375rem;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.78125rem;
+  line-height: 1.125rem;
+  text-align: left;
+  transition: background-color 100ms ease;
+}
+
+.tool-chips-summary:hover {
+  background: var(--bg-hover);
+}
+
+.tool-chips-summary-chevron {
+  width: 0.75rem;
+  height: 0.75rem;
+  flex: 0 0 0.75rem;
+  stroke-width: 2.2;
+  transform: rotate(-90deg);
+  transition: transform 200ms ease;
+}
+
+.tool-chips.is-open .tool-chips-summary-chevron {
+  transform: rotate(0deg);
+}
+
+.tool-chips-body-wrapper,
+.tool-chip-detail-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    grid-template-rows 300ms cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 300ms cubic-bezier(0.23, 1, 0.32, 1),
+    visibility 0s linear 300ms;
+}
+
+.tool-chips.is-open > .tool-chips-body-wrapper,
+.tool-chip-row.is-open > .tool-chip-detail-wrapper {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.tool-chips-body,
+.tool-chip-detail-clip {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.tool-chips-body {
+  margin: 0 -0.25rem;
+  padding: 0 0.375rem 0.25rem;
+}
+
+.tool-chips-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.375rem;
+}
+
+.tool-chip-row {
+  width: 100%;
+  animation: tool-chip-fade-up 300ms cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.tool-chip-row-main {
+  display: flex;
+  width: fit-content;
+  max-width: calc(100% + 0.375rem);
+  min-width: 0;
+  height: 1.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: -0.1875rem;
+  padding: 0 0.1875rem;
+  border: 0;
+  border-radius: 0.4375rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+button.tool-chip-row-main {
+  cursor: pointer;
+  transition: background-color 100ms ease;
+}
+
+button.tool-chip-row-main:hover {
+  background: var(--bg-hover);
+}
+
+.tool-chip-icon-slot {
+  position: relative;
+  display: inline-flex;
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 1rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.tool-chip-tool-icon {
+  width: 0.8125rem;
+  height: 0.8125rem;
+  opacity: 1;
+  stroke-width: 2;
+  transition: opacity 100ms ease;
+}
+
+.tool-chip-row-chevron {
+  position: absolute;
+  width: 0.75rem;
+  height: 0.75rem;
+  opacity: 0;
+  stroke-width: 2.2;
+  transform: rotate(-90deg);
+  transition:
+    opacity 100ms ease,
+    transform 150ms ease;
+}
+
+.tool-chip-row.is-expandable .tool-chip-row-main:hover .tool-chip-tool-icon,
+.tool-chip-row.is-open .tool-chip-tool-icon {
+  opacity: 0;
+}
+
+.tool-chip-row.is-expandable .tool-chip-row-main:hover .tool-chip-row-chevron,
+.tool-chip-row.is-open .tool-chip-row-chevron {
+  opacity: 1;
+}
+
+.tool-chip-row.is-open .tool-chip-row-chevron {
+  transform: rotate(0deg);
+}
+
+.tool-chip-name {
+  max-width: min(13.75rem, 42vw);
+  flex: 0 0 auto;
+  overflow: hidden;
+  color: var(--text-primary);
+  font-size: 0.78125rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tool-chip-value {
+  min-width: 0;
+  max-width: min(22.5rem, 60vw);
+  height: 1.375rem;
+  display: inline-flex;
+  flex: 0 1 auto;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 0.4375rem;
+  border-radius: 0.375rem;
+  background: var(--bg-hover);
+  box-shadow: inset 0 0 0 0.0625rem var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.71875rem;
+  line-height: 1.375rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tool-chip-row.state-running .tool-chip-value {
+  background-image: linear-gradient(
+    90deg,
+    var(--bg-hover) 30%,
+    var(--bg-panel) 50%,
+    var(--bg-hover) 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer-text 1.4s linear infinite;
+}
+
+.tool-chip-detail {
+  margin: 0.125rem 0 0.25rem 0.5rem;
+  padding: 0.1875rem 0 0.1875rem 0.875rem;
+  overflow: hidden;
+  border-left: 0.0625rem solid var(--border-color);
+  color: var(--text-secondary);
+  font-family: ui-monospace, "SFMono-Regular", "SF Mono", Consolas, "Liberation Mono", var(--yrkie-cjk-fallback), monospace;
+  font-size: 0.71875rem;
+  line-height: 1.6;
+  text-overflow: ellipsis;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@keyframes tool-chip-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(0.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-chip-row,
+  .tool-chip-row.state-running .tool-chip-value {
+    animation: none !important;
+  }
+
+  .tool-chips-body-wrapper,
+  .tool-chip-detail-wrapper,
+  .tool-chips-summary-chevron,
+  .tool-chip-tool-icon,
+  .tool-chip-row-chevron {
+    transition: none !important;
+  }
+}
+
+/* Beautiful UI Thinking — Reasoning 与 Search 各自保留独立组件状态。 */
+.thinking-state {
+  display: flex;
+  width: min(100%, 47.5rem);
+  flex-direction: column;
+}
+
+.thinking-state-trigger {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: -0.375rem;
+  padding: 0.25rem 0.375rem;
+  border: 0;
+  border-radius: 0.4375rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 100ms ease;
+}
+
+.thinking-state-trigger:hover {
+  background: var(--bg-hover);
+}
+
+.thinking-state-leading-icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 1rem;
+  color: var(--text-secondary);
+  stroke-width: 1.8;
+}
+
+.thinking-state-leading-icon.is-filled {
+  fill: currentColor;
+}
+
+.thinking-state.state-completed .thinking-state-leading-icon {
+  color: var(--text-muted);
+}
+
+.thinking-state-label {
+  overflow: hidden;
+  max-width: min(35rem, calc(100vw - 10rem));
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  animation: thinking-state-fade-in 350ms ease-out both;
+}
+
+.thinking-state-label.is-running {
+  background-image: linear-gradient(
+    90deg,
+    var(--text-muted) 35%,
+    var(--text-primary) 50%,
+    var(--text-muted) 65%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer-text 1.4s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.thinking-state-chevron {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex: 0 0 0.875rem;
+  color: var(--text-muted);
+  stroke-width: 2.2;
+  transition: transform 300ms ease;
+}
+
+.thinking-state.is-open .thinking-state-chevron {
+  transform: rotate(180deg);
+}
+
+.thinking-state-body-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    grid-template-rows 400ms cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 400ms cubic-bezier(0.23, 1, 0.32, 1),
+    visibility 0s linear 400ms;
+}
+
+.thinking-state-body-wrapper.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.thinking-state-body {
+  overflow: hidden;
+}
+
+.thinking-state-trace {
+  position: relative;
+  margin-top: 0.25rem;
+  margin-left: 0.3125rem;
+  padding-left: 1rem;
+}
+
+.thinking-state-line {
+  position: absolute;
+  top: -0.5rem;
+  bottom: 0.125rem;
+  left: 0.1875rem;
+  width: 0.0625rem;
+  background: var(--border-color);
+}
+
+.thinking-state-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.25rem 0;
+}
+
+.thinking-state-search-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.thinking-state-query,
+.thinking-state-source {
+  display: flex;
+  width: 100%;
+  min-height: 1.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.375rem;
+  font-size: 0.78125rem;
+  text-align: left;
+}
+
+.thinking-state-query {
+  height: 1.5rem;
+  min-height: 1.5rem;
+  color: var(--text-secondary);
+  animation: thinking-state-fade-up 300ms cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.thinking-state-query svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex: 0 0 0.875rem;
+  color: var(--text-muted);
+  stroke-width: 2;
+}
+
+.thinking-state-query span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.thinking-state-source {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: background-color 150ms ease;
+  animation: thinking-state-fade-up 320ms cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.thinking-state-source:nth-child(3) {
+  animation-delay: 120ms;
+}
+
+.thinking-state-source:nth-child(4) {
+  animation-delay: 240ms;
+}
+
+.thinking-state-source:hover {
+  background: var(--bg-hover);
+}
+
+.thinking-state-source-dot {
+  display: inline-flex;
+  width: 0.875rem;
+  height: 0.875rem;
+  flex: 0 0 0.875rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 62.4375rem;
+  color: #fff;
+}
+
+.thinking-state-source-dot.tone-0 {
+  background: #6d74db;
+}
+
+.thinking-state-source-dot.tone-1 {
+  background: #dc7e36;
+}
+
+.thinking-state-source-dot.tone-2 {
+  background: #3b9c69;
+}
+
+.thinking-state-source-dot svg {
+  width: 0.5625rem;
+  height: 0.5625rem;
+  stroke-width: 2.5;
+}
+
+.thinking-state-source-title {
+  min-width: 0;
+  overflow: hidden;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 0.0625rem;
+  transition: background-size 180ms ease;
+}
+
+.thinking-state-source:hover .thinking-state-source-title {
+  background-size: 100% 0.0625rem;
+}
+
+.thinking-state-source-detail {
+  flex: 0 0 auto;
+  color: var(--text-muted);
+  font-size: 0.71875rem;
+  white-space: nowrap;
+}
+
+.thinking-state-more {
+  padding-left: 0.375rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  animation: thinking-state-fade-in 300ms ease-out both;
+}
+
+.thinking-state-reasoning-content {
+  min-height: 1.75rem;
+  padding: 0.125rem 0.375rem;
+  color: var(--text-secondary);
+  font-size: 0.78125rem;
+  line-height: 1.65;
+  animation: thinking-state-fade-up 320ms cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.thinking-state-reasoning-content .thinking-log {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.thinking-state-reasoning-content .markdown-content > :first-child {
+  margin-top: 0;
+}
+
+.thinking-state-reasoning-content .markdown-content > :last-child {
+  margin-bottom: 0;
+}
+
+.work-shell .ai-message .thinking-state-reasoning-content {
+  font-family: "Manrope", var(--yrkie-cjk-fallback), sans-serif;
+}
+
+@keyframes thinking-state-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(0.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes thinking-state-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ================================================================
+   Timeline 导航 — 用户向上滚动时从右侧滑入
+   复刻 propertypes/scroll.html
+   ================================================================ */
+
+.timeline-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%) translateX(2.5rem);
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(1.25rem);
+  -webkit-backdrop-filter: blur(1.25rem);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: 1rem;
+  padding: 0.75rem 0;
+  max-width: 12.25rem;
+  min-width: 3rem;
+  box-shadow: 0 0.625rem 2.5rem rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1), right 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 100;
+}
+
+.app-shell[data-theme="light"] .timeline-nav {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0.625rem 2.5rem rgba(0, 0, 0, 0.06);
+}
+
+.timeline-nav.is-visible {
+  transform: translateY(-50%) translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.timeline-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0;
+}
+
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 0.0625rem;
+  background: var(--border-color);
+  z-index: 0;
+}
+
+.timeline-item {
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem 0.5rem 0.8125rem;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.timeline-link:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-hover);
+}
+
+.timeline-dot {
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-radius: 50%;
+  background: var(--border-color);
+  border: 0.125rem solid var(--bg-app);
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.timeline-link:hover .timeline-dot {
+  background: var(--text-secondary);
+  transform: scale(1.2);
+}
+
+.timeline-link.active {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.timeline-link.active .timeline-dot {
+  background: var(--text-primary);
+  box-shadow: 0 0 0 0.1875rem rgba(128, 128, 128, 0.15);
+}
+
+.timeline-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: inherit;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+/* Compact 模式：产物面板打开或窗口很窄时 → 只显示圆点 */
+.timeline-nav.timeline-compact {
+  max-width: 3.5rem;
+  min-width: 3rem;
+  padding: 0.75rem 0.25rem;
+  border-radius: 1.75rem;
+}
+
+.timeline-nav.timeline-compact .timeline-link {
+  justify-content: center;
+  padding: 0.5rem 0;
+  gap: 0;
+}
+
+.timeline-nav.timeline-compact .timeline-label {
+  display: none;
+}
+
+.timeline-nav.timeline-compact .timeline-list::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 窗口较窄时自动收拢为 dots-only */
+@media (max-width: 68.75rem) {
+  .timeline-nav {
+    max-width: 3.5rem;
+    min-width: 3rem;
+    padding: 0.75rem 0.25rem;
+    border-radius: 1.75rem;
+  }
+
+  .timeline-nav .timeline-link {
+    justify-content: center;
+    padding: 0.5rem 0;
+    gap: 0;
+  }
+
+  .timeline-nav .timeline-label {
+    display: none;
+  }
+
+  .timeline-nav .timeline-list::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.thinking-collapsible-content {
+  max-width: 47.5rem;
+}
+
+.thinking-log {
+  color: var(--text-secondary);
+  font-size: 0.84375rem;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.tool-detail-grid {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.375rem 0.75rem;
+  align-items: baseline;
+}
+
+.tool-detail-grid span {
+  color: var(--text-muted);
+}
+
+.tool-detail-grid code,
+.tool-log {
+  background: var(--bg-code);
+  border-radius: 0.375rem;
+  color: var(--text-secondary);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, var(--yrkie-cjk-fallback), monospace;
+  font-size: 0.75rem;
+}
+
+.tool-detail-grid code {
+  padding: 0.1875rem 0.375rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tool-log {
+  margin: 0;
+  padding: 0.625rem 0.75rem;
+  white-space: pre-wrap;
+}
+
+.message-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.user-message .message-actions {
+  justify-content: flex-end;
+}
+
+.ai-message .message-actions {
+  justify-content: flex-start;
+}
+
+.message-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.message-action-btn:hover {
+  background-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.input-container-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, var(--bg-app) 70%, transparent);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  /* 防止流式更新导致输入区域抖动 */
+  will-change: transform;
+  backface-visibility: hidden;
+}

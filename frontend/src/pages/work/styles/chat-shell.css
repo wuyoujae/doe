@@ -1,0 +1,21 @@
+/* Original 2026-10-12 declarations retained for the extracted Work page. */
+.main-content {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.view-container {
+  flex: 1;
+  overflow-y: auto;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.view-container.active {
+  display: flex;
+}

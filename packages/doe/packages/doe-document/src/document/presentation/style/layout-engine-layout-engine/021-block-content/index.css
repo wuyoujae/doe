@@ -1,0 +1,62 @@
+.block-content {
+  width: 100%;
+}
+
+.component-card {
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: var(--body-size);
+  line-height: var(--line-height);
+}
+
+/* Pure text primitives never own a card surface. This policy is attached by
+   the renderer so themes and legacy component props cannot reintroduce an
+   isolated background color. */
+.component-card[data-background-policy="transparent"] {
+  /* Text glyphs can paint a few pixels outside their CSS line box (especially
+     large CJK display type). Clipping that optical overhang both cuts the
+     glyphs and makes scrollHeight report a false component overflow. Pure text
+     primitives own no crop viewport, so their ink must stay visible. */
+  overflow: visible;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.component-card h1,
+.component-card h2,
+.component-card h3,
+.component-card p,
+.component-card ul,
+.component-card ol,
+.component-card blockquote,
+.component-card figure {
+  margin: 0;
+}
+
+.component-card h1,
+.component-card h2,
+.component-card h3 {
+  text-wrap: balance;
+}
+
+.component-card p,
+.component-card li {
+  overflow-wrap: anywhere;
+}
+
+/* Semantic text owns its legal line boundaries. Generic component wrapping is
+   only a fallback for unprepared copy and must never split a protected token
+   after the semantic pass, including while an embedded editor is resuming from
+   a hidden or streaming state. */
+[data-semantic-wrap]:not([contenteditable]) {
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+[data-semantic-wrap]:not([contenteditable]) > .semantic-text-line,
+[data-semantic-wrap]:not([contenteditable]) > .semantic-text-token {
+  max-width: 100%;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+}
+

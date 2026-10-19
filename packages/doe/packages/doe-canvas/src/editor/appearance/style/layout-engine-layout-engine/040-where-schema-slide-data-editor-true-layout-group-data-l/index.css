@@ -1,0 +1,5 @@
+:where(.schema-slide[data-editor="true"]) .layout-group[data-local-cluster="true"]:hover > .local-cluster-badge,
+:where(.schema-slide[data-editor="true"]) .layout-group[data-local-cluster="true"].is-selected > .local-cluster-badge {
+  opacity: 1;
+}
+

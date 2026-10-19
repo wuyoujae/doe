@@ -1,0 +1,53 @@
+# Local documentation, agent instructions and disposable development artifacts.
+/test/
+/docs/
+AGENTS.md
+
+# Private application data, credentials, originals and generated exports.
+/.run-data/
+.env
+.env.*
+!.env.example
+master.key
+parser-token
+export-token
+playback-owner-token
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3-wal
+*.sqlite3-shm
+*.sqlite-journal
+*.sqlite3-journal
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+*.pem
+*.p12
+*.pfx
+
+# Installed dependencies, local caches and build outputs.
+node_modules/
+dist/
+target/
+.cache/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.tsbuildinfo
+*.log
+
+# Operating-system and editor-local files.
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo

@@ -1,0 +1,100 @@
+/* math-formula v2 — native MathML renderer.
+ * The component owns sizing and alignment; the browser math layout engine owns
+ * glyph baselines, fraction metrics, accents, roots and operator limits. */
+.ppt-math-formula {
+  --math-color: var(--yrkie-color-body);
+  --math-align: center;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  color: var(--math-color);
+  background: transparent;
+  border: 0;
+}
+
+.ppt-math-formula__body {
+  display: flex;
+  align-items: center;
+  justify-content: var(--math-align);
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  padding: 9px 14px;
+  overflow: hidden;
+  font-size: var(--typography-h4-size);
+  line-height: 1;
+}
+
+/* The engine applies the product typeface to descendants with a broad rule.
+ * Math must retain a math font so operators and scripts use correct metrics. */
+.ppt-math-formula__root,
+.ppt-math-formula__root * {
+  font-family: "Cambria Math", "STIX Two Math", "Latin Modern Math",
+    "STIXGeneral", "Times New Roman", serif !important;
+}
+
+.ppt-math-formula__root {
+  display: block;
+  width: max-content;
+  max-width: none;
+  margin: 0;
+  padding: 0.08em 0.04em;
+  color: inherit;
+  font-size: 1em;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: inherit;
+}
+
+.ppt-math-formula__root[display="block"] {
+  margin-block: 0;
+}
+
+/* Native script sizing still positions indices; clamp only undersized nodes. */
+.ppt-math-formula__root [data-math-min-size] {
+  font-size: var(--typography-normal-size);
+}
+
+/* Chromium inherits `math-style` inconsistently through embedded tables.
+ * Setting it explicitly keeps stacked limits and matrix cells predictable. */
+.ppt-math-formula__root[data-display="true"] {
+  math-style: normal;
+}
+
+.ppt-math-formula__root[data-display="false"] {
+  math-style: compact;
+}
+
+.ppt-math-formula__root .ppt-math-formula__mtext--text {
+  font-family: InfaxisWield, Arial, "Microsoft YaHei", "PingFang SC", sans-serif !important;
+  font-style: normal;
+}
+
+.ppt-math-formula__root mfrac {
+  padding-inline: 0.06em;
+}
+
+.ppt-math-formula__root mo[largeop="true"] {
+  padding-inline: 0.06em;
+}
+
+.ppt-math-formula__root .ppt-math-formula__overline {
+  text-decoration-line: overline;
+  text-decoration-thickness: 0.055em;
+  text-decoration-skip-ink: none;
+}
+
+.ppt-math-formula__root mtable {
+  line-height: 1.08;
+}
+
+@supports not (math-style: normal) {
+  .ppt-math-formula__root {
+    font-family: "Cambria Math", "Times New Roman", serif !important;
+  }
+}

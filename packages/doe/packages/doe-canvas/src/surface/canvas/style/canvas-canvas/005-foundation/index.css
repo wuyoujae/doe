@@ -1,0 +1,4 @@
+/* The frame owns the only rounded clip for full-bleed Slides. Repeating the
+   same rounded clip on scaled descendants creates a pale antialiasing seam at
+   every corner. A one-design-pixel paint bleed also absorbs fractional scale
+   rounding without changing the authored 1280 × 720 layout geometry. */

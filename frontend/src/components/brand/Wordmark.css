@@ -1,0 +1,5 @@
+.yrkie-wordmark {
+  /* Preserve the previous wordmark's layout slot; SVG artwork stays undistorted. */
+  aspect-ratio: 5 / 2;
+  color: var(--yrkie-color-primary);
+}

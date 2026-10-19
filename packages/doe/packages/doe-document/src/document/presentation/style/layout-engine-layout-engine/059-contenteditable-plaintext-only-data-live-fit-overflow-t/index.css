@@ -1,0 +1,5 @@
+[contenteditable="plaintext-only"][data-live-fit-overflow="true"] {
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+

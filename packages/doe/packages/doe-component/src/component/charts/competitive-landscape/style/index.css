@@ -1,0 +1,84 @@
+.ppt-competitive-landscape {
+  width: 680px;
+  height: 620px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: var(--yrkie-color-body);
+  background: var(--yrkie-color-surface);
+  font-family: var(--font-sans-cn);
+}
+
+.ppt-competitive-landscape__title {
+  margin: 0 0 12px;
+  padding: 8px 14px;
+  flex: none;
+  color: var(--yrkie-color-on-primary);
+  background: var(--yrkie-color-primary);
+  font-size: var(--typography-h4-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 1;
+  text-align: center;
+}
+
+.ppt-competitive-landscape__svg {
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+}
+
+.ppt-competitive-landscape__axis {
+  stroke: var(--yrkie-color-auxiliary);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-competitive-landscape__axis-label {
+  fill: var(--yrkie-color-body);
+  font-size: var(--typography-normal-size);
+  font-weight: var(--yrkie-font-weight-regular);
+}
+
+.ppt-competitive-landscape__x-label {
+  fill: var(--yrkie-color-body);
+  font-size: var(--typography-normal-size);
+  font-weight: var(--yrkie-font-weight-regular);
+  text-anchor: middle;
+}
+
+.ppt-competitive-landscape__bubble-title,
+.ppt-competitive-landscape__bubble-subtitle,
+.ppt-competitive-landscape__bubble-body,
+.ppt-competitive-landscape__callout-text {
+  text-anchor: middle;
+}
+
+.ppt-competitive-landscape__bubble-title {
+  font-size: var(--typography-h4-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+  text-decoration: underline;
+}
+
+.ppt-competitive-landscape__bubble-subtitle {
+  font-size: var(--typography-normal-size);
+  font-style: italic;
+}
+
+.ppt-competitive-landscape__bubble-body {
+  font-size: var(--typography-small-size);
+  font-style: italic;
+}
+
+.ppt-competitive-landscape__callout {
+  fill: var(--yrkie-color-surface);
+  stroke: var(--yrkie-color-primary);
+  stroke-width: 2.5;
+  stroke-dasharray: 10 6;
+}
+
+.ppt-competitive-landscape__callout-text {
+  fill: var(--yrkie-color-body);
+  font-size: var(--typography-normal-size);
+  font-style: italic;
+  font-weight: var(--yrkie-font-weight-semibold);
+}

@@ -1,0 +1,12 @@
+.schema-slide[data-theme="yrkie-theme"]:not([data-background-foreground="light"])
+  :is(
+    .ppt-grouped-bar-chart, .ppt-line-chart, .ppt-stacked-bar-chart,
+    .ppt-waterfall-chart, .ppt-insight-card, .ppt-service-matrix,
+    .ppt-channel-comparison, .ppt-risk-matrix, .ppt-forecast-scatter,
+    .ppt-combo-chart, .ppt-stacked-area-chart, .ppt-radar-chart,
+    .ppt-donut-chart, .ppt-metric-card-group,
+    .ppt-capability-cards, .ppt-data-table
+  ) {
+  color: var(--yrkie-color-body);
+}
+

@@ -1,0 +1,59 @@
+#demo-toolbar {
+  position: fixed;
+  z-index: 40;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  max-width: calc(100vw - 28px);
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  background: rgba(18, 24, 34, 0.92);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+  font-family: var(--font-sans-cn);
+  backdrop-filter: blur(12px);
+}
+
+.demo-toolbar__buttons {
+  display: flex;
+  min-width: 0;
+  max-width: min(720px, 48vw);
+  flex: 1 1 420px;
+  flex-wrap: nowrap;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.demo-toolbar__button {
+  flex: 0 0 auto;
+}
+
+.demo-toolbar__button {
+  padding: 7px 11px;
+  color: rgba(255, 255, 255, 0.78);
+  border: 0;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.demo-toolbar__button[aria-pressed="true"] {
+  color: #ffffff;
+  background: var(--editor-blue);
+}
+
+.demo-toolbar__gesture-guide {
+  max-width: 310px;
+  padding: 0 10px;
+  color: #bcd4ff;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 11px;
+  line-height: 1.35;
+}
+

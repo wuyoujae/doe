@@ -1,0 +1,6 @@
+html[data-slide-generation="true"] .work-editor__canvas {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+

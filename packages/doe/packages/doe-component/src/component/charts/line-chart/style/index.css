@@ -1,0 +1,193 @@
+.ppt-line-chart {
+  --line-chart-navy: var(--yrkie-color-primary);
+  --line-chart-grid: var(--yrkie-grid-line);
+  --line-chart-axis: var(--yrkie-color-body);
+  --line-chart-y-axis-width: 50px;
+  --line-chart-legend-columns: 1;
+  --line-chart-category-count: 1;
+
+  width: 680px;
+  height: 390px;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  color: var(--yrkie-color-body);
+  font-family: var(--font-sans-cn);
+}
+
+.ppt-line-chart[data-has-title="true"] {
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.ppt-line-chart__title {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  min-height: 56px;
+  padding: 7px 18px;
+  color: var(--yrkie-color-on-primary);
+  background: var(--line-chart-navy);
+  font-size: var(--typography-h4-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 1.08;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.ppt-line-chart[data-title-wrap="true"] .ppt-line-chart__title {
+  white-space: normal;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.ppt-line-chart__body {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 18px 12px 10px;
+}
+
+.ppt-line-chart[data-has-value-labels="true"] .ppt-line-chart__body {
+  padding-top: max(14px, calc(var(--typography-normal-size) * 1.4 + var(--line-chart-label-rise)));
+}
+
+.ppt-line-chart__main {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.ppt-line-chart__legend {
+  margin: 0 0 0 var(--line-chart-y-axis-width);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--line-chart-legend-columns), minmax(0, 1fr));
+  justify-content: center;
+  justify-items: center;
+  gap: 8px 22px;
+  flex: none;
+  list-style: none;
+  font-size: var(--typography-small-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 1;
+}
+
+.ppt-line-chart__legend-item {
+  display: flex;
+  min-width: 0;
+  max-width: 100%;
+  align-items: center;
+  gap: 10px;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.ppt-line-chart__legend-line {
+  width: 38px;
+  height: 3px;
+  flex: none;
+  background: currentColor;
+}
+
+.ppt-line-chart__plot {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: var(--line-chart-y-axis-width) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  flex: 1;
+  font-family: var(--font-sans-cn);
+  font-size: var(--typography-normal-size);
+  font-variant-numeric: tabular-nums;
+}
+
+.ppt-line-chart__y-axis {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.ppt-line-chart__y-tick {
+  position: absolute;
+  top: var(--tick-position);
+  right: 10px;
+  line-height: 1;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+
+.ppt-line-chart__field {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.ppt-line-chart__svg,
+.ppt-line-chart__labels {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.ppt-line-chart__labels {
+  pointer-events: none;
+}
+
+.ppt-line-chart__grid-line {
+  stroke: var(--line-chart-grid);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-line-chart__grid-line--zero {
+  stroke: var(--line-chart-axis);
+  stroke-width: 2;
+}
+
+.ppt-line-chart__series-path {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-line-chart__point {
+  stroke: none;
+}
+
+.ppt-line-chart__value-label {
+  fill: var(--yrkie-color-body);
+  font-family: var(--font-sans-cn);
+  font-size: var(--typography-normal-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+}
+
+.ppt-line-chart__x-axis {
+  min-width: 0;
+  min-height: 30px;
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--line-chart-category-count), minmax(0, 1fr));
+  padding-top: 8px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.ppt-line-chart__category {
+  min-width: 0;
+  padding-inline: 3px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,13 @@
+/* Explicit page opt-in; never inherited by the DOE canvas or its editing portals. */
+[data-ui-theme] {
+  --page-danger: #a52d31;
+  --page-shadow-input: rgba(32, 30, 39, 0.18);
+  font-family: var(--yrkie-font-ui-content);
+  font-size: var(--yrkie-text-body);
+  font-weight: var(--yrkie-weight-regular);
+  color: var(--yrkie-color-body);
+}
+[data-ui-theme] :where(button, input, select, textarea) { font-family: inherit; }
+[data-ui-theme] :where(input, textarea)::placeholder { color: var(--yrkie-color-placeholder); }
+[data-ui-theme] :where(h1, h2, h3) { color: var(--yrkie-color-title); font-weight: var(--yrkie-weight-heading); }
+[data-ui-theme] :where(strong, b) { font-weight: var(--yrkie-weight-bold); }

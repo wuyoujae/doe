@@ -1,0 +1,15 @@
+.ui-checkbox { position: relative; display: inline-flex; flex: none; width: 1.125rem; height: 1.125rem; vertical-align: middle; }
+.ui-checkbox > input.ui-checkbox-input {
+  appearance: none; box-sizing: border-box; display: block; width: 100%; height: 100%; margin: 0;
+  padding: 0; border: var(--yrkie-border-width) solid var(--yrkie-color-control-border);
+  border-radius: var(--yrkie-gap-micro); background: var(--yrkie-color-white); cursor: pointer;
+  transition: background-color var(--yrkie-motion-control) ease, border-color var(--yrkie-motion-control) ease;
+}
+.ui-checkbox > input.ui-checkbox-input:checked { background: var(--yrkie-color-primary); border-color: var(--yrkie-color-primary); }
+.ui-checkbox > input.ui-checkbox-input:focus-visible { outline: calc(var(--yrkie-border-width) * 2) solid var(--yrkie-color-primary); outline-offset: calc(var(--yrkie-border-width) * 2); }
+.ui-checkbox > svg { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: var(--yrkie-color-on-primary); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+.ui-checkbox path { stroke-dasharray: 14; stroke-dashoffset: 14; opacity: 0; transition: stroke-dashoffset var(--yrkie-motion-panel) var(--yrkie-ease-control), opacity var(--yrkie-motion-fade) ease; }
+.ui-checkbox-input:checked + svg path { stroke-dashoffset: 0; opacity: 1; }
+.ui-checkbox:has(input:disabled) { opacity: 0.45; }
+.ui-checkbox > input.ui-checkbox-input:disabled { cursor: default; }
+@media (prefers-reduced-motion: reduce) { .ui-checkbox > input.ui-checkbox-input, .ui-checkbox path { transition: none; } }

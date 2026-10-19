@@ -1,0 +1,18 @@
+[package]
+name = "otherone-memory"
+version = "0.5.0"
+edition = "2021"
+license = "MIT"
+readme = "../../README.md"
+documentation = "https://docs.rs/otherone-memory"
+repository = "https://github.com/wuyoujae/otherone-agent"
+keywords = ["ai", "agent", "memory"]
+categories = ["data-structures"]
+description = "Long-term and short-term memory primitives for the Otherone agent framework"
+
+[dependencies]
+chrono = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+uuid = { workspace = true }

@@ -1,0 +1,35 @@
+[package]
+name = "otherone-agent"
+version = "0.6.0-yrkie.1"
+edition = "2021"
+license = "MIT"
+readme = "../../README.md"
+documentation = "https://docs.rs/otherone-agent"
+repository = "https://github.com/wuyoujae/otherone-agent"
+keywords = ["ai", "agent", "llm"]
+categories = ["asynchronous"]
+description = "Agent 循环驱动 — 核心 Agent 主循环，支持流式和非流式响应"
+
+[features]
+default = ["localfile", "postgres"]
+localfile = ["otherone-context/localfile", "otherone-storage/localfile"]
+postgres = ["otherone-context/postgres", "otherone-storage/postgres"]
+
+[dependencies]
+tokio = { workspace = true }
+async-trait = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+futures = { workspace = true }
+tokio-util = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+otherone-ai = { version = "0.6.0", path = "../otherone-ai" }
+otherone-context = { version = "0.6.0-yrkie.1", path = "../otherone-context", default-features = false }
+otherone-memory = { version = "0.5.0", path = "../otherone-memory" }
+otherone-tools = { version = "0.6.0", path = "../otherone-tools" }
+otherone-storage = { version = "0.6.0-yrkie.1", path = "../otherone-storage", default-features = false }
+otherone-skills = { version = "0.5.0", path = "../otherone-skills" }

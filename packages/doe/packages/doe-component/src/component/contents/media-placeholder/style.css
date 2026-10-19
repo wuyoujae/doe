@@ -1,0 +1,9 @@
+.schema-slide [data-empty-media] {
+  background: color-mix(in srgb, var(--yrkie-color-body) 10%, var(--yrkie-color-surface));
+  color: color-mix(in srgb, var(--yrkie-color-body) 42%, var(--yrkie-color-surface));
+}
+.schema-slide [data-empty-media="icon"] { border-radius: var(--yrkie-radius-component); }
+[data-empty-media="icon"] svg { width: 70%; height: 70%; }
+[data-empty-media="image"] { margin: 0; aspect-ratio: 1; }
+[data-contents-image-index][role="button"] { cursor: pointer; }
+[data-contents-image-index][role="button"]:focus-visible { outline: 2px solid var(--yrkie-color-primary); outline-offset: 2px; }

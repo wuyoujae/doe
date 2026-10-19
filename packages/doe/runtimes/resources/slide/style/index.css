@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "MiSans";
+  src: url("./fonts/misans/MiSansVF.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Alexandria";
+  src: url("./fonts/alexandria/Alexandria-wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: block;
+  unicode-range:
+    U+0000-024F,
+    U+2000-206F,
+    U+20A0-20CF,
+    U+2100-214F,
+    U+2190-23FF,
+    U+2460-27BF;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--yrkie-color-studio-stage);
+}
+
+#slide-stage {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  overflow: hidden;
+  place-items: center;
+}
+
+#slide-scaler {
+  position: relative;
+  flex: none;
+  width: var(--doe-canvas-width, 960pt);
+  height: var(--doe-canvas-height, 540pt);
+  transform-origin: center;
+}
+
+#slide-content {
+  position: relative;
+  width: var(--doe-canvas-width, 960pt);
+  height: var(--doe-canvas-height, 540pt);
+  overflow: hidden;
+  background: var(--yrkie-color-light);
+  box-shadow: 0 25px 50px -12px var(--yrkie-shadow-strong);
+  font-family: var(--font-sans-cn);
+  font-synthesis: none;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  text-rendering: optimizeLegibility;
+}
+
+.font-sans-cn {
+  font-family: var(--font-sans-cn);
+}
+
+.font-serif-cn {
+  font-family: var(--font-serif-cn);
+}
+
+.font-sans-en {
+  font-family: var(--font-sans-en);
+}

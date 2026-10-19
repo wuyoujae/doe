@@ -1,0 +1,14 @@
+.schema-slide[data-editor="true"][data-edge-media="true"]
+  .edge-media-divider {
+  display: block;
+}
+
+:where(.schema-slide[data-editor="true"]) .layout-group[data-edge-split-root="true"]:hover
+  > .edge-media-divider,
+:where(.schema-slide[data-editor="true"]) .layout-group[data-edge-split-root="true"].is-selected
+  > .edge-media-divider,
+.edge-media-divider:focus-visible,
+.edge-media-divider.is-active {
+  opacity: 1;
+}
+

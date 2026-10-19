@@ -1,0 +1,10 @@
+.doe-canvas:has(.schema-slide[data-edge-media="true"])
+  .schema-slide[data-edge-media="true"]
+  [data-layout-region="media"]
+  > .block-content {
+  inset: -1px;
+  /* Resolve both edges from inset; 100% would only shift the paint up/left. */
+  width: auto;
+  height: auto;
+}
+

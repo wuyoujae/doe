@@ -1,0 +1,2 @@
+/* Static rendering is measured at native size, outside scaled canvas ancestry. */
+.doe-canvas__staging { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; opacity: 0; pointer-events: none; }

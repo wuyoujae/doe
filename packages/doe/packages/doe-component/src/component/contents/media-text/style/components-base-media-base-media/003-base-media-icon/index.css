@@ -1,0 +1,2 @@
+.base-media__icon { width: var(--space-36pt); height: var(--space-36pt); display: flex; align-items: center; justify-content: center; background: var(--yrkie-color-secondary); color: var(--yrkie-color-primary); border-radius: var(--yrkie-radius-component); }
+.base-media__icon svg { width: var(--space-24pt); height: var(--space-24pt); }

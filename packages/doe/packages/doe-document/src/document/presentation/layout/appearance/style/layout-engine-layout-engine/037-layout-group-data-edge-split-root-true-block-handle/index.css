@@ -1,0 +1,6 @@
+.layout-group[data-edge-split-root="true"] > .block-handle {
+  top: var(--space-12pt);
+  left: 50%;
+  transform: translateX(-50%);
+}
+

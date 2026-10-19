@@ -1,0 +1,18 @@
+[package]
+name = "otherone-skills"
+version = "0.5.0"
+edition = "2021"
+license = "MIT"
+readme = "../../README.md"
+documentation = "https://docs.rs/otherone-skills"
+repository = "https://github.com/wuyoujae/otherone-agent"
+keywords = ["ai", "agent", "skills"]
+categories = ["parser-implementations"]
+description = "Skills 技能系统 — Agent Skills 标准实现，基于 SKILL.md 文件的可插拔技能架构"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }

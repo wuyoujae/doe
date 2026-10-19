@@ -1,0 +1,13 @@
+:where(.schema-slide[data-editor="true"]) .flow-block:not(.layout-group).is-selected > .block-content,
+:where(.schema-slide[data-editor="true"]) .group-item:not(.layout-group).is-selected > .block-content,
+:where(.schema-slide[data-editor="true"]) .layout-group.is-selected > .layout-group__content {
+  border-radius: 4px;
+  box-shadow: 0 0 0 3px var(--editor-blue);
+}
+
+:where(.schema-slide[data-editor="true"]) .flow-block:not(.layout-group):hover > .block-content,
+:where(.schema-slide[data-editor="true"]) .group-item:not(.layout-group):hover > .block-content,
+:where(.schema-slide[data-editor="true"]) .layout-group:hover > .layout-group__content {
+  box-shadow: 0 0 0 1px rgba(40, 120, 255, 0.38);
+}
+

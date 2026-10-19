@@ -1,0 +1,47 @@
+.block-handle:hover,
+.block-handle:focus-visible {
+  color: var(--editor-blue);
+  border-color: #8bb7ff;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 2px rgba(40, 120, 255, 0.1),
+    0 3px 9px rgba(23, 32, 51, 0.13);
+  outline: 0;
+}
+
+.block-handle:active {
+  cursor: grabbing;
+}
+
+.schema-slide.is-block-dragging,
+.schema-slide.is-block-dragging * {
+  cursor: grabbing !important;
+  user-select: none !important;
+}
+
+html[data-block-dragging="true"],
+html[data-block-dragging="true"] * {
+  cursor: grabbing !important;
+  user-select: none !important;
+}
+
+.block-handle--layout {
+  cursor: pointer;
+}
+
+.local-cluster-badge {
+  position: absolute;
+  z-index: 7;
+  top: var(--space-6pt);
+  right: var(--space-6pt);
+  padding: 4px 7px;
+  opacity: 0;
+  color: #1e4f91;
+  border: 1px solid #9fc2ff;
+  border-radius: 999px;
+  background: rgba(234, 242, 255, 0.94);
+  font: 800 9pt/1 var(--font-sans-cn);
+  pointer-events: none;
+  transition: opacity 120ms ease;
+}
+

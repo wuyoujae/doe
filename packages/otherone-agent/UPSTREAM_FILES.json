@@ -1,0 +1,338 @@
+{
+  "commit": "98cbdd5736535e14bab4593973b33fddd4a99c64",
+  "sourceDirectory": "app/backend/third_party/otherone-agent-0.6.0-yrkie.1/",
+  "files": [
+    {
+      "path": "Cargo.lock",
+      "sha256": "441da039731df7d0dee46ae3877741c67df8c757bf3f6fe7c5d781d587319a73"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "3f276c62aabca68737e9368dc7f2d672e05174f81d8e90c2fe7e5f0ee9a0d049"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "b6d317c9150c89aca8e2d1e06ff0534d8c94eaea06c4c0a866e1d627d793d0c8"
+    },
+    {
+      "path": "README.md",
+      "sha256": "c07140c0e436284e423f7ed8ecd0dd61031b46822be62a538ae5ba88d176f119"
+    },
+    {
+      "path": "crates/otherone-agent/Cargo.toml",
+      "sha256": "e49c2d83013c1faa467470304ca01d6d75a470d76e049ff116cffb4f59921080"
+    },
+    {
+      "path": "crates/otherone-agent/src/error.rs",
+      "sha256": "b4f294ca0c203ac07fdca377560734a0f15232ce3d9831f1251300972f3e472f"
+    },
+    {
+      "path": "crates/otherone-agent/src/lib.rs",
+      "sha256": "ec803976063c4c88c01299b900e4523b866d375479c245e36daa4b6ffeab1361"
+    },
+    {
+      "path": "crates/otherone-agent/src/multi_agent/event.rs",
+      "sha256": "35841658d2511e08399fa369ed835159b3c0401cf00e40a253213d1e947934a2"
+    },
+    {
+      "path": "crates/otherone-agent/src/multi_agent/mod.rs",
+      "sha256": "9faf1321a54eb890c05f7fb11c90e59c24e8979aab967e24aef0f03f9cde87ce"
+    },
+    {
+      "path": "crates/otherone-agent/src/multi_agent/registry.rs",
+      "sha256": "5d0749cb7bf21beee30c5efb3ac433f27d33228551d0f80576c74f630dcc192e"
+    },
+    {
+      "path": "crates/otherone-agent/src/multi_agent/runtime.rs",
+      "sha256": "c5fc818b3f4ac9dd48fcd01d2569b8c470a3fb56117941f7635aef5c7cd13ad7"
+    },
+    {
+      "path": "crates/otherone-agent/src/multi_agent/supervisor.rs",
+      "sha256": "10e769f443b18bce3e82805beb93bbe55445c3554a07014322a9ff235e409467"
+    },
+    {
+      "path": "crates/otherone-agent/src/multi_agent/types.rs",
+      "sha256": "bbda4f57dfe0310668be5463c0117cdcff0a701db0eda28b7244b2f458f6b6c9"
+    },
+    {
+      "path": "crates/otherone-agent/src/response_parser.rs",
+      "sha256": "356adf74f8dbb5e33d7684dd9219c2e7aa6d7272f3190dd5ec6a5a893daee66c"
+    },
+    {
+      "path": "crates/otherone-agent/src/types.rs",
+      "sha256": "8fb147eeae7dc956e79add4223e73f0a9872d412001a17c6c1e8ca34bef9c5b3"
+    },
+    {
+      "path": "crates/otherone-agent/tests/live_memory_openrouter.rs",
+      "sha256": "2cfc0b07b433e5da80ab37d20b930dd558e798f1b64e246b9a61bcc223827454"
+    },
+    {
+      "path": "crates/otherone-ai/Cargo.toml",
+      "sha256": "1a9385153938e852c122bf86d03099a54ca16619a691e3533cf008477c088203"
+    },
+    {
+      "path": "crates/otherone-ai/src/anthropic/client.rs",
+      "sha256": "a8bf34859d88fcaa2fb565fb18588ed76ec4c0d96cb45d7d5b53b1fdcf925e65"
+    },
+    {
+      "path": "crates/otherone-ai/src/anthropic/mod.rs",
+      "sha256": "32379ba5daaa06b2d36db3504b69c7e2ad923a10a94da10edc19e12edf87acc3"
+    },
+    {
+      "path": "crates/otherone-ai/src/anthropic/types.rs",
+      "sha256": "e77a923e51ea25cc71926667011003765646dcb0dab28ea12d8efcce3018f5a6"
+    },
+    {
+      "path": "crates/otherone-ai/src/error.rs",
+      "sha256": "5d270517277252efbd135a54442dbc81154e008c3ff05787d62d22b5dcbe8c7d"
+    },
+    {
+      "path": "crates/otherone-ai/src/fetch/client.rs",
+      "sha256": "8e9276bb667650cbd63cfa124308116a68d572fce481f88c91337398bd8e6ce4"
+    },
+    {
+      "path": "crates/otherone-ai/src/fetch/mod.rs",
+      "sha256": "5bbd24c062364fbb87e20e910ac7dcdef1ea2de1655de953b5e3891ad5e01c38"
+    },
+    {
+      "path": "crates/otherone-ai/src/http_transport.rs",
+      "sha256": "09bee6a8402462ecda244dcc2a4b181b232dc5bb0b5a12bd2e779cffef128c0e"
+    },
+    {
+      "path": "crates/otherone-ai/src/lib.rs",
+      "sha256": "0c1522c7fffeef9fc3b0e9c2d9ad4617c2de0fb0bdca39b7bd622d3e9bb36df2"
+    },
+    {
+      "path": "crates/otherone-ai/src/local/client.rs",
+      "sha256": "1475ff081684ae8a9f5fe7302003589e1b9dbf90f541bd2ae97deca42900105c"
+    },
+    {
+      "path": "crates/otherone-ai/src/local/mod.rs",
+      "sha256": "437784d16b200978d7ef31b1c1f48f6e83c2e3b78cb006506e35666ecc54c126"
+    },
+    {
+      "path": "crates/otherone-ai/src/openai/client.rs",
+      "sha256": "a45acbcb5949d7e88887f96e6df86db758871b09759a9b488f28a65a67c26fca"
+    },
+    {
+      "path": "crates/otherone-ai/src/openai/mod.rs",
+      "sha256": "7f237810a08447d6815633f5039606f234e69eed8bc96b3cb6660e6c21d29c1b"
+    },
+    {
+      "path": "crates/otherone-ai/src/openai/types.rs",
+      "sha256": "7405a954c24f9b1ebd2293e8f4d579906e4a29559670af48f0a63ecb98aa521a"
+    },
+    {
+      "path": "crates/otherone-ai/src/openrouter/client.rs",
+      "sha256": "c0ccfa5b2bf1cb2f116488a98e8c416c741a4af1cd017a0f28cb03321ca9c143"
+    },
+    {
+      "path": "crates/otherone-ai/src/openrouter/mod.rs",
+      "sha256": "0ce609fdca39d20918c36b0e41cf9c828a5ae3ecc123fcbdf795ca5d7ae27fc4"
+    },
+    {
+      "path": "crates/otherone-ai/src/traits.rs",
+      "sha256": "3f903526a62b81ce6978be898b217b8b1b5bcf123e7cbdb8ac8a8743bae012b0"
+    },
+    {
+      "path": "crates/otherone-ai/src/types.rs",
+      "sha256": "facaf9fc6bd75b3872c98d219ae9a8b15109277a90d868544260ed921739ded6"
+    },
+    {
+      "path": "crates/otherone-context/Cargo.toml",
+      "sha256": "d09a754f8c2d7112f222dc1ecce66eeabdc0ba18154914340d053b7efc248b65"
+    },
+    {
+      "path": "crates/otherone-context/src/compact/check_threshold.rs",
+      "sha256": "2522c0395aa6e075fb377c670d30e9e1b698b19e1922de2053230e2cb7670da1"
+    },
+    {
+      "path": "crates/otherone-context/src/compact/estimate_tokens.rs",
+      "sha256": "74f74cb3d0f3c42c14e7bdc631f8e9381e83ca061de09d4792332ce992ae79d7"
+    },
+    {
+      "path": "crates/otherone-context/src/compact/messages_to_sequence.rs",
+      "sha256": "e6b0023547c5482865068d810ceaf6cdfd5d31930dbc6cacd8652ff00e08b962"
+    },
+    {
+      "path": "crates/otherone-context/src/compact/mod.rs",
+      "sha256": "6d66de0b2e341a66d5fbeee44f0d41a26a0587544f743161d3b7f2efa51290de"
+    },
+    {
+      "path": "crates/otherone-context/src/compact/prompts.rs",
+      "sha256": "aba1e7d9f5bb1a2a26962802490d9dfc2638462313e5486df28f2e9be087916c"
+    },
+    {
+      "path": "crates/otherone-context/src/error.rs",
+      "sha256": "1ef6a30c58df3fd77480f4bb06f2b2e4314bd788d2090dd599c3d67aeed7d975"
+    },
+    {
+      "path": "crates/otherone-context/src/lib.rs",
+      "sha256": "45643a1567421260963d6a14ffd80d534acb9268bda664c1594f898c3b1f2d68"
+    },
+    {
+      "path": "crates/otherone-context/src/types.rs",
+      "sha256": "342c90d6a693fa3630198e243d79247918a918e3294cef1300d5d484fdd249fc"
+    },
+    {
+      "path": "crates/otherone-mcp/Cargo.toml",
+      "sha256": "b86de02c7a9142c3b828a7891a6fb239989e03fef3d7c291399de8829c6dd5be"
+    },
+    {
+      "path": "crates/otherone-mcp/src/client.rs",
+      "sha256": "c686ff572bfa9c74fa4ee7e729a9785d61ca67ff57eea4e193923ebb6fc85c66"
+    },
+    {
+      "path": "crates/otherone-mcp/src/error.rs",
+      "sha256": "0605b8657d7fce16a61745305f19f4edeb5a2eb5cfe536e035160de2d59fdda9"
+    },
+    {
+      "path": "crates/otherone-mcp/src/lib.rs",
+      "sha256": "7ccf6fe6b7d1bc9e8e69b963f61d6011021bacad3746ff6bcacee1f11dbeecac"
+    },
+    {
+      "path": "crates/otherone-mcp/src/types.rs",
+      "sha256": "46fb3457198c37ee697bac09d600f74465e694dc818d0abb9fefc0edd3d16d36"
+    },
+    {
+      "path": "crates/otherone-memory/Cargo.toml",
+      "sha256": "9216873dff4a93ee0cef0c398729243353a2984ae6ed02238f65dfb75bb74ef8"
+    },
+    {
+      "path": "crates/otherone-memory/src/error.rs",
+      "sha256": "6e8396bbf5eb11f48ccab07cfd76d6e283a97608cfd363e70e4a7b1cfdaef4cc"
+    },
+    {
+      "path": "crates/otherone-memory/src/lib.rs",
+      "sha256": "29c23c01ca3c06491cdce8a92a0fd2c8f0ea0a21f4896239b6d70b7600568753"
+    },
+    {
+      "path": "crates/otherone-memory/src/storage.rs",
+      "sha256": "2feb82bee39f01684d76b5c2bf5a976ad342970333bd44413f04fb0c0eda1cff"
+    },
+    {
+      "path": "crates/otherone-memory/src/tree.rs",
+      "sha256": "f6b817ff044945188da75dee52b633a59881b786fd48616ca3d17bde43b4e18d"
+    },
+    {
+      "path": "crates/otherone-memory/src/types.rs",
+      "sha256": "423bd666e264aac32f28ebf0f1648e88df332e49d9979c0d88b567e50d379ff8"
+    },
+    {
+      "path": "crates/otherone-skills/Cargo.toml",
+      "sha256": "8a3eeb6ad4064a29486f414d0016e33628af4d57c0cb22fa321546065346e77d"
+    },
+    {
+      "path": "crates/otherone-skills/src/discovery.rs",
+      "sha256": "b2c07ed27ef03b91c016e42ce9dd1ddea78b9f38be116ca2923adcbf42ca7b3f"
+    },
+    {
+      "path": "crates/otherone-skills/src/error.rs",
+      "sha256": "9f8a1373112cb1fa48841e37e9b7f7a41b474ec62a5bfd1d0728df25f150405d"
+    },
+    {
+      "path": "crates/otherone-skills/src/lib.rs",
+      "sha256": "24984376302d491285a7a8d2d331e695c6974a6c467ccf3b41d264a9db698ced"
+    },
+    {
+      "path": "crates/otherone-skills/src/types.rs",
+      "sha256": "102f96511896dc5b4d966f91df76010b7545df5a989ed10820114a0fb8f30f82"
+    },
+    {
+      "path": "crates/otherone-skills/src/validation.rs",
+      "sha256": "c76966d525bcce4651e970d8381c1ba452bb3388f78e7eee2f2be8613bb41be6"
+    },
+    {
+      "path": "crates/otherone-storage/Cargo.toml",
+      "sha256": "2666a2750a3933d27a272157a7296c91883c25f283c241169e1e15f3b96391e4"
+    },
+    {
+      "path": "crates/otherone-storage/src/database/client.rs",
+      "sha256": "3af9bc9558c8cc9f6b3e622c19561aecc022afce035dc92efed2e98300d16ecd"
+    },
+    {
+      "path": "crates/otherone-storage/src/database/init.rs",
+      "sha256": "e8c755d77994f96644e10e4ec7d19daefb8e94f99209353c6b7ad3ac71eafd1b"
+    },
+    {
+      "path": "crates/otherone-storage/src/database/migrations/otherone-db.sql",
+      "sha256": "154d96e7864ef6b36cc3b862ef4dc75cae15cdf290727d29fe47fe116190e2c6"
+    },
+    {
+      "path": "crates/otherone-storage/src/database/mod.rs",
+      "sha256": "d30b21334b50d546175998e25dd2a8d9f9eac80a4878dc196e1f712524e9f710"
+    },
+    {
+      "path": "crates/otherone-storage/src/database/mongodb.rs",
+      "sha256": "43b2bd89fbd5e8311274ab9aac4ab4176cac8130f672d320bc6d6ffc4146f180"
+    },
+    {
+      "path": "crates/otherone-storage/src/database/mysql.rs",
+      "sha256": "88e105f883b11d6f2ab9c32a99adb1be3c8d917a3f223b9715751924984cff82"
+    },
+    {
+      "path": "crates/otherone-storage/src/database/reader.rs",
+      "sha256": "1a980ad4e1f75369c1b61ee142d0b3586c4c3552f61e652c014aa1f2a294be2a"
+    },
+    {
+      "path": "crates/otherone-storage/src/database/writer.rs",
+      "sha256": "fb3a867d2d9d5cef1818ff659e6a094ae39d75b9290e5ee57fe7fa9725d0eb4e"
+    },
+    {
+      "path": "crates/otherone-storage/src/error.rs",
+      "sha256": "e128bf1c921350201a5d7ab705fcbd978952304ef758f7fa86841ea516ac3669"
+    },
+    {
+      "path": "crates/otherone-storage/src/lib.rs",
+      "sha256": "fbfb0bf5c660623735d4584efef2472ac9c4b7ac9accde7fbf737ef5d11a9c34"
+    },
+    {
+      "path": "crates/otherone-storage/src/localfile/encrypt.rs",
+      "sha256": "85b5ef0b2accaf89e549f947cddc7ef118dbfa5bffd0d83c14e709592d34c703"
+    },
+    {
+      "path": "crates/otherone-storage/src/localfile/mod.rs",
+      "sha256": "d4421e280c403b4a32db01db5d8f57056552cc9739c4f4a930f91f5680ce8141"
+    },
+    {
+      "path": "crates/otherone-storage/src/localfile/reader.rs",
+      "sha256": "470a72d39f5157e0b61f7ff493520d089b1552bb9d3a7fb6e359ca648868dcba"
+    },
+    {
+      "path": "crates/otherone-storage/src/localfile/writer.rs",
+      "sha256": "5c16bc7f047828f4a9b84f9e3a5f5973ba84e31bd437c8b31057c9aeffe818b6"
+    },
+    {
+      "path": "crates/otherone-storage/src/redis/client.rs",
+      "sha256": "bc23b06f1fa47284187f755b34c4f4864ea7d1ec025cd2573198f69c4dbba2b4"
+    },
+    {
+      "path": "crates/otherone-storage/src/redis/mod.rs",
+      "sha256": "6cea08b898172c2999b2ab365c3e66d5e2646ab5ab3260f92405d39884fb34d3"
+    },
+    {
+      "path": "crates/otherone-storage/src/types.rs",
+      "sha256": "d80a5af8fd59952bae4d27e7efd6fbed41f9cd806e399841b170496f1d19c09a"
+    },
+    {
+      "path": "crates/otherone-tools/Cargo.toml",
+      "sha256": "815013187d334aea1bf9ad47ef492534d3d5eee5e27ceebd6f46b7ad4b327b64"
+    },
+    {
+      "path": "crates/otherone-tools/src/lib.rs",
+      "sha256": "bc80651680e5266bcf7e0e665baef90dd5fce9d621e667e495325c379e110a2b"
+    },
+    {
+      "path": "crates/otherone-tools/src/types.rs",
+      "sha256": "ff908b715c1f71a926cac28054a36aa72e72a494e0517d02ad312713b72acd32"
+    },
+    {
+      "path": "crates/otherone/Cargo.toml",
+      "sha256": "cc4a110abcd9f9be8513faed40a8c9131f3702f7506ed74388bf062b9ce6cf7b"
+    },
+    {
+      "path": "crates/otherone/src/lib.rs",
+      "sha256": "8a15756888c7196cbc009d71b66e09460fa6a5b75aa51fe0b877e51887a678f7"
+    }
+  ]
+}

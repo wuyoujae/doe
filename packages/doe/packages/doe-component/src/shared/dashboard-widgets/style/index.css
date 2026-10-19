@@ -1,0 +1,475 @@
+.ppt-donut-chart,
+.ppt-metric-card-group {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 0;
+  color: var(--yrkie-color-body);
+  background: transparent;
+  font-family: var(--font-sans-cn);
+  font-variant-numeric: tabular-nums;
+}
+
+.ppt-donut-chart,
+.ppt-metric-card-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.ppt-donut-chart__title,
+.ppt-metric-card-group__title {
+  margin: 0 0 7px;
+  flex: none;
+  color: var(--yrkie-color-title);
+  font-size: var(--typography-h4-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 1.08;
+}
+
+.ppt-donut-chart__title {
+  text-align: center;
+}
+
+.ppt-donut-chart__subtitle,
+.ppt-metric-card-group__subtitle {
+  margin: 0 0 7px;
+  flex: none;
+  color: var(--yrkie-color-body);
+  font-size: var(--typography-normal-size);
+  line-height: 1.23;
+  white-space: pre-line;
+}
+
+.ppt-donut-chart__svg {
+  width: 100%;
+  min-height: 0;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.ppt-donut-chart__segment-label,
+.ppt-donut-chart__segment-value,
+.ppt-donut-chart__segment-caption,
+.ppt-donut-chart__badge-label,
+.ppt-donut-chart__center-title,
+.ppt-donut-chart__center-eyebrow,
+.ppt-donut-chart__center-value,
+.ppt-donut-chart__center-subtitle,
+.ppt-donut-chart__footnote {
+  font-family: var(--font-sans-cn);
+  pointer-events: none;
+}
+
+.ppt-donut-chart__segment-label,
+.ppt-donut-chart__segment-value,
+.ppt-donut-chart__badge-label {
+  font-size: var(--typography-normal-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+}
+
+.ppt-donut-chart__segment-caption {
+  font-size: var(--typography-small-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+}
+
+.ppt-donut-chart__center-title {
+  fill: var(--yrkie-color-title);
+  font-size: var(--typography-h4-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+}
+
+.ppt-donut-chart__center-eyebrow {
+  fill: var(--yrkie-color-title);
+  font-size: var(--typography-normal-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+}
+
+.ppt-donut-chart__center-value {
+  fill: var(--yrkie-color-title);
+  font-size: var(--typography-h3-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+}
+
+.ppt-donut-chart__center-subtitle,
+.ppt-donut-chart__footnote {
+  fill: var(--yrkie-color-body);
+  font-size: var(--typography-small-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+}
+
+.ppt-donut-chart__tag {
+  position: absolute;
+  left: 20px;
+  z-index: 2;
+  padding: 7px 14px 8px;
+  color: var(--yrkie-color-on-primary);
+  background: var(--yrkie-color-primary);
+  border-radius: var(--yrkie-radius-pill);
+  font-size: var(--typography-normal-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 1;
+}
+
+.ppt-donut-chart__tag::after {
+  content: "";
+  position: absolute;
+  left: 34px;
+  bottom: -9px;
+  border: 6px solid transparent;
+  border-top-color: var(--yrkie-color-primary);
+  border-bottom: 0;
+}
+
+.ppt-donut-chart__legend {
+  margin: var(--donut-legend-gap, 24px) 0 0;
+  padding: 3px 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+  flex: none;
+  list-style: none;
+  font-size: var(--typography-small-size);
+  line-height: 1.1;
+}
+
+.ppt-donut-chart__legend-item {
+  min-width: 0;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.ppt-donut-chart__legend-swatch {
+  width: 7px;
+  height: 7px;
+  flex: none;
+}
+
+.ppt-donut-chart__footer {
+  margin-top: 1px;
+  padding: 0 8px;
+  flex: none;
+  font-size: var(--typography-small-size);
+  line-height: 1.35;
+  text-align: center;
+}
+
+.ppt-donut-chart--compact {
+  background: transparent;
+}
+
+.ppt-donut-chart--hero {
+  background: var(--yrkie-color-surface);
+}
+
+.ppt-metric-card-group__cards {
+  min-height: 0;
+  display: grid;
+  flex: 1;
+}
+
+.ppt-metric-card-group__card {
+  min-width: 0;
+  min-height: 0;
+  padding: 24px 27px 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: var(--yrkie-color-on-primary);
+  border-radius: var(--yrkie-radius-component);
+}
+
+.ppt-metric-card-group__top {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.ppt-metric-card-group__name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: var(--typography-h2-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 1.08;
+}
+
+.ppt-metric-card-group__icon {
+  width: 58px;
+  height: 58px;
+  flex: none;
+  color: currentColor;
+}
+
+.ppt-metric-card-group__metric {
+  min-width: 0;
+  margin-top: 25px;
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  white-space: nowrap;
+}
+
+.ppt-metric-card-group__number {
+  min-width: 0;
+  font-size: var(--typography-h1-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+}
+
+.ppt-metric-card-group__unit {
+  font-size: var(--typography-h3-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+}
+
+.ppt-metric-card-group__description {
+  margin: 15px 0 0;
+  overflow-wrap: anywhere;
+  font-size: var(--typography-normal-size);
+  line-height: 1.23;
+}
+
+.ppt-metric-card-group--compact .ppt-metric-card-group__card {
+  padding: 12px 16px;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  border-radius: 0;
+}
+
+.ppt-metric-card-group--compact .ppt-metric-card-group__icon {
+  width: 78px;
+  height: 78px;
+}
+
+.ppt-metric-card-group--compact .ppt-metric-card-group__copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.ppt-metric-card-group--compact .ppt-metric-card-group__name {
+  font-size: var(--typography-h3-size);
+  line-height: 1.08;
+}
+
+.ppt-metric-card-group--compact .ppt-metric-card-group__metric {
+  margin-top: 8px;
+}
+
+.ppt-metric-card-group--compact .ppt-metric-card-group__number {
+  font-size: var(--typography-h2-size);
+}
+
+.ppt-metric-card-group--compact .ppt-metric-card-group__unit {
+  font-size: var(--typography-h3-size);
+}
+
+.ppt-metric-card-group--compact .ppt-metric-card-group__description {
+  margin-top: 5px;
+  font-size: var(--typography-small-size);
+}
+
+.ppt-metric-card-group__steps {
+  margin-top: 14px;
+  display: grid;
+  gap: 7px;
+  flex: none;
+}
+
+.ppt-metric-card-group__step {
+  min-width: 0;
+  padding: 8px 22px 8px 16px;
+  overflow: hidden;
+  color: var(--yrkie-color-on-primary);
+  background: var(--yrkie-color-primary);
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 20px 50%);
+  font-size: var(--typography-h4-size);
+  line-height: 1;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ppt-metric-card-group__step:first-child {
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%);
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__cards {
+  min-height: 0;
+  flex: 1;
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__card {
+  padding: 14px 12px 10px;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--yrkie-color-body);
+  border-radius: 0;
+  text-align: center;
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__name {
+  flex: none;
+  font-size: var(--typography-h4-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 1.08;
+  white-space: nowrap;
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__metric {
+  margin-top: 8px;
+  justify-content: center;
+  gap: 2px;
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__number {
+  font-size: var(--typography-xl-size);
+  line-height: 0.95;
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__unit {
+  font-size: var(--typography-h2-size);
+  line-height: 1;
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__icon {
+  width: var(--mosaic-icon-size, 70px);
+  height: var(--mosaic-icon-size, 70px);
+  margin-top: auto;
+  max-width: 88%;
+  max-height: 55%;
+  color: var(--yrkie-color-secondary);
+  stroke-width: 2.4;
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__description {
+  margin-top: 5px;
+  font-size: var(--typography-small-size);
+  line-height: 1.1;
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__card--small {
+  padding: 9px 8px 7px;
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__card--small .ppt-metric-card-group__name {
+  font-size: var(--typography-large-size);
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__card--small .ppt-metric-card-group__metric {
+  margin-top: 3px;
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__card--small .ppt-metric-card-group__number {
+  font-size: var(--typography-h1-size);
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__card--small .ppt-metric-card-group__unit {
+  font-size: var(--typography-h2-size);
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__card--micro {
+  padding: 5px 6px 3px;
+  justify-content: center;
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__card--micro .ppt-metric-card-group__name {
+  font-size: var(--typography-small-size);
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__card--micro .ppt-metric-card-group__metric {
+  margin-top: 1px;
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__card--micro .ppt-metric-card-group__number {
+  font-size: var(--typography-h2-size);
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__card--micro .ppt-metric-card-group__unit {
+  font-size: var(--typography-large-size);
+}
+
+.ppt-metric-card-group--mosaic .ppt-metric-card-group__card--micro .ppt-metric-card-group__icon {
+  display: none;
+}
+
+.ppt-metric-card-group--narrative .ppt-metric-card-group__cards {
+  border-top: 2px solid var(--yrkie-line-strong);
+}
+
+.ppt-metric-card-group--narrative .ppt-metric-card-group__card {
+  padding: 24px 30px 16px;
+  color: var(--yrkie-color-body);
+  background: var(--yrkie-color-surface);
+  border-right: 2px solid var(--yrkie-line-strong);
+  border-radius: 0;
+}
+
+.ppt-metric-card-group--narrative .ppt-metric-card-group__card:last-child {
+  border-right: 0;
+}
+
+.ppt-metric-card-group--narrative .ppt-metric-card-group__top {
+  justify-content: flex-start;
+  align-items: center;
+  gap: 14px;
+}
+
+.ppt-metric-card-group--narrative .ppt-metric-card-group__icon {
+  width: 43px;
+  height: 43px;
+  color: var(--yrkie-color-primary);
+}
+
+.ppt-metric-card-group--narrative .ppt-metric-card-group__name {
+  color: var(--yrkie-color-primary);
+  font-size: var(--typography-h4-size);
+  line-height: 1;
+}
+
+.ppt-metric-card-group--narrative .ppt-metric-card-group__description {
+  margin: 17px 0 10px;
+  flex: 1;
+  color: var(--yrkie-color-body);
+  font-size: var(--typography-normal-size);
+  line-height: 1.45;
+}
+
+.ppt-metric-card-group__narrative-footer {
+  min-width: 0;
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.ppt-metric-card-group__metric-label {
+  max-width: 45%;
+  overflow-wrap: anywhere;
+  font-size: var(--typography-normal-size);
+  line-height: 1.22;
+  white-space: pre-line;
+}
+
+.ppt-metric-card-group--narrative .ppt-metric-card-group__metric {
+  margin: 0;
+  flex: none;
+}
+
+.ppt-metric-card-group--narrative .ppt-metric-card-group__number {
+  color: var(--yrkie-color-title);
+  font-size: var(--typography-h1-size);
+  line-height: 0.9;
+}
+
+.ppt-metric-card-group--narrative .ppt-metric-card-group__unit {
+  color: var(--yrkie-color-title);
+  font-size: var(--typography-h3-size);
+}

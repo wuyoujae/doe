@@ -1,0 +1,45 @@
+.doe-image-picker { display: flex; flex-direction: column; gap: var(--yrkie-gap-section); font: var(--yrkie-text-label)/1.5 var(--yrkie-font-ui); color: var(--yrkie-color-ink); }
+.doe-image-picker .doe-image-file { display: none; }
+.chart-content-sheet .doe-image-drop { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--yrkie-gap-icon); min-height: 8rem; padding: var(--yrkie-gap-section); border: var(--yrkie-border-width) dashed var(--yrkie-color-control-border); border-radius: var(--yrkie-radius-panel); background: var(--yrkie-color-page); }
+.doe-image-drop > svg { width: 1.5rem; height: 1.5rem; }
+.doe-image-drop small { color: var(--yrkie-color-ink-muted); font-size: var(--yrkie-text-nav); }
+.chart-content-sheet .doe-image-drop[data-dragging] { border-color: var(--yrkie-color-primary); background: var(--yrkie-color-primary-soft); }
+.doe-image-divider { display: flex; align-items: center; gap: var(--yrkie-gap-content); color: var(--yrkie-color-ink-muted); font-size: var(--yrkie-text-nav); }
+.doe-image-divider::before, .doe-image-divider::after { content: ''; height: var(--yrkie-border-width); flex: 1; background: var(--yrkie-color-control-border); }
+.doe-image-composer { border: var(--yrkie-border-width) solid var(--yrkie-color-control-border); border-radius: var(--yrkie-radius-panel); background: var(--yrkie-color-page); }
+.chart-content-sheet .doe-image-composer textarea { box-sizing: border-box; display: block; width: 100%; min-height: 3.5rem; max-height: min(11.25rem, 30dvh); padding: var(--yrkie-gap-content); border: 0; border-radius: var(--yrkie-radius-panel); background: transparent; resize: none; overflow-y: auto; font: var(--yrkie-weight-regular) var(--yrkie-text-body)/1.5 var(--yrkie-font-ui); }
+.chart-content-sheet .doe-image-composer textarea:focus-visible { outline: none; box-shadow: none; }
+.doe-image-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--yrkie-gap-control); padding: var(--yrkie-gap-control); }
+.doe-image-matting { display: flex; align-items: center; gap: var(--yrkie-gap-icon); font-size: var(--yrkie-text-nav); cursor: pointer; }
+.doe-image-toolbar .ui-select { width: auto; flex: none; }
+.doe-image-toolbar .ui-select-menu { inset-inline-end: auto; min-width: 100%; width: max-content; box-sizing: border-box; }
+.doe-image-toolbar .ui-select :is(.ui-select-trigger span,.ui-select-menu button span) { white-space: nowrap; overflow-wrap: normal; }
+.chart-content-sheet .doe-image-toolbar button { font-family: var(--yrkie-font-ui); }
+.chart-content-sheet .doe-image-send { display: grid; place-items: center; margin-left: auto; flex: none; padding: 0; width: 2rem; height: 2rem; border: 0; border-radius: var(--yrkie-radius-panel); color: var(--yrkie-color-on-primary); background: var(--yrkie-color-primary); }
+.doe-image-send svg { width: 1.25rem; height: 1.25rem; }
+.doe-image-grid { columns: 3; column-gap: var(--yrkie-gap-icon); }
+.doe-image-grid:empty { display: none; }
+.chart-content-sheet .doe-image-item { box-sizing: border-box; position: relative; display: inline-flex; width: 100%; min-width: 0; margin: 0 0 var(--yrkie-gap-icon); padding: 0; border: var(--yrkie-border-width) solid var(--yrkie-color-control-border); border-radius: var(--yrkie-radius-panel-sm); overflow: hidden; break-inside: avoid; vertical-align: top; background: var(--yrkie-color-page); }
+.doe-image-tile img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.chart-content-sheet .doe-image-tile[aria-pressed="true"] { border-color: var(--yrkie-color-primary); outline: var(--yrkie-border-width) solid var(--yrkie-color-primary); }
+.doe-image-selected { position: absolute; inset: var(--yrkie-gap-icon) var(--yrkie-gap-icon) auto auto; display: grid; place-items: center; width: 1.5rem; height: 1.5rem; background: var(--yrkie-color-primary); color: var(--yrkie-color-on-primary); border-radius: var(--yrkie-radius-pill); }
+.doe-image-selected svg { width: 1rem; height: 1rem; }
+.doe-image-pending { align-items: center; justify-content: center; flex-wrap: wrap; align-content: center; gap: var(--yrkie-gap-icon); min-height: 5rem; color: var(--yrkie-color-ink-muted); }
+.doe-image-pending span { width: 100%; padding-inline: var(--yrkie-gap-icon); text-align: center; box-sizing: border-box; font-size: var(--yrkie-text-nav); }
+.doe-image-pending button svg { width: 1rem; height: 1rem; }
+.doe-image-spinner { width: 1.25rem; height: 1.25rem; animation: doe-image-spin 1s linear infinite; }
+.doe-image-tile-state { position: absolute; inset: 50% auto auto 50%; translate: -50% -50%; font-size: var(--yrkie-text-nav); }
+.doe-image-status { display: flex; align-items: center; justify-content: center; gap: var(--yrkie-gap-icon); color: var(--yrkie-color-ink-muted); }
+.doe-image-error { color: var(--chart-danger); }
+.doe-project-image-sheet .chart-content-preview-pane { --doe-image-preview-max-height: min(18rem, 35dvh); min-height: 0; height: auto; }
+.doe-project-image-sheet .doe-image-preview { flex: none; align-self: center; width: min(100%, calc(var(--doe-image-preview-max-height) * var(--doe-image-preview-ratio, 1))); height: auto; max-height: var(--doe-image-preview-max-height); aspect-ratio: var(--doe-image-preview-ratio, 1); }
+.doe-image-preview img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.doe-project-image-sheet .chart-content-footer { gap: var(--yrkie-gap-icon); }
+.doe-project-image-sheet .chart-content-footer > div { flex-wrap: wrap; justify-content: flex-end; }
+.doe-project-image-sheet .chart-content-footer > p:empty { display: none; }
+.doe-project-image-sheet .chart-content-footer > div:last-child { margin-inline-start: auto; }
+.chart-content-sheet:has(.doe-project-image-form) .chart-content-header h2 { font-family: var(--yrkie-font-ui); }
+@media (max-width: 35rem) { .doe-image-grid { columns: 2; } }
+@keyframes doe-image-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .doe-image-spinner { animation: none; } }
+@media (max-width: 24rem) { .doe-image-toolbar { gap: var(--yrkie-gap-icon); padding: var(--yrkie-gap-icon); } .doe-image-matting { gap: var(--yrkie-gap-micro); } }

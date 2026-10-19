@@ -1,0 +1,422 @@
+"""Public compatibility API for the modular DOE html/compiler engine."""
+from __future__ import annotations
+from doe_export.html.compiler.shared import (
+    ALWAYS_UNSUPPORTED_EDITABLE_TAGS,
+    Any,
+    BROWSER_WORKER_MAX_REQUESTS,
+    BROWSER_WORKER_MAX_RSS_BYTES,
+    Background,
+    Border,
+    Bounds,
+    BulletInfo,
+    BytesIO,
+    CANONICAL_SLIDE_SELECTOR,
+    CANONICAL_VIEWPORT,
+    CSS_PX_TO_PT,
+    DEFAULT_MAX_DOM_NODES,
+    DEFAULT_TIMEOUT_MS,
+    DEFAULT_VIEWPORT,
+    EDITABLE_HTML_TAGS,
+    EDITABLE_SVG_TAGS,
+    Fill,
+    Font,
+    GENERIC_TEXT_CONTAINER_TAGS,
+    GeometryPath,
+    GradientStop,
+    HTML_TEXT_WIDTH_SAFETY,
+    INLINE_TEXT_TAGS,
+    IconInfo,
+    ImageInfo,
+    InvalidTextLayoutSnapshot,
+    PILImage,
+    Paragraph,
+    Path,
+    Presentation,
+    Run,
+    SKIP_TAGS,
+    SLIDE_HEIGHT,
+    SLIDE_WIDTH,
+    SVG_GRAPHIC_CHILD_TAGS,
+    SVG_NAMESPACE,
+    Shadow,
+    Shape,
+    Slide,
+    TABLE_CELL_TAGS,
+    TABLE_NATIVE_TEXT_CHILD_TAGS,
+    TABLE_TAGS,
+    TEXT_TAGS,
+    TableCell,
+    TableInfo,
+    TextFrame,
+    UNSUPPORTED_SVG_ATTRIBUTES,
+    VOID_TEXT_TAGS,
+    _BROWSER_ENV_ALLOWLIST,
+    _CANONICAL_SCRIPT_ID_PATTERN,
+    _CANONICAL_SCRIPT_MARKER_PATTERN,
+    _CANONICAL_SCRIPT_TYPE_PATTERN,
+    _ESCAPED_HTML_ATTRIBUTE_PATTERN,
+    _HTML_TAG_PATTERN,
+    _MARKDOWN_HTML_FENCE_PATTERN,
+    _SCRIPT_ELEMENT_PATTERN,
+    _SCRIPT_OPEN_PATTERN,
+    _SVG_PATH_TOKEN_RE,
+    _parent_path,
+    atexit,
+    base64,
+    copy,
+    create_layout_snapshot,
+    dataclass,
+    dataclasses,
+    deque,
+    hashlib,
+    image_payload,
+    json,
+    layout_snapshot_is_valid,
+    lru_cache,
+    make_text_container_metrics,
+    math,
+    os,
+    presentation_from_dict,
+    queue,
+    re,
+    refresh_no_wrap_layout_snapshot,
+    shutil,
+    signal,
+    stat,
+    subprocess,
+    threading,
+)
+from doe_export.html.compiler.diagnostics.HtmlDiagnostic import HtmlDiagnostic
+from doe_export.html.compiler.typography._ValidatedVisualTextLayout import _ValidatedVisualTextLayout
+from doe_export.html.compiler.diagnostics.HtmlCompileError import HtmlCompileError
+from doe_export.html.compiler.document._presentation_size_for_viewport import _presentation_size_for_viewport
+from doe_export.html.compiler.document._has_unescaped_double_quote import _has_unescaped_double_quote
+from doe_export.html.compiler.typography._decode_unwrapped_json_html_string import _decode_unwrapped_json_html_string
+from doe_export.html.compiler.document._normalize_serialized_html_source import _normalize_serialized_html_source
+from doe_export.html.compiler.document.recover_serialized_html_source import recover_serialized_html_source
+from doe_export.html.compiler.document._close_truncated_canonical_payload import _close_truncated_canonical_payload
+from doe_export.html.compiler.diagnostics._append_escaped_markup_diagnostic import _append_escaped_markup_diagnostic
+from doe_export.html.compiler.diagnostics._append_truncated_canonical_payload_diagnostic import _append_truncated_canonical_payload_diagnostic
+from doe_export.html.compiler.document.compile_html import compile_html
+from doe_export.html.compiler.document.compile_slide_fragment import compile_slide_fragment
+from doe_export.html.compiler.document.compile_slide_fragments import compile_slide_fragments
+from doe_export.html.compiler.browser.warm_browser_snapshot_worker import warm_browser_snapshot_worker
+from doe_export.html.compiler.browser.recycle_browser_snapshot_worker import recycle_browser_snapshot_worker
+from doe_export.html.compiler.document.capture_html_screenshots import capture_html_screenshots
+from doe_export.html.compiler.document.print_html_to_pdf import print_html_to_pdf
+from doe_export.html.compiler.document._validate_source_and_mode import _validate_source_and_mode
+from doe_export.html.compiler.browser._compile_browser_snapshot import _compile_browser_snapshot
+from doe_export.html.compiler.document._is_canonical_html import _is_canonical_html
+from doe_export.html.compiler.snapshot._canonical_snapshot_source import _canonical_snapshot_source
+from doe_export.html.compiler.document._is_canonical_slide_marker import _is_canonical_slide_marker
+from doe_export.html.compiler.document._canonical_source_requires_dom_validation import _canonical_source_requires_dom_validation
+from doe_export.html.compiler.document._compile_canonical_html import _compile_canonical_html
+from doe_export.html.compiler.document._unchanged_canonical_presentation import _unchanged_canonical_presentation
+from doe_export.html.compiler.document._canonical_payload_presentation import _canonical_payload_presentation
+from doe_export.html.compiler.document._reconcile_canonical_presentation import _reconcile_canonical_presentation
+from doe_export.html.compiler.structure._iter_ir_shapes import _iter_ir_shapes
+from doe_export.html.compiler.structure._iter_indexed_ir_shapes import _iter_indexed_ir_shapes
+from doe_export.html.compiler.typography.normalize_canonical_text_layout import normalize_canonical_text_layout
+from doe_export.html.compiler.browser.apply_browser_text_layout_snapshots import apply_browser_text_layout_snapshots
+from doe_export.html.compiler.typography._presentation_text_layout_entries import _presentation_text_layout_entries
+from doe_export.html.compiler.document._validated_layout_track_sizes import _validated_layout_track_sizes
+from doe_export.html.compiler.browser._text_frame_needs_browser_layout import _text_frame_needs_browser_layout
+from doe_export.html.compiler.browser._refresh_browser_text_layout_from_current_projection import _refresh_browser_text_layout_from_current_projection
+from doe_export.html.compiler.typography._canonical_paragraph_layout_nodes import _canonical_paragraph_layout_nodes
+from doe_export.html.compiler.typography._canonical_paragraph_is_rendered import _canonical_paragraph_is_rendered
+from doe_export.html.compiler.typography._paragraph_has_semantic_text import _paragraph_has_semantic_text
+from doe_export.html.compiler.typography._canonical_paragraph_node_is_blank import _canonical_paragraph_node_is_blank
+from doe_export.html.compiler.structure._reconcile_shape_runs import _reconcile_shape_runs
+from doe_export.html.compiler.structure._shape_descendant_nodes import _shape_descendant_nodes
+from doe_export.html.compiler.typography._reconcile_shape_paragraphs import _reconcile_shape_paragraphs
+from doe_export.html.compiler.css._reconcile_shape_style import _reconcile_shape_style
+from doe_export.html.compiler.typography._canonical_inline_rotation import _canonical_inline_rotation
+from doe_export.html.compiler.typography._canonical_inline_bounds import _canonical_inline_bounds
+from doe_export.html.compiler.assets._reconcile_shape_image import _reconcile_shape_image
+from doe_export.html.compiler.assets._managed_image_asset_id import _managed_image_asset_id
+from doe_export.html.compiler.assets._apply_stable_image_fit import _apply_stable_image_fit
+from doe_export.html.compiler.structure._reconcile_shape_table import _reconcile_shape_table
+from doe_export.html.compiler.typography._reconcile_table_cell_text import _reconcile_table_cell_text
+from doe_export.html.compiler.css._reconcile_table_cell_style import _reconcile_table_cell_style
+from doe_export.html.compiler.snapshot._offset_snapshot_node import _offset_snapshot_node
+from doe_export.html.compiler.structure._require_editable_element_coverage import _require_editable_element_coverage
+from doe_export.html.compiler.svg._collect_svg_coverage_violations import _collect_svg_coverage_violations
+from doe_export.html.compiler.structure._HtmlTableCellPlan import _HtmlTableCellPlan
+from doe_export.html.compiler.document._HtmlFloatBox import _HtmlFloatBox
+from doe_export.html.compiler.geometry._HtmlClipMask import _HtmlClipMask
+from doe_export.html.compiler.structure._semantic_shapes_from_ast import _semantic_shapes_from_ast
+from doe_export.html.compiler.structure._table_shape_from_node import _table_shape_from_node
+from doe_export.html.compiler.structure._native_table_fallback_reason import _native_table_fallback_reason
+from doe_export.html.compiler.structure._table_row_nodes import _table_row_nodes
+from doe_export.html.compiler.structure._table_caption_node import _table_caption_node
+from doe_export.html.compiler.structure._table_planned_rows import _table_planned_rows
+from doe_export.html.compiler.structure._table_cell_from_plan import _table_cell_from_plan
+from doe_export.html.compiler.typography._table_cell_text import _table_cell_text
+from doe_export.html.compiler.typography._table_cell_text_frame_from_node import _table_cell_text_frame_from_node
+from doe_export.html.compiler.typography._text_frame_plain_text import _text_frame_plain_text
+from doe_export.html.compiler.structure._table_col_widths import _table_col_widths
+from doe_export.html.compiler.structure._table_col_declared_width import _table_col_declared_width
+from doe_export.html.compiler.structure._table_row_heights import _table_row_heights
+from doe_export.html.compiler.document._normalized_track_sizes import _normalized_track_sizes
+from doe_export.html.compiler.css._border_from_node_side import _border_from_node_side
+from doe_export.html.compiler.structure._table_vertical_align import _table_vertical_align
+from doe_export.html.compiler.structure._table_first_row_is_header import _table_first_row_is_header
+from doe_export.html.compiler.structure._table_last_row_is_footer import _table_last_row_is_footer
+from doe_export.html.compiler.structure._table_plan_is_header import _table_plan_is_header
+from doe_export.html.compiler.geometry._table_content_bounds import _table_content_bounds
+from doe_export.html.compiler.geometry._union_bounds import _union_bounds
+from doe_export.html.compiler.geometry._relative_bounds import _relative_bounds
+from doe_export.html.compiler.structure._belongs_to_table import _belongs_to_table
+from doe_export.html.compiler.document._path_is_under_any import _path_is_under_any
+from doe_export.html.compiler.document._path_is_same_or_descendant import _path_is_same_or_descendant
+from doe_export.html.compiler.document._path_is_descendant import _path_is_descendant
+from doe_export.html.compiler.document._parent_path import _parent_path
+from doe_export.html.compiler.document._path_has_segment import _path_has_segment
+from doe_export.html.compiler.structure._path_has_table_cell_segment import _path_has_table_cell_segment
+from doe_export.html.compiler.document._path_segment_tag import _path_segment_tag
+from doe_export.html.compiler.document._html_span import _html_span
+from doe_export.html.compiler.css._style_attr_property import _style_attr_property
+from doe_export.html.compiler.css._css_length_or_percent_pt import _css_length_or_percent_pt
+from doe_export.html.compiler.geometry._bounds_from_node import _bounds_from_node
+from doe_export.html.compiler.svg._svg_text_shape import _svg_text_shape
+from doe_export.html.compiler.svg._svg_graphic_shapes_from_node import _svg_graphic_shapes_from_node
+from doe_export.html.compiler.svg._svg_clipped_path import _svg_clipped_path
+from doe_export.html.compiler.svg._svg_transformed_path import _svg_transformed_path
+from doe_export.html.compiler.svg._svg_linear_gradient_fill import _svg_linear_gradient_fill
+from doe_export.html.compiler.svg._svg_view_box import _svg_view_box
+from doe_export.html.compiler.svg._svg_graphic_node_to_normalized_d import _svg_graphic_node_to_normalized_d
+from doe_export.html.compiler.svg._svg_length import _svg_length
+from doe_export.html.compiler.svg._svg_points import _svg_points
+from doe_export.html.compiler.svg._svg_points_to_path import _svg_points_to_path
+from doe_export.html.compiler.svg._svg_rect_path import _svg_rect_path
+from doe_export.html.compiler.svg._svg_ellipse_path import _svg_ellipse_path
+from doe_export.html.compiler.svg._svg_point import _svg_point
+from doe_export.html.compiler.svg._svg_fill_from_node import _svg_fill_from_node
+from doe_export.html.compiler.svg._svg_border_from_node import _svg_border_from_node
+from doe_export.html.compiler.svg._svg_paint_color import _svg_paint_color
+from doe_export.html.compiler.svg._svg_paint_opacity import _svg_paint_opacity
+from doe_export.html.compiler.svg._svg_stroke_width_pt import _svg_stroke_width_pt
+from doe_export.html.compiler.svg._svg_attr_style_or_computed import _svg_attr_style_or_computed
+from doe_export.html.compiler.svg._svg_line_cap import _svg_line_cap
+from doe_export.html.compiler.svg._svg_line_join import _svg_line_join
+from doe_export.html.compiler.svg._svg_stroke_dash import _svg_stroke_dash
+from doe_export.html.compiler.svg._svg_path_to_normalized_d import _svg_path_to_normalized_d
+from doe_export.html.compiler.svg._svg_arc_to_cubic_segments import _svg_arc_to_cubic_segments
+from doe_export.html.compiler.svg._svg_number import _svg_number
+from doe_export.html.compiler.css._fill_from_node import _fill_from_node
+from doe_export.html.compiler.css._background_fills_from_node import _background_fills_from_node
+from doe_export.html.compiler.typography._uses_background_clip_text import _uses_background_clip_text
+from doe_export.html.compiler.typography._background_clip_text_color import _background_clip_text_color
+from doe_export.html.compiler.assets._background_image_fill import _background_image_fill
+from doe_export.html.compiler.css._background_layer_fill import _background_layer_fill
+from doe_export.html.compiler.css._css_background_layers import _css_background_layers
+from doe_export.html.compiler.document._background_layer_property import _background_layer_property
+from doe_export.html.compiler.geometry._apply_background_image_geometry import _apply_background_image_geometry
+from doe_export.html.compiler.document._background_rendered_fractions import _background_rendered_fractions
+from doe_export.html.compiler.document._background_dimension_fraction import _background_dimension_fraction
+from doe_export.html.compiler.document._background_box_pixels import _background_box_pixels
+from doe_export.html.compiler.document._background_repeat_modes import _background_repeat_modes
+from doe_export.html.compiler.document._background_axis_repeats import _background_axis_repeats
+from doe_export.html.compiler.document._background_tile_alignment import _background_tile_alignment
+from doe_export.html.compiler.css._css_background_position_fractions import _css_background_position_fractions
+from doe_export.html.compiler.css._css_url import _css_url
+from doe_export.html.compiler.css._gradient_fill import _gradient_fill
+from doe_export.html.compiler.css._css_function_arguments import _css_function_arguments
+from doe_export.html.compiler.css._split_css_function_args import _split_css_function_args
+from doe_export.html.compiler.css._css_gradient_angle import _css_gradient_angle
+from doe_export.html.compiler.css._css_gradient_stop_position import _css_gradient_stop_position
+from doe_export.html.compiler.css._css_unquote import _css_unquote
+from doe_export.html.compiler.diagnostics._background_diagnostics_from_node import _background_diagnostics_from_node
+from doe_export.html.compiler.document._first_background_layer_value import _first_background_layer_value
+from doe_export.html.compiler.css._first_css_color import _first_css_color
+from doe_export.html.compiler.typography._native_outline_border_from_node import _native_outline_border_from_node
+from doe_export.html.compiler.css._border_side_specs import _border_side_specs
+from doe_export.html.compiler.typography._border_style_to_line import _border_style_to_line
+from doe_export.html.compiler.typography._text_decoration_shapes_from_node import _text_decoration_shapes_from_node
+from doe_export.html.compiler.typography._text_bounds_from_node import _text_bounds_from_node
+from doe_export.html.compiler.typography._uses_text_decoration_overlay import _uses_text_decoration_overlay
+from doe_export.html.compiler.typography._decoration_line_offsets import _decoration_line_offsets
+from doe_export.html.compiler.typography._text_decoration_line_shape import _text_decoration_line_shape
+from doe_export.html.compiler.document._wavy_decoration_path import _wavy_decoration_path
+from doe_export.html.compiler.typography._text_decoration_lines import _text_decoration_lines
+from doe_export.html.compiler.typography._text_decoration_style import _text_decoration_style
+from doe_export.html.compiler.typography._underline_from_text_decoration_style import _underline_from_text_decoration_style
+from doe_export.html.compiler.typography._strike_from_text_decoration_style import _strike_from_text_decoration_style
+from doe_export.html.compiler.typography._text_decoration_style_to_line import _text_decoration_style_to_line
+from doe_export.html.compiler.typography._text_decoration_color import _text_decoration_color
+from doe_export.html.compiler.typography._text_decoration_thickness_pt import _text_decoration_thickness_pt
+from doe_export.html.compiler.css._border_shapes_from_node import _border_shapes_from_node
+from doe_export.html.compiler.css._rounded_border_shapes_from_node import _rounded_border_shapes_from_node
+from doe_export.html.compiler.typography._outline_shape_from_node import _outline_shape_from_node
+from doe_export.html.compiler.css._box_shadow_from_node import _box_shadow_from_node
+from doe_export.html.compiler.typography._text_shadow_from_computed import _text_shadow_from_computed
+from doe_export.html.compiler.typography._text_shadow_part import _text_shadow_part
+from doe_export.html.compiler.css._box_shadow_part import _box_shadow_part
+from doe_export.html.compiler.css._filter_shadow_from_node import _filter_shadow_from_node
+from doe_export.html.compiler.structure._filter_effects_from_node import _filter_effects_from_node
+from doe_export.html.compiler.document._first_soft_edge_effect import _first_soft_edge_effect
+from doe_export.html.compiler.css._css_named_function_arguments import _css_named_function_arguments
+from doe_export.html.compiler.css._css_filter_function_names import _css_filter_function_names
+from doe_export.html.compiler.css._css_filter_amount import _css_filter_amount
+from doe_export.html.compiler.css._css_function_body_at import _css_function_body_at
+from doe_export.html.compiler.diagnostics._unique_diagnostics import _unique_diagnostics
+from doe_export.html.compiler.css._shadow_diagnostics import _shadow_diagnostics
+from doe_export.html.compiler.css._append_shadow_diagnostics import _append_shadow_diagnostics
+from doe_export.html.compiler.css._shadow_host_diagnostics import _shadow_host_diagnostics
+from doe_export.html.compiler.css._split_css_shadow_list import _split_css_shadow_list
+from doe_export.html.compiler.css._shadow_tokens import _shadow_tokens
+from doe_export.html.compiler.geometry._expanded_bounds import _expanded_bounds
+from doe_export.html.compiler.assets._image_info_from_node import _image_info_from_node
+from doe_export.html.compiler.assets._is_remote_image_placeholder import _is_remote_image_placeholder
+from doe_export.html.compiler.assets._image_info_from_src import _image_info_from_src
+from doe_export.html.compiler.assets._image_intrinsic_dimensions import _image_intrinsic_dimensions
+from doe_export.html.compiler.assets._populate_image_intrinsic_size import _populate_image_intrinsic_size
+from doe_export.html.compiler.svg._svg_payload_intrinsic_size_pt import _svg_payload_intrinsic_size_pt
+from doe_export.html.compiler.svg._svg_css_length_pt import _svg_css_length_pt
+from doe_export.html.compiler.document._positive_finite_number import _positive_finite_number
+from doe_export.html.compiler.geometry._object_fit_contain_bounds import _object_fit_contain_bounds
+from doe_export.html.compiler.document._apply_object_fit_crop import _apply_object_fit_crop
+from doe_export.html.compiler.document._apply_cover_crop import _apply_cover_crop
+from doe_export.html.compiler.css._css_object_position_fractions import _css_object_position_fractions
+from doe_export.html.compiler.document._position_token_fraction import _position_token_fraction
+from doe_export.html.compiler.typography._text_for_node import _text_for_node
+from doe_export.html.compiler.typography._ancestor_will_aggregate_inline_text import _ancestor_will_aggregate_inline_text
+from doe_export.html.compiler.typography._text_shape_bounds_from_node import _text_shape_bounds_from_node
+from doe_export.html.compiler.geometry._border_inset_bounds import _border_inset_bounds
+from doe_export.html.compiler.css._border_inset_pt import _border_inset_pt
+from doe_export.html.compiler.typography._float_adjusted_text_bounds import _float_adjusted_text_bounds
+from doe_export.html.compiler.structure._active_float_boxes_for_node import _active_float_boxes_for_node
+from doe_export.html.compiler.structure._float_box_from_node import _float_box_from_node
+from doe_export.html.compiler.diagnostics._layout_diagnostics_from_node import _layout_diagnostics_from_node
+from doe_export.html.compiler.diagnostics._stable_identity_diagnostics import _stable_identity_diagnostics
+from doe_export.html.compiler.css._css_effect_layout_diagnostics import _css_effect_layout_diagnostics
+from doe_export.html.compiler.structure._parent_node import _parent_node
+from doe_export.html.compiler.document._is_flex_display import _is_flex_display
+from doe_export.html.compiler.document._is_grid_display import _is_grid_display
+from doe_export.html.compiler.typography._is_layout_text_container import _is_layout_text_container
+from doe_export.html.compiler.document._layout_item_right_limit import _layout_item_right_limit
+from doe_export.html.compiler.document._layout_content_right import _layout_content_right
+from doe_export.html.compiler.css._has_css_gap import _has_css_gap
+from doe_export.html.compiler.css._has_css_gap_axis import _has_css_gap_axis
+from doe_export.html.compiler.css._css_column_count import _css_column_count
+from doe_export.html.compiler.css._css_column_spacing_pt import _css_column_spacing_pt
+from doe_export.html.compiler.typography._css_vertical_text import _css_vertical_text
+from doe_export.html.compiler.typography._css_text_frame_diagnostics import _css_text_frame_diagnostics
+from doe_export.html.compiler.css._css_time_list_has_duration import _css_time_list_has_duration
+from doe_export.html.compiler.document._has_non_initial_flex_item_props import _has_non_initial_flex_item_props
+from doe_export.html.compiler.document._has_non_initial_grid_item_props import _has_non_initial_grid_item_props
+from doe_export.html.compiler.document._has_non_initial_grid_template import _has_non_initial_grid_template
+from doe_export.html.compiler.diagnostics._diagnostic_value import _diagnostic_value
+from doe_export.html.compiler.css._css_float_value import _css_float_value
+from doe_export.html.compiler.css._css_clear_value import _css_clear_value
+from doe_export.html.compiler.geometry._bounds_right import _bounds_right
+from doe_export.html.compiler.geometry._bounds_bottom import _bounds_bottom
+from doe_export.html.compiler.geometry._bounds_overlap_y import _bounds_overlap_y
+from doe_export.html.compiler.typography._has_only_inline_text_descendants import _has_only_inline_text_descendants
+from doe_export.html.compiler.typography._text_frame_from_node import _text_frame_from_node
+from doe_export.html.compiler.typography._flex_baseline_top_offset import _flex_baseline_top_offset
+from doe_export.html.compiler.typography._validated_visual_text_layout import _validated_visual_text_layout
+from doe_export.html.compiler.browser._set_browser_text_layout_snapshot import _set_browser_text_layout_snapshot
+from doe_export.html.compiler.typography._map_visual_soft_breaks_to_paragraph import _map_visual_soft_breaks_to_paragraph
+from doe_export.html.compiler.document._utf16_length import _utf16_length
+from doe_export.html.compiler.browser._browser_rendered_single_line_text import _browser_rendered_single_line_text
+from doe_export.html.compiler.typography._pptx_single_line_wrap_risk import _pptx_single_line_wrap_risk
+from doe_export.html.compiler.typography._is_tight_short_text_box import _is_tight_short_text_box
+from doe_export.html.compiler.typography._paragraphs_from_rich_text_runs import _paragraphs_from_rich_text_runs
+from doe_export.html.compiler.geometry._adjust_list_item_bounds import _adjust_list_item_bounds
+from doe_export.html.compiler.typography._apply_list_paragraph_format import _apply_list_paragraph_format
+from doe_export.html.compiler.document._list_indent_metrics import _list_indent_metrics
+from doe_export.html.compiler.typography._bullet_info_from_list_node import _bullet_info_from_list_node
+from doe_export.html.compiler.typography._custom_marker_bullet_info import _custom_marker_bullet_info
+from doe_export.html.compiler.document._list_has_custom_marker import _list_has_custom_marker
+from doe_export.html.compiler.typography._marker_text_from_content import _marker_text_from_content
+from doe_export.html.compiler.typography._ordered_bullet_scheme import _ordered_bullet_scheme
+from doe_export.html.compiler.typography._unordered_bullet_char import _unordered_bullet_char
+from doe_export.html.compiler.typography._trim_paragraph_runs import _trim_paragraph_runs
+from doe_export.html.compiler.typography._clean_inline_text import _clean_inline_text
+from doe_export.html.compiler.typography._font_from_node import _font_from_node
+from doe_export.html.compiler.typography._font_from_rich_run import _font_from_rich_run
+from doe_export.html.compiler.typography._font_from_computed import _font_from_computed
+from doe_export.html.compiler.typography._apply_text_transform import _apply_text_transform
+from doe_export.html.compiler.typography._line_height_pt import _line_height_pt
+from doe_export.html.compiler.css._css_letter_spacing_pt import _css_letter_spacing_pt
+from doe_export.html.compiler.css._css_word_spacing_pt import _css_word_spacing_pt
+from doe_export.html.compiler.typography._css_text_indent_pt import _css_text_indent_pt
+from doe_export.html.compiler.css._css_kerning_pt import _css_kerning_pt
+from doe_export.html.compiler.typography._css_font_variant_caps import _css_font_variant_caps
+from doe_export.html.compiler.typography._css_vertical_align_baseline import _css_vertical_align_baseline
+from doe_export.html.compiler.typography._rounded_baseline_fraction import _rounded_baseline_fraction
+from doe_export.html.compiler.css._css_tab_size_pt import _css_tab_size_pt
+from doe_export.html.compiler.typography._tab_space_factor import _tab_space_factor
+from doe_export.html.compiler.css._css_direction import _css_direction
+from doe_export.html.compiler.css._css_rtl import _css_rtl
+from doe_export.html.compiler.css._css_rtl_for_run import _css_rtl_for_run
+from doe_export.html.compiler.css._css_computed_length_pt import _css_computed_length_pt
+from doe_export.html.compiler.typography._css_white_space import _css_white_space
+from doe_export.html.compiler.typography._css_overflow_wrap import _css_overflow_wrap
+from doe_export.html.compiler.typography._css_word_break import _css_word_break
+from doe_export.html.compiler.typography._css_word_wrap import _css_word_wrap
+from doe_export.html.compiler.typography._css_text_frame_overflow import _css_text_frame_overflow
+from doe_export.html.compiler.typography._css_text_frame_margins import _css_text_frame_margins
+from doe_export.html.compiler.css._css_nonnegative_length_pt import _css_nonnegative_length_pt
+from doe_export.html.compiler.typography._preserves_spaces import _preserves_spaces
+from doe_export.html.compiler.typography._preserves_newlines import _preserves_newlines
+from doe_export.html.compiler.typography._normalize_text_for_white_space import _normalize_text_for_white_space
+from doe_export.html.compiler.typography._clean_text_for_computed import _clean_text_for_computed
+from doe_export.html.compiler.typography._paragraph_text_lines import _paragraph_text_lines
+from doe_export.html.compiler.typography._append_text_runs_preserving_newlines import _append_text_runs_preserving_newlines
+from doe_export.html.compiler.geometry._visual_scale import _visual_scale
+from doe_export.html.compiler.typography._text_visual_scale import _text_visual_scale
+from doe_export.html.compiler.geometry._css_transform_rotation import _css_transform_rotation
+from doe_export.html.compiler.geometry._normalize_rotation_degrees import _normalize_rotation_degrees
+from doe_export.html.compiler.geometry._transform_adjusted_bounds import _transform_adjusted_bounds
+from doe_export.html.compiler.geometry._rounded_overflow_clip_masks import _rounded_overflow_clip_masks
+from doe_export.html.compiler.geometry._overflow_clip_bounds_for_node import _overflow_clip_bounds_for_node
+from doe_export.html.compiler.geometry._padding_box_bounds_from_node import _padding_box_bounds_from_node
+from doe_export.html.compiler.geometry._css_clips_overflow import _css_clips_overflow
+from doe_export.html.compiler.geometry._clip_mask_for_node import _clip_mask_for_node
+from doe_export.html.compiler.geometry._bounds_nearly_equal import _bounds_nearly_equal
+from doe_export.html.compiler.geometry._bounds_contains import _bounds_contains
+from doe_export.html.compiler.geometry._clip_mask_diagnostics import _clip_mask_diagnostics
+from doe_export.html.compiler.geometry._shape_geometry_for_node import _shape_geometry_for_node
+from doe_export.html.compiler.geometry._custom_clip_path_polygon_paths_from_node import _custom_clip_path_polygon_paths_from_node
+from doe_export.html.compiler.typography._split_css_space_tokens import _split_css_space_tokens
+from doe_export.html.compiler.geometry._css_clip_coordinate_percent import _css_clip_coordinate_percent
+from doe_export.html.compiler.geometry._geometry_from_node import _geometry_from_node
+from doe_export.html.compiler.geometry._custom_border_radius_paths_from_node import _custom_border_radius_paths_from_node
+from doe_export.html.compiler.geometry._normalized_border_radius_pairs import _normalized_border_radius_pairs
+from doe_export.html.compiler.css._border_radii_are_uniform import _border_radii_are_uniform
+from doe_export.html.compiler.svg._rounded_rect_svg_path import _rounded_rect_svg_path
+from doe_export.html.compiler.geometry._border_radius_pairs import _border_radius_pairs
+from doe_export.html.compiler.geometry._css_axis_scale_from_layout import _css_axis_scale_from_layout
+from doe_export.html.compiler.geometry._has_percent_ellipse_radius import _has_percent_ellipse_radius
+from doe_export.html.compiler.geometry._radius_pair import _radius_pair
+from doe_export.html.compiler.css._css_length_or_percent import _css_length_or_percent
+from doe_export.html.compiler.structure._shape_name import _shape_name
+from doe_export.html.compiler.document._computed import _computed
+from doe_export.html.compiler.css._element_opacity import _element_opacity
+from doe_export.html.compiler.svg._svg_effective_opacity import _svg_effective_opacity
+from doe_export.html.compiler.typography._clean_text import _clean_text
+from doe_export.html.compiler.css._css_alpha_value import _css_alpha_value
+from doe_export.html.compiler.css._css_rgb_channel import _css_rgb_channel
+from doe_export.html.compiler.css._css_color import _css_color
+from doe_export.html.compiler.css._css_px import _css_px
+from doe_export.html.compiler.css._css_float import _css_float
+from doe_export.html.compiler.typography._text_align import _text_align
+from doe_export.html.compiler.typography._first_font_family import _first_font_family
+from doe_export.html.compiler.typography._resolved_font_family import _resolved_font_family
+from doe_export.html.compiler.assets._image_content_type import _image_content_type
+from doe_export.html.compiler.browser._run_browser_snapshot import _run_browser_snapshot
+from doe_export.html.compiler.browser._run_browser_snapshot_batch import _run_browser_snapshot_batch
+from doe_export.html.compiler.geometry._doe_alexandria_codepoints import _doe_alexandria_codepoints
+from doe_export.html.compiler.browser._invoke_browser_snapshot import _invoke_browser_snapshot
+from doe_export.html.compiler.browser._browser_worker_environment import _browser_worker_environment
+from doe_export.html.compiler.browser._BrowserSnapshotWorker import _BrowserSnapshotWorker
+from doe_export.html.compiler.browser._terminate_process_tree import _terminate_process_tree
+from doe_export.html.compiler.browser._signal_process_group import _signal_process_group
+from doe_export.html.compiler.browser._linux_process_tree_rss_bytes import _linux_process_tree_rss_bytes
+from doe_export.html.compiler.diagnostics._diagnostics_from_snapshot import _diagnostics_from_snapshot
+from doe_export.html.compiler.snapshot._ast_from_snapshot import _ast_from_snapshot
+from doe_export.html.compiler.document._normalize_viewport import _normalize_viewport
+from doe_export.html.compiler.document._optional_int import _optional_int
+from doe_export.html.compiler.browser.state import _BROWSER_SNAPSHOT_WORKER

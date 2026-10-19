@@ -1,0 +1,29 @@
+.schema-slide[data-theme="yrkie-theme"]:not([data-background-foreground="light"])
+  :is(
+    .component-hero__subtitle, .component-text__body, .component-list__items,
+    .component-question-card__text, .component-stat__description,
+    .component-media__fallback-message, .component-quote__source,
+    .ppt-data-table td, .ppt-business-chart__subtitle,
+    .ppt-insight-card__subtitle, .ppt-risk-matrix__subtitle,
+    .ppt-donut-chart__subtitle, .ppt-metric-card-group__subtitle,
+    .ppt-donut-chart__legend,
+    .ppt-capability-cards__text, .ppt-service-matrix__label,
+    .ppt-service-matrix__right, .ppt-channel-comparison__note
+  ) {
+  color: var(--yrkie-color-body);
+}
+
+.schema-slide[data-theme="yrkie-theme"]:not([data-background-foreground="light"])
+  :is(
+    .component-hero__title, .component-heading, .component-title,
+    .component-question-card__title, .component-stat__value,
+    .component-stat__label, .component-media__fallback-title,
+    .component-quote blockquote, .ppt-data-table th,
+    .ppt-business-chart__title, .ppt-insight-card__title,
+    .ppt-risk-matrix__title, .ppt-service-matrix__title,
+    .ppt-channel-comparison__title, .ppt-donut-chart__title,
+    .ppt-metric-card-group__title) {
+  color: var(--yrkie-color-title);
+  letter-spacing: var(--yrkie-letter-spacing-heading);
+}
+

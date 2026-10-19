@@ -1,0 +1,29 @@
+/* Keep fractional glyph advances stable when the complete diagram is zoomed. */
+.doe-diagram { position: relative; text-rendering: geometricPrecision; }
+.doe-diagram.component-card { overflow: visible; }
+.doe-diagram__art { position: absolute; top: 0; overflow: visible; }
+.doe-diagram > .doe-diagram__copy { position: absolute; min-width: 0; box-sizing: border-box; }
+.doe-diagram__title { margin: 0 0 var(--space-6pt); color: var(--yrkie-color-title); }
+.doe-diagram__text { margin: 0; color: var(--yrkie-color-body); }
+.doe-diagram__icon { position: absolute; left: -88px; top: 8px; width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; background: var(--diagram-item-color); color: var(--yrkie-color-light); }
+.doe-diagram__icon svg { width: 32px; height: 32px; stroke: currentColor; }
+.doe-diagram__icon[style*="chart-2"] { color: var(--yrkie-color-title); }
+.doe-diagram__icon--art { background: none; border-radius: 0; }
+.doe-diagram__icon--art svg { width: 100%; height: 100%; }
+.doe-diagram__icon--dark { color: var(--diagram-item-color); }
+.doe-diagram__icon--dark[style*="chart-2"] { color: var(--yrkie-color-title); }
+.doe-diagram__value-box { position: absolute; box-sizing: border-box; display: flex; align-items: center; justify-content: center; padding: 4px 10px; border-radius: var(--yrkie-radius-pill); background: var(--diagram-item-color); color: var(--yrkie-color-light); text-align: center; }
+.doe-diagram__value { width: 100%; color: inherit; }
+.doe-diagram__value-box[style*="chart-2"] { color: var(--yrkie-color-title); }
+.doe-diagram--vertical-progress .doe-diagram__title { color: var(--yrkie-color-primary); }
+.doe-diagram--vertical-progress .doe-progress__track { stroke: var(--yrkie-color-primary); }
+.doe-diagram--vertical-progress .doe-progress__fill { fill: var(--yrkie-color-primary); }
+.doe-diagram--wave-arrow .doe-wave-arrow__face { fill: var(--yrkie-color-primary); }
+.doe-diagram--wave-arrow .doe-wave-arrow__return { fill: var(--yrkie-color-chart-5); }
+.doe-diagram--wave-arrow .doe-wave-arrow__edge { stroke: var(--yrkie-color-on-primary); }
+.doe-diagram--concentric-circles .doe-diagram__icon,
+.doe-diagram--serpentine-process .doe-diagram__icon,
+.doe-diagram--icon-columns .doe-diagram__icon,
+.doe-diagram--badge-cards .doe-diagram__icon { color: var(--yrkie-color-on-primary); }
+.doe-diagram--badge-cards { --diagram-card-surface: var(--yrkie-color-secondary); }
+.doe-diagram--badge-cards .doe-diagram__value-box { background: var(--yrkie-color-primary); color: var(--yrkie-color-on-primary); }

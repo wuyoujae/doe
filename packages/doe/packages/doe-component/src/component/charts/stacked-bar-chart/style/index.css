@@ -1,0 +1,108 @@
+.ppt-stacked-bar-chart {
+  --stacked-chart-legend-columns: 1;
+
+  width: 390px;
+  height: 470px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  color: var(--yrkie-color-body);
+  font-family: var(--font-sans-cn);
+}
+
+.ppt-stacked-bar-chart__title {
+  margin: 0 0 16px;
+  flex: none;
+  font-size: var(--typography-h4-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 1.08;
+  text-align: center;
+}
+
+.ppt-stacked-bar-chart__subtitle {
+  margin: 0 0 10px;
+  flex: none;
+  font-size: var(--typography-normal-size);
+  font-weight: var(--yrkie-font-weight-regular);
+  line-height: 1.12;
+}
+
+.ppt-stacked-bar-chart__legend {
+  margin: 10px 0 0;
+  padding: 0 12px;
+  display: grid;
+  grid-template-columns: repeat(var(--stacked-chart-legend-columns), minmax(0, 1fr));
+  justify-content: center;
+  justify-items: center;
+  gap: 8px 22px;
+  flex: none;
+  list-style: none;
+  font-size: var(--typography-small-size);
+  line-height: 1;
+}
+
+.ppt-stacked-bar-chart__legend-item {
+  display: flex;
+  min-width: 0;
+  max-width: 100%;
+  align-items: center;
+  gap: 7px;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.ppt-stacked-bar-chart__swatch {
+  width: 24px;
+  height: 14px;
+  flex: none;
+  background: currentColor;
+}
+
+.ppt-stacked-bar-chart__svg {
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+  overflow: visible;
+}
+
+.ppt-stacked-bar-chart__grid-line {
+  stroke: var(--yrkie-grid-line);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-stacked-bar-chart__axis-label,
+.ppt-stacked-bar-chart__category-label,
+.ppt-stacked-bar-chart__segment-label,
+.ppt-stacked-bar-chart__annotation-label {
+  fill: var(--yrkie-color-body);
+  font-family: var(--font-sans-cn);
+  font-size: var(--typography-normal-size);
+}
+
+.ppt-stacked-bar-chart__category-label,
+.ppt-stacked-bar-chart__segment-label,
+.ppt-stacked-bar-chart__annotation-label {
+  text-anchor: middle;
+}
+
+.ppt-stacked-bar-chart__annotation-line {
+  fill: none;
+  stroke: var(--yrkie-color-auxiliary);
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-stacked-bar-chart__annotation-shape {
+  fill: var(--yrkie-color-surface);
+  stroke: var(--yrkie-color-auxiliary);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-stacked-bar-chart__annotation-label {
+  font-family: var(--font-sans-cn);
+  font-size: var(--typography-normal-size);
+}

@@ -1,0 +1,1 @@
+.component-list__items--todo > [data-checked="true"] .component-list__text { text-decoration: line-through; opacity: 0.5; }

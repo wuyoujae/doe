@@ -1,0 +1,28 @@
+.component-quote {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  align-content: center;
+  box-sizing: border-box;
+  border: 1px solid var(--yrkie-line-solid);
+  border-left: 8px solid var(--demo-red);
+  border-radius: var(--yrkie-radius-component) 0 0 var(--yrkie-radius-component);
+  background: var(--yrkie-color-surface);
+}
+
+.component-card.component-quote[data-background-policy="transparent"] {
+  background-color: var(--yrkie-color-surface) !important;
+}
+
+.component-quote blockquote {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  color: var(--demo-navy);
+  line-height: 1.28;
+}
+
+.component-quote__source {
+  color: var(--demo-red);
+}
+

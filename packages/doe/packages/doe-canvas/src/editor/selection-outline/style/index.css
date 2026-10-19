@@ -1,0 +1,8 @@
+.doe-selection-outline { position: absolute; box-sizing: border-box; z-index: 6; pointer-events: none; border: 1px solid transparent; border-radius: var(--yrkie-radius-component); }
+.has-selection-outline:hover > .doe-selection-outline,
+.has-selection-outline.has-selected-item > .doe-selection-outline { border-color: var(--yrkie-line-strong-solid); }
+.has-selection-outline.is-item-selected > .doe-selection-outline,
+.block-shell.has-selection-outline.is-selected:not(.has-selected-item) > .doe-selection-outline { border-color: var(--editor-blue); }
+.block-shell.has-selection-outline:is(:hover, .is-selected, .has-selected-item) > .block-content,
+.layout-group.block-shell.has-selection-outline:is(:hover, .is-selected) > .layout-group__content { box-shadow: none; }
+.is-measuring-columns .doe-selection-outline { display: none; }

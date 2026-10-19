@@ -1,0 +1,7 @@
+.ppt-numbered-icon-cards {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  background: transparent;
+}
+

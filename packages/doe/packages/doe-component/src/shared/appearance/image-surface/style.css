@@ -1,0 +1,47 @@
+.component-image-surface {
+  box-sizing: border-box;
+  flex: none;
+  width: 100%;
+  padding: var(--space-12pt);
+  border: 1px solid var(--yrkie-line-solid);
+  border-radius: var(--yrkie-radius-component);
+  background: var(--yrkie-color-surface);
+  color: var(--yrkie-color-body);
+}
+.component-image-surface > .component-card { max-width: 100%; }
+.component-image-surface > .component-stat,
+.component-image-surface > .ppt-math-formula .ppt-math-formula__body { padding: 0; }
+.component-image-surface[data-image-surface-type="table"] { padding: 0; }
+.component-image-surface > .ppt-data-table[data-lines="grid"] { border: 0; }
+
+/* Keep existing accents and protruding ornaments; only fill their transparent surface. */
+.item-cards[data-image-surface="items"] .item-cards__surface,
+.ppt-capability-cards[data-image-surface="items"] .ppt-capability-cards__card {
+  background: var(--yrkie-color-surface);
+  border-color: var(--yrkie-line-solid);
+}
+.item-cards[data-image-surface="items"][data-variant="side-rule"] .item-cards__surface {
+  border: 1px solid var(--yrkie-line-solid);
+  border-left: 0.1875rem solid var(--yrkie-color-primary);
+  border-radius: var(--yrkie-radius-component);
+}
+.item-cards[data-image-surface="items"][data-variant="top-rule"] .item-cards__surface {
+  border: 1px solid var(--yrkie-line-solid);
+  border-top: 0.1875rem solid var(--yrkie-color-primary);
+  border-radius: var(--yrkie-radius-component);
+}
+.item-cards[data-image-surface="items"][data-variant="top-icon"] .item-cards__surface { border-top-color: var(--yrkie-color-primary); }
+.item-cards[data-image-surface="items"] .item-cards__quote { background: var(--yrkie-color-surface); }
+
+/* Image foreground applies to the photo, never to an opaque reading surface.
+   Inline author colors retain their normal CSS priority. */
+.schema-slide [data-image-surface] { --doe-background-foreground: var(--yrkie-color-title); }
+.schema-slide[data-background-foreground] [data-image-surface] :is(.component-hero__title, .component-hero__eyebrow, .component-title,
+  .component-stat__value, .component-stat__label, .component-list__number),
+.schema-slide[data-background-foreground] .component-heading[data-image-surface] {
+  color: var(--yrkie-color-title);
+  text-shadow: none;
+}
+.schema-slide[data-background-foreground] [data-image-surface] :is(.component-hero__subtitle, .component-text__body,
+  .component-list__items, .component-stat__description) { color: var(--yrkie-color-body); text-shadow: none; }
+.schema-slide[data-background-foreground] [data-image-surface] :is(.component-stat__value, .component-list__number) { color: var(--demo-navy); }

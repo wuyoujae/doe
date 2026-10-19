@@ -1,0 +1,9 @@
+.component-list__items {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--item-columns, 1), minmax(0, 1fr));
+  gap: var(--space-12pt) var(--space-18pt);
+  padding: 0;
+  list-style: none;
+}
+

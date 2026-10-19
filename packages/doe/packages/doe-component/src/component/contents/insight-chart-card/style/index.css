@@ -1,0 +1,113 @@
+.ppt-insight-card {
+  width: 360px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--yrkie-color-surface);
+  border: 0;
+  color: var(--yrkie-color-body);
+  font-family: var(--font-sans-cn);
+}
+
+.ppt-insight-card__header {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  flex: none;
+}
+
+.ppt-insight-card[data-has-index="false"] .ppt-insight-card__header {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.ppt-insight-card__badge {
+  width: 52px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  color: var(--yrkie-color-on-primary);
+  background: var(--yrkie-color-primary);
+  font-size: var(--typography-h4-size);
+  line-height: 1;
+}
+
+.ppt-insight-card__title {
+  margin: 3px 0 0;
+  color: var(--yrkie-color-title);
+  font-size: var(--typography-h4-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 1.08;
+  white-space: pre-line;
+}
+
+.ppt-insight-card__subtitle {
+  margin: 14px 0 8px 62px;
+  flex: none;
+  font-size: var(--typography-normal-size);
+  font-weight: var(--yrkie-font-weight-regular);
+  line-height: 1.15;
+  white-space: pre-line;
+}
+
+.ppt-insight-card[data-has-index="false"] .ppt-insight-card__subtitle {
+  margin-left: 0;
+}
+
+.ppt-insight-card__svg {
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+  overflow: visible;
+}
+
+.ppt-insight-card__grid-line {
+  stroke: var(--yrkie-grid-line);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-insight-card__axis-label,
+.ppt-insight-card__category-label,
+.ppt-insight-card__value-label,
+.ppt-insight-card__callout-label {
+  fill: var(--yrkie-color-body);
+  font-family: var(--font-sans-cn);
+  font-size: var(--typography-normal-size);
+}
+
+.ppt-insight-card__category-label,
+.ppt-insight-card__value-label,
+.ppt-insight-card__callout-label {
+  text-anchor: middle;
+}
+
+.ppt-insight-card__line {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-insight-card__bar-value {
+  fill: var(--yrkie-color-on-primary);
+  font-family: var(--font-sans-cn);
+  font-size: var(--typography-normal-size);
+  text-anchor: middle;
+}
+
+.ppt-insight-card__callout-path {
+  fill: none;
+  stroke: var(--yrkie-color-auxiliary);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-insight-card__callout-shape {
+  fill: var(--yrkie-color-surface);
+  stroke: var(--yrkie-color-auxiliary);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}

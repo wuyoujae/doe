@@ -1,0 +1,66 @@
+@keyframes ai-generation-block-reveal {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0 round 8px);
+    filter: grayscale(0.5) sepia(0.16) hue-rotate(176deg) saturate(1.35) brightness(1.08);
+    transform: translateY(10px) scale(0.992);
+  }
+  48% {
+    opacity: 1;
+    filter: grayscale(0.16) sepia(0.05) hue-rotate(176deg) saturate(1.08) brightness(1.025);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 round 8px);
+    filter: none;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ai-generation-outline-pulse {
+  0%,
+  100% {
+    opacity: 0.82;
+    box-shadow:
+      inset 0 0 0 3px var(--editor-blue),
+      0 0 12px rgba(40, 120, 255, 0.14);
+  }
+  50% {
+    opacity: 1;
+    box-shadow:
+      inset 0 0 0 3px var(--editor-blue),
+      0 0 22px rgba(40, 120, 255, 0.3);
+  }
+}
+
+@keyframes ai-generation-badge-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ai-generation-media-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-slide-generation="true"] .ai-generation-outline,
+  html[data-slide-generation="true"] .ai-generation-badge,
+  html[data-slide-generation="true"]
+    .block-shell.is-ai-arriving:not(.layout-group)
+    > .block-content,
+  html[data-slide-generation="true"]
+    .block-shell.is-ai-arriving.layout-group
+    > .layout-group__content,
+  .component-media__generation-placeholder-icon {
+    animation: none;
+  }
+}
+

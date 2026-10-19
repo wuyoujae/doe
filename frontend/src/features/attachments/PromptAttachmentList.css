@@ -1,0 +1,185 @@
+.prompt-attachment-region {
+  width: 100%;
+  min-width: 0;
+}
+
+.prompt-attachment-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prompt-attachment-item {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.5625rem;
+  padding: 0.5rem 0.5625rem;
+  border: 0.0625rem solid var(--border-color, rgba(0, 0, 0, 0.12));
+  border-radius: 0.625rem;
+  background: color-mix(in srgb, var(--bg-panel, #fff) 86%, var(--bg-app, #f4f4f5));
+  color: var(--text-primary, #18181b);
+}
+
+.tone-dashboard .prompt-attachment-item {
+  border-color: var(--mingslide-surface-border, rgba(0, 0, 0, 0.12));
+  background: rgba(0, 0, 0, 0.035);
+  color: var(--mingslide-text-primary, #18181b);
+}
+
+.prompt-attachment-kind-icon {
+  width: 1.1875rem;
+  height: 1.1875rem;
+  flex: 0 0 auto;
+  color: var(--text-secondary, #71717a);
+}
+
+.prompt-attachment-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1875rem;
+}
+
+.prompt-attachment-name {
+  overflow: hidden;
+  color: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.prompt-attachment-meta {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.3125rem;
+  overflow: hidden;
+  color: var(--text-muted, #71717a);
+  font-size: 0.625rem;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.prompt-attachment-status {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1875rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.prompt-attachment-status svg {
+  width: 0.6875rem;
+  height: 0.6875rem;
+  flex: 0 0 auto;
+}
+
+.prompt-attachment-status.is-error,
+.prompt-attachment-item.state-failed .prompt-attachment-kind-icon,
+.prompt-attachment-restore-status.is-error {
+  color: var(--danger-color, #b42318);
+}
+
+.prompt-attachment-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.prompt-attachment-actions button {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.4375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--text-secondary, #71717a);
+  cursor: pointer;
+}
+
+.prompt-attachment-actions button:hover:not(:disabled) {
+  background: var(--bg-hover, rgba(0, 0, 0, 0.07));
+  color: var(--text-primary, #18181b);
+}
+
+.prompt-attachment-actions button:focus-visible {
+  outline: 0.125rem solid var(--border-focus, #4f7cff);
+  outline-offset: 0.0625rem;
+}
+
+.prompt-attachment-actions button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+.prompt-attachment-actions svg {
+  width: 0.9375rem;
+  height: 0.9375rem;
+}
+
+.prompt-attachment-spinner {
+  animation: prompt-attachment-spin 0.9s linear infinite;
+}
+
+.prompt-attachment-restore-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4375rem;
+  min-height: 2rem;
+  color: var(--text-muted, #71717a);
+  font-size: 0.75rem;
+}
+
+.prompt-attachment-restore-status svg {
+  width: 0.9375rem;
+  height: 0.9375rem;
+}
+
+.prompt-attachment-restore-status button {
+  min-height: 2rem;
+  margin-left: auto;
+  padding: 0.25rem 0.5625rem;
+  border: 0.0625rem solid currentColor;
+  border-radius: 0.4375rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.prompt-attachment-restore-status button:focus-visible {
+  outline: 0.125rem solid var(--border-focus, #4f7cff);
+  outline-offset: 0.125rem;
+}
+
+@keyframes prompt-attachment-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 45rem) {
+  .prompt-attachment-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .prompt-attachment-actions button {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prompt-attachment-spinner {
+    animation-duration: 1.8s;
+  }
+}

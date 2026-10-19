@@ -1,0 +1,4 @@
+html[data-doe-direct-text-edit="true"] .doe-canvas {
+  overflow: clip;
+}
+

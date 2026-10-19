@@ -1,0 +1,163 @@
+{
+  "custom": {
+    "label": "Custom",
+    "baseUrl": "",
+    "kinds": ["text", "image"],
+    "textMaxTokensField": "max_tokens",
+    "imageDefaultCount": 1
+  },
+  "openai": {
+    "label": "OpenAI",
+    "baseUrl": "https://api.openai.com/v1",
+    "kinds": ["text", "image"],
+    "textMaxTokensField": "max_completion_tokens",
+    "imageDefaultCount": 1
+  },
+  "openrouter": {
+    "label": "OpenRouter",
+    "baseUrl": "https://openrouter.ai/api/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "anthropic": {
+    "label": "Claude",
+    "baseUrl": "https://api.anthropic.com/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "deepseek": {
+    "label": "DeepSeek",
+    "baseUrl": "https://api.deepseek.com",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "gemini": {
+    "label": "Google Gemini",
+    "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai",
+    "kinds": ["text", "image"],
+    "textMaxTokensField": "max_tokens",
+    "imageDefaultCount": 1
+  },
+  "xai": {
+    "label": "xAI",
+    "baseUrl": "https://api.x.ai/v1",
+    "kinds": ["text", "image"],
+    "textMaxTokensField": "max_tokens",
+    "imageDefaultCount": 1
+  },
+  "together": {
+    "label": "Together AI",
+    "baseUrl": "https://api.together.ai/v1",
+    "kinds": ["text", "image"],
+    "textMaxTokensField": "max_tokens",
+    "imageDefaultCount": 1
+  },
+  "groq": {
+    "label": "Groq",
+    "baseUrl": "https://api.groq.com/openai/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "mistral": {
+    "label": "Mistral",
+    "baseUrl": "https://api.mistral.ai/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "fireworks": {
+    "label": "Fireworks AI",
+    "baseUrl": "https://api.fireworks.ai/inference/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "cerebras": {
+    "label": "Cerebras",
+    "baseUrl": "https://api.cerebras.ai/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "sambanova": {
+    "label": "SambaNova",
+    "baseUrl": "https://api.sambanova.ai/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "siliconflow": {
+    "label": "SiliconFlow",
+    "baseUrl": "https://api.siliconflow.cn/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "dashscope": {
+    "label": "Alibaba Cloud · Beijing",
+    "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "dashscope_intl": {
+    "label": "Alibaba Cloud · Singapore",
+    "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "moonshot": {
+    "label": "Moonshot · Kimi",
+    "baseUrl": "https://api.moonshot.ai/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "zai": {
+    "label": "Z.AI",
+    "baseUrl": "https://api.z.ai/api/paas/v4",
+    "kinds": ["text", "image"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "nvidia": {
+    "label": "NVIDIA NIM",
+    "baseUrl": "https://integrate.api.nvidia.com/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "minimax": {
+    "label": "MiniMax",
+    "baseUrl": "https://api.minimax.io/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_completion_tokens"
+  },
+  "novita": {
+    "label": "Novita AI",
+    "baseUrl": "https://api.novita.ai/openai/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "huggingface": {
+    "label": "Hugging Face",
+    "baseUrl": "https://router.huggingface.co/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "volcengine": {
+    "label": "Volcengine · Doubao",
+    "baseUrl": "https://ark.cn-beijing.volces.com/api/v3",
+    "kinds": ["text", "image"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "byteplus": {
+    "label": "BytePlus ModelArk",
+    "baseUrl": "https://ark.ap-southeast.bytepluses.com/api/v3",
+    "kinds": ["text", "image"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "ollama": {
+    "label": "Ollama",
+    "baseUrl": "http://localhost:11434/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  },
+  "lmstudio": {
+    "label": "LM Studio",
+    "baseUrl": "http://localhost:1234/v1",
+    "kinds": ["text"],
+    "textMaxTokensField": "max_tokens"
+  }
+}

@@ -1,0 +1,42 @@
+/* Shared default geometry. Explicit legacy comparison retains its cascade. */
+.schema-slide[data-flow-model="flow-v1"] .schema-layout { gap: 0; }
+.schema-slide[data-flow-model="flow-v1"] [data-flow-slot="true"] {
+  min-height: 0; flex: 0 0 auto; align-self: stretch;
+}
+.schema-slide[data-flow-model="flow-v1"] [data-flow-slot="true"][data-flow-height] > .block-content {
+  display: block; min-height: 0; height: auto; flex: none; padding: 0; align-self: flex-start;
+}
+.schema-slide[data-flow-model="flow-v1"] [data-flow-group="true"] {
+  min-height: 0; height: auto; flex: none;
+}
+/* Equal-height row slots align their natural contents, including nested groups. */
+.schema-slide[data-flow-model="flow-v1"] [data-flow-slot="true"][data-flow-vertical-align] {
+  display: flex; flex-direction: column; justify-content: flex-start;
+}
+.schema-slide[data-flow-model="flow-v1"] [data-flow-slot="true"][data-flow-vertical-align="center"] {
+  justify-content: safe center;
+}
+.schema-slide[data-flow-model="flow-v1"] [data-flow-slot="true"][data-flow-vertical-align="end"] {
+  justify-content: safe flex-end;
+}
+.schema-slide[data-flow-model="flow-v1"] [data-flow-slot="true"][data-flow-vertical-align] > .layout-group__content[data-flow-group="true"] {
+  /* Legacy composition flex growth must not turn natural content into a slot. */
+  flex: none;
+}
+.schema-slide[data-flow-model="flow-v1"] [data-flow-surface] {
+  flex: none; max-width: 100%; min-height: 0; height: auto;
+}
+.schema-slide[data-flow-model="flow-v1"] [data-flow-inset="none"] { padding: 0; }
+.schema-slide[data-flow-model="flow-v1"] [data-flow-surface="fill"] { width: 100%; }
+.schema-slide[data-flow-model="flow-v1"] [data-flow-surface="intrinsic"] { width: fit-content; }
+.schema-slide[data-flow-model="flow-v1"] [data-flow-surface][data-text-align="center"] { margin-inline: auto; }
+.schema-slide[data-flow-model="flow-v1"] [data-flow-surface][data-text-align="right"] { margin-left: auto; }
+.schema-slide[data-flow-model="flow-v1"] [data-flow-slot="true"][data-flow-height="stretch"] > .block-content,
+.schema-slide[data-flow-model="flow-v1"] [data-flow-height="stretch"] > .block-content > .component-card { height: 100%; }
+.schema-slide[data-flow-model="flow-v1"] .item-cards__surface[data-flow-surface="fill"] { height: 100%; }
+.schema-slide[data-flow-model="flow-v1"] .item-cards__surface[data-flow-surface="intrinsic"] { margin-inline: auto; }
+.schema-slide[data-flow-model="flow-v1"] .item-cards__grid { grid-auto-rows: max-content; }
+.schema-slide[data-flow-model="flow-v1"] [data-flow-item-alignment="row-stretch"] .item-cards__row { align-items: stretch; }
+.schema-slide[data-flow-model="flow-v1"] [data-contents-presentation="metrics"] .item-cards__surface { width: fit-content; margin-inline: auto; }
+.schema-slide[data-flow-model="flow-v1"] [data-flow-edge="true"] { width: 100%; height: 100%; }
+.schema-slide[data-flow-model="flow-v1"] [data-flow-root="true"] { height: 100%; }

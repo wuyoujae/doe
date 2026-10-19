@@ -1,0 +1,199 @@
+{
+  "id": "yrkie-theme",
+  "label": "Classic Blue",
+  "fonts": {
+    "latin": "Alexandria",
+    "cjk": "MiSans",
+    "stack": "\"Alexandria\", \"MiSans\", Arial, sans-serif"
+  },
+  "typography": {
+    "sizeModes": [
+      "compact",
+      "default",
+      "expanded"
+    ],
+    "weights": {
+      "regular": 300,
+      "semibold": 400,
+      "bold": 600
+    },
+    "styles": {
+      "small": {
+        "sizes": {
+          "compact": 9.5,
+          "default": 10.5,
+          "expanded": 11.5
+        },
+        "defaultWeight": "regular",
+        "allowedWeights": [
+          "regular"
+        ]
+      },
+      "normal": {
+        "sizes": {
+          "compact": 12.5,
+          "default": 13.5,
+          "expanded": 14.5
+        },
+        "defaultWeight": "regular",
+        "allowedWeights": [
+          "regular"
+        ]
+      },
+      "large": {
+        "sizes": {
+          "compact": 14.5,
+          "default": 15.5,
+          "expanded": 16.5
+        },
+        "defaultWeight": "regular",
+        "allowedWeights": [
+          "regular"
+        ]
+      },
+      "h4": {
+        "sizes": {
+          "compact": 14.5,
+          "default": 15.5,
+          "expanded": 16.5
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "h3": {
+        "sizes": {
+          "compact": 17,
+          "default": 18.5,
+          "expanded": 20
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "h2": {
+        "sizes": {
+          "compact": 18.5,
+          "default": 20,
+          "expanded": 22
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "h1": {
+        "sizes": {
+          "compact": 33,
+          "default": 36,
+          "expanded": 41
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "xl": {
+        "sizes": {
+          "compact": 45,
+          "default": 52,
+          "expanded": 59
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "2xl": {
+        "sizes": {
+          "compact": 65,
+          "default": 75,
+          "expanded": 85
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "3xl": {
+        "sizes": {
+          "compact": 97,
+          "default": 112.5,
+          "expanded": 129
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      }
+    },
+    "lineHeight": 1.38,
+    "letterSpacing": {
+      "body": "0",
+      "heading": "0",
+      "eyebrow": "0.03em"
+    }
+  },
+  "radius": {
+    "canvas": "0.5rem",
+    "component": "0.5rem",
+    "pill": "999px",
+    "circle": "50%"
+  },
+  "colors": {
+    "primary": "#1B54DA",
+    "secondary": "#D2DDF8",
+    "title": "#1B1B27",
+    "body": "#404155",
+    "auxiliary": "#172033",
+    "dark": "#304765",
+    "light": "#F9F9FF",
+    "surface": "#FFFFFF",
+    "softSurface": "#E4E9F5",
+    "onPrimary": "#FFFFFF",
+    "onImage": "#FFFFFF",
+    "mask": "#14243B",
+    "studioStage": "#5C73E6",
+    "chart": [
+      "#1B54DA",
+      "#D2DDF8",
+      "#1543AD",
+      "#4172E7",
+      "#10317F"
+    ],
+    "code": {
+      "background": "#14243A",
+      "border": "#304765",
+      "text": "#DCE7F5",
+      "comment": "#8DA4BE",
+      "string": "#F0C98D",
+      "number": "#8FD3C8",
+      "keyword": "#FF8F87",
+      "builtin": "#9EC5FF",
+      "operator": "#F3A9A4"
+    }
+  },
+  "lineAlpha": {
+    "normal": 14,
+    "grid": 16,
+    "strong": 28
+  },
+  "shadow": {
+    "color": "#172033",
+    "softAlpha": 10,
+    "mediumAlpha": 16,
+    "strongAlpha": 24
+  },
+  "icon": {
+    "strokeWidth": 1.5
+  }
+}

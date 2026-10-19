@@ -1,0 +1,39 @@
+.component-heading {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  width: 100%;
+  height: max-content;
+  margin: 0;
+  padding: var(--doe-item-inset, 3pt) 0 var(--space-6pt);
+  color: var(--yrkie-color-title);
+  border-bottom: 2px solid var(--yrkie-line-strong);
+  background: transparent;
+  letter-spacing: normal;
+}
+
+.component-heading--1 {
+  font-size: var(--slide-title-size);
+  line-height: 1.08;
+}
+
+.component-heading--2 {
+  font-size: var(--typography-h2-size);
+  line-height: 1.1;
+}
+
+.component-heading--3 {
+  font-size: var(--typography-h3-size);
+  line-height: 1.14;
+}
+
+.component-heading:is([data-heading-variant="plain"], [data-heading-variant="display"]) {
+  border-bottom: 0;
+}
+
+.schema-slide .component-heading[data-heading-variant="display"] {
+  font-size: var(--yrkie-hero-title-size, var(--typography-h1-size));
+  line-height: 1.05;
+}
+

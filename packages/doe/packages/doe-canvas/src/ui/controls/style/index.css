@@ -1,0 +1,103 @@
+/* Shared controls adopt the approved scale without changing other UI surfaces. */
+.ui-select {
+  position: relative;
+  min-width: 0;
+  font: var(--yrkie-weight-regular) var(--yrkie-text-body)/1.2 var(--yrkie-font-ui);
+  color: var(--yrkie-color-body);
+}
+.ui-select-label {
+  display: block;
+  margin-bottom: var(--yrkie-gap-icon);
+  font-size: var(--yrkie-text-body);
+  font-weight: var(--yrkie-weight-bold);
+  color: var(--yrkie-color-body);
+}
+.ui-select[data-placement="up"] .ui-select-menu {
+  top: auto;
+  bottom: calc(100% + var(--yrkie-gap-icon));
+  transform-origin: bottom;
+}
+.ui-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--yrkie-gap-icon);
+  width: 100%;
+  padding: calc(var(--yrkie-space-unit) * 2.5) var(--yrkie-gap-control);
+  border: var(--yrkie-border-width) solid var(--yrkie-color-control-border);
+  border-radius: var(--yrkie-radius-control);
+  color: inherit;
+  background: var(--yrkie-color-white);
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+.ui-select-trigger span, .ui-select-menu button span { min-width: 0; flex: 1; overflow-wrap: anywhere; }
+.ui-select svg { width: calc(var(--yrkie-space-unit) * 3.75); height: calc(var(--yrkie-space-unit) * 3.75); flex-shrink: 0; }
+.ui-select-chevron { transition: transform var(--yrkie-motion-control) var(--yrkie-ease-control); }
+.ui-select.is-open .ui-select-chevron { transform: rotate(180deg); }
+.ui-select-menu {
+  position: absolute;
+  top: calc(100% + var(--yrkie-gap-icon));
+  inset-inline: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: var(--yrkie-gap-micro);
+  max-height: min(calc(var(--yrkie-space-unit) * 60), 40dvh);
+  overflow-y: auto;
+  padding: calc(var(--yrkie-space-unit) * 1.5);
+  border: var(--yrkie-border-width) solid var(--yrkie-color-control-border);
+  border-radius: var(--yrkie-radius-control);
+  background: var(--yrkie-color-white);
+  box-shadow: var(--yrkie-shadow-select);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(calc(var(--yrkie-gap-icon) * -1)) scale(0.98);
+  transform-origin: top left;
+  transition: opacity var(--yrkie-motion-fade) ease, transform var(--yrkie-motion-panel) var(--yrkie-ease-control), visibility 0s linear var(--yrkie-motion-panel);
+}
+.ui-select.is-open .ui-select-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: none; transition-delay: 0s; }
+.ui-select-menu button {
+  display: flex;
+  align-items: center;
+  gap: var(--yrkie-gap-icon);
+  padding: calc(var(--yrkie-space-unit) * 2.5) var(--yrkie-gap-control);
+  border: 0;
+  border-radius: var(--yrkie-radius-control);
+  font: inherit;
+  text-align: start;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+.ui-select .ui-select-menu button[aria-selected="true"] {
+  background: var(--yrkie-color-primary);
+  color: var(--yrkie-color-on-primary);
+}
+.ui-select .ui-select-menu button[aria-selected="true"] :is(span, svg) {
+  color: var(--yrkie-color-on-primary);
+}
+.ui-select-trigger:focus-visible, .ui-select-menu button:focus-visible, .ui-primary-button:focus-visible {
+  outline: calc(var(--yrkie-border-width) * 2) solid var(--yrkie-color-primary);
+  outline-offset: calc(var(--yrkie-border-width) * 2);
+}
+.ui-select-menu button[aria-selected="true"]:focus-visible { outline-offset: calc(var(--yrkie-border-width) * -3); outline-color: var(--yrkie-color-on-primary); }
+.ui-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--yrkie-gap-icon);
+  padding: calc(var(--yrkie-space-unit) * 2.5) calc(var(--yrkie-space-unit) * 4.5);
+  border: var(--yrkie-border-width) solid transparent;
+  border-radius: var(--yrkie-radius-control);
+  background: var(--yrkie-color-primary);
+  color: var(--yrkie-color-on-primary);
+  font: var(--yrkie-weight-regular) var(--yrkie-text-body)/1.2 var(--yrkie-font-ui);
+  cursor: pointer;
+}
+.ui-select-trigger:disabled, .ui-primary-button:disabled { opacity: 0.45; cursor: default; }
+@media (prefers-reduced-motion: reduce) {
+  .ui-select-menu, .ui-select-chevron { transition: none; }
+}

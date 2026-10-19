@@ -1,0 +1,14 @@
+[workspace]
+resolver = "2"
+members = ["packages/doe-core/rust", "packages/doe-component/rust", "packages/doe-document/rust"]
+
+[workspace.package]
+version = "2.0.0"
+edition = "2021"
+
+[workspace.dependencies]
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = { version = "=1.0.150", features = ["preserve_order"] }
+sha2 = "=0.10.9"
+regex = "=1.12.4"
+roxmltree = "=0.21.1"

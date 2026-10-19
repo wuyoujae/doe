@@ -1,0 +1,172 @@
+.ppt-forecast-scatter,
+.ppt-combo-chart,
+.ppt-bubble-chart,
+.ppt-stacked-area-chart,
+.ppt-radar-chart {
+  margin: 0;
+  overflow: hidden;
+  color: var(--yrkie-color-body);
+  background: transparent;
+  font-family: var(--font-sans-cn);
+  font-variant-numeric: tabular-nums;
+}
+
+.ppt-forecast-scatter,
+.ppt-combo-chart,
+.ppt-bubble-chart,
+.ppt-stacked-area-chart,
+.ppt-radar-chart {
+  display: flex;
+  flex-direction: column;
+}
+
+.ppt-business-chart__title {
+  margin: 0 0 6px;
+  flex: none;
+  font-size: var(--typography-h4-size);
+  font-style: italic;
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 1.08;
+}
+
+.ppt-radar-chart .ppt-business-chart__title {
+  text-align: center;
+}
+
+.ppt-business-chart__subtitle {
+  margin: 0 0 8px;
+  flex: none;
+  font-size: var(--typography-normal-size);
+  font-style: italic;
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 1.1;
+}
+
+.ppt-business-chart__svg {
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+}
+
+.ppt-radar-chart__legend {
+  margin: 0;
+  padding: 3px 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+  flex: none;
+  list-style: none;
+  color: var(--yrkie-color-body);
+  font-size: var(--typography-small-size);
+  line-height: 1.1;
+}
+
+.ppt-radar-chart__legend-item {
+  min-width: 0;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.ppt-radar-chart__legend-swatch {
+  width: 7px;
+  height: 7px;
+  flex: none;
+}
+
+.ppt-business-chart__grid {
+  stroke: var(--yrkie-grid-line);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-business-chart__axis {
+  stroke: var(--yrkie-color-body);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-business-chart__tick,
+.ppt-business-chart__category,
+.ppt-business-chart__value,
+.ppt-business-chart__note,
+.ppt-business-chart__bubble-label,
+.ppt-business-chart__radar-label {
+  fill: var(--yrkie-color-body);
+  font-family: var(--font-sans-cn);
+  font-size: var(--typography-normal-size);
+}
+
+.ppt-business-chart__legend {
+  fill: var(--yrkie-color-body);
+  font-family: var(--font-sans-cn);
+  font-size: var(--typography-small-size);
+}
+
+.ppt-business-chart__category,
+.ppt-business-chart__value,
+.ppt-business-chart__bubble-label {
+  text-anchor: middle;
+}
+
+.ppt-business-chart__point {
+  stroke: var(--yrkie-color-surface);
+  stroke-width: 1.5;
+}
+
+.ppt-business-chart__value-box {
+  fill: var(--yrkie-color-surface);
+  stroke: var(--yrkie-color-primary);
+  stroke-width: 1;
+}
+
+.ppt-business-chart__line {
+  fill: none;
+  stroke: var(--yrkie-color-body);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-business-chart__area {
+  stroke: none;
+}
+
+.ppt-business-chart__bubble-outline {
+  fill: none;
+  stroke: var(--yrkie-color-primary);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-business-chart__bubble-outline--dashed {
+  stroke-dasharray: 7 5;
+}
+
+.ppt-business-chart__panel-title {
+  fill: var(--yrkie-color-title);
+  font-size: var(--typography-h4-size);
+  font-style: italic;
+}
+
+.ppt-business-chart__panel-meta,
+.ppt-business-chart__panel-body {
+  fill: var(--yrkie-color-body);
+  font-size: var(--typography-normal-size);
+}
+
+.ppt-business-chart__radar-grid,
+.ppt-business-chart__radar-axis {
+  fill: none;
+  stroke: var(--yrkie-line-strong);
+  stroke-width: 1.25;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-business-chart__radar-point {
+  stroke: var(--yrkie-color-surface);
+  stroke-width: 1;
+}

@@ -1,0 +1,62 @@
+.schema-layout [data-typography-style="small"] {
+  font-size: var(--typography-small-size);
+  font-weight: var(--typography-small-weight);
+}
+
+.schema-layout [data-typography-style="normal"] {
+  font-size: var(--typography-normal-size);
+  font-weight: var(--typography-normal-weight);
+}
+
+.schema-layout [data-typography-style="large"] {
+  font-size: var(--typography-large-size);
+  font-weight: var(--typography-large-weight);
+}
+
+.schema-layout [data-typography-style="h4"] {
+  font-size: var(--typography-h4-size);
+  font-weight: var(--typography-h4-weight);
+}
+
+.schema-layout [data-typography-style="h3"] {
+  font-size: var(--typography-h3-size);
+  font-weight: var(--typography-h3-weight);
+}
+
+.schema-layout [data-typography-style="h2"] {
+  font-size: var(--typography-h2-size);
+  font-weight: var(--typography-h2-weight);
+}
+
+.schema-layout [data-typography-style="h1"] {
+  font-size: var(--typography-h1-size);
+  font-weight: var(--typography-h1-weight);
+}
+
+.schema-layout [data-typography-style="xl"] {
+  font-size: var(--typography-xl-size);
+  font-weight: var(--typography-xl-weight);
+}
+
+.schema-layout [data-typography-style="2xl"] {
+  font-size: var(--typography-2xl-size);
+  font-weight: var(--typography-2xl-weight);
+}
+
+.schema-layout [data-typography-style="3xl"] {
+  font-size: var(--typography-3xl-size);
+  font-weight: var(--typography-3xl-weight);
+}
+
+.schema-layout [data-typography-weight="regular"] {
+  font-weight: var(--yrkie-font-weight-regular) !important;
+}
+
+.schema-layout [data-typography-weight="semibold"] {
+  font-weight: var(--yrkie-font-weight-semibold) !important;
+}
+
+.schema-layout [data-typography-weight="bold"] {
+  font-weight: var(--yrkie-font-weight-bold) !important;
+}
+

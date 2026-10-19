@@ -1,0 +1,23 @@
+[package]
+name = "otherone-mcp"
+version = "0.6.0"
+edition = "2021"
+license = "MIT"
+readme = "../../README.md"
+documentation = "https://docs.rs/otherone-mcp"
+repository = "https://github.com/wuyoujae/otherone-agent"
+keywords = ["ai", "agent", "mcp"]
+categories = ["api-bindings", "asynchronous"]
+description = "MCP (Model Context Protocol) — 连接外部工具服务器的协议实现"
+
+[dependencies]
+tokio = { workspace = true }
+reqwest = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+async-trait = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+otherone-ai = { version = "0.6.0", path = "../otherone-ai" }
+otherone-tools = { version = "0.6.0", path = "../otherone-tools" }

@@ -1,0 +1,16 @@
+.component-stat,
+.component-text,
+.component-list,
+.component-quote {
+  padding: var(--component-padding);
+}
+
+.component-text,
+.component-list,
+.component-quote {
+  background: transparent;
+}
+
+.component-text,
+.component-list { padding-inline: 0; }
+

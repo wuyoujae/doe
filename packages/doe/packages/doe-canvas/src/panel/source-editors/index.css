@@ -1,0 +1,19 @@
+.content-side-sheet {
+  inset: 0 0 0 auto;
+  width: min(100%, 36rem);
+  height: 100dvh;
+  max-height: 100dvh;
+  border-radius: var(--work-panel-radius, 0.875rem) 0 0 var(--work-panel-radius, 0.875rem);
+}
+.content-side-sheet[open] { animation-name: content-drawer-enter; }
+@keyframes content-drawer-enter { from { transform: translateX(100%); } to { transform: translateX(0); } }
+.content-side-sheet .chart-content-body { display: flex; flex-direction: column; overflow: auto; }
+.content-side-sheet .chart-content-preview-pane { order: -1; flex: none; min-height: 16rem; height: 30dvh; border-left: 0; border-bottom: 1px solid var(--chart-border); padding: 1.25rem 1.5rem; }
+.content-side-sheet .chart-content-form-pane { overflow: visible; padding: 1.5rem; }
+.content-side-sheet .chart-content-header, .content-side-sheet .chart-content-footer { padding-inline: 1.5rem; }
+.chart-content-sheet .content-source-input { min-height: 10rem; font-family: var(--font-mono, monospace); tab-size: 4; }
+.chart-content-sheet[data-editor-type="code-block"] .content-source-input { min-height: 18rem; white-space: pre; overflow: auto; }
+.content-formula-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+@media (max-width: 47.5rem) {
+  .content-side-sheet { border-radius: 0; }
+}

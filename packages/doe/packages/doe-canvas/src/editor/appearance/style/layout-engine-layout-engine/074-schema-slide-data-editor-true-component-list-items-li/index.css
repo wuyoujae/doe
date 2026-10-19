@@ -1,0 +1,9 @@
+.schema-slide[data-editor="true"] .component-list__items li {
+  border-radius: 3px;
+  cursor: grab;
+}
+
+.schema-slide[data-editor="true"] .component-list__items li:active {
+  cursor: grabbing;
+}
+

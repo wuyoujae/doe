@@ -1,0 +1,203 @@
+{
+  "id": "yrkie-terracotta",
+  "label": "Terracotta · 陶土工坊",
+  "fonts": {
+    "latin": "Alexandria",
+    "cjk": "MiSans",
+    "stack": "\"Alexandria\", \"MiSans\", Arial, sans-serif",
+    "headingStack": "\"EB Garamond\", \"MiSans\", Georgia, serif",
+    "codeStack": "\"IBM Plex Mono\", \"MiSans\", Consolas, monospace"
+  },
+  "typography": {
+    "sizeModes": [
+      "compact",
+      "default",
+      "expanded"
+    ],
+    "weights": {
+      "regular": 300,
+      "semibold": 600,
+      "bold": 600
+    },
+    "styles": {
+      "small": {
+        "sizes": {
+          "compact": 9.5,
+          "default": 10.5,
+          "expanded": 11.5
+        },
+        "defaultWeight": "regular",
+        "allowedWeights": [
+          "regular"
+        ]
+      },
+      "normal": {
+        "sizes": {
+          "compact": 12.5,
+          "default": 13.5,
+          "expanded": 14.5
+        },
+        "defaultWeight": "regular",
+        "allowedWeights": [
+          "regular"
+        ]
+      },
+      "large": {
+        "sizes": {
+          "compact": 14.5,
+          "default": 15.5,
+          "expanded": 16.5
+        },
+        "defaultWeight": "regular",
+        "allowedWeights": [
+          "regular"
+        ]
+      },
+      "h4": {
+        "sizes": {
+          "compact": 14.5,
+          "default": 15.5,
+          "expanded": 16.5
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "h3": {
+        "sizes": {
+          "compact": 18,
+          "default": 20,
+          "expanded": 22
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "h2": {
+        "sizes": {
+          "compact": 21,
+          "default": 24,
+          "expanded": 27
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "h1": {
+        "sizes": {
+          "compact": 32,
+          "default": 36,
+          "expanded": 42
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "xl": {
+        "sizes": {
+          "compact": 45,
+          "default": 52,
+          "expanded": 59
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "2xl": {
+        "sizes": {
+          "compact": 65,
+          "default": 75,
+          "expanded": 85
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "3xl": {
+        "sizes": {
+          "compact": 97,
+          "default": 112.5,
+          "expanded": 129
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      }
+    },
+    "lineHeight": 1.4,
+    "letterSpacing": {
+      "body": "0",
+      "heading": "-0.025em",
+      "eyebrow": "0.06em"
+    },
+    "heroSizePt": 70
+  },
+  "radius": {
+    "canvas": "0.75rem",
+    "component": "0.75rem",
+    "pill": "999px",
+    "circle": "50%"
+  },
+  "colors": {
+    "primary": "#A14732",
+    "secondary": "#E7C8B8",
+    "title": "#723D2C",
+    "body": "#664C3D",
+    "auxiliary": "#84654F",
+    "dark": "#512D22",
+    "light": "#F5E9DC",
+    "surface": "#FCF3E8",
+    "softSurface": "#EEDAC7",
+    "onPrimary": "#FFF9F0",
+    "mask": "#3B211A",
+    "onImage": "#FFFFFF",
+    "studioStage": "#DEC9B8",
+    "chart": [
+      "#A14732",
+      "#6A6C40",
+      "#376F72",
+      "#845975",
+      "#887032"
+    ],
+    "code": {
+      "background": "#392A24",
+      "border": "#795343",
+      "text": "#F1E4D1",
+      "comment": "#C9AF97",
+      "string": "#D8CD99",
+      "number": "#A6D3BD",
+      "keyword": "#EBA78C",
+      "builtin": "#B9CADA",
+      "operator": "#E8D2BB"
+    }
+  },
+  "lineAlpha": {
+    "normal": 25,
+    "grid": 15,
+    "strong": 40
+  },
+  "shadow": {
+    "color": "#3B211A",
+    "softAlpha": 3,
+    "mediumAlpha": 7,
+    "strongAlpha": 11
+  },
+  "icon": {
+    "strokeWidth": 1.5
+  },
+  "heroReadingSurface": false
+}

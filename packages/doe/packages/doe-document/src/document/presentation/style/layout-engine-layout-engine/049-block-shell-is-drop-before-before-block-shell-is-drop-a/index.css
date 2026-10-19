@@ -1,0 +1,21 @@
+.block-shell.is-drop-before::before,
+.block-shell.is-drop-after::after {
+  position: absolute;
+  z-index: 20;
+  right: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 999px;
+  content: "";
+  background: var(--editor-blue);
+  box-shadow: 0 0 0 3px rgba(40, 120, 255, 0.13);
+}
+
+.block-shell.is-drop-before::before {
+  top: calc(var(--group-gap) * -0.5);
+}
+
+.block-shell.is-drop-after::after {
+  bottom: calc(var(--group-gap) * -0.5);
+}
+

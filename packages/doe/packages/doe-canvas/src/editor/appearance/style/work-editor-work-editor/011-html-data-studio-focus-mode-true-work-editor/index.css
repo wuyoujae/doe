@@ -1,0 +1,94 @@
+html[data-studio-focus-mode="true"] .work-editor {
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 178px;
+  background: var(--yrkie-color-studio-stage);
+}
+
+html[data-studio-focus-mode="true"] .work-editor__stage {
+  padding: 42px 20px 16px;
+  background: var(--yrkie-color-studio-stage);
+}
+
+html[data-studio-focus-mode="true"] .work-editor__canvas-frame {
+  width: min(96%, calc((100vh - 58px) * var(--doe-canvas-ratio, 16 / 9)));
+  border-color: rgba(255, 255, 255, 0.58);
+  box-shadow:
+    0 28px 70px rgba(29, 41, 119, 0.28),
+    0 4px 14px rgba(29, 41, 119, 0.18);
+}
+
+html[data-studio-focus-mode="true"] .work-editor__slide-settings {
+  top: 12px;
+  right: 16px;
+}
+
+html[data-studio-focus-mode="true"] .work-editor__filmstrip-shell {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 32px minmax(0, 1fr) 32px;
+  align-items: stretch;
+  gap: 10px;
+  min-height: 0;
+  padding: 12px 14px;
+  border-top: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--yrkie-color-studio-stage);
+  box-shadow: -12px 0 30px rgba(29, 41, 119, 0.12);
+}
+
+html[data-studio-focus-mode="true"] .work-editor__filmstrip {
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-height: 0;
+  overflow: hidden auto;
+  padding: 3px 5px 6px;
+  scrollbar-color: rgba(255, 255, 255, 0.46) transparent;
+}
+
+html[data-studio-focus-mode="true"] .work-editor__thumb,
+html[data-studio-focus-mode="true"] .work-editor__add {
+  flex: 0 0 auto;
+  width: 140px;
+}
+
+html[data-studio-focus-mode="true"] .work-editor__thumb-frame,
+html[data-studio-focus-mode="true"] .work-editor__add-frame {
+  width: 140px;
+}
+
+html[data-studio-focus-mode="true"] .work-editor__thumb-scale {
+  transform: scale(var(--doe-thumb-focus-scale, 0.109375));
+}
+
+html[data-studio-focus-mode="true"] .work-editor__thumb-number {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+html[data-studio-focus-mode="true"] .work-editor__thumb[aria-current="page"]
+  .work-editor__thumb-number {
+  color: #ffffff;
+}
+
+html[data-studio-focus-mode="true"] .work-editor__thumb[aria-current="page"]
+  .work-editor__thumb-frame {
+  box-shadow:
+    0 0 0 2px #ffffff,
+    0 0 0 4px rgba(255, 255, 255, 0.26),
+    0 8px 20px rgba(29, 41, 119, 0.22);
+}
+
+html[data-studio-focus-mode="true"] .work-editor__nav {
+  width: 32px;
+  height: 32px;
+  justify-self: center;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.13);
+  transform: rotate(90deg);
+}
+
+html[data-studio-focus-mode="true"] .work-editor__nav:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.66);
+  background: rgba(255, 255, 255, 0.22);
+}
+

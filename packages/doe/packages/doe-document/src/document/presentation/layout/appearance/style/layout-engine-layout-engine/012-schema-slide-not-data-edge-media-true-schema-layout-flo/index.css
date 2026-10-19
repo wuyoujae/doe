@@ -1,0 +1,87 @@
+.schema-slide:not([data-edge-media="true"])
+  .schema-layout
+  > .flow-block {
+  flex: 0 0 auto;
+}
+
+.schema-layout[data-density="compact"] {
+  /* Component padding follows typography density instead of staying at the
+     comfortable-card inset after the text has already stepped down. */
+  --component-padding: 10pt;
+  --metric-min-height: 84px;
+  --line-height: 1.34;
+}
+
+.schema-layout[data-density="tight"] {
+  --component-padding: 8pt;
+  --metric-min-height: 72px;
+  --line-height: 1.3;
+}
+
+.schema-layout:is([data-density="small-default"], [data-density="small-compact"], [data-density="minimum"], [data-density="minimum-final"], [data-density="minimum-expanded"], [data-density="micro"]) {
+  --component-padding: var(--space-6pt);
+  --metric-min-height: 72px;
+  --line-height: 1.26;
+}
+
+.schema-slide[data-edge-media="true"] .schema-layout {
+  display: block;
+  padding: 0;
+}
+
+.schema-slide[data-edge-media="true"]
+  .schema-layout
+  > .layout-group {
+  width: 100%;
+  height: 100%;
+}
+
+.schema-slide[data-edge-media="true"]
+  .layout-group__content[data-layout-variant="edge-media"] {
+  height: 100%;
+}
+
+.schema-slide[data-edge-media="true"]
+  [data-layout-region="content"] {
+  height: 100%;
+  overflow: hidden;
+}
+
+.schema-slide[data-edge-media="true"]
+  [data-layout-region="content"]
+  > :is(.layout-group__content, .block-content) {
+  height: 100%;
+  box-sizing: border-box;
+  align-content: start;
+  align-content: safe center;
+  padding: var(--page-padding);
+  padding-top: var(--page-top-padding, var(--page-padding));
+  padding-bottom: var(--page-bottom-padding);
+}
+
+.schema-slide[data-edge-media="true"]
+  [data-layout-region="content"]:not(.layout-group)
+  > .block-content {
+  display: grid;
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-content-align="start"]
+  > [data-layout-region="content"]
+  > :is(.layout-group__content, .block-content) {
+  align-content: start;
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-content-align="center"]
+  > [data-layout-region="content"]
+  > :is(.layout-group__content, .block-content) {
+  align-content: start;
+  align-content: safe center;
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-content-align="end"]
+  > [data-layout-region="content"]
+  > :is(.layout-group__content, .block-content) {
+  align-content: end;
+  align-content: safe end;
+}
+

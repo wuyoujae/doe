@@ -1,0 +1,17 @@
+/* Edge-media resizing is intentionally limited to the boundary between the
+   media track and the remaining content track. It never changes child layout
+   rules and it is excluded from layout measurements by absolute positioning. */
+.edge-media-divider {
+  position: absolute;
+  z-index: 14;
+  display: none;
+  padding: 0;
+  opacity: 0;
+  border: 0;
+  background: transparent;
+  outline: 0;
+  touch-action: none;
+  user-select: none;
+  transition: opacity 120ms ease;
+}
+

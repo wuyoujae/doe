@@ -1,0 +1,101 @@
+/* Original 2026-10-12 declarations retained for the extracted Work page. */
+
+.input-box {
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.2s;
+  box-shadow: 0 1px 12px var(--shadow-input);
+  overflow: visible;
+}
+
+.input-box:focus-within {
+  border-color: var(--border-focus);
+  box-shadow: 0 2px 18px var(--shadow-input);
+}
+
+.input-box textarea {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 15px;
+  resize: none;
+  outline: none;
+  height: auto;
+  min-height: 32px;
+  max-height: 180px;
+  overflow-y: auto;
+  line-height: 1.5;
+  padding-top: 4px;
+  transition: height 0.12s ease;
+}
+
+.input-box textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.input-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.icon-btn:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.send-btn {
+  background-color: var(--btn-primary-bg);
+  color: var(--text-inverse);
+}
+
+.send-btn:hover {
+  background-color: var(--btn-primary-hover);
+  color: var(--text-inverse);
+}
+
+.send-btn.disabled {
+  background-color: var(--border-color);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.send-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.send-hint {
+  color: var(--text-muted);
+  font-size: 11px;
+  white-space: nowrap;
+  user-select: none;
+}

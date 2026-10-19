@@ -1,0 +1,105 @@
+.edge-media-divider[data-orientation="vertical"] {
+  width: 24px;
+  transform: translateX(-50%);
+  cursor: col-resize;
+}
+
+.edge-media-divider[data-orientation="horizontal"] {
+  height: 24px;
+  transform: translateY(-50%);
+  cursor: row-resize;
+}
+
+.edge-media-divider__line {
+  position: absolute;
+  background: rgba(40, 120, 255, 0.72);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.78);
+  transition: background 120ms ease, box-shadow 120ms ease;
+}
+
+.edge-media-divider[data-orientation="vertical"]
+  .edge-media-divider__line {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+}
+
+.edge-media-divider[data-orientation="horizontal"]
+  .edge-media-divider__line {
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+.edge-media-divider:hover .edge-media-divider__line,
+.edge-media-divider:focus-visible .edge-media-divider__line,
+.edge-media-divider.is-active .edge-media-divider__line {
+  background: var(--editor-blue);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.9),
+    0 0 0 5px rgba(40, 120, 255, 0.13);
+}
+
+.edge-media-divider__readout,
+.edge-media-divider__status {
+  position: absolute;
+  display: none;
+  padding: 6px 9px;
+  color: #ffffff;
+  border-radius: 999px;
+  background: #203754;
+  box-shadow: 0 5px 16px rgba(23, 32, 51, 0.22);
+  font: 800 9pt/1 var(--font-sans-cn);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.edge-media-divider[data-orientation="vertical"]
+  :is(.edge-media-divider__readout, .edge-media-divider__status) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.edge-media-divider[data-orientation="horizontal"]
+  :is(.edge-media-divider__readout, .edge-media-divider__status) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.edge-media-divider:hover .edge-media-divider__readout,
+.edge-media-divider:focus-visible .edge-media-divider__readout,
+.edge-media-divider.is-active .edge-media-divider__readout {
+  display: block;
+}
+
+.edge-media-divider.is-limited
+  .edge-media-divider__readout {
+  display: none;
+}
+
+.edge-media-divider.is-limited:hover
+  .edge-media-divider__status,
+.edge-media-divider.is-limited:focus-visible
+  .edge-media-divider__status,
+.edge-media-divider.is-limited.is-active
+  .edge-media-divider__status {
+  display: block;
+  background: #b42318;
+}
+
+.edge-media-ratio-readout {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  color: #1e4f91;
+  border-radius: 999px;
+  background: var(--editor-blue-soft);
+  font: 800 9pt/1 var(--font-sans-cn);
+  white-space: nowrap;
+}
+

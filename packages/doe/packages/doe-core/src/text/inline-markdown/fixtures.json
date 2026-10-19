@@ -1,0 +1,13 @@
+[
+  {"source":"普通文字","text":"普通文字","runs":[]},
+  {"source":"第一行\\n第二行","text":"第一行\n第二行","runs":[]},
+  {"source":"保留**关键文字**和*斜体*","text":"保留关键文字和斜体","runs":[{"start":2,"end":6,"bold":true},{"start":7,"end":9,"italic":true}]},
+  {"source":"++下划线++ ==标记== ~~删除~~","text":"下划线 标记 删除","runs":[{"start":0,"end":3,"underline":true},{"start":4,"end":6,"mark":true},{"start":7,"end":9,"strike":true}]},
+  {"source":"**重点*也斜体***","text":"重点也斜体","runs":[{"start":0,"end":2,"bold":true},{"start":2,"end":5,"bold":true,"italic":true}]},
+  {"source":"***同一段***","text":"同一段","runs":[{"start":0,"end":3,"bold":true,"italic":true}]},
+  {"source":"😀**中文A**","text":"😀中文A","runs":[{"start":2,"end":5,"bold":true}]},
+  {"source":"**没有闭合 *仍然斜体*","text":"**没有闭合 仍然斜体","runs":[{"start":7,"end":11,"italic":true}]},
+  {"source":"snake_case 和 __加粗__ _斜体_","text":"snake_case 和 加粗 斜体","runs":[{"start":13,"end":15,"bold":true},{"start":16,"end":18,"italic":true}]},
+  {"source":"\\*原样\\* \\\\n","text":"*原样* \\n","runs":[]},
+  {"source":"<script>alert(1)</script>","text":"<script>alert(1)</script>","runs":[]}
+]

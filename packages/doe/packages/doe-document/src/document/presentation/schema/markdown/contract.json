@@ -1,0 +1,2933 @@
+{
+  "version": "2.1",
+  "components": {
+    "hero": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "title": {
+            "type": "string"
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "eyebrow": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "align": {
+            "type": "enum",
+            "values": [
+              "left",
+              "center",
+              "right"
+            ]
+          }
+        },
+        "required": [
+          "title"
+        ]
+      },
+      "body": "title"
+    },
+    "heading": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "text": {
+            "type": "string"
+          },
+          "variant": {
+            "type": "enum",
+            "values": [
+              "section",
+              "plain",
+              "display"
+            ]
+          },
+          "level": {
+            "type": "enum",
+            "values": [
+              1,
+              2,
+              3
+            ],
+            "default": 1
+          },
+          "kicker": {
+            "type": "string"
+          },
+          "align": {
+            "type": "enum",
+            "values": [
+              "left",
+              "center",
+              "right"
+            ]
+          }
+        },
+        "required": [
+          "text"
+        ]
+      },
+      "body": "text",
+      "shorthand": "level"
+    },
+    "text": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "text": {
+            "type": "string"
+          },
+          "align": {
+            "type": "enum",
+            "values": [
+              "left",
+              "center",
+              "right"
+            ]
+          }
+        },
+        "required": [
+          "text"
+        ]
+      },
+      "body": "text"
+    },
+    "quote": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "text": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      },
+      "body": "text"
+    },
+    "notice": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "text": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      },
+      "body": "text"
+    },
+    "code-block": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "language": {
+            "type": "enum",
+            "values": [
+              "python",
+              "javascript",
+              "typescript",
+              "json",
+              "html",
+              "css",
+              "sql",
+              "shell",
+              "text"
+            ],
+            "default": "text"
+          },
+          "wrap": {
+            "type": "boolean",
+            "default": true
+          }
+        },
+        "required": [
+          "code"
+        ]
+      },
+      "body": "code",
+      "shorthand": "language"
+    },
+    "list": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "title": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "item": {
+              "type": "string"
+            },
+            "min": 1,
+            "max": 100
+          },
+          "itemLayout": {
+            "type": "enum",
+            "values": [
+              "auto",
+              "stack",
+              "grid"
+            ],
+            "default": "auto"
+          },
+          "itemColumns": {
+            "type": "enum",
+            "values": [
+              "auto",
+              1,
+              2
+            ],
+            "default": "auto"
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "ordered-list": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "title": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "item": {
+              "type": "string"
+            },
+            "min": 1,
+            "max": 100
+          },
+          "itemLayout": {
+            "type": "enum",
+            "values": [
+              "auto",
+              "stack",
+              "grid"
+            ],
+            "default": "auto"
+          },
+          "itemColumns": {
+            "type": "enum",
+            "values": [
+              "auto",
+              1,
+              2
+            ],
+            "default": "auto"
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "todo-list": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "title": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "item": {
+              "type": "object",
+              "fields": {
+                "text": {
+                  "type": "string"
+                },
+                "checked": {
+                  "type": "boolean",
+                  "default": false
+                }
+              },
+              "required": [
+                "text"
+              ]
+            },
+            "min": 1,
+            "max": 100
+          },
+          "itemLayout": {
+            "type": "enum",
+            "values": [
+              "auto",
+              "stack",
+              "grid"
+            ],
+            "default": "auto"
+          },
+          "itemColumns": {
+            "type": "enum",
+            "values": [
+              "auto",
+              1,
+              2
+            ],
+            "default": "auto"
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "stat": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "value": {
+            "type": "scalar"
+          },
+          "label": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "body": "value"
+    },
+    "media": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "src": {
+            "type": "string"
+          },
+          "alt": {
+            "type": "string",
+            "default": ""
+          },
+          "fit": {
+            "type": "enum",
+            "values": [
+              "natural",
+              "contain",
+              "cover",
+              "fill"
+            ]
+          },
+          "position": {
+            "type": "position"
+          },
+          "aspectRatio": {
+            "type": "enum",
+            "values": [
+              "1:1",
+              "4:3",
+              "3:4",
+              "16:9",
+              "9:16"
+            ]
+          }
+        },
+        "required": [
+          "src"
+        ]
+      },
+      "body": "src"
+    },
+    "image-text": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "imageSize": {"type":"enum","values":["compact","full"]},
+          "imageFit": {"type":"enum","values":["contain","cover"]},
+          "imageAspectRatio": {"type":"enum","values":["1:1","4:3","3:4","16:9"]},
+          "surface": {"type":"enum","values":["none","soft"]},
+          "src": {
+            "type": "string"
+          },
+          "alt": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "src",
+          "title",
+          "text"
+        ]
+      }
+    },
+    "icon-text": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "icon": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "icon",
+          "title",
+          "text"
+        ]
+      }
+    },
+    "question-card": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "title": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "index": {
+            "type": "scalar"
+          },
+          "icon": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title"
+        ]
+      },
+      "body": "title"
+    },
+    "contents": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "imageSize": {"type":"enum","values":["compact","full"]},
+          "imageFit": {"type":"enum","values":["contain","cover"]},
+          "imageAspectRatio": {"type":"enum","values":["1:1","4:3","3:4","16:9"]},
+          "surface": {"type":"enum","values":["none","soft"]},
+          "orientation": {
+            "type": "enum",
+            "values": [
+              "vertical",
+              "horizontal"
+            ],
+            "default": "vertical"
+          },
+          "staggered": {
+            "type": "boolean",
+            "default": true
+          },
+          "connectors": {
+            "type": "boolean",
+            "default": true
+          },
+          "presentation": {
+            "type": "enum",
+            "values": [
+              "cards:filled",
+              "cards:filled-icon",
+              "cards:outline",
+              "cards:side-rule",
+              "cards:top-rule",
+              "cards:top-icon",
+              "cards:connected",
+              "cards:connected-icon",
+              "cards:leaf",
+              "cards:quote",
+              "cards:bubble",
+              "dot-card",
+              "dot-list",
+              "numbered-parallelogram",
+              "numbered-pill",
+              "numbered-chevron",
+              "ascending-bar",
+              "ascending-arrow",
+              "ascending-numbered",
+              "numbered-top-rule",
+              "numbered-inline",
+              "timeline-numbered",
+              "timeline-dots",
+              "timeline-dot-cards",
+              "alternating",
+              "icon-horizontal",
+              "image-text",
+              "icon-text",
+              "list:unordered",
+              "list:ordered",
+              "shape:semicircle",
+              "shape:petals",
+              "shape:cycle-arrows",
+              "shape:full-circle",
+              "shape:ring",
+              "shape:stairs",
+              "shape:pyramid",
+              "shape:inverted-pyramid",
+              "capability",
+              "numbered",
+              "question",
+              "quotation",
+              "columns",
+              "metrics"
+            ],
+            "default": "cards:filled"
+          },
+          "items": {
+            "type": "array",
+            "item": {
+              "type": "object",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                },
+                "src": {
+                  "type": "string"
+                },
+                "alt": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "scalar"
+                },
+                "bullets": {
+                  "type": "array",
+                  "item": {
+                    "type": "string"
+                  },
+                  "min": 0,
+                  "max": 100
+                }
+              },
+              "required": []
+            },
+            "min": 1,
+            "max": 12
+          },
+          "title": {
+            "type": "string"
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "itemLayout": {
+            "type": "enum",
+            "values": [
+              "auto",
+              "stack",
+              "grid"
+            ],
+            "default": "auto"
+          },
+          "itemColumns": {
+            "type": "enum",
+            "values": [
+              "auto",
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            "default": "auto"
+          },
+          "columnPreference": {
+            "type": "enum",
+            "values": [
+              "auto",
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            "default": "auto"
+          }
+        },
+        "required": [
+          "items"
+        ]
+      },
+      "shorthand": "presentation"
+    },
+    "item-cards": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "variant": {
+            "type": "enum",
+            "values": [
+              "filled",
+              "filled-icon",
+              "outline",
+              "side-rule",
+              "top-rule",
+              "top-icon",
+              "connected",
+              "connected-icon",
+              "leaf",
+              "quote",
+              "bubble"
+            ],
+            "default": "filled"
+          },
+          "items": {
+            "type": "array",
+            "item": {
+              "type": "object",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            },
+            "min": 1,
+            "max": 12
+          },
+          "itemLayout": {
+            "type": "enum",
+            "values": [
+              "auto",
+              "stack",
+              "grid"
+            ],
+            "default": "auto"
+          },
+          "itemColumns": {
+            "type": "enum",
+            "values": [
+              "auto",
+              1,
+              2,
+              3,
+              4
+            ],
+            "default": "auto"
+          }
+        },
+        "required": [
+          "items"
+        ]
+      },
+      "shorthand": "variant"
+    },
+    "3d-funnel": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "items": {
+            "type": "array",
+            "min": 1,
+            "max": 4,
+            "item": {
+              "type": "object",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "shape-contents": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "variant": {
+            "type": "enum",
+            "values": [
+              "semicircle",
+              "petals",
+              "cycle-arrows",
+              "full-circle",
+              "ring",
+              "stairs",
+              "pyramid",
+              "inverted-pyramid"
+            ],
+            "default": "semicircle"
+          },
+          "items": {
+            "type": "array",
+            "item": {
+              "type": "object",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            },
+            "min": 2,
+            "max": 12
+          }
+        },
+        "required": [
+          "items"
+        ]
+      },
+      "shorthand": "variant"
+    },
+    "capability-cards": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "title": {
+            "type": "string"
+          },
+          "content": {
+            "type": "object",
+            "fields": {
+              "items": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "icon": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "text"
+                  ]
+                },
+                "min": 1,
+                "max": 6
+              }
+            },
+            "required": [
+              "items"
+            ]
+          },
+          "itemLayout": {
+            "type": "enum",
+            "values": [
+              "auto",
+              "stack",
+              "grid"
+            ],
+            "default": "auto"
+          },
+          "itemColumns": {
+            "type": "enum",
+            "values": [
+              "auto",
+              1,
+              2,
+              3,
+              4
+            ],
+            "default": "auto"
+          }
+        },
+        "required": []
+      }
+    },
+    "numbered-icon-cards": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "title": {
+            "type": "string"
+          },
+          "content": {
+            "type": "object",
+            "fields": {
+              "items": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "icon": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "text"
+                  ]
+                },
+                "min": 2,
+                "max": 6
+              }
+            },
+            "required": [
+              "items"
+            ]
+          },
+          "itemLayout": {
+            "type": "enum",
+            "values": [
+              "auto",
+              "stack",
+              "grid"
+            ],
+            "default": "auto"
+          },
+          "itemColumns": {
+            "type": "enum",
+            "values": [
+              "auto",
+              1,
+              2,
+              3,
+              4
+            ],
+            "default": "auto"
+          }
+        },
+        "required": []
+      }
+    },
+    "table": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "content": {
+            "type": "object",
+            "fields": {
+              "columns": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "header": {
+                      "type": "string"
+                    },
+                    "align": {
+                      "type": "enum",
+                      "values": [
+                        "left",
+                        "center",
+                        "right"
+                      ]
+                    },
+                    "locale": {
+                      "type": "string"
+                    },
+                    "protectedTerms": {
+                      "type": "array",
+                      "item": {
+                        "type": "string"
+                      },
+                      "min": 0,
+                      "max": 100
+                    }
+                  },
+                  "required": [
+                    "header"
+                  ]
+                },
+                "min": 1,
+                "max": 12
+              },
+              "rows": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "cells": {
+                      "type": "array",
+                      "item": {
+                        "type": "union",
+                        "choices": [
+                          {
+                            "type": "scalar"
+                          },
+                          {
+                            "type": "object",
+                            "fields": {
+                              "text": {
+                                "type": "string"
+                              },
+                              "emphasis": {
+                                "type": "enum",
+                                "values": [
+                                  "muted",
+                                  "highlight"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "text"
+                            ]
+                          }
+                        ]
+                      },
+                      "min": 1,
+                      "max": 12
+                    }
+                  },
+                  "required": [
+                    "cells"
+                  ]
+                },
+                "min": 1,
+                "max": 100
+              }
+            },
+            "required": [
+              "columns",
+              "rows"
+            ]
+          },
+          "ariaLabel": {
+            "type": "string"
+          },
+          "borderStyle": {
+            "type": "enum",
+            "values": [
+              "grid",
+              "none",
+              "three-line"
+            ],
+            "default": "grid"
+          },
+          "semanticWrap": {
+            "type": "union",
+            "choices": [
+              {
+                "type": "enum",
+                "values": [
+                  false
+                ]
+              },
+              {
+                "type": "object",
+                "fields": {
+                  "locale": {
+                    "type": "string"
+                  },
+                  "protectedTerms": {
+                    "type": "array",
+                    "item": {
+                      "type": "string"
+                    },
+                    "min": 0,
+                    "max": 100
+                  }
+                },
+                "required": []
+              }
+            ]
+          }
+        },
+        "required": []
+      }
+    },
+    "grouped-bar-chart": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "content": {
+            "type": "object",
+            "fields": {
+              "categories": {
+                "type": "array",
+                "item": {
+                  "type": "string"
+                },
+                "min": 1,
+                "max": 100
+              },
+              "series": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "item": {
+                        "type": "number"
+                      },
+                      "min": 1,
+                      "max": 100
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "data"
+                  ]
+                },
+                "min": 1,
+                "max": 100
+              },
+              "valuePrefix": {
+                "type": "string"
+              },
+              "valueSuffix": {
+                "type": "string"
+              },
+              "minValue": {
+                "type": "number"
+              },
+              "maxValue": {
+                "type": "number"
+              },
+              "tickInterval": {
+                "type": "number",
+                "minExclusive": 0
+              },
+              "includeZero": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "categories",
+              "series"
+            ]
+          },
+          "showLegend": {
+            "type": "boolean",
+            "default": true
+          },
+          "subtitle": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    "line-chart": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "content": {
+            "type": "object",
+            "fields": {
+              "categories": {
+                "type": "array",
+                "item": {
+                  "type": "string"
+                },
+                "min": 1,
+                "max": 100
+              },
+              "series": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "item": {
+                        "type": "number"
+                      },
+                      "min": 1,
+                      "max": 100
+                    },
+                    "labels": {
+                      "type": "array",
+                      "item": {
+                        "type": "object",
+                        "fields": {
+                          "index": {
+                            "type": "integer",
+                            "min": 0
+                          },
+                          "text": {
+                            "type": "scalar"
+                          }
+                        },
+                        "required": [
+                          "index"
+                        ]
+                      },
+                      "min": 0,
+                      "max": 100
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "data"
+                  ]
+                },
+                "min": 1,
+                "max": 100
+              },
+              "valuePrefix": {
+                "type": "string"
+              },
+              "valueSuffix": {
+                "type": "string"
+              },
+              "minValue": {
+                "type": "number"
+              },
+              "maxValue": {
+                "type": "number"
+              },
+              "tickInterval": {
+                "type": "number",
+                "minExclusive": 0
+              },
+              "includeZero": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "categories",
+              "series"
+            ]
+          },
+          "showLegend": {
+            "type": "boolean",
+            "default": true
+          },
+          "smooth": {
+            "type": "boolean",
+            "default": true
+          }
+        },
+        "required": []
+      }
+    },
+    "stacked-bar-chart": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "content": {
+            "type": "object",
+            "fields": {
+              "categories": {
+                "type": "array",
+                "item": {
+                  "type": "string"
+                },
+                "min": 1,
+                "max": 100
+              },
+              "series": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "item": {
+                        "type": "number"
+                      },
+                      "min": 1,
+                      "max": 100
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "data"
+                  ]
+                },
+                "min": 1,
+                "max": 100
+              },
+              "valuePrefix": {
+                "type": "string"
+              },
+              "valueSuffix": {
+                "type": "string"
+              },
+              "minValue": {
+                "type": "number"
+              },
+              "maxValue": {
+                "type": "number"
+              },
+              "tickInterval": {
+                "type": "number",
+                "minExclusive": 0
+              },
+              "includeZero": {
+                "type": "boolean"
+              },
+              "showYAxis": {
+                "type": "boolean",
+                "default": false
+              },
+              "showValues": {
+                "type": "boolean",
+                "default": true
+              },
+              "legendReversed": {
+                "type": "boolean",
+                "default": false
+              },
+              "annotation": {
+                "type": "object",
+                "fields": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "from": {
+                    "type": "integer",
+                    "min": 0
+                  },
+                  "to": {
+                    "type": "integer",
+                    "min": 0
+                  }
+                },
+                "required": [
+                  "label"
+                ]
+              }
+            },
+            "required": [
+              "categories",
+              "series"
+            ]
+          },
+          "showLegend": {
+            "type": "boolean",
+            "default": true
+          },
+          "subtitle": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    "radar-chart": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "content": {
+            "type": "object",
+            "fields": {
+              "axes": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "max": {
+                      "type": "number",
+                      "minExclusive": 0
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "max"
+                  ]
+                },
+                "min": 3,
+                "max": 8
+              },
+              "datasets": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "values": {
+                      "type": "array",
+                      "item": {
+                        "type": "number"
+                      },
+                      "min": 3,
+                      "max": 8
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "values"
+                  ]
+                },
+                "min": 1,
+                "max": 3
+              }
+            },
+            "required": [
+              "axes",
+              "datasets"
+            ]
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "showLegend": {
+            "type": "boolean",
+            "default": true
+          }
+        },
+        "required": []
+      }
+    },
+    "risk-matrix": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "content": {
+            "type": "object",
+            "fields": {
+              "items": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "x": {
+                      "type": "number",
+                      "min": 0,
+                      "max": 1
+                    },
+                    "y": {
+                      "type": "number",
+                      "min": 0,
+                      "max": 1
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "x",
+                    "y"
+                  ]
+                },
+                "min": 1,
+                "max": 100
+              },
+              "xLabel": {
+                "type": "string"
+              },
+              "yLabel": {
+                "type": "string"
+              },
+              "priorityZone": {
+                "type": "object",
+                "fields": {
+                  "x": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  },
+                  "width": {
+                    "type": "number"
+                  },
+                  "height": {
+                    "type": "number"
+                  },
+                  "label": {
+                    "type": "string"
+                  },
+                  "labelLines": {
+                    "type": "array",
+                    "item": {
+                      "type": "string"
+                    },
+                    "min": 0,
+                    "max": 100
+                  }
+                },
+                "required": [
+                  "x",
+                  "y",
+                  "width",
+                  "height"
+                ]
+              }
+            },
+            "required": [
+              "items"
+            ]
+          },
+          "subtitle": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    "waterfall-chart": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "content": {
+            "type": "object",
+            "fields": {
+              "items": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "number"
+                    },
+                    "type": {
+                      "type": "enum",
+                      "values": [
+                        "change",
+                        "total"
+                      ],
+                      "default": "change"
+                    },
+                    "connectToNext": {
+                      "type": "boolean"
+                    },
+                    "showValue": {
+                      "type": "boolean"
+                    },
+                    "valuePosition": {
+                      "type": "enum",
+                      "values": [
+                        "inside",
+                        "above",
+                        "badge"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "value"
+                  ]
+                },
+                "min": 2,
+                "max": 100
+              },
+              "valuePrefix": {
+                "type": "string"
+              },
+              "valueSuffix": {
+                "type": "string"
+              },
+              "minValue": {
+                "type": "number"
+              },
+              "maxValue": {
+                "type": "number"
+              },
+              "tickInterval": {
+                "type": "number",
+                "minExclusive": 0
+              },
+              "includeZero": {
+                "type": "boolean"
+              },
+              "showYAxis": {
+                "type": "boolean"
+              },
+              "showValues": {
+                "type": "boolean"
+              },
+              "showChangeSigns": {
+                "type": "boolean"
+              },
+              "staggerLabels": {
+                "type": "boolean"
+              },
+              "footnote": {
+                "type": "string"
+              },
+              "callouts": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "index": {
+                      "type": "integer",
+                      "min": 0
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "position": {
+                      "type": "enum",
+                      "values": [
+                        "above",
+                        "below"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "index",
+                    "text"
+                  ]
+                },
+                "min": 0,
+                "max": 100
+              },
+              "comparisons": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "from": {
+                      "type": "integer",
+                      "min": 0
+                    },
+                    "to": {
+                      "type": "integer",
+                      "min": 0
+                    },
+                    "label": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "from",
+                    "to",
+                    "label"
+                  ]
+                },
+                "min": 0,
+                "max": 100
+              }
+            },
+            "required": [
+              "items"
+            ]
+          },
+          "subtitle": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    "donut-chart": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "content": {
+            "type": "object",
+            "fields": {
+              "items": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "number",
+                      "min": 0
+                    },
+                    "percentLabel": {
+                      "type": "string"
+                    },
+                    "badge": {
+                      "type": "string"
+                    },
+                    "primary": {
+                      "type": "boolean"
+                    },
+                    "valueLabel": {
+                      "type": "union",
+                      "choices": [
+                        {
+                          "type": "enum",
+                          "values": [
+                            false
+                          ]
+                        },
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "detailLabel": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "value"
+                  ]
+                },
+                "min": 2,
+                "max": 6
+              },
+              "variant": {
+                "type": "enum",
+                "values": [
+                  "standard",
+                  "compact",
+                  "hero"
+                ],
+                "default": "standard"
+              },
+              "showLegend": {
+                "type": "boolean",
+                "default": true
+              },
+              "center": {
+                "type": "object",
+                "fields": {
+                  "title": {
+                    "type": "union",
+                    "choices": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "array",
+                        "item": {
+                          "type": "string"
+                        },
+                        "min": 0,
+                        "max": 100
+                      }
+                    ]
+                  },
+                  "value": {
+                    "type": "scalar"
+                  },
+                  "eyebrow": {
+                    "type": "string"
+                  },
+                  "subtitle": {
+                    "type": "union",
+                    "choices": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "array",
+                        "item": {
+                          "type": "string"
+                        },
+                        "min": 0,
+                        "max": 100
+                      }
+                    ]
+                  }
+                },
+                "required": []
+              },
+              "tag": {
+                "type": "string"
+              },
+              "footerLines": {
+                "type": "array",
+                "item": {
+                  "type": "string"
+                },
+                "min": 0,
+                "max": 100
+              },
+              "footnotes": {
+                "type": "array",
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "align": {
+                      "type": "enum",
+                      "values": [
+                        "left",
+                        "right"
+                      ]
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "lines": {
+                      "type": "array",
+                      "item": {
+                        "type": "string"
+                      },
+                      "min": 0,
+                      "max": 100
+                    }
+                  },
+                  "required": []
+                },
+                "min": 0,
+                "max": 100
+              },
+              "valuePrefix": {
+                "type": "string"
+              },
+              "valueSuffix": {
+                "type": "string"
+              },
+              "maximumFractionDigits": {
+                "type": "enum",
+                "values": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              }
+            },
+            "required": [
+              "items"
+            ]
+          }
+        },
+        "required": []
+      }
+    },
+    "math-formula": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "content": {
+            "type": "object",
+            "fields": {
+              "formula": {
+                "type": "string"
+              },
+              "display": {
+                "type": "boolean",
+                "default": true
+              },
+              "align": {
+                "type": "enum",
+                "values": [
+                  "left",
+                  "center",
+                  "right"
+                ]
+              }
+            },
+            "required": [
+              "formula"
+            ]
+          }
+        },
+        "required": []
+      },
+      "body": "formula"
+    },
+    "concentric-circles": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "items": {
+            "type": "array",
+            "min": 1,
+            "max": 4,
+            "item": {
+              "type": "object",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "layered-funnel": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "items": {
+            "type": "array",
+            "min": 1,
+            "max": 4,
+            "item": {
+              "type": "object",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "folded-arrow": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "items": {
+            "type": "array",
+            "min": 1,
+            "max": 4,
+            "item": {
+              "type": "object",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "wave-arrow": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "items": {
+            "type": "array",
+            "min": 3,
+            "max": 3,
+            "item": {
+              "type": "object",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "layered-cube": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "items": {
+            "type": "array",
+            "min": 1,
+            "max": 4,
+            "item": {
+              "type": "object",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "double-ring": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "items": {
+            "type": "array",
+            "min": 2,
+            "max": 6,
+            "item": {
+              "type": "object",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "side": {
+                  "type": "enum",
+                  "values": [
+                    "left",
+                    "right"
+                  ]
+                },
+                "icon": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "droplet-process": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "items": {
+            "type": "array",
+            "min": 1,
+            "max": 5,
+            "item": {
+              "type": "object",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "mind-map": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "content": {
+            "type": "object",
+            "fields": {
+              "items": {
+                "type": "array",
+                "min": 1,
+                "max": 40,
+                "item": {
+                  "type": "object",
+                  "fields": {
+                    "level": {
+                      "type": "integer",
+                      "min": 0,
+                      "max": 5
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "icon": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "level",
+                    "title",
+                    "text"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "items"
+            ]
+          }
+        },
+        "required": [
+          "content"
+        ]
+      }
+    },
+    "serpentine-process": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "items": {
+            "type": "array",
+            "min": 1,
+            "max": 6,
+            "item": {
+              "type": "object",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "recycling-arrows": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "items": {
+            "type": "array",
+            "min": 3,
+            "max": 3,
+            "item": {
+              "type": "object",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "vertical-progress": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "items": {
+            "type": "array",
+            "min": 1,
+            "max": 4,
+            "item": {
+              "type": "object",
+              "fields": {
+                "text": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "number",
+                  "min": 0,
+                  "max": 100
+                }
+              },
+              "required": [
+                "value",
+                "text"
+              ]
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "icon-columns": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "items": {
+            "type": "array",
+            "min": 1,
+            "max": 4,
+            "item": {
+              "type": "object",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "badge-cards": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "items": {
+            "type": "array",
+            "min": 1,
+            "max": 4,
+            "item": {
+              "type": "object",
+              "fields": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    "text-panel": {
+      "schema": {
+        "type": "object",
+        "fields": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      },
+      "body": "text"
+    }
+  },
+  "group": {
+    "type": "object",
+    "fields": {
+      "variant": {
+        "type": "enum",
+        "values": [
+          "auto",
+          "row",
+          "stack",
+          "columns",
+          "composition",
+          "grid",
+          "auto-grid",
+          "edge-media"
+        ],
+        "default": "auto"
+      },
+      "direction": {
+        "type": "enum",
+        "values": [
+          "auto",
+          "row",
+          "stack"
+        ]
+      },
+      "ratio": {
+        "type": "enum",
+        "values": [
+          "auto",
+          "balanced",
+          "primary-first",
+          "primary-second"
+        ]
+      },
+      "columns": {
+        "type": "enum",
+        "values": [
+          "auto",
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "maxColumns": {
+        "type": "integer",
+        "min": 1,
+        "max": 6
+      },
+      "align": {
+        "type": "enum",
+        "values": [
+          "start",
+          "center",
+          "end",
+          "stretch"
+        ]
+      },
+      "region": {
+        "type": "enum",
+        "values": [
+          "content",
+          "media"
+        ]
+      },
+      "mediaPosition": {
+        "type": "enum",
+        "values": [
+          "left",
+          "right",
+          "top",
+          "bottom"
+        ],
+        "default": "left"
+      },
+      "mediaRatio": {
+        "type": "number",
+        "min": 0.28,
+        "max": 0.58
+      },
+      "mediaShape": {
+        "type": "enum",
+        "values": [
+          "straight",
+          "fade",
+          "diagonal",
+          "circle",
+          "inner-circle"
+        ],
+        "default": "straight"
+      },
+      "contentAlign": {
+        "type": "enum",
+        "values": [
+          "start",
+          "center",
+          "end"
+        ],
+        "default": "center"
+      }
+    },
+    "required": []
+  },
+  "slide": {
+    "type": "object",
+    "fields": {
+      "preset": {
+        "type": "enum",
+        "values": [
+          "flow",
+          "narrative",
+          "balanced",
+          "dashboard",
+          "edge-media"
+        ],
+        "default": "flow"
+      },
+      "background": {
+        "type": "object",
+        "fields": {
+          "src": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean",
+            "default": true
+          },
+          "fit": {
+            "type": "enum",
+            "values": [
+              "cover",
+              "contain"
+            ],
+            "default": "contain"
+          },
+          "position": {
+            "type": "position"
+          },
+          "contentAlign": {
+            "type": "enum",
+            "values": [
+              "left",
+              "center",
+              "right"
+            ],
+            "default": "center"
+          },
+          "contentVerticalAlign": {
+            "type": "enum",
+            "values": [
+              "top",
+              "center",
+              "bottom"
+            ],
+            "default": "center"
+          },
+          "contentWidth": {
+            "type": "number",
+            "min": 0.2,
+            "max": 1
+          },
+          "textSurface": {
+            "type": "enum",
+            "values": [
+              "auto",
+              "none"
+            ]
+          },
+          "foreground": {
+            "type": "enum",
+            "values": [
+              "light",
+              "dark"
+            ]
+          },
+          "overlay": {
+            "type": "union",
+            "choices": [
+              {
+                "type": "enum",
+                "values": [
+                  false
+                ]
+              },
+              {
+                "type": "object",
+                "fields": {
+                  "opacity": {
+                    "type": "number",
+                    "min": 0,
+                    "max": 0.9
+                  },
+                  "direction": {
+                    "type": "enum",
+                    "values": [
+                      "to-right",
+                      "to-left",
+                      "to-bottom",
+                      "to-top"
+                    ]
+                  }
+                },
+                "required": []
+              }
+            ]
+          }
+        },
+        "required": [
+          "src"
+        ]
+      },
+      "logo": {
+        "type": "string"
+      }
+    },
+    "required": []
+  },
+  "leafLayout": {
+    "type": "object",
+    "fields": {
+      "span": {
+        "type": "enum",
+        "values": [
+          "auto",
+          "full",
+          "half"
+        ],
+        "default": "auto"
+      },
+      "region": {
+        "type": "enum",
+        "values": [
+          "content",
+          "media"
+        ]
+      }
+    },
+    "required": []
+  },
+  "deck": {
+    "type": "object",
+    "fields": {
+      "title": {
+        "type": "string",
+        "default": "Yrkie 幻灯片"
+      },
+      "pageNumber": {
+        "type": "boolean",
+        "default": true
+      },
+      "pageNumberFormat": {
+        "type": "enum",
+        "values": [
+          "number",
+          "fraction"
+        ],
+        "default": "number"
+      },
+      "theme": {
+        "type": "enum",
+        "values": [
+          "yrkie-theme",
+          "yrkie-violet",
+          "yrkie-drak",
+          "yrkie-ledger",
+          "yrkie-sunburst",
+          "yrkie-atelier",
+          "yrkie-coast",
+          "yrkie-noir",
+          "yrkie-botanical",
+          "yrkie-swiss",
+          "yrkie-blueprint",
+          "yrkie-terracotta",
+          "yrkie-aurora",
+          "yrkie-rose",
+          "yrkie-cobalt",
+          "yrkie-sage",
+          "yrkie-copper",
+          "yrkie-citrus",
+          "yrkie-obsidian",
+          "yrkie-vermilion"
+        ],
+        "default": "yrkie-theme"
+      },
+      "logo": {
+        "type": "string"
+      }
+    },
+    "required": []
+  },
+  "aliases": {
+    "item": "items",
+    "column": "columns",
+    "row": "rows",
+    "axis": "axes",
+    "dataset": "datasets",
+    "label": "labels",
+    "callout": "callouts",
+    "comparison": "comparisons",
+    "footnote": "footnotes",
+    "cell": "cells"
+  },
+  "authoring": {
+    "names": {
+      "hero": "title-group",
+      "heading": "section-heading",
+      "text": "text-paragraph",
+      "quote": "quote",
+      "notice": "icon-callout",
+      "code-block": "code-block",
+      "list": "bullets",
+      "ordered-list": "numbered-list",
+      "todo-list": "checklist",
+      "stat": "metric",
+      "media": "image",
+      "image-text": "image-caption",
+      "icon-text": "icon-caption",
+      "question-card": "question",
+      "contents": "layout",
+      "item-cards": "cards",
+      "shape-contents": "diagram",
+      "3d-funnel": "horizontal-3d-funnel",
+      "capability-cards": "features",
+      "numbered-icon-cards": "numbered-features",
+      "table": "data-table",
+      "grouped-bar-chart": "grouped-bar-chart",
+      "line-chart": "line-chart",
+      "stacked-bar-chart": "stacked-bar-chart",
+      "radar-chart": "radar-chart",
+      "risk-matrix": "risk-matrix",
+      "waterfall-chart": "waterfall-chart",
+      "donut-chart": "donut-chart",
+      "math-formula": "math-formula",
+      "concentric-circles": "concentric-target",
+      "layered-funnel": "vertical-3d-funnel",
+      "folded-arrow": "folded-rising-arrow",
+      "wave-arrow": "wave-rising-arrow",
+      "layered-cube": "layered-3d-cube",
+      "double-ring": "interlocking-3d-rings",
+      "droplet-process": "droplet-arrow-steps",
+      "mind-map": "tree-mind-map",
+      "serpentine-process": "serpentine-steps",
+      "recycling-arrows": "folded-three-arrow-cycle",
+      "vertical-progress": "vertical-percentage-bars",
+      "icon-columns": "large-icon-items",
+      "badge-cards": "staggered-arrow-cards",
+      "text-panel": "filled-text-panel"
+    },
+    "styles": {
+      "contents": {
+        "cards": "cards:filled",
+        "cards-icons": "cards:filled-icon",
+        "cards-outline": "cards:outline",
+        "cards-left-accent": "cards:side-rule",
+        "cards-top-accent": "cards:top-rule",
+        "cards-badge": "cards:top-icon",
+        "cards-connected": "cards:connected",
+        "cards-connected-icons": "cards:connected-icon",
+        "cards-leaf": "cards:leaf",
+        "cards-quote": "cards:quote",
+        "cards-speech": "cards:bubble",
+        "dot-cards": "dot-card",
+        "dots": "dot-list",
+        "slanted-steps": "numbered-parallelogram",
+        "pill-steps": "numbered-pill",
+        "chevrons": "numbered-chevron",
+        "rising-bars": "ascending-bar",
+        "rising-arrows": "ascending-arrow",
+        "rising-steps": "ascending-numbered",
+        "numbered-bars": "numbered-top-rule",
+        "numbered-labels": "numbered-inline",
+        "timeline": "timeline-numbered",
+        "timeline-dots": "timeline-dots",
+        "timeline-cards": "timeline-dot-cards",
+        "alternating": "alternating",
+        "icon-rows": "icon-horizontal",
+        "images": "image-text",
+        "icons": "icon-text",
+        "bullets": "list:unordered",
+        "numbered-list": "list:ordered",
+        "arc": "shape:semicircle",
+        "petals": "shape:petals",
+        "cycle": "shape:cycle-arrows",
+        "circle": "shape:full-circle",
+        "ring": "shape:ring",
+        "stairs": "shape:stairs",
+        "pyramid": "shape:pyramid",
+        "funnel": "shape:inverted-pyramid",
+        "features": "capability",
+        "numbered-features": "numbered",
+        "questions": "question",
+        "quotes": "quotation",
+        "columns": "columns",
+        "metrics": "metrics"
+      },
+      "item-cards": {
+        "filled": "filled",
+        "icons": "filled-icon",
+        "outline": "outline",
+        "left-accent": "side-rule",
+        "top-accent": "top-rule",
+        "badge": "top-icon",
+        "connected": "connected",
+        "connected-icons": "connected-icon",
+        "leaf": "leaf",
+        "quote": "quote",
+        "speech": "bubble"
+      },
+      "shape-contents": {
+        "arc": "semicircle",
+        "petals": "petals",
+        "cycle": "cycle-arrows",
+        "circle": "full-circle",
+        "ring": "ring",
+        "stairs": "stairs",
+        "pyramid": "pyramid",
+        "funnel": "inverted-pyramid"
+      }
+    },
+    "hostProps": [
+      "itemColumns",
+      "itemLayout",
+      "columnPreference"
+    ],
+    "hostGroup": [
+      "columns",
+      "maxColumns",
+      "contentAlign"
+    ],
+    "legacyNames": {
+      "cover-title": "hero",
+      "cover": "hero",
+      "title": "heading",
+      "paragraph": "text",
+      "quote": "quote",
+      "callout": "notice",
+      "code": "code-block",
+      "bullets": "list",
+      "numbered-list": "ordered-list",
+      "checklist": "todo-list",
+      "metric": "stat",
+      "image": "media",
+      "image-caption": "image-text",
+      "icon-caption": "icon-text",
+      "question": "question-card",
+      "layout": "contents",
+      "cards": "item-cards",
+      "diagram": "shape-contents",
+      "3d-funnel": "3d-funnel",
+      "features": "capability-cards",
+      "numbered-features": "numbered-icon-cards",
+      "table": "table",
+      "bars": "grouped-bar-chart",
+      "line": "line-chart",
+      "stacked-bars": "stacked-bar-chart",
+      "radar": "radar-chart",
+      "risk-map": "risk-matrix",
+      "waterfall": "waterfall-chart",
+      "donut": "donut-chart",
+      "formula": "math-formula",
+      "concentric-circles": "concentric-circles",
+      "layered-funnel": "layered-funnel",
+      "folded-arrow": "folded-arrow",
+      "wave-arrow": "wave-arrow",
+      "layered-cube": "layered-cube",
+      "double-ring": "double-ring",
+      "droplet-process": "droplet-process",
+      "mind-map": "mind-map",
+      "serpentine-process": "serpentine-process",
+      "recycling-arrows": "recycling-arrows",
+      "vertical-progress": "vertical-progress",
+      "icon-columns": "icon-columns",
+      "badge-cards": "badge-cards",
+      "text-panel": "text-panel"
+    },
+    "presets": {
+      "filled-cards": {
+        "type": "contents",
+        "presentation": "cards:filled"
+      },
+      "top-left-icon-cards": {
+        "type": "contents",
+        "presentation": "cards:filled-icon"
+      },
+      "outlined-cards": {
+        "type": "contents",
+        "presentation": "cards:outline"
+      },
+      "left-accent-cards": {
+        "type": "contents",
+        "presentation": "cards:side-rule"
+      },
+      "top-accent-cards": {
+        "type": "contents",
+        "presentation": "cards:top-rule"
+      },
+      "top-badge-cards": {
+        "type": "contents",
+        "presentation": "cards:top-icon"
+      },
+      "joined-cards": {
+        "type": "contents",
+        "presentation": "cards:connected"
+      },
+      "icon-linked-cards": {
+        "type": "contents",
+        "presentation": "cards:connected-icon"
+      },
+      "diagonal-rounded-cards": {
+        "type": "contents",
+        "presentation": "cards:leaf"
+      },
+      "quote-frame-cards": {
+        "type": "contents",
+        "presentation": "cards:quote"
+      },
+      "speech-bubble-cards": {
+        "type": "contents",
+        "presentation": "cards:bubble"
+      },
+      "dot-filled-cards": {
+        "type": "contents",
+        "presentation": "dot-card"
+      },
+      "dot-text-items": {
+        "type": "contents",
+        "presentation": "dot-list"
+      },
+      "slanted-numbered-steps": {
+        "type": "contents",
+        "presentation": "numbered-parallelogram"
+      },
+      "pill-numbered-steps": {
+        "type": "contents",
+        "presentation": "numbered-pill"
+      },
+      "chevron-steps": {
+        "type": "contents",
+        "presentation": "numbered-chevron"
+      },
+      "ascending-bar-steps": {
+        "type": "contents",
+        "presentation": "ascending-bar"
+      },
+      "ascending-arrow-steps": {
+        "type": "contents",
+        "presentation": "ascending-arrow"
+      },
+      "ascending-numbered-bar-steps": {
+        "type": "contents",
+        "presentation": "ascending-numbered"
+      },
+      "top-numbered-rule-cards": {
+        "type": "contents",
+        "presentation": "numbered-top-rule"
+      },
+      "side-numbered-cards": {
+        "type": "contents",
+        "presentation": "numbered-inline"
+      },
+      "numbered-node-timeline": {
+        "type": "contents",
+        "presentation": "timeline-numbered"
+      },
+      "dot-node-timeline": {
+        "type": "contents",
+        "presentation": "timeline-dots"
+      },
+      "dot-card-timeline": {
+        "type": "contents",
+        "presentation": "timeline-dot-cards"
+      },
+      "unmarked-card-timeline": {
+        "type": "contents",
+        "presentation": "alternating"
+      },
+      "icon-beside-text": {
+        "type": "contents",
+        "presentation": "icon-horizontal"
+      },
+      "image-above-text": {
+        "type": "contents",
+        "presentation": "image-text"
+      },
+      "icon-above-text": {
+        "type": "contents",
+        "presentation": "icon-text"
+      },
+      "bulleted-list": {
+        "type": "contents",
+        "presentation": "list:unordered"
+      },
+      "numbered-text-list": {
+        "type": "contents",
+        "presentation": "list:ordered"
+      },
+      "segmented-semicircle": {
+        "type": "contents",
+        "presentation": "shape:semicircle"
+      },
+      "petal-diagram": {
+        "type": "contents",
+        "presentation": "shape:petals"
+      },
+      "circular-arrow-cycle": {
+        "type": "contents",
+        "presentation": "shape:cycle-arrows"
+      },
+      "segmented-circle": {
+        "type": "contents",
+        "presentation": "shape:full-circle"
+      },
+      "ring-node-diagram": {
+        "type": "contents",
+        "presentation": "shape:ring"
+      },
+      "widening-stair-diagram": {
+        "type": "contents",
+        "presentation": "shape:stairs"
+      },
+      "layered-pyramid": {
+        "type": "contents",
+        "presentation": "shape:pyramid"
+      },
+      "layered-inverted-pyramid": {
+        "type": "contents",
+        "presentation": "shape:inverted-pyramid"
+      },
+      "labelled-icon-cards": {
+        "type": "contents",
+        "presentation": "capability"
+      },
+      "bottom-right-badge-cards": {
+        "type": "contents",
+        "presentation": "numbered"
+      },
+      "question-prompt-cards": {
+        "type": "contents",
+        "presentation": "question"
+      },
+      "quotation-blocks": {
+        "type": "contents",
+        "presentation": "quotation"
+      },
+      "text-columns": {
+        "type": "contents",
+        "presentation": "columns"
+      },
+      "metric-summary": {
+        "type": "contents",
+        "presentation": "metrics"
+      }
+    },
+    "groups": {
+      "auto-layout-group": "auto",
+      "row-layout-group": "row",
+      "stack-layout-group": "stack",
+      "column-layout-group": "columns",
+      "primary-secondary-layout": "composition",
+      "edge-image-layout": "edge-media"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.item-cards[data-contents-marker-layout="timeline"] { --contents-timeline-gutter: calc(var(--space-36pt) * 2); --contents-marker-y: 50%; }
+.item-cards[data-contents-marker-layout="timeline"] .item-cards__grid { column-gap: var(--contents-timeline-gutter); }
+.item-cards[data-contents-marker-layout="timeline"][data-timeline-layout="single"] .item-cards__grid { grid-template-columns: minmax(0, 1fr); padding-left: var(--contents-timeline-gutter); }
+.item-cards[data-contents-marker-layout="timeline"][data-timeline-layout="single"] .item-cards__grid::before { left: calc(var(--contents-timeline-gutter) / 2); }
+.item-cards[data-contents-marker-layout="timeline"] .item-cards__surface { background: transparent; border: 0; padding: var(--space-6pt) 0; display: flex; flex-direction: column; justify-content: center; border-radius: var(--yrkie-radius-component); }
+.item-cards[data-contents-marker-layout="timeline"] .contents-marker { position: absolute; top: var(--contents-marker-y); z-index: 1; }
+.item-cards[data-contents-marker-layout="timeline"] [data-side="left"] .contents-marker { right: calc(var(--contents-timeline-gutter) / -2); transform: translate(50%, -50%); }
+.item-cards[data-contents-marker-layout="timeline"] [data-side="right"] .contents-marker { left: calc(var(--contents-timeline-gutter) / -2); transform: translate(-50%, -50%); }
+.item-cards[data-contents-marker-layout="timeline"] .item-cards__item::after { content: ""; position: absolute; top: var(--contents-marker-y); width: calc(var(--contents-timeline-gutter) / 2); border-top: var(--contents-timeline-line-width) solid var(--yrkie-line-strong-solid); pointer-events: none; }
+.item-cards[data-contents-marker-layout="timeline"] [data-side="left"]::after { left: 100%; }
+.item-cards[data-contents-marker-layout="timeline"] [data-side="right"]::after { right: 100%; }
+
+.item-cards[data-contents-marker-layout="timeline"]:not([data-contents-presentation="timeline-dot-cards"]) [data-side="left"] .item-cards__surface { padding-right: var(--space-12pt); }
+.item-cards[data-contents-marker-layout="timeline"]:not([data-contents-presentation="timeline-dot-cards"]) [data-side="right"] .item-cards__surface { padding-left: var(--space-12pt); }
+
+.item-cards[data-timeline-layout="horizontal"] { width: 100%; }
+.item-cards[data-timeline-layout="horizontal"] .item-cards__grid { grid-template-columns: repeat(var(--timeline-tracks), minmax(0, 1fr)); grid-template-rows: repeat(2, 1fr); column-gap: 0; row-gap: var(--contents-timeline-gutter); padding-left: 0; }
+.item-cards[data-timeline-layout="horizontal"] .item-cards__grid::before { top: 50%; bottom: auto; left: 0; right: 0; border-left: 0; border-top: var(--contents-timeline-line-width) solid var(--yrkie-line-strong-solid); }
+.item-cards[data-timeline-layout="horizontal"] .item-cards__item { text-align: center; padding-inline: var(--space-6pt); }
+.item-cards[data-timeline-layout="horizontal"] [data-side="top"] .item-cards__surface { justify-content: flex-end; }
+.item-cards[data-timeline-layout="horizontal"] [data-side="bottom"] .item-cards__surface { justify-content: flex-start; }
+.item-cards[data-timeline-layout="horizontal"] .contents-marker { left: 50%; right: auto; }
+.item-cards[data-timeline-layout="horizontal"] [data-side="top"] .contents-marker { top: auto; bottom: calc(var(--contents-timeline-gutter) / -2); transform: translate(-50%, 50%); }
+.item-cards[data-timeline-layout="horizontal"] [data-side="bottom"] .contents-marker { top: calc(var(--contents-timeline-gutter) / -2); bottom: auto; transform: translate(-50%, -50%); }
+.item-cards[data-timeline-layout="horizontal"] .item-cards__item::after { left: 50%; right: auto; width: 0; height: calc(var(--contents-timeline-gutter) / 2); border-top: 0; border-left: var(--contents-timeline-line-width) solid var(--yrkie-line-strong-solid); }
+.item-cards[data-timeline-layout="horizontal"] [data-side="top"]::after { top: 100%; }
+.item-cards[data-timeline-layout="horizontal"] [data-side="bottom"]::after { top: auto; bottom: 100%; }
+
+/* Compact modes retain the central axis and nodes; only the short branches disappear. */
+.item-cards[data-contents-axis="alternating"] { --timeline-node-size: var(--space-12pt); }
+.item-cards[data-contents-presentation="timeline-numbered"] { --timeline-node-size: var(--space-30pt); }
+.item-cards[data-timeline-connectors="false"] { --contents-timeline-gutter: calc(var(--timeline-node-size) + var(--space-12pt)); }
+.item-cards[data-timeline-connectors="false"] .item-cards__item::after { content: none; }
+.item-cards[data-timeline-layout="horizontal"][data-timeline-staggered="false"] .item-cards__grid { grid-template-rows: 1fr; row-gap: 0; padding-top: calc((var(--contents-timeline-gutter) + var(--timeline-node-size)) / 2); }
+.item-cards[data-timeline-layout="horizontal"][data-timeline-staggered="false"] .item-cards__grid::before { top: calc(var(--timeline-node-size) / 2); }
+
+.item-cards[data-contents-presentation="alternating"][data-timeline-connectors="true"] { --contents-timeline-gutter: calc(var(--space-36pt) * 2); }
+.item-cards[data-contents-presentation="alternating"]:not([data-timeline-layout="horizontal"]) .item-cards__grid { column-gap: var(--contents-timeline-gutter); }
+.item-cards[data-contents-presentation="alternating"][data-timeline-layout="single"] .item-cards__grid { padding-left: var(--contents-timeline-gutter); }
+.item-cards[data-contents-presentation="alternating"][data-timeline-layout="single"] .item-cards__grid::before { left: calc(var(--contents-timeline-gutter) / 2); }
+.item-cards[data-contents-presentation="alternating"][data-timeline-connectors="true"] .item-cards__item::after { content: ""; position: absolute; pointer-events: none; }
+.item-cards[data-contents-presentation="alternating"]:not([data-timeline-layout="horizontal"]) .item-cards__item::after { top: 50%; width: calc(var(--contents-timeline-gutter) / 2); border-top: var(--contents-timeline-line-width) solid var(--yrkie-line-strong-solid); }
+.item-cards[data-contents-presentation="alternating"] [data-side="left"]::after { left: 100%; }
+.item-cards[data-contents-presentation="alternating"] [data-side="right"]::after { right: 100%; }

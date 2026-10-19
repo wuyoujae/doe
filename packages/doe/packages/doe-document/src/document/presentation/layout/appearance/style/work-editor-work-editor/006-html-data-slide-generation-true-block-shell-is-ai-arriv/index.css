@@ -1,0 +1,10 @@
+html[data-slide-generation="true"]
+  .block-shell.is-ai-arriving:not(.layout-group)
+  > .block-content,
+html[data-slide-generation="true"]
+  .block-shell.is-ai-arriving.layout-group
+  > .layout-group__content {
+  transform-origin: top left;
+  animation: ai-generation-block-reveal 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+

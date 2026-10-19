@@ -1,0 +1,272 @@
+.work-editor__loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--editor-muted);
+  background: var(--yrkie-color-light);
+  font-size: 14px;
+}
+
+.work-editor__loading[hidden] {
+  display: none;
+}
+
+.work-editor__filmstrip-shell {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) 32px;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 12px 18px 14px;
+  border-top: 1px solid var(--editor-line);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 -8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.work-editor__filmstrip {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+  overflow: auto hidden;
+  padding: 2px 2px 5px;
+  scrollbar-width: thin;
+}
+
+.work-editor__thumb {
+  position: relative;
+  display: grid;
+  flex: 0 0 var(--doe-thumb-default-width, 154px);
+  grid-template-rows: auto 12px;
+  gap: 7px;
+  width: var(--doe-thumb-default-width, 154px);
+}
+
+.work-editor__thumb-preview {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.work-editor__thumb-number {
+  display: block;
+  color: var(--editor-muted);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+}
+
+.work-editor__thumb-frame {
+  position: relative;
+  display: block;
+  width: var(--doe-thumb-default-width, 154px);
+  aspect-ratio: var(--doe-canvas-ratio, 16 / 9);
+  overflow: hidden;
+  border: 0;
+  border-radius: 4px;
+  background: var(--yrkie-color-light);
+  box-shadow:
+    0 0 0 1px var(--editor-line),
+    0 5px 12px rgba(15, 23, 42, 0.08);
+}
+
+.work-editor__thumb[aria-current="page"] .work-editor__thumb-number {
+  color: var(--editor-blue);
+  font-weight: 600;
+}
+
+.work-editor__thumb[aria-current="page"] .work-editor__thumb-frame {
+  box-shadow:
+    0 0 0 1px var(--editor-blue),
+    0 0 0 3px rgba(40, 120, 255, 0.18),
+    0 7px 16px rgba(15, 23, 42, 0.1);
+}
+
+.work-editor__thumb-scale,
+.work-editor__thumb-canvas {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: var(--doe-canvas-width, 1280px);
+  height: var(--doe-canvas-height, 720px);
+}
+
+.work-editor__thumb-scale {
+  transform: scale(var(--doe-thumb-default-scale, 0.1203125));
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.work-editor__thumb-canvas {
+  contain: layout paint style;
+  overflow: hidden;
+  background: var(--yrkie-color-light);
+  font-family: var(--font-sans-cn);
+  /* The thumbnail Canvas is nested in a button. Chromium's button default
+     text-align is inherited, so isolate Slide text from that UI chrome. */
+  text-align: start;
+  pointer-events: none;
+}
+
+.work-editor__thumb-canvas .schema-slide,
+.work-editor__thumb-canvas .schema-layout {
+  position: absolute;
+  inset: 0;
+}
+
+.work-editor__thumbnail-staging {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: -1320px;
+  width: var(--doe-canvas-width, 1280px);
+  height: var(--doe-canvas-height, 720px);
+  contain: layout paint style;
+  overflow: hidden;
+  background: var(--yrkie-color-light);
+  font-family: var(--font-sans-cn);
+  pointer-events: none;
+}
+
+.work-editor__thumb-delete {
+  position: absolute;
+  z-index: 5;
+  top: 7px;
+  right: 7px;
+  display: inline-grid;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  place-items: center;
+  opacity: 0;
+  color: #667085;
+  border: 1px solid rgba(208, 213, 221, 0.88);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 3px 9px rgba(15, 23, 42, 0.11);
+  cursor: pointer;
+  pointer-events: none;
+  transform: translateY(-2px);
+  transition:
+    opacity 120ms ease,
+    color 120ms ease,
+    background-color 120ms ease,
+    transform 120ms ease;
+}
+
+.work-editor__thumb-delete svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.work-editor__thumb:hover .work-editor__thumb-delete,
+.work-editor__thumb:focus-within .work-editor__thumb-delete {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.work-editor__thumb-delete:hover,
+.work-editor__thumb-delete:focus-visible {
+  color: #b42318;
+  background: #ffffff;
+}
+
+.work-editor__thumb-delete[hidden] {
+  display: none;
+}
+
+.work-editor__add,
+.work-editor__nav {
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--editor-line);
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.work-editor__add {
+  display: grid;
+  flex: 0 0 var(--doe-thumb-default-width, 154px);
+  grid-template-rows: auto 12px;
+  align-items: start;
+  gap: 7px;
+  width: var(--doe-thumb-default-width, 154px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #475467;
+}
+
+.work-editor__add-number-space {
+  display: block;
+  grid-row: 2;
+  width: 100%;
+}
+
+.work-editor__add-frame {
+  display: grid;
+  grid-row: 1;
+  width: var(--doe-thumb-default-width, 154px);
+  aspect-ratio: var(--doe-canvas-ratio, 16 / 9);
+  grid-template-rows: 1fr auto;
+  place-items: center;
+  padding: 13px 10px 8px;
+  border: 1px solid #cbd1da;
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 0 5px 12px rgba(15, 23, 42, 0.05);
+  transition:
+    border-color 120ms ease,
+    background-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.work-editor__add-icon {
+  font-size: 21px;
+  line-height: 1;
+}
+
+.work-editor__add-frame > small {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.work-editor__nav {
+  width: 32px;
+  height: 54px;
+  border-radius: 8px;
+  color: #344054;
+  font-size: 22px;
+}
+
+.work-editor__nav:disabled {
+  cursor: default;
+  opacity: 0.34;
+}
+
+.work-editor__nav:hover:not(:disabled) {
+  border-color: #b9c5d4;
+  background: #f8fafc;
+}
+
+.work-editor__add:hover .work-editor__add-frame,
+.work-editor__add:focus-visible .work-editor__add-frame {
+  border-color: #98a2b3;
+  background: #f8fafc;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+}
+
+.work-editor__add:focus-visible {
+  outline: 0;
+}
+

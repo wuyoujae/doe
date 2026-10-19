@@ -1,0 +1,151 @@
+.doe-component-toolbar-dock {
+  --yrkie-text-body: var(--work-text-0-875);
+  --yrkie-text-label: 0.84375rem;
+  position: absolute;
+  z-index: 12;
+  top: var(--yrkie-gap-control);
+  left: var(--yrkie-gap-content);
+  right: var(--yrkie-gap-content);
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.work-preview-panel .doe-component-toolbar-dock > .doe-component-toolbar {
+  display: block;
+  pointer-events: auto;
+  min-width: 0;
+  max-width: 100%;
+}
+.doe-component-toolbar .work-ppt-insert-toolbar {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  border-color: var(--yrkie-color-control-border);
+  background: var(--yrkie-color-white);
+}
+.doe-component-toolbar .work-ppt-insert-toolbar > button {
+  flex-shrink: 0;
+  color: var(--yrkie-color-ink-muted);
+}
+.doe-component-toolbar .work-ppt-insert-toolbar > button:is(:hover:not(:disabled), [aria-expanded="true"]) {
+  background: var(--yrkie-color-task-hover);
+  color: var(--yrkie-color-heading);
+}
+.doe-component-toolbar .work-ppt-insert-toolbar > button:focus-visible { outline-color: var(--yrkie-color-primary); }
+.doe-component-toolbar .work-ppt-insert-toolbar > .doe-view-mode-toggle { padding-inline: var(--yrkie-gap-icon); }
+.doe-component-toolbar .work-ppt-insert-toolbar > .doe-view-mode-toggle[aria-pressed="true"] { color: var(--yrkie-color-heading); background: var(--yrkie-color-task-hover); }
+.doe-toolbar-divider {
+  flex: 0 0 var(--yrkie-border-width);
+  height: 1.25rem;
+  margin-inline: var(--yrkie-gap-micro);
+  background: var(--yrkie-color-control-border);
+}
+@media (max-width: 48rem) {
+  .doe-component-toolbar .work-ppt-insert-toolbar > button { flex-shrink: 1; min-width: 2rem; width: 2.75rem; height: 2.75rem; padding: 0; }
+  .doe-component-toolbar .work-ppt-insert-toolbar > button > span { display: none; }
+  .doe-component-toolbar[data-view-switch] .work-ppt-insert-toolbar > button { min-width: 0; }
+}
+.doe-component-toolbar-dock .work-ppt-insert-toolbar > button {
+  font-family: var(--yrkie-font-ui);
+  font-size: var(--yrkie-text-body);
+  font-weight: var(--yrkie-weight-regular);
+}
+.work-shell[data-work-layout="doe-floating"] .doe-component-toolbar-dock {
+  left: calc(1rem + var(--work-chat-panel-width) + var(--work-doe-floating-gap));
+  right: calc(10.75rem + var(--work-doe-floating-gap));
+}
+
+.doe-component-catalog {
+  box-sizing: border-box;
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  width: min(25rem, calc(100vw - var(--yrkie-gap-content)));
+  max-height: min(39rem, var(--doe-catalog-available-height, 80vh));
+  overflow: hidden;
+  padding: var(--yrkie-gap-control);
+  border: var(--yrkie-border-width) solid var(--yrkie-color-control-border);
+  border-radius: var(--yrkie-radius-panel-sm);
+  background: var(--yrkie-color-white);
+  color: var(--yrkie-color-ink);
+  box-shadow: var(--yrkie-shadow-select);
+  font: var(--yrkie-text-label)/1.5 var(--yrkie-font-ui);
+}
+.doe-component-catalog:popover-open { display: flex; flex-direction: column; }
+.doe-component-catalog header, .doe-component-search {
+  display: flex;
+  align-items: center;
+  gap: var(--yrkie-gap-icon);
+}
+.doe-component-catalog header { flex-shrink: 0; justify-content: space-between; margin-bottom: var(--yrkie-gap-icon); }
+.doe-component-catalog header button {
+  display: grid;
+  place-items: center;
+  padding: var(--yrkie-gap-icon);
+  border: 0;
+  border-radius: var(--yrkie-radius-lg);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.doe-component-catalog button:hover { background: var(--yrkie-color-task-hover); }
+.doe-component-catalog svg { width: var(--yrkie-gap-content); height: var(--yrkie-gap-content); flex-shrink: 0; }
+.doe-component-search {
+  flex-shrink: 0;
+  padding: var(--yrkie-gap-icon);
+  border: var(--yrkie-border-width) solid var(--yrkie-color-control-border);
+  border-radius: var(--yrkie-radius-lg);
+}
+.doe-component-search input { width: 100%; min-width: 0; border: 0; background: transparent; color: inherit; font: inherit; }
+.doe-component-search input:focus-visible { outline: none; }
+.doe-component-search:focus-within { border-color: var(--yrkie-color-primary); }
+.doe-component-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--yrkie-gap-icon);
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  list-style: none;
+  margin: var(--yrkie-gap-control) 0 0;
+  padding: var(--yrkie-gap-micro);
+}
+.doe-component-grid li { min-width: 0; display: flex; }
+.doe-component-grid li > button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--yrkie-gap-icon);
+  min-width: 0;
+  min-height: 6.25rem;
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: var(--yrkie-gap-icon);
+  border: var(--yrkie-border-width) solid var(--yrkie-color-control-border);
+  border-radius: var(--yrkie-radius-panel-sm);
+  background: var(--yrkie-color-white);
+  text-align: center;
+}
+.doe-component-grid button:hover { background: var(--yrkie-color-task-hover); border-color: var(--yrkie-color-primary); }
+.doe-component-grid button:disabled { cursor: wait; }
+.doe-component-grid button > span { line-height: 1.4; overflow-wrap: anywhere; }
+.doe-component-feedback {
+  position: absolute;
+  top: 100%;
+  margin-top: var(--yrkie-gap-icon);
+  padding: var(--yrkie-gap-control);
+  max-width: 25rem;
+  border-radius: var(--yrkie-radius-panel-sm);
+  background: var(--yrkie-color-white);
+  color: var(--yrkie-color-ink);
+  box-shadow: var(--yrkie-shadow-select);
+  font: var(--yrkie-text-label)/1.5 var(--yrkie-font-ui);
+}
+.doe-component-catalog .doe-component-icon { width: 3.5rem; height: 2.625rem; color: var(--yrkie-color-primary); flex-shrink: 0; }
+.doe-component-catalog p { margin: var(--yrkie-gap-micro) 0 0; color: var(--yrkie-color-ink-muted); }
+.doe-component-catalog :focus-visible { outline: var(--yrkie-border-width) solid var(--yrkie-color-primary); outline-offset: var(--yrkie-gap-micro); }

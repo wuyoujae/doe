@@ -1,0 +1,43 @@
+.component-question-card {
+  overflow: hidden;
+  border: 1px solid var(--yrkie-line-solid);
+  border-radius: var(--yrkie-radius-component);
+  background: var(--yrkie-color-surface);
+}
+
+.component-question-card__index {
+  display: grid;
+  /* The header owns twice the former vertical inset so short labels retain
+     visible breathing room even after whole-card scaling. */
+  min-height: 46px;
+  min-width: 0;
+  place-items: center;
+  padding: 8px var(--space-12pt);
+  border-radius: var(--yrkie-radius-component) var(--yrkie-radius-component) 0 0;
+  background: var(--yrkie-color-secondary);
+  color: var(--yrkie-color-body);
+  line-height: 1;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.component-question-card__body {
+  display: grid;
+  gap: var(--component-gap);
+  padding: var(--component-padding);
+}
+
+.component-question-card__title {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  color: var(--yrkie-color-title);
+  line-height: var(--line-height);
+  text-wrap: wrap;
+  word-break: normal;
+}
+
+.component-question-card__text {
+  color: var(--yrkie-color-body);
+}
+

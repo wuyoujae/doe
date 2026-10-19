@@ -1,0 +1,6 @@
+.doe-canvas:has(
+  .schema-slide:is([data-edge-media="true"], [data-has-background="true"])
+) :is(.doe-canvas__scale, .doe-canvas__mount, .schema-slide) {
+  border-radius: 0;
+}
+

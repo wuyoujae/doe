@@ -1,0 +1,646 @@
+[
+  {
+    "name": "title-group",
+    "type": "hero",
+    "category": "base",
+    "zh": "标题组",
+    "en": "Title group",
+    "description": "眉题、主标题、副标题组合；可用于突出陈述，不限定页面用途。"
+  },
+  {
+    "name": "section-heading",
+    "type": "heading",
+    "category": "base",
+    "zh": "分级标题",
+    "en": "Section heading",
+    "description": "独立标题，支持 1–3 级；可选分隔线、纯文字或主题大字。"
+  },
+  {
+    "name": "text-paragraph",
+    "type": "text",
+    "category": "base",
+    "zh": "正文段落",
+    "en": "Text paragraph",
+    "description": "独立长短正文，可与其他组件组合。"
+  },
+  {
+    "name": "filled-text-panel",
+    "type": "text-panel",
+    "category": "base",
+    "zh": "底色文字面板",
+    "en": "Filled text panel",
+    "description": "主题主色底、白字正文，强调一整块文字。"
+  },
+  {
+    "name": "icon-callout",
+    "type": "notice",
+    "category": "base",
+    "zh": "图标提示条",
+    "en": "Icon callout",
+    "description": "图标配一条重点说明，不是可重复的卡片组。"
+  },
+  {
+    "name": "image",
+    "type": "media",
+    "category": "base",
+    "zh": "图片",
+    "en": "Image",
+    "description": "独立图片或 GIF；不暗示支持视频、音频。"
+  },
+  {
+    "name": "checklist",
+    "type": "todo-list",
+    "category": "base",
+    "zh": "勾选清单",
+    "en": "Checklist",
+    "description": "条目有可切换的完成状态。"
+  },
+  {
+    "name": "code-block",
+    "type": "code-block",
+    "category": "base",
+    "zh": "代码块",
+    "en": "Code block",
+    "description": "保留代码结构，支持语言选择。"
+  },
+  {
+    "name": "math-formula",
+    "type": "math-formula",
+    "category": "base",
+    "zh": "数学公式",
+    "en": "Math formula",
+    "description": "数学表达式，不是普通正文。"
+  },
+  {
+    "name": "filled-cards",
+    "type": "contents",
+    "presentation": "cards:filled",
+    "category": "contents",
+    "zh": "浅底卡片",
+    "en": "Filled cards",
+    "description": "浅色底的标题与正文卡片，用于并列观点。"
+  },
+  {
+    "name": "top-left-icon-cards",
+    "type": "contents",
+    "presentation": "cards:filled-icon",
+    "category": "contents",
+    "zh": "左上图标卡片",
+    "en": "Top left icon cards",
+    "description": "卡片内左上方放图标，下方是标题和正文。"
+  },
+  {
+    "name": "outlined-cards",
+    "type": "contents",
+    "presentation": "cards:outline",
+    "category": "contents",
+    "zh": "描边卡片",
+    "en": "Outlined cards",
+    "description": "透明底、四周描边，区别于浅底卡片。"
+  },
+  {
+    "name": "left-accent-cards",
+    "type": "contents",
+    "presentation": "cards:side-rule",
+    "category": "contents",
+    "zh": "左侧色条卡片",
+    "en": "Left accent cards",
+    "description": "用左侧色条强调内容，不是四周描边。"
+  },
+  {
+    "name": "top-accent-cards",
+    "type": "contents",
+    "presentation": "cards:top-rule",
+    "category": "contents",
+    "zh": "顶部色条卡片",
+    "en": "Top accent cards",
+    "description": "用顶部色条强调内容，无悬挂图标。"
+  },
+  {
+    "name": "top-badge-cards",
+    "type": "contents",
+    "presentation": "cards:top-icon",
+    "category": "contents",
+    "zh": "顶置圆章卡片",
+    "en": "Top badge cards",
+    "description": "圆形图标悬在顶部边线上，区别于左上图标和右下圆章。"
+  },
+  {
+    "name": "joined-cards",
+    "type": "contents",
+    "presentation": "cards:connected",
+    "category": "contents",
+    "zh": "连体分格卡片",
+    "en": "Joined cards",
+    "description": "相邻内容共用连续底板，以分隔线区分。"
+  },
+  {
+    "name": "icon-linked-cards",
+    "type": "contents",
+    "presentation": "cards:connected-icon",
+    "category": "contents",
+    "zh": "图标连接卡片",
+    "en": "Icon linked cards",
+    "description": "同一行相邻卡片的连接处放图标；不是每张卡左上放图标。"
+  },
+  {
+    "name": "diagonal-rounded-cards",
+    "type": "contents",
+    "presentation": "cards:leaf",
+    "category": "contents",
+    "zh": "对角圆角卡片",
+    "en": "Diagonal rounded cards",
+    "description": "两处对角为大圆角，描述真实轮廓而非植物用途。"
+  },
+  {
+    "name": "quote-frame-cards",
+    "type": "contents",
+    "presentation": "cards:quote",
+    "category": "contents",
+    "zh": "引号边框卡片",
+    "en": "Quote frame cards",
+    "description": "引号装饰边框，标题和正文放在框内；不是带来源的引语块。"
+  },
+  {
+    "name": "speech-bubble-cards",
+    "type": "contents",
+    "presentation": "cards:bubble",
+    "category": "contents",
+    "zh": "对话气泡卡片",
+    "en": "Speech bubble cards",
+    "description": "底部带气泡尖角，可表达发言或反馈。"
+  },
+  {
+    "name": "dot-filled-cards",
+    "type": "contents",
+    "presentation": "dot-card",
+    "category": "contents",
+    "zh": "圆点浅底卡片",
+    "en": "Dot filled cards",
+    "description": "圆点标记配浅底卡片，保留标题与正文。"
+  },
+  {
+    "name": "dot-text-items",
+    "type": "contents",
+    "presentation": "dot-list",
+    "category": "contents",
+    "zh": "圆点要点组",
+    "en": "Dot text items",
+    "description": "圆点标记配标题和正文，无卡片底；区别于仅正文的基础列表。"
+  },
+  {
+    "name": "slanted-numbered-steps",
+    "type": "contents",
+    "presentation": "numbered-parallelogram",
+    "category": "contents",
+    "zh": "斜角图标流程",
+    "en": "Slanted icon steps",
+    "description": "图标放在平行四边形内，表达有序步骤；支持横竖切换。"
+  },
+  {
+    "name": "pill-numbered-steps",
+    "type": "contents",
+    "presentation": "numbered-pill",
+    "category": "contents",
+    "zh": "胶囊图标流程",
+    "en": "Pill icon steps",
+    "description": "图标放在胶囊形内，表达有序步骤；支持横竖切换。"
+  },
+  {
+    "name": "chevron-steps",
+    "type": "contents",
+    "presentation": "numbered-chevron",
+    "category": "contents",
+    "zh": "燕尾箭头流程",
+    "en": "Chevron steps",
+    "description": "逐项图标的燕尾箭头，表达流程顺序；支持横竖切换。"
+  },
+  {
+    "name": "ascending-bar-steps",
+    "type": "contents",
+    "presentation": "ascending-bar",
+    "category": "contents",
+    "zh": "阶梯横条流程",
+    "en": "Ascending bar steps",
+    "description": "横条随条目逐级抬高，无箭头尖、无编号。"
+  },
+  {
+    "name": "ascending-arrow-steps",
+    "type": "contents",
+    "presentation": "ascending-arrow",
+    "category": "contents",
+    "zh": "阶梯箭头流程",
+    "en": "Ascending arrow steps",
+    "description": "多个独立箭头逐级抬高；不是一条连续的波浪箭头。"
+  },
+  {
+    "name": "ascending-numbered-bar-steps",
+    "type": "contents",
+    "presentation": "ascending-numbered",
+    "category": "contents",
+    "zh": "图标阶梯横条流程",
+    "en": "Ascending icon bar steps",
+    "description": "逐级抬高的横条附带图标，区别于无标记横条。"
+  },
+  {
+    "name": "top-numbered-rule-cards",
+    "type": "contents",
+    "presentation": "numbered-top-rule",
+    "category": "contents",
+    "zh": "顶部图标横线卡片",
+    "en": "Top icon rule cards",
+    "description": "图标与横线放在内容上方。"
+  },
+  {
+    "name": "side-numbered-cards",
+    "type": "contents",
+    "presentation": "numbered-inline",
+    "category": "contents",
+    "zh": "左侧图标卡片",
+    "en": "Side icon cards",
+    "description": "图标放在内容左侧，区别于顶部图标。"
+  },
+  {
+    "name": "numbered-node-timeline",
+    "type": "contents",
+    "presentation": "timeline-numbered",
+    "category": "contents",
+    "zh": "图标节点时间线",
+    "en": "Icon node timeline",
+    "description": "中轴节点为图标，文字分布在轴两侧或同侧。"
+  },
+  {
+    "name": "dot-node-timeline",
+    "type": "contents",
+    "presentation": "timeline-dots",
+    "category": "contents",
+    "zh": "圆点节点时间线",
+    "en": "Dot node timeline",
+    "description": "中轴节点为圆点，文字不带浅底卡片。"
+  },
+  {
+    "name": "dot-card-timeline",
+    "type": "contents",
+    "presentation": "timeline-dot-cards",
+    "category": "contents",
+    "zh": "圆点卡片时间线",
+    "en": "Dot card timeline",
+    "description": "中轴圆点配浅底内容卡片。"
+  },
+  {
+    "name": "unmarked-card-timeline",
+    "type": "contents",
+    "presentation": "alternating",
+    "category": "contents",
+    "zh": "无标记卡片时间线",
+    "en": "Unmarked card timeline",
+    "description": "卡片沿中轴排布，不带编号或圆点节点；默认两侧交错。"
+  },
+  {
+    "name": "icon-beside-text",
+    "type": "contents",
+    "presentation": "icon-horizontal",
+    "category": "contents",
+    "zh": "左图标右文字",
+    "en": "Icon beside text",
+    "description": "图标在左、标题正文在右，用于并列要点。"
+  },
+  {
+    "name": "image-above-text",
+    "type": "contents",
+    "presentation": "image-text",
+    "category": "contents",
+    "zh": "上图下文字",
+    "en": "Image above text",
+    "description": "每项上方图片、下方标题正文；图片来自有效素材。"
+  },
+  {
+    "name": "icon-above-text",
+    "type": "contents",
+    "presentation": "icon-text",
+    "category": "contents",
+    "zh": "上图标下文字",
+    "en": "Icon above text",
+    "description": "每项上方图标、下方标题正文。"
+  },
+  {
+    "name": "bulleted-list",
+    "type": "contents",
+    "presentation": "list:unordered",
+    "category": "contents",
+    "zh": "项目符号列表",
+    "en": "Bulleted list",
+    "description": "每项只有正文，系统生成项目符号，不支持用标题代替正文。"
+  },
+  {
+    "name": "numbered-text-list",
+    "type": "contents",
+    "presentation": "list:ordered",
+    "category": "contents",
+    "zh": "编号列表",
+    "en": "Numbered text list",
+    "description": "每项只有正文，系统生成顺序编号。"
+  },
+  {
+    "name": "segmented-semicircle",
+    "type": "contents",
+    "presentation": "shape:semicircle",
+    "category": "contents",
+    "zh": "半圆分段图",
+    "en": "Segmented semicircle",
+    "description": "半圆弧分段，外围配说明；用于概念分组，不是数值占比图。"
+  },
+  {
+    "name": "petal-diagram",
+    "type": "contents",
+    "presentation": "shape:petals",
+    "category": "contents",
+    "zh": "花瓣关系图",
+    "en": "Petal diagram",
+    "description": "花瓣状分区与外围说明，表达同一主题下的关联要素。"
+  },
+  {
+    "name": "circular-arrow-cycle",
+    "type": "contents",
+    "presentation": "shape:cycle-arrows",
+    "category": "contents",
+    "zh": "环形箭头循环图",
+    "en": "Circular arrow cycle",
+    "description": "多个箭头首尾绕成环，表达可重复的循环步骤。"
+  },
+  {
+    "name": "segmented-circle",
+    "type": "contents",
+    "presentation": "shape:full-circle",
+    "category": "contents",
+    "zh": "圆形分区图",
+    "en": "Segmented circle",
+    "description": "实心圆分区配外围说明，分区不按业务数值决定大小。"
+  },
+  {
+    "name": "ring-node-diagram",
+    "type": "contents",
+    "presentation": "shape:ring",
+    "category": "contents",
+    "zh": "圆环节点图",
+    "en": "Ring node diagram",
+    "description": "环形图形配独立编号节点和外围说明，不是数据环形图。"
+  },
+  {
+    "name": "widening-stair-diagram",
+    "type": "contents",
+    "presentation": "shape:stairs",
+    "category": "contents",
+    "zh": "逐层加宽阶梯图",
+    "en": "Widening stair diagram",
+    "description": "从上到下每层更宽，说明在右；不是逐级抬高的箭头流程。"
+  },
+  {
+    "name": "layered-pyramid",
+    "type": "contents",
+    "presentation": "shape:pyramid",
+    "category": "contents",
+    "zh": "分层正三角图",
+    "en": "Layered pyramid",
+    "description": "上窄下宽的平面三角形分层，表达层级结构。"
+  },
+  {
+    "name": "layered-inverted-pyramid",
+    "type": "contents",
+    "presentation": "shape:inverted-pyramid",
+    "category": "contents",
+    "zh": "分层倒三角图",
+    "en": "Layered inverted pyramid",
+    "description": "上宽下窄的平面三角形分层，区别于两种立体漏斗。"
+  },
+  {
+    "name": "labelled-icon-cards",
+    "type": "contents",
+    "presentation": "capability",
+    "category": "contents",
+    "zh": "标题标签图标卡片",
+    "en": "Labelled icon cards",
+    "description": "顶部标题标签，下方左图标右正文；不限制为“能力”主题。"
+  },
+  {
+    "name": "bottom-right-badge-cards",
+    "type": "contents",
+    "presentation": "numbered",
+    "category": "contents",
+    "zh": "右下圆章卡片",
+    "en": "Bottom right badge cards",
+    "description": "浅底卡片右下叠放圆形图标；当前没有自动序号。"
+  },
+  {
+    "name": "question-prompt-cards",
+    "type": "contents",
+    "presentation": "question",
+    "category": "contents",
+    "zh": "问题提示卡片",
+    "en": "Question prompt cards",
+    "description": "问题标题配说明文字；不暗示交互问答、评分或提交功能。"
+  },
+  {
+    "name": "quotation-blocks",
+    "type": "contents",
+    "presentation": "quotation",
+    "category": "contents",
+    "zh": "引语来源组",
+    "en": "Quotation blocks",
+    "description": "引语正文配来源，可展示一条或多条。"
+  },
+  {
+    "name": "text-columns",
+    "type": "contents",
+    "presentation": "columns",
+    "category": "contents",
+    "zh": "分栏文字组",
+    "en": "Text columns",
+    "description": "将同一组标题正文分栏；区别于放入任意组件的分栏布局容器。"
+  },
+  {
+    "name": "metric-summary",
+    "type": "contents",
+    "presentation": "metrics",
+    "category": "contents",
+    "zh": "关键指标组",
+    "en": "Metric summary",
+    "description": "突出数值、指标名称与说明，支持一个或多个指标。"
+  },
+  {
+    "name": "horizontal-3d-funnel",
+    "type": "3d-funnel",
+    "category": "diagrams",
+    "zh": "横向立体漏斗",
+    "en": "Horizontal 3D funnel",
+    "description": "分段立体漏斗沿水平方向排布，文字在各段下方；1–4 项。"
+  },
+  {
+    "name": "vertical-3d-funnel",
+    "type": "layered-funnel",
+    "category": "diagrams",
+    "zh": "竖向立体漏斗",
+    "en": "Vertical 3D funnel",
+    "description": "立体圆台从上到下变窄，每层说明在右；1–4 项。"
+  },
+  {
+    "name": "concentric-target",
+    "type": "concentric-circles",
+    "category": "diagrams",
+    "zh": "同心圆靶心图",
+    "en": "Concentric target",
+    "description": "由内到外的同心圆层级，引线连接右侧说明；1–4 项。"
+  },
+  {
+    "name": "folded-rising-arrow",
+    "type": "folded-arrow",
+    "category": "diagrams",
+    "zh": "折纸上升箭头",
+    "en": "Folded rising arrow",
+    "description": "一条多折面箭头向右上递进，说明在右；1–4 项。"
+  },
+  {
+    "name": "wave-rising-arrow",
+    "type": "wave-arrow",
+    "category": "diagrams",
+    "zh": "波浪上升箭头",
+    "en": "Wave rising arrow",
+    "description": "一条连续波浪带向右上递进，说明沿各段分布；固定 3 项。"
+  },
+  {
+    "name": "layered-3d-cube",
+    "type": "layered-cube",
+    "category": "diagrams",
+    "zh": "分层立体方柱",
+    "en": "Layered 3D cube",
+    "description": "中央立体方柱分层，左右各有独立说明；1–4 项。"
+  },
+  {
+    "name": "interlocking-3d-rings",
+    "type": "double-ring",
+    "category": "diagrams",
+    "zh": "立体交叠双环",
+    "en": "Interlocking 3D rings",
+    "description": "两个立体环交叠，左右分配说明；2–6 项，不随项数增加环数。"
+  },
+  {
+    "name": "droplet-arrow-steps",
+    "type": "droplet-process",
+    "category": "diagrams",
+    "zh": "水滴箭头流程",
+    "en": "Droplet arrow steps",
+    "description": "横向水滴形编号箭头，说明在下方；1–5 项。"
+  },
+  {
+    "name": "serpentine-steps",
+    "type": "serpentine-process",
+    "category": "diagrams",
+    "zh": "折返弯道流程",
+    "en": "Serpentine steps",
+    "description": "流程沿半圆弯道来回折返；1–6 项。"
+  },
+  {
+    "name": "folded-three-arrow-cycle",
+    "type": "recycling-arrows",
+    "category": "diagrams",
+    "zh": "三箭头折叠循环",
+    "en": "Folded three arrow cycle",
+    "description": "三支折叠箭头构成闭环；固定 3 项，区别于可变项数的环形箭头。"
+  },
+  {
+    "name": "vertical-percentage-bars",
+    "type": "vertical-progress",
+    "category": "diagrams",
+    "zh": "竖向百分比进度条",
+    "en": "Vertical percentage bars",
+    "description": "每项百分比直接决定竖条填充高度；1–4 项。"
+  },
+  {
+    "name": "large-icon-items",
+    "type": "icon-columns",
+    "category": "diagrams",
+    "zh": "大图标说明组",
+    "en": "Large icon items",
+    "description": "大尺寸图标配独立说明，强调视觉符号；1–4 项。"
+  },
+  {
+    "name": "staggered-arrow-cards",
+    "type": "badge-cards",
+    "category": "diagrams",
+    "zh": "交错箭头流程卡",
+    "en": "Staggered arrow cards",
+    "description": "卡片高低交错、箭头连接，顶部图标与底部数值条；1–4 项。"
+  },
+  {
+    "name": "data-table",
+    "type": "table",
+    "category": "charts",
+    "zh": "数据表格",
+    "en": "Data table",
+    "description": "行列单元格组织信息，可包含文字和数值。"
+  },
+  {
+    "name": "grouped-bar-chart",
+    "type": "grouped-bar-chart",
+    "category": "charts",
+    "zh": "分组柱状图",
+    "en": "Grouped bar chart",
+    "description": "比较多个系列在相同类别中的实际数值。"
+  },
+  {
+    "name": "line-chart",
+    "type": "line-chart",
+    "category": "charts",
+    "zh": "折线趋势图",
+    "en": "Line chart",
+    "description": "用真实数值表达连续变化或时间趋势。"
+  },
+  {
+    "name": "stacked-bar-chart",
+    "type": "stacked-bar-chart",
+    "category": "charts",
+    "zh": "堆叠柱状图",
+    "en": "Stacked bar chart",
+    "description": "表达总量及组成部分；不要与分组并排柱混用。"
+  },
+  {
+    "name": "radar-chart",
+    "type": "radar-chart",
+    "category": "charts",
+    "zh": "多维雷达图",
+    "en": "Radar chart",
+    "description": "多个维度上的实际数值对比。"
+  },
+  {
+    "name": "risk-matrix",
+    "type": "risk-matrix",
+    "category": "charts",
+    "zh": "风险矩阵图",
+    "en": "Risk matrix",
+    "description": "按概率、影响两个维度定位风险，不是地理地图。"
+  },
+  {
+    "name": "waterfall-chart",
+    "type": "waterfall-chart",
+    "category": "charts",
+    "zh": "增减瀑布图",
+    "en": "Waterfall chart",
+    "description": "表达起点、增减变化及最终结果的数值关系。"
+  },
+  {
+    "name": "donut-chart",
+    "type": "donut-chart",
+    "category": "charts",
+    "zh": "占比环形图",
+    "en": "Donut chart",
+    "description": "扇段按实际数值比例绘制；区别于圆环节点、双环示意图。"
+  },
+  {
+    "name": "tree-mind-map",
+    "type": "mind-map",
+    "category": "charts",
+    "zh": "树状思维导图",
+    "en": "Tree mind map",
+    "description": "根据父子层级生成树状节点与连线，不是自由摆放的任意关系网。"
+  }
+]

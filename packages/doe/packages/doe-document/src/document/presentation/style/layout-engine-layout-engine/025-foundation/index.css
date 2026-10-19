@@ -1,0 +1,3 @@
+/* Filled media in a row is a viewport owned by the row, not an intrinsic-size
+   image. This prevents a late image load from increasing the measured row and
+   pushing following blocks outside the fixed slide canvas. */

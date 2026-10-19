@@ -1,0 +1,41 @@
+/*
+ * Yrkie DOE semantic theme consumers.
+ * Literal theme values live only in core/theme.js.
+ */
+
+/* Optional font roles are enabled only by new theme definitions. */
+.schema-slide[data-theme-font-roles] :is([data-semantic-wrap="title"], [data-typography-style="h1"], [data-typography-style="h2"], [data-typography-style="h3"], [data-typography-style="h4"]) {
+  font-family: var(--font-heading);
+  letter-spacing: var(--yrkie-letter-spacing-heading);
+}
+
+.schema-slide[data-theme-font-roles] .component-code-block__code {
+  font-family: var(--font-code);
+}
+
+.schema-slide[data-theme-font-roles] .component-hero__title {
+  font-size: var(--yrkie-hero-title-size);
+}
+
+.schema-slide[data-theme="yrkie-theme"] {
+  background: var(--yrkie-color-light);
+  color: var(--yrkie-color-body);
+  font-family: var(--font-sans-cn);
+  line-height: var(--yrkie-line-height);
+  letter-spacing: var(--yrkie-letter-spacing-body);
+}
+
+.schema-slide[data-theme="yrkie-theme"] .component-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.36em;
+  justify-self: start;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.24em 0.72em;
+  border-radius: var(--yrkie-radius-component);
+  background-color: var(--yrkie-color-secondary);
+  color: var(--yrkie-color-title);
+  letter-spacing: var(--yrkie-letter-spacing-eyebrow);
+}
+

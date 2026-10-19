@@ -1,0 +1,7 @@
+#slide-mount,
+.schema-slide,
+.schema-layout {
+  position: absolute;
+  inset: 0;
+}
+

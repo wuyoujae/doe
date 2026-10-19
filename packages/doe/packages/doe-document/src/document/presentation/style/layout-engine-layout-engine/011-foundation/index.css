@@ -1,0 +1,2 @@
+/* A fixed-height slide must report overflow instead of letting Flexbox shrink
+   independent blocks until their painted contents overlap. */

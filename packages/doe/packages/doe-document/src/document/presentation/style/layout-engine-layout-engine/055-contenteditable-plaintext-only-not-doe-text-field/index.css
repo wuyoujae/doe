@@ -1,0 +1,17 @@
+[contenteditable="plaintext-only"]:not(.doe-text-field) {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 1ch;
+  max-width: 100%;
+  height: auto;
+  min-height: 1em;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word;
+  text-wrap: wrap !important;
+  cursor: text;
+  caret-color: var(--editor-blue);
+  outline: none;
+}
+

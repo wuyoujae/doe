@@ -1,0 +1,4655 @@
+{
+  "cases": [
+    {
+      "name": "image-text",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "image-text",
+                  "props": {
+                    "src": "yrkie-asset-data://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "alt": "Sample image",
+                    "title": "Title",
+                    "text": "Description"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "icon-text",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "icon-text",
+                  "props": {
+                    "icon": "Target",
+                    "title": "Title",
+                    "text": "Description"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "shape-contents",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "shape-contents",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Title",
+                        "text": "Description"
+                      },
+                      {
+                        "title": "Title",
+                        "text": "Description"
+                      },
+                      {
+                        "title": "Title",
+                        "text": "Description"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "item-cards",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "item-cards",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Title",
+                        "text": "Description",
+                        "icon": "Target"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "hero",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "hero",
+                  "props": {
+                    "title": "Title",
+                    "eyebrow": "Eyebrow",
+                    "subtitle": "Subtitle",
+                    "icon": "Handshake"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "heading",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "heading",
+                  "props": {
+                    "text": "Heading",
+                    "level": 1,
+                    "kicker": "Kicker"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "text",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "text",
+                  "props": {
+                    "text": "She said \"yes\".\nThe next line."
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "code-block",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "code-block",
+                  "props": {
+                    "code": "print(\"Hello\")\nprint(2)",
+                    "language": "python",
+                    "wrap": false
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "list",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "list",
+                  "props": {
+                    "items": [
+                      "One",
+                      "Two"
+                    ],
+                    "title": "Title"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "ordered-list",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "ordered-list",
+                  "props": {
+                    "items": [
+                      "One",
+                      "Two"
+                    ],
+                    "title": "Title"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "todo-list",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "todo-list",
+                  "props": {
+                    "items": [
+                      {
+                        "text": "Done",
+                        "checked": true
+                      },
+                      {
+                        "text": "Pending",
+                        "checked": false
+                      }
+                    ],
+                    "title": "Title"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "notice",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "notice",
+                  "props": {
+                    "text": "Notice",
+                    "icon": "Triangle"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "question-card",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "question-card",
+                  "props": {
+                    "title": "Question",
+                    "text": "Answer",
+                    "index": "Q"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "quote",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "quote",
+                  "props": {
+                    "text": "Quoted text",
+                    "source": "Source"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "media",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "media",
+                  "props": {
+                    "src": "yrkie-asset-data://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "alt": "Sample image",
+                    "fit": "cover",
+                    "position": "20% 80%",
+                    "aspectRatio": "4:3"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "stat",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "stat",
+                  "props": {
+                    "value": 42,
+                    "label": "Label",
+                    "description": "Description"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "table",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "table",
+                  "props": {
+                    "content": {
+                      "columns": [
+                        {
+                          "header": "Name",
+                          "align": "left",
+                          "locale": "en",
+                          "protectedTerms": [
+                            "Item A"
+                          ]
+                        },
+                        {
+                          "header": "Value",
+                          "align": "right"
+                        }
+                      ],
+                      "rows": [
+                        {
+                          "cells": [
+                            "Item A",
+                            12
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "text": "Item B",
+                              "emphasis": "muted"
+                            },
+                            {
+                              "text": "20",
+                              "emphasis": "highlight"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "ariaLabel": "Sample table",
+                    "borderStyle": "three-line",
+                    "semanticWrap": {
+                      "locale": "en",
+                      "protectedTerms": [
+                        "Item B"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "grouped-bar-chart",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "grouped-bar-chart",
+                  "props": {
+                    "content": {
+                      "categories": [
+                        "A",
+                        "B"
+                      ],
+                      "series": [
+                        {
+                          "name": "Series",
+                          "data": [
+                            10,
+                            20
+                          ]
+                        }
+                      ],
+                      "valuePrefix": "$",
+                      "valueSuffix": "M",
+                      "maxValue": 30,
+                      "tickInterval": 10
+                    },
+                    "subtitle": "USD millions",
+                    "showLegend": false
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "line-chart",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "line-chart",
+                  "props": {
+                    "content": {
+                      "categories": [
+                        "A",
+                        "B"
+                      ],
+                      "series": [
+                        {
+                          "name": "Series",
+                          "data": [
+                            -5,
+                            20
+                          ],
+                          "labels": [
+                            {
+                              "index": 0,
+                              "text": "Low"
+                            },
+                            {
+                              "index": 1,
+                              "text": 20
+                            }
+                          ]
+                        }
+                      ],
+                      "valuePrefix": "$",
+                      "valueSuffix": "M",
+                      "maxValue": 30,
+                      "tickInterval": 10,
+                      "minValue": -10,
+                      "includeZero": false
+                    },
+                    "showLegend": false,
+                    "smooth": false
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "stacked-bar-chart",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "stacked-bar-chart",
+                  "props": {
+                    "content": {
+                      "categories": [
+                        "A",
+                        "B"
+                      ],
+                      "series": [
+                        {
+                          "name": "Series",
+                          "data": [
+                            10,
+                            20
+                          ]
+                        }
+                      ],
+                      "valuePrefix": "$",
+                      "valueSuffix": "M",
+                      "maxValue": 30,
+                      "tickInterval": 10,
+                      "showYAxis": false,
+                      "showValues": false,
+                      "legendReversed": true,
+                      "annotation": {
+                        "label": "Change",
+                        "from": 0,
+                        "to": 1
+                      }
+                    },
+                    "subtitle": "USD millions",
+                    "showLegend": true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "risk-matrix",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "risk-matrix",
+                  "props": {
+                    "content": {
+                      "items": [
+                        {
+                          "label": "A",
+                          "x": 0.6,
+                          "y": 0.7
+                        }
+                      ],
+                      "xLabel": "Likelihood",
+                      "yLabel": "Impact",
+                      "priorityZone": {
+                        "x": 0.6,
+                        "y": 0.6,
+                        "width": 0.4,
+                        "height": 0.4,
+                        "labelLines": [
+                          "Priority",
+                          "risks"
+                        ]
+                      }
+                    },
+                    "subtitle": "Risks"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "waterfall-chart",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "waterfall-chart",
+                  "props": {
+                    "content": {
+                      "items": [
+                        {
+                          "label": "Start",
+                          "value": 100,
+                          "type": "total",
+                          "connectToNext": true,
+                          "showValue": true,
+                          "valuePosition": "inside"
+                        },
+                        {
+                          "label": "Change",
+                          "value": -20,
+                          "type": "change",
+                          "valuePosition": "badge"
+                        },
+                        {
+                          "label": "End",
+                          "value": 80,
+                          "type": "total",
+                          "showValue": false
+                        }
+                      ],
+                      "minValue": 0,
+                      "maxValue": 120,
+                      "tickInterval": 20,
+                      "includeZero": true,
+                      "valuePrefix": "$",
+                      "valueSuffix": "M",
+                      "showYAxis": true,
+                      "showValues": true,
+                      "showChangeSigns": true,
+                      "staggerLabels": false,
+                      "footnote": "Source",
+                      "callouts": [
+                        {
+                          "index": 1,
+                          "text": "Change",
+                          "position": "below"
+                        }
+                      ],
+                      "comparisons": [
+                        {
+                          "from": 0,
+                          "to": 2,
+                          "label": "Net change"
+                        }
+                      ]
+                    },
+                    "subtitle": "USD millions"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "radar-chart",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "radar-chart",
+                  "props": {
+                    "content": {
+                      "axes": [
+                        {
+                          "label": "A",
+                          "max": 10
+                        },
+                        {
+                          "label": "B",
+                          "max": 20
+                        },
+                        {
+                          "label": "C",
+                          "max": 30
+                        }
+                      ],
+                      "datasets": [
+                        {
+                          "name": "Series",
+                          "values": [
+                            5,
+                            10,
+                            15
+                          ]
+                        }
+                      ]
+                    },
+                    "subtitle": "Scores",
+                    "showLegend": false
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "donut-chart",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "donut-chart",
+                  "props": {
+                    "content": {
+                      "items": [
+                        {
+                          "label": "A",
+                          "value": 25,
+                          "percentLabel": "25%",
+                          "badge": "A",
+                          "primary": true,
+                          "valueLabel": "25",
+                          "detailLabel": "Share"
+                        },
+                        {
+                          "label": "B",
+                          "value": 75,
+                          "valueLabel": false
+                        }
+                      ],
+                      "variant": "hero",
+                      "showLegend": false,
+                      "center": {
+                        "value": 100,
+                        "eyebrow": "Total",
+                        "subtitle": [
+                          "All",
+                          "items"
+                        ]
+                      },
+                      "tag": "FY",
+                      "footerLines": [
+                        "Source"
+                      ],
+                      "footnotes": [
+                        {
+                          "align": "left",
+                          "lines": [
+                            "Note"
+                          ]
+                        },
+                        {
+                          "align": "right",
+                          "text": "Right note"
+                        }
+                      ],
+                      "valuePrefix": "$",
+                      "valueSuffix": "M",
+                      "maximumFractionDigits": 2
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "capability-cards",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "capability-cards",
+                  "props": {
+                    "content": {
+                      "items": [
+                        {
+                          "title": "Title",
+                          "text": "Description",
+                          "icon": "Target"
+                        }
+                      ]
+                    },
+                    "title": "Capabilities"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "numbered-icon-cards",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "numbered-icon-cards",
+                  "props": {
+                    "content": {
+                      "items": [
+                        {
+                          "title": "Title",
+                          "text": "Description",
+                          "icon": "Target"
+                        },
+                        {
+                          "title": "Title",
+                          "text": "Description",
+                          "icon": "ShieldCheck"
+                        }
+                      ]
+                    },
+                    "title": "Items"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "math-formula",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "math-formula",
+                  "props": {
+                    "content": {
+                      "formula": "\\frac{a_{1}+b}{2}",
+                      "display": true,
+                      "align": "right"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "columns-2",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "group",
+                  "type": "layout-group",
+                  "layout": {
+                    "variant": "columns",
+                    "columns": 2
+                  },
+                  "children": [
+                    {
+                      "id": "text-0",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      }
+                    },
+                    {
+                      "id": "text-1",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "columns-3",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "group",
+                  "type": "layout-group",
+                  "layout": {
+                    "variant": "columns",
+                    "columns": 3
+                  },
+                  "children": [
+                    {
+                      "id": "text-0",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      }
+                    },
+                    {
+                      "id": "text-1",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      }
+                    },
+                    {
+                      "id": "text-2",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "columns-4",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "group",
+                  "type": "layout-group",
+                  "layout": {
+                    "variant": "columns",
+                    "columns": 4
+                  },
+                  "children": [
+                    {
+                      "id": "text-0",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      }
+                    },
+                    {
+                      "id": "text-1",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      }
+                    },
+                    {
+                      "id": "text-2",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      }
+                    },
+                    {
+                      "id": "text-3",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "shape-contents-petals",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "shape-contents",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Title",
+                        "text": "Description"
+                      },
+                      {
+                        "title": "Title",
+                        "text": "Description"
+                      },
+                      {
+                        "title": "Title",
+                        "text": "Description"
+                      }
+                    ],
+                    "variant": "petals"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "shape-contents-stairs",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "shape-contents",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Title",
+                        "text": "Description"
+                      },
+                      {
+                        "title": "Title",
+                        "text": "Description"
+                      },
+                      {
+                        "title": "Title",
+                        "text": "Description"
+                      }
+                    ],
+                    "variant": "stairs"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "shape-contents-pyramid",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "shape-contents",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Title",
+                        "text": "Description"
+                      },
+                      {
+                        "title": "Title",
+                        "text": "Description"
+                      },
+                      {
+                        "title": "Title",
+                        "text": "Description"
+                      }
+                    ],
+                    "variant": "pyramid"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "item-cards-filled-icon",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "item-cards",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Title",
+                        "text": "Description",
+                        "icon": "Target"
+                      }
+                    ],
+                    "variant": "filled-icon"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "item-cards-outline",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "item-cards",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Title",
+                        "text": "Description",
+                        "icon": "Target"
+                      }
+                    ],
+                    "variant": "outline"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "item-cards-side-rule",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "item-cards",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Title",
+                        "text": "Description",
+                        "icon": "Target"
+                      }
+                    ],
+                    "variant": "side-rule"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "item-cards-top-rule",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "item-cards",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Title",
+                        "text": "Description",
+                        "icon": "Target"
+                      }
+                    ],
+                    "variant": "top-rule"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "item-cards-top-icon",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "item-cards",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Title",
+                        "text": "Description",
+                        "icon": "Target"
+                      }
+                    ],
+                    "variant": "top-icon"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "item-cards-connected",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "item-cards",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Title",
+                        "text": "Description",
+                        "icon": "Target"
+                      }
+                    ],
+                    "variant": "connected"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "item-cards-connected-icon",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "item-cards",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Title",
+                        "text": "Description",
+                        "icon": "Target"
+                      }
+                    ],
+                    "variant": "connected-icon"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "item-cards-leaf",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "item-cards",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Title",
+                        "text": "Description",
+                        "icon": "Target"
+                      }
+                    ],
+                    "variant": "leaf"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "item-cards-quote",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "item-cards",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Title",
+                        "text": "Description",
+                        "icon": "Target"
+                      }
+                    ],
+                    "variant": "quote"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "item-cards-bubble",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "item-cards",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Title",
+                        "text": "Description",
+                        "icon": "Target"
+                      }
+                    ],
+                    "variant": "bubble"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "layout-automatic",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "g",
+                  "type": "layout-group",
+                  "layout": {},
+                  "children": [
+                    {
+                      "id": "a",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      }
+                    },
+                    {
+                      "id": "b",
+                      "type": "stat",
+                      "props": {
+                        "value": 42,
+                        "label": "Label",
+                        "description": "Description"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "layout-row",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "g",
+                  "type": "layout-group",
+                  "layout": {
+                    "variant": "row",
+                    "align": "start"
+                  },
+                  "children": [
+                    {
+                      "id": "a",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      }
+                    },
+                    {
+                      "id": "b",
+                      "type": "stat",
+                      "props": {
+                        "value": 42,
+                        "label": "Label",
+                        "description": "Description"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "layout-stack",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "g",
+                  "type": "layout-group",
+                  "layout": {
+                    "variant": "stack",
+                    "align": "end"
+                  },
+                  "children": [
+                    {
+                      "id": "a",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      }
+                    },
+                    {
+                      "id": "b",
+                      "type": "stat",
+                      "props": {
+                        "value": 42,
+                        "label": "Label",
+                        "description": "Description"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "layout-balanced",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "g",
+                  "type": "layout-group",
+                  "layout": {
+                    "variant": "composition",
+                    "direction": "row",
+                    "ratio": "balanced",
+                    "align": "center"
+                  },
+                  "children": [
+                    {
+                      "id": "a",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      }
+                    },
+                    {
+                      "id": "b",
+                      "type": "stat",
+                      "props": {
+                        "value": 42,
+                        "label": "Label",
+                        "description": "Description"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "layout-first",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "g",
+                  "type": "layout-group",
+                  "layout": {
+                    "variant": "composition",
+                    "direction": "row",
+                    "ratio": "primary-first"
+                  },
+                  "children": [
+                    {
+                      "id": "a",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      }
+                    },
+                    {
+                      "id": "b",
+                      "type": "stat",
+                      "props": {
+                        "value": 42,
+                        "label": "Label",
+                        "description": "Description"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "layout-second",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "g",
+                  "type": "layout-group",
+                  "layout": {
+                    "variant": "composition",
+                    "direction": "row",
+                    "ratio": "primary-second",
+                    "align": "stretch"
+                  },
+                  "children": [
+                    {
+                      "id": "a",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      }
+                    },
+                    {
+                      "id": "b",
+                      "type": "stat",
+                      "props": {
+                        "value": 42,
+                        "label": "Label",
+                        "description": "Description"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "edge-straight",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "edge",
+                  "type": "layout-group",
+                  "layout": {
+                    "variant": "edge-media",
+                    "mediaPosition": "left",
+                    "mediaRatio": 0.4,
+                    "mediaShape": "straight",
+                    "contentAlign": "start"
+                  },
+                  "children": [
+                    {
+                      "id": "copy",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      },
+                      "layout": {
+                        "region": "content"
+                      }
+                    },
+                    {
+                      "id": "image",
+                      "type": "media",
+                      "props": {
+                        "src": "yrkie-asset-data://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                        "alt": "Sample image",
+                        "fit": "cover",
+                        "position": "20% 80%",
+                        "aspectRatio": "4:3"
+                      },
+                      "layout": {
+                        "region": "media"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "layout": {
+                "preset": "edge-media"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "edge-fade",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "edge",
+                  "type": "layout-group",
+                  "layout": {
+                    "variant": "edge-media",
+                    "mediaPosition": "right",
+                    "mediaRatio": 0.4,
+                    "mediaShape": "fade",
+                    "contentAlign": "center"
+                  },
+                  "children": [
+                    {
+                      "id": "copy",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      },
+                      "layout": {
+                        "region": "content"
+                      }
+                    },
+                    {
+                      "id": "image",
+                      "type": "media",
+                      "props": {
+                        "src": "yrkie-asset-data://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                        "alt": "Sample image",
+                        "fit": "cover",
+                        "position": "20% 80%",
+                        "aspectRatio": "4:3"
+                      },
+                      "layout": {
+                        "region": "media"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "layout": {
+                "preset": "edge-media"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "edge-diagonal",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "edge",
+                  "type": "layout-group",
+                  "layout": {
+                    "variant": "edge-media",
+                    "mediaPosition": "top",
+                    "mediaRatio": 0.5,
+                    "mediaShape": "diagonal",
+                    "contentAlign": "end"
+                  },
+                  "children": [
+                    {
+                      "id": "copy",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      },
+                      "layout": {
+                        "region": "content"
+                      }
+                    },
+                    {
+                      "id": "image",
+                      "type": "media",
+                      "props": {
+                        "src": "yrkie-asset-data://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                        "alt": "Sample image",
+                        "fit": "cover",
+                        "position": "20% 80%",
+                        "aspectRatio": "4:3"
+                      },
+                      "layout": {
+                        "region": "media"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "layout": {
+                "preset": "edge-media"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "edge-circle",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "edge",
+                  "type": "layout-group",
+                  "layout": {
+                    "variant": "edge-media",
+                    "mediaPosition": "bottom",
+                    "mediaRatio": 0.5,
+                    "mediaShape": "circle",
+                    "contentAlign": "start"
+                  },
+                  "children": [
+                    {
+                      "id": "copy",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      },
+                      "layout": {
+                        "region": "content"
+                      }
+                    },
+                    {
+                      "id": "image",
+                      "type": "media",
+                      "props": {
+                        "src": "yrkie-asset-data://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                        "alt": "Sample image",
+                        "fit": "cover",
+                        "position": "20% 80%",
+                        "aspectRatio": "4:3"
+                      },
+                      "layout": {
+                        "region": "media"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "layout": {
+                "preset": "edge-media"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "edge-inner-circle",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "edge",
+                  "type": "layout-group",
+                  "layout": {
+                    "variant": "edge-media",
+                    "mediaPosition": "right",
+                    "mediaRatio": 0.4,
+                    "mediaShape": "inner-circle",
+                    "contentAlign": "center"
+                  },
+                  "children": [
+                    {
+                      "id": "copy",
+                      "type": "text",
+                      "props": {
+                        "text": "She said \"yes\".\nThe next line."
+                      },
+                      "layout": {
+                        "region": "content"
+                      }
+                    },
+                    {
+                      "id": "image",
+                      "type": "media",
+                      "props": {
+                        "src": "yrkie-asset-data://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                        "alt": "Sample image",
+                        "fit": "cover",
+                        "position": "20% 80%",
+                        "aspectRatio": "4:3"
+                      },
+                      "layout": {
+                        "region": "media"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "layout": {
+                "preset": "edge-media"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "background-flow",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "text",
+                  "props": {
+                    "text": "She said \"yes\".\nThe next line."
+                  }
+                }
+              ],
+              "layout": {
+                "preset": "flow"
+              },
+              "background": {
+                "src": "yrkie-asset-data://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "fit": "contain",
+                "position": "50% 50%",
+                "foreground": "dark",
+                "overlay": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "background-narrative",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "text",
+                  "props": {
+                    "text": "She said \"yes\".\nThe next line."
+                  }
+                }
+              ],
+              "layout": {
+                "preset": "narrative"
+              },
+              "background": {
+                "src": "yrkie-asset-data://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "fit": "cover",
+                "position": "50% 50%",
+                "foreground": "light",
+                "overlay": {
+                  "opacity": 0.25,
+                  "direction": "to-left"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "background-balanced",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "text",
+                  "props": {
+                    "text": "She said \"yes\".\nThe next line."
+                  }
+                }
+              ],
+              "layout": {
+                "preset": "balanced"
+              },
+              "background": {
+                "src": "yrkie-asset-data://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "fit": "contain",
+                "position": "50% 50%",
+                "foreground": "dark",
+                "overlay": {
+                  "opacity": 0.25,
+                  "direction": "to-bottom"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "background-dashboard",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "text",
+                  "props": {
+                    "text": "She said \"yes\".\nThe next line."
+                  }
+                }
+              ],
+              "layout": {
+                "preset": "dashboard"
+              },
+              "background": {
+                "src": "yrkie-asset-data://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "fit": "cover",
+                "position": "50% 50%",
+                "foreground": "light",
+                "overlay": {
+                  "opacity": 0.25,
+                  "direction": "to-top"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "text-content",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "text",
+                  "props": {
+                    "text": "She said \"yes\".\nThe next line."
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "span-full",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "text",
+                  "props": {
+                    "text": "She said \"yes\".\nThe next line."
+                  },
+                  "layout": {
+                    "span": "full"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "span-half",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "text",
+                  "props": {
+                    "text": "She said \"yes\".\nThe next line."
+                  },
+                  "layout": {
+                    "span": "half"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "donut-standard",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "donut-chart",
+                  "props": {
+                    "content": {
+                      "items": [
+                        {
+                          "label": "A",
+                          "value": 25
+                        },
+                        {
+                          "label": "B",
+                          "value": 75
+                        }
+                      ],
+                      "variant": "standard",
+                      "center": {
+                        "title": [
+                          "Center",
+                          "text"
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "donut-compact",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "donut-chart",
+                  "props": {
+                    "content": {
+                      "items": [
+                        {
+                          "label": "A",
+                          "value": 25
+                        },
+                        {
+                          "label": "B",
+                          "value": 75
+                        }
+                      ],
+                      "variant": "compact",
+                      "center": {
+                        "title": [
+                          "Center",
+                          "text"
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "background-disabled",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "text",
+                  "props": {
+                    "text": "She said \"yes\".\nThe next line."
+                  }
+                }
+              ],
+              "layout": {
+                "preset": "flow"
+              },
+              "background": {
+                "src": "yrkie-asset-data://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "fit": "contain",
+                "position": "50% 50%",
+                "foreground": "dark",
+                "overlay": false,
+                "enabled": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "cards:connected",
+                    "items": [
+                      {
+                        "id": "entry-1",
+                        "title": "Title",
+                        "text": "Body",
+                        "icon": "Target"
+                      },
+                      {
+                        "id": "entry-2",
+                        "title": "Next",
+                        "text": "Details"
+                      }
+                    ],
+                    "itemColumns": "auto",
+                    "itemLayout": "auto",
+                    "columnPreference": 4
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-alternating",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "alternating",
+                    "items": [
+                      {
+                        "id": "i0",
+                        "title": "Stage 0",
+                        "text": "Complete content.",
+                        "icon": "ArrowRight"
+                      },
+                      {
+                        "id": "i1",
+                        "title": "Stage 1",
+                        "text": "Complete content.",
+                        "icon": "ArrowRight"
+                      },
+                      {
+                        "id": "i2",
+                        "title": "Stage 2",
+                        "text": "Complete content.",
+                        "icon": "ArrowRight"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-icon-horizontal",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "icon-horizontal",
+                    "items": [
+                      {
+                        "id": "i0",
+                        "title": "Stage 0",
+                        "text": "Complete content.",
+                        "icon": "ArrowRight"
+                      },
+                      {
+                        "id": "i1",
+                        "title": "Stage 1",
+                        "text": "Complete content.",
+                        "icon": "ArrowRight"
+                      },
+                      {
+                        "id": "i2",
+                        "title": "Stage 2",
+                        "text": "Complete content.",
+                        "icon": "ArrowRight"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-dot-card",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "dot-card",
+                    "items": [
+                      {
+                        "id": "i0",
+                        "title": "Stage 0",
+                        "text": "Complete content."
+                      },
+                      {
+                        "id": "i1",
+                        "title": "Stage 1",
+                        "text": "Complete content."
+                      },
+                      {
+                        "id": "i2",
+                        "title": "Stage 2",
+                        "text": "Complete content."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-dot-list",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "dot-list",
+                    "items": [
+                      {
+                        "id": "i0",
+                        "title": "Stage 0",
+                        "text": "Complete content."
+                      },
+                      {
+                        "id": "i1",
+                        "title": "Stage 1",
+                        "text": "Complete content."
+                      },
+                      {
+                        "id": "i2",
+                        "title": "Stage 2",
+                        "text": "Complete content."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-numbered-top-rule",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "numbered-top-rule",
+                    "items": [
+                      {
+                        "id": "i0",
+                        "title": "Stage 0",
+                        "text": "Complete content."
+                      },
+                      {
+                        "id": "i1",
+                        "title": "Stage 1",
+                        "text": "Complete content."
+                      },
+                      {
+                        "id": "i2",
+                        "title": "Stage 2",
+                        "text": "Complete content."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-numbered-inline",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "numbered-inline",
+                    "items": [
+                      {
+                        "id": "i0",
+                        "title": "Stage 0",
+                        "text": "Complete content."
+                      },
+                      {
+                        "id": "i1",
+                        "title": "Stage 1",
+                        "text": "Complete content."
+                      },
+                      {
+                        "id": "i2",
+                        "title": "Stage 2",
+                        "text": "Complete content."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-timeline-numbered",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "timeline-numbered",
+                    "items": [
+                      {
+                        "id": "i0",
+                        "title": "Stage 0",
+                        "text": "Complete content."
+                      },
+                      {
+                        "id": "i1",
+                        "title": "Stage 1",
+                        "text": "Complete content."
+                      },
+                      {
+                        "id": "i2",
+                        "title": "Stage 2",
+                        "text": "Complete content."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-timeline-dots",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "timeline-dots",
+                    "items": [
+                      {
+                        "id": "i0",
+                        "title": "Stage 0",
+                        "text": "Complete content."
+                      },
+                      {
+                        "id": "i1",
+                        "title": "Stage 1",
+                        "text": "Complete content."
+                      },
+                      {
+                        "id": "i2",
+                        "title": "Stage 2",
+                        "text": "Complete content."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-timeline-dot-cards",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "timeline-dot-cards",
+                    "items": [
+                      {
+                        "id": "i0",
+                        "title": "Stage 0",
+                        "text": "Complete content."
+                      },
+                      {
+                        "id": "i1",
+                        "title": "Stage 1",
+                        "text": "Complete content."
+                      },
+                      {
+                        "id": "i2",
+                        "title": "Stage 2",
+                        "text": "Complete content."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-process-numbered-parallelogram",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "numbered-parallelogram",
+                    "items": [
+                      {
+                        "id": "stage-1",
+                        "title": "Stage 1",
+                        "text": "Confirm the scope and next action."
+                      },
+                      {
+                        "id": "stage-2",
+                        "title": "Stage 2",
+                        "text": "Confirm the scope and next action."
+                      },
+                      {
+                        "id": "stage-3",
+                        "title": "Stage 3",
+                        "text": "Confirm the scope and next action."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-process-numbered-pill",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "numbered-pill",
+                    "items": [
+                      {
+                        "id": "stage-1",
+                        "title": "Stage 1",
+                        "text": "Confirm the scope and next action."
+                      },
+                      {
+                        "id": "stage-2",
+                        "title": "Stage 2",
+                        "text": "Confirm the scope and next action."
+                      },
+                      {
+                        "id": "stage-3",
+                        "title": "Stage 3",
+                        "text": "Confirm the scope and next action."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-process-numbered-chevron",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "numbered-chevron",
+                    "items": [
+                      {
+                        "id": "stage-1",
+                        "title": "Stage 1",
+                        "text": "Confirm the scope and next action."
+                      },
+                      {
+                        "id": "stage-2",
+                        "title": "Stage 2",
+                        "text": "Confirm the scope and next action."
+                      },
+                      {
+                        "id": "stage-3",
+                        "title": "Stage 3",
+                        "text": "Confirm the scope and next action."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-process-ascending-bar",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "ascending-bar",
+                    "items": [
+                      {
+                        "id": "stage-1",
+                        "title": "Stage 1",
+                        "text": "Confirm the scope and next action."
+                      },
+                      {
+                        "id": "stage-2",
+                        "title": "Stage 2",
+                        "text": "Confirm the scope and next action."
+                      },
+                      {
+                        "id": "stage-3",
+                        "title": "Stage 3",
+                        "text": "Confirm the scope and next action."
+                      }
+                    ],
+                    "itemLayout": "grid",
+                    "itemColumns": 5
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-process-ascending-arrow",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "ascending-arrow",
+                    "items": [
+                      {
+                        "id": "stage-1",
+                        "title": "Stage 1",
+                        "text": "Confirm the scope and next action."
+                      },
+                      {
+                        "id": "stage-2",
+                        "title": "Stage 2",
+                        "text": "Confirm the scope and next action."
+                      },
+                      {
+                        "id": "stage-3",
+                        "title": "Stage 3",
+                        "text": "Confirm the scope and next action."
+                      }
+                    ],
+                    "itemLayout": "grid",
+                    "itemColumns": 5
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-process-ascending-numbered",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "ascending-numbered",
+                    "items": [
+                      {
+                        "id": "stage-1",
+                        "title": "Stage 1",
+                        "text": "Confirm the scope and next action."
+                      },
+                      {
+                        "id": "stage-2",
+                        "title": "Stage 2",
+                        "text": "Confirm the scope and next action."
+                      },
+                      {
+                        "id": "stage-3",
+                        "title": "Stage 3",
+                        "text": "Confirm the scope and next action."
+                      }
+                    ],
+                    "itemLayout": "grid",
+                    "itemColumns": 5
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "contents-process-shape-inverted-pyramid",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "node",
+                  "type": "contents",
+                  "props": {
+                    "presentation": "shape:inverted-pyramid",
+                    "items": [
+                      {
+                        "id": "stage-1",
+                        "title": "Stage 1",
+                        "text": "Confirm the scope and next action."
+                      },
+                      {
+                        "id": "stage-2",
+                        "title": "Stage 2",
+                        "text": "Confirm the scope and next action."
+                      },
+                      {
+                        "id": "stage-3",
+                        "title": "Stage 3",
+                        "text": "Confirm the scope and next action."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "3d-funnel",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "funnel",
+                  "type": "3d-funnel",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "AI engine",
+                        "text": "Analysis and decisions."
+                      },
+                      {
+                        "title": "Storage",
+                        "text": "Secure data management."
+                      },
+                      {
+                        "title": "Frontend",
+                        "text": "Interaction and visualization."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "concentric-circles",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "funnel",
+                  "type": "concentric-circles",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Stage 1",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 2",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 3",
+                        "text": "Explain the next step."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "layered-funnel",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "funnel",
+                  "type": "layered-funnel",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Stage 1",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 2",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 3",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 4",
+                        "text": "Explain the next step."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "folded-arrow",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "funnel",
+                  "type": "folded-arrow",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Stage 1",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 2",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 3",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 4",
+                        "text": "Explain the next step."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "wave-arrow",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "funnel",
+                  "type": "wave-arrow",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Stage 1",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 2",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 3",
+                        "text": "Explain the next step."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "layered-cube",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "funnel",
+                  "type": "layered-cube",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Stage 1",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 2",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 3",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 4",
+                        "text": "Explain the next step."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "double-ring",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "funnel",
+                  "type": "double-ring",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Stage 1",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 2",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 3",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 4",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 5",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 6",
+                        "text": "Explain the next step."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "droplet-process",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "funnel",
+                  "type": "droplet-process",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "Stage 1",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 2",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 3",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 4",
+                        "text": "Explain the next step."
+                      },
+                      {
+                        "title": "Stage 5",
+                        "text": "Explain the next step."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "mind-map",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "funnel",
+                  "type": "mind-map",
+                  "props": {
+                    "content": {
+                      "items": [
+                        {
+                          "level": 0,
+                          "title": "Level 0",
+                          "text": "Responsibility",
+                          "icon": "User"
+                        },
+                        {
+                          "level": 1,
+                          "title": "Level 1",
+                          "text": "Responsibility",
+                          "icon": "User"
+                        },
+                        {
+                          "level": 2,
+                          "title": "Level 2",
+                          "text": "Responsibility",
+                          "icon": "User"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "serpentine-process",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "funnel",
+                  "type": "serpentine-process",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "阶段 1",
+                        "text": "明确下一步行动。",
+                        "icon": "Star"
+                      },
+                      {
+                        "title": "阶段 2",
+                        "text": "明确下一步行动。",
+                        "icon": "Star"
+                      },
+                      {
+                        "title": "阶段 3",
+                        "text": "明确下一步行动。",
+                        "icon": "Star"
+                      },
+                      {
+                        "title": "阶段 4",
+                        "text": "明确下一步行动。",
+                        "icon": "Star"
+                      },
+                      {
+                        "title": "阶段 5",
+                        "text": "明确下一步行动。",
+                        "icon": "Star"
+                      },
+                      {
+                        "title": "阶段 6",
+                        "text": "明确下一步行动。",
+                        "icon": "Star"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "recycling-arrows",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "funnel",
+                  "type": "recycling-arrows",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "阶段 1",
+                        "text": "明确下一步行动。"
+                      },
+                      {
+                        "title": "阶段 2",
+                        "text": "明确下一步行动。"
+                      },
+                      {
+                        "title": "阶段 3",
+                        "text": "明确下一步行动。"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "vertical-progress",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "funnel",
+                  "type": "vertical-progress",
+                  "props": {
+                    "items": [
+                      {
+                        "value": 65,
+                        "text": "说明进度与目标。"
+                      },
+                      {
+                        "value": 30,
+                        "text": "说明进度与目标。"
+                      },
+                      {
+                        "value": 97,
+                        "text": "说明进度与目标。"
+                      },
+                      {
+                        "value": 41,
+                        "text": "说明进度与目标。"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "icon-columns",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "funnel",
+                  "type": "icon-columns",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "阶段 1",
+                        "text": "明确下一步行动。",
+                        "icon": "Star"
+                      },
+                      {
+                        "title": "阶段 2",
+                        "text": "明确下一步行动。",
+                        "icon": "Star"
+                      },
+                      {
+                        "title": "阶段 3",
+                        "text": "明确下一步行动。",
+                        "icon": "Star"
+                      },
+                      {
+                        "title": "阶段 4",
+                        "text": "明确下一步行动。",
+                        "icon": "Star"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "badge-cards",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "funnel",
+                  "type": "badge-cards",
+                  "props": {
+                    "items": [
+                      {
+                        "title": "阶段 1",
+                        "text": "明确下一步行动。",
+                        "icon": "Star",
+                        "value": "提升 10%"
+                      },
+                      {
+                        "title": "阶段 2",
+                        "text": "明确下一步行动。",
+                        "icon": "Star",
+                        "value": "提升 10%"
+                      },
+                      {
+                        "title": "阶段 3",
+                        "text": "明确下一步行动。",
+                        "icon": "Star",
+                        "value": "提升 10%"
+                      },
+                      {
+                        "title": "阶段 4",
+                        "text": "明确下一步行动。",
+                        "icon": "Star",
+                        "value": "提升 10%"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "text-panel",
+      "root": {
+        "version": 4,
+        "pageNumber": {
+          "enabled": true,
+          "format": "fraction"
+        },
+        "deck": {
+          "title": "Schema fixture",
+          "theme": "yrkie-theme",
+          "slides": [
+            {
+              "id": "slide",
+              "size": {
+                "width": 960,
+                "height": 540,
+                "unit": "pt"
+              },
+              "blocks": [
+                {
+                  "id": "panel",
+                  "type": "text-panel",
+                  "props": {
+                    "text": "第一段。\n\n第二段：支持 **重点文字**。"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

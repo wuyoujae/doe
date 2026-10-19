@@ -1,0 +1,71 @@
+/* Host-only controls; the DOE canvas and toolbar keep their original styles. */
+.open-source-work .work-back-btn svg { width: 1.125rem; height: 1.125rem; }
+.open-source-work .work-mobile-nav-button svg { width: 1.25rem; height: 1.25rem; }
+.open-source-work .work-mobile-menu-trigger svg { width: 1.3125rem; height: 1.3125rem; }
+.open-source-work .work-nav-icon-btn {
+  width: calc(var(--yrkie-space-unit) * 8.5);
+  height: calc(var(--yrkie-space-unit) * 8.5);
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: calc(var(--yrkie-space-unit) * 0.25) solid var(--work-line-light);
+  border-radius: calc(var(--yrkie-space-unit) * 2.5);
+  background: var(--work-bg-panel);
+  color: var(--work-text-ink);
+  cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+.open-source-work .work-nav-icon-btn svg { width: 1rem; height: 1rem; }
+.open-source-work .work-nav-actions .work-nav-icon-btn > span { display: none; }
+.open-source-work .work-nav-icon-btn:hover {
+  border-color: var(--work-line-light);
+  background: var(--yrkie-color-primary-soft);
+  color: var(--yrkie-color-primary);
+}
+.open-source-work :is(.work-nav-share-btn, .work-nav-action-btn) {
+  height: calc(var(--yrkie-space-unit) * 8.5);
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--yrkie-space-unit) * 1.75);
+  padding: 0 calc(var(--yrkie-space-unit) * 3);
+  border: calc(var(--yrkie-space-unit) * 0.25) solid #d9e0eb;
+  border-radius: calc(var(--yrkie-space-unit) * 2.25);
+  color: var(--yrkie-color-body);
+  background: var(--work-bg-panel);
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+.open-source-work :is(.work-nav-share-btn, .work-nav-action-btn) svg { width: 1rem; height: 1rem; }
+.open-source-work .work-nav-share-btn:not(:disabled):hover {
+  border-color: #d9e0eb;
+  background: #eff6ff;
+}
+.open-source-work :is(.work-nav-share-btn, .work-nav-action-btn):disabled { opacity: 0.5; cursor: not-allowed; }
+.open-source-work .work-nav-actions .work-nav-action-btn.present,
+.open-source-work .work-nav-actions .work-nav-action-btn.present:hover {
+  border: 0;
+  background: radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.34), transparent 27%), linear-gradient(145deg, #002253 0%, #3550e0 57%, #7650d8 100%);
+  color: var(--yrkie-color-white);
+  box-shadow: none;
+  filter: none;
+  transform: none;
+  transition: none;
+}
+@media (min-width: 64.0625rem) and (max-width: 73.75rem) {
+  .open-source-work :is(.work-nav-share-btn, .work-nav-action-btn) { width: calc(var(--yrkie-space-unit) * 8.5); padding: 0; }
+  .open-source-work :is(.work-nav-share-btn, .work-nav-action-btn) span { display: none; }
+}
+.local-project-conversation { overflow: auto; padding-top: 1.5rem !important; }
+.local-project-conversation .message-item-text { white-space: pre-wrap; }
+.local-ai-notice { margin: 1.5rem 0; font-size: var(--yrkie-text-body); line-height: 1.7; color: var(--yrkie-color-body-secondary); }
+.local-storage-error { color: var(--yrkie-color-body); font-size: var(--yrkie-text-label); line-height: 1.6; }
+.local-input-label { font-size: var(--yrkie-text-label); color: var(--yrkie-color-body-secondary); }
+.open-source-work .input-box textarea:disabled { cursor: not-allowed; }
+.local-save-error { z-index: 25; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.75rem 1rem; background: var(--bg-app); font-size: var(--yrkie-text-label); }
+.local-save-error button, .local-work-load button { border: 0; border-radius: var(--yrkie-radius-control); padding: 0.5rem 0.75rem; background: var(--yrkie-color-primary); color: var(--yrkie-color-on-primary); cursor: pointer; }
+.local-work-load { display: grid; place-content: center; justify-items: center; flex: 1; gap: 1rem; padding: 2rem; color: var(--yrkie-color-body); text-align: center; font-size: var(--yrkie-text-body); }

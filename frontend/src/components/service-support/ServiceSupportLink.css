@@ -1,0 +1,26 @@
+/* Original Work navigation Upgrade appearance, shared by the local entry points. */
+.service-support-link {
+  --service-support-border: #d9e0eb;
+  --service-support-hover: #eff6ff;
+  --service-support-icon: #d97706;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.125rem;
+  height: auto;
+  gap: 0.4375rem;
+  padding: 0.4375rem 0.75rem;
+  border: var(--yrkie-border-width) solid var(--service-support-border);
+  border-radius: 0.5625rem;
+  background: var(--yrkie-color-white);
+  color: var(--yrkie-color-body);
+  font: var(--yrkie-weight-regular) var(--yrkie-text-body)/1.2 var(--yrkie-font-ui);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--yrkie-motion-control) ease, border-color var(--yrkie-motion-control) ease, color var(--yrkie-motion-control) ease;
+}
+.service-support-link > svg { flex-shrink: 0; width: 1rem; height: 1rem; color: var(--service-support-icon); }
+a.service-support-link:hover { border-color: var(--service-support-border); background: var(--service-support-hover); color: var(--yrkie-color-body); }
+.service-support-link:focus-visible { outline: calc(var(--yrkie-border-width) * 2) solid var(--yrkie-color-primary); outline-offset: var(--yrkie-gap-micro); }
+@media (prefers-reduced-motion: reduce) { .service-support-link { transition: none; } }

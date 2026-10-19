@@ -1,0 +1,60 @@
+/* Original message-only typography; navigation and canvas are outside this module. */
+.work-shell .user-message > .message-items-wrapper > .message-item-text { background: var(--yrkie-color-conversation-user); }
+.work-shell .work-chat-island {
+  --text-primary: var(--yrkie-color-body);
+  --text-secondary: var(--yrkie-color-body);
+  --text-muted: var(--yrkie-color-placeholder);
+  /* Existing Markdown heading hierarchy at the approved 0.875rem body size. */
+  --work-message-heading-1: 1.75rem;
+  --work-message-heading-2: 1.3125rem;
+  --work-message-heading-3: 1.09375rem;
+  --work-message-heading-4: 0.9625rem;
+  --work-message-inline-code: 0.74375rem;
+  --work-empty-title: 1.5rem;
+}
+.work-shell .work-chat-island :is(.chat-history-view, .new-chat-view, .message-panel, .message-panel-empty,
+  .message-item-text, .message-tool-row, .collapsible-content, .thinking-log, .otherone-md, .thinking-state-reasoning-content,
+  .input-box, .custom-select, button, input, textarea, select) {
+  font-family: var(--yrkie-font-ui);
+  font-size: var(--yrkie-text-body);
+  font-weight: var(--yrkie-weight-regular);
+}
+.work-shell .work-chat-island :is(.message-item-text, .otherone-md, .input-box textarea) {
+  color: var(--yrkie-color-body);
+}
+.work-shell .work-chat-island :is(.agent-message-name, .thinking-state-source-title) {
+  font-size: var(--yrkie-text-body);
+  font-weight: var(--yrkie-weight-regular);
+  color: var(--yrkie-color-title);
+}
+.work-shell .work-chat-island :is(.message-panel-empty, .message-tool-row, .agent-message-activity,
+  .agent-trace-unavailable, .thinking-state-trigger, .thinking-state-label, .thinking-state-query, .thinking-state-source,
+  .thinking-state-source-detail, .thinking-state-more,
+  .tool-chips-summary, .tool-chip-name, .tool-chip-value, .tool-chip-detail, .tool-log, .tool-detail-grid code,
+  .code-lang, .code-copy-btn, .send-hint, .prompt-attachment-name, .prompt-attachment-meta,
+  .prompt-attachment-status, .message-attachment-chip-name, .message-attachment-chip-size) {
+  font-size: var(--yrkie-text-label);
+  font-weight: var(--yrkie-weight-regular);
+}
+.work-shell .work-chat-island :is(.agent-message-activity, .agent-trace-unavailable, .send-hint,
+  .thinking-state-source-detail, .thinking-state-more) { color: var(--yrkie-color-placeholder); }
+.work-shell .work-chat-island :is(input, textarea)::placeholder { color: var(--yrkie-color-placeholder); }
+.work-shell .work-chat-island :is(strong, b, h1, h2, h3, h4, h5, h6, th, .agent-message-name) {
+  font-weight: var(--yrkie-weight-bold);
+}
+.work-shell .work-chat-island .otherone-md :is(h1, h2, h3, h4, h5, h6) { color: var(--yrkie-color-title); }
+.work-shell .work-chat-island .otherone-md h1 { font-size: var(--work-message-heading-1); }
+.work-shell .work-chat-island .otherone-md h2 { font-size: var(--work-message-heading-2); }
+.work-shell .work-chat-island .otherone-md h3 { font-size: var(--work-message-heading-3); }
+.work-shell .work-chat-island .otherone-md h4 { font-size: var(--work-message-heading-4); }
+.work-shell .work-chat-island .otherone-md :is(h5, h6, table) { font-size: var(--yrkie-text-body); }
+.work-shell .work-chat-island .new-chat-view .greeting {
+  font-size: var(--work-empty-title);
+  color: var(--yrkie-color-title);
+}
+.work-shell .work-chat-island .otherone-md code { font-size: var(--work-message-inline-code); }
+.work-shell .work-chat-island .otherone-md pre code { font-size: var(--yrkie-text-label); }
+.work-shell .work-chat-island .input-box .send-btn:not(:disabled):not(.disabled) {
+  background-color: var(--yrkie-color-primary);
+  color: var(--yrkie-color-on-primary);
+}

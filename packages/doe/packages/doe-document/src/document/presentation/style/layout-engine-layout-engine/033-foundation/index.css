@@ -1,0 +1,4 @@
+/* A heading is a content-sized title/divider unit, never a flexible panel.
+   Stack and collection groups may stretch their tracks to equalize cards;
+   keep that spare height below the content instead of inserting it between
+   the title and its divider. */

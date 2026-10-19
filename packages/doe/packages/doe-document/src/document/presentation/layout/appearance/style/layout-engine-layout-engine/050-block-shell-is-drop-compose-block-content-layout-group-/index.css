@@ -1,0 +1,16 @@
+.block-shell.is-drop-compose > .block-content,
+.layout-group.block-shell.is-drop-compose > .layout-group__content {
+  border-radius: 5px;
+  box-shadow:
+    0 0 0 4px var(--editor-blue),
+    0 0 0 10px rgba(40, 120, 255, 0.14);
+}
+
+.block-shell.is-drop-swap > .block-content,
+.layout-group.block-shell.is-drop-swap > .layout-group__content {
+  border-radius: 5px;
+  box-shadow:
+    inset 0 0 0 4px var(--editor-blue),
+    inset 0 0 0 10px rgba(40, 120, 255, 0.12);
+}
+

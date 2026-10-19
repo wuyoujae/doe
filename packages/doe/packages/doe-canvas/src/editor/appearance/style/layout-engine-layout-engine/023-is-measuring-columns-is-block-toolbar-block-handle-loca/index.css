@@ -1,0 +1,4 @@
+.is-measuring-columns :is(.block-toolbar, .block-handle, .local-cluster-badge) {
+  display: none !important;
+}
+

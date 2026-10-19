@@ -1,0 +1,21 @@
+.schema-slide[data-background-foreground="light"] {
+  --doe-background-foreground: #F9F9FF;
+}
+
+.schema-slide[data-background-foreground="light"] .component-hero__title,
+.schema-slide[data-background-foreground="light"] .component-hero__eyebrow,
+.schema-slide[data-background-foreground="light"] .component-heading,
+.schema-slide[data-background-foreground="light"] .component-text__body,
+.schema-slide[data-background-foreground="light"] .component-list .component-title,
+.schema-slide[data-background-foreground="light"] .component-list__items,
+.schema-slide[data-background-foreground="light"] .component-list__number,
+.schema-slide[data-background-foreground="light"] .component-stat__value,
+.schema-slide[data-background-foreground="light"] .component-stat__label {
+  color: var(--doe-background-foreground);
+  text-shadow: 0 2px 18px var(--yrkie-shadow-strong);
+}
+
+.schema-slide[data-background-foreground="light"] .component-hero__subtitle,
+.schema-slide[data-background-foreground="light"] .component-stat__description {
+  color: var(--doe-background-foreground);
+}

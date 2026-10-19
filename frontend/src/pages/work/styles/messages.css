@@ -1,0 +1,112 @@
+/* Original 2026-10-12 declarations retained for the extracted Work page. */
+.chat-history-view {
+  overflow: hidden;
+  padding: 0 24px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.chat-history-view .message-item-text {
+  contain: layout style;
+}
+
+.message-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.message-items-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.user-message .message-items-wrapper {
+  align-items: flex-end;
+}
+
+.message-item-text {
+  width: 100%;
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.user-message>.message-items-wrapper>.message-item-text {
+  width: fit-content;
+  max-width: 80%;
+  min-width: 0;
+  background-color: var(--bg-user-msg);
+  border: 1px solid var(--border-user);
+  border-radius: 12px;
+  padding: 16px 20px;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.message-item-text p {
+  margin-bottom: 12px;
+}
+
+.message-item-text p:last-child {
+  margin-bottom: 0;
+}
+
+.message-item-text h3 {
+  margin: 16px 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.message-item-text ul {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.message-item-text li {
+  margin-bottom: 6px;
+}
+
+.message-item-text code {
+  background: var(--bg-code);
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, var(--yrkie-cjk-fallback), monospace;
+  font-size: 13.5px;
+}
+
+.message-item-text pre {
+  margin: 12px 0;
+  overflow-x: auto;
+}
+
+.message-item-text pre code {
+  display: block;
+  padding: 12px;
+  line-height: 1.5;
+}
+.message-item-text p:last-child::after {
+  content: '';
+  display: none;
+}
+
+.input-container-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, var(--bg-app) 70%, transparent);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  will-change: transform;
+  backface-visibility: hidden;
+}

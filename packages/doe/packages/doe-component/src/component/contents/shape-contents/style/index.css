@@ -1,0 +1,31 @@
+.shape-contents.component-card { overflow: visible; }
+.shape-contents { --shape-contents-gap: var(--space-18pt); --shape-art-width: 62%; }
+.shape-contents__copy { min-width: 0; box-sizing: border-box; padding: var(--doe-item-inset, 3pt); }
+.shape-contents__title { margin: 0 0 var(--space-6pt); color: var(--yrkie-color-title); }
+.shape-contents__text { margin: 0; color: var(--yrkie-color-body); }
+.shape-contents__art { display: block; overflow: visible; flex: none; }
+.shape-contents__shape, .shape-contents__ring-node { fill: var(--yrkie-color-secondary); stroke: var(--yrkie-line-strong); stroke-width: 1; stroke-linejoin: round; }
+.shape-contents__marker { color: var(--yrkie-color-title); }
+.shape-contents__marker svg { overflow: visible; }
+/* Keep each external label beside its sector; the central label sits over the arc. */
+.shape-contents[data-variant="semicircle"] { display: grid; grid-template-columns: minmax(0, 1fr) var(--shape-art-width) minmax(0, 1fr); gap: var(--space-6pt) var(--shape-contents-gap); align-items: center; }
+.shape-contents[data-variant="semicircle"] > .shape-contents__copy:nth-child(1) { grid-area: 2 / 1; text-align: right; }
+.shape-contents[data-variant="semicircle"] > .shape-contents__copy:nth-child(2) { grid-area: 1 / 2; text-align: center; }
+.shape-contents[data-variant="semicircle"] > .shape-contents__copy:nth-child(3) { grid-area: 2 / 3; }
+.shape-contents[data-variant="semicircle"] > .shape-contents__art { grid-area: 2 / 2; width: 100%; height: auto; }
+.shape-contents[data-variant="petals"] { display: grid; grid-template-columns: minmax(0, 1fr) var(--shape-art-width) minmax(0, 1fr); align-items: center; gap: var(--shape-contents-gap); }
+.shape-contents[data-variant="petals"] > .shape-contents__copy { text-align: right; }
+.shape-contents[data-variant="petals"] > .shape-contents__art { width: 100%; height: auto; }
+.shape-contents__right { display: flex; flex-direction: column; justify-content: space-around; gap: var(--shape-contents-gap); align-self: stretch; }
+.shape-contents__row { position: relative; display: grid; align-items: center; gap: var(--shape-contents-gap); border-bottom: 1px solid var(--yrkie-line-strong); margin-bottom: var(--space-6pt); }
+.shape-contents__row:last-child { margin-bottom: 0; }
+.shape-contents:is([data-variant="pyramid"], [data-variant="inverted-pyramid"]) .shape-contents__row { border-bottom: 0; }
+.shape-contents:is([data-variant="pyramid"], [data-variant="inverted-pyramid"]) .shape-contents__row:not(:last-child)::after { content: ""; position: absolute; left: var(--shape-divider-start); right: 0; top: calc(100% + var(--space-6pt) / 2); transform: translateY(-50%); border-top: 1px solid var(--yrkie-line-strong); }
+.shape-contents[data-variant="stairs"] .shape-contents__row { border-bottom: 0; }
+.shape-contents__row > .shape-contents__art { grid-area: 1 / 1; align-self: stretch; }
+.shape-contents__row > .shape-contents__copy { grid-area: 1 / 2; padding: var(--space-6pt) var(--doe-item-inset, 3pt); }
+
+/* Variable-count radial layouts reserve measured space for every copy box. */
+.shape-contents[data-radial-layout] { display: block; position: relative; }
+.shape-contents[data-radial-layout] > .shape-contents__copy,
+.shape-contents[data-radial-layout] > .shape-contents__art { position: absolute; margin: 0; }

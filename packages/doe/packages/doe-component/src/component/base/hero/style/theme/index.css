@@ -1,0 +1,16 @@
+.schema-slide[data-theme="yrkie-theme"] .component-hero__eyebrow-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 0.9em;
+  height: 0.9em;
+}
+
+.schema-slide[data-theme="yrkie-theme"] .component-quote {
+  border-left-color: var(--yrkie-color-primary);
+}
+
+.schema-slide[data-theme="yrkie-theme"] .component-question-card__index {
+  background-color: var(--yrkie-color-secondary);
+  color: var(--yrkie-color-body);
+}
+

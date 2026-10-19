@@ -1,0 +1,10 @@
+.diagram-3d-funnel { position: relative; }
+.diagram-3d-funnel.component-card { overflow: visible; }
+.diagram-3d-funnel__art { position: absolute; top: 0; overflow: visible; }
+.diagram-3d-funnel__body, .diagram-3d-funnel__face {
+  fill: var(--yrkie-color-secondary); stroke: var(--yrkie-line-strong); stroke-width: 1; stroke-linejoin: round;
+}
+.diagram-3d-funnel__shade { fill: var(--yrkie-color-primary); opacity: .06; }
+.diagram-3d-funnel > .diagram-3d-funnel__copy { position: absolute; min-width: 0; box-sizing: border-box; text-align: center; }
+.diagram-3d-funnel__title { margin: 0 0 var(--space-6pt); color: var(--yrkie-color-title); }
+.diagram-3d-funnel__text { margin: 0; color: var(--yrkie-color-body); }

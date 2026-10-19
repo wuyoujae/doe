@@ -1,0 +1,21 @@
+.layout-group[data-composition-group="true"]
+  > .layout-group__content
+  > .group-item
+  > .block-content
+  > .component-card.component-heading,
+.layout-group[data-compression-group="true"]
+  > .layout-group__content
+  > .group-item
+  > .block-content
+  > .component-card.component-heading,
+.layout-group[data-collection-group="true"]
+  > .layout-group__content
+  > .group-item
+  > .block-content
+  > .component-card.component-heading {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  height: max-content;
+  min-height: 0;
+}
+

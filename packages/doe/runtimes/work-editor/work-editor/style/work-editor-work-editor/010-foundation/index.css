@@ -1,0 +1,14 @@
+/* The local Component Studio owns this same-origin marker. Production Work
+   never sets it, so its bottom filmstrip and surrounding surface are unchanged. */
+html[data-studio-focus-mode="true"],
+html[data-studio-focus-mode="true"] body {
+  background: var(--yrkie-color-studio-stage);
+}
+
+
+/* Theme only the presentation surround, including the compact/mobile editor. */
+html[data-runtime-surface="work"][data-editor-layout="doe-work"],
+html[data-runtime-surface="work"][data-editor-layout="doe-work"] body,
+html[data-runtime-surface="work"][data-editor-layout="doe-work"] .work-editor__stage {
+  background: var(--yrkie-color-studio-stage);
+}

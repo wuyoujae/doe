@@ -1,0 +1,5 @@
+[contenteditable="plaintext-only"]::selection {
+  color: inherit;
+  background: rgba(40, 120, 255, 0.2);
+}
+

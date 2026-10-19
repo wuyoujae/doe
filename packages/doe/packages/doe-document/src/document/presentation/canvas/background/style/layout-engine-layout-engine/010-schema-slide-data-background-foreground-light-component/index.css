@@ -1,0 +1,10 @@
+.schema-slide[data-background-foreground="light"]
+  .component-list__items
+  li::before {
+  background: var(--doe-background-foreground);
+}
+
+.schema-slide[data-background-foreground="light"] .component-heading {
+  border-bottom-color: color-mix(in srgb, var(--doe-background-foreground) 42%, transparent);
+}
+

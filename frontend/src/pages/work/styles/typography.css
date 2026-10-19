@@ -1,0 +1,49 @@
+/* Original 2026-10-12 declarations retained for the extracted Work page. */
+.work-shell .user-message>.message-items-wrapper>.message-item-text {
+  background: var(--yrkie-color-conversation-user);
+}
+.work-shell :is(.work-nav-bar,.work-chat-island) {
+  font-family: var(--yrkie-font-ui);
+  font-size: var(--yrkie-text-body);
+  font-weight: var(--yrkie-weight-regular);
+  color: var(--yrkie-color-body);
+}
+.work-shell :is(.work-nav-bar) :is(button,.work-nav-title,.work-mobile-nav-title) {
+  font-family: var(--yrkie-font-ui);
+  font-size: var(--yrkie-text-body);
+  font-weight: var(--yrkie-weight-regular);
+}
+.work-shell :is(.work-nav-title,.work-mobile-nav-title) { color: var(--yrkie-color-title); }
+
+.work-shell .work-chat-island {
+  --text-primary: var(--yrkie-color-body);
+  --text-secondary: var(--yrkie-color-body);
+  --text-muted: var(--yrkie-color-placeholder);
+  --work-message-heading-1: 1.75rem;
+  --work-message-heading-2: 1.3125rem;
+  --work-message-heading-3: 1.09375rem;
+  --work-message-heading-4: 0.9625rem;
+  --work-message-inline-code: 0.74375rem;
+  --work-empty-title: 1.5rem;
+}
+.work-shell .work-chat-island :is(.chat-history-view,.message-item-text,.input-box,button,input,textarea,select) {
+  font-family: var(--yrkie-font-ui);
+  font-size: var(--yrkie-text-body);
+  font-weight: var(--yrkie-weight-regular);
+}
+.work-shell .work-chat-island :is(.message-item-text,.input-box textarea) {
+  color: var(--yrkie-color-body);
+}
+.work-shell .work-chat-island :is(.send-hint) {
+  font-size: var(--yrkie-text-label);
+  font-weight: var(--yrkie-weight-regular);
+}
+.work-shell .work-chat-island :is(.send-hint) { color: var(--yrkie-color-placeholder); }
+.work-shell .work-chat-island :is(input,textarea)::placeholder { color: var(--yrkie-color-placeholder); }
+.work-shell .work-chat-island :is(strong,b,h1,h2,h3,h4,h5,h6,th) {
+  font-weight: var(--yrkie-weight-bold);
+}
+.work-shell .work-chat-island .input-box .send-btn:not(:disabled):not(.disabled) {
+  background-color: var(--yrkie-color-primary);
+  color: var(--yrkie-color-on-primary);
+}

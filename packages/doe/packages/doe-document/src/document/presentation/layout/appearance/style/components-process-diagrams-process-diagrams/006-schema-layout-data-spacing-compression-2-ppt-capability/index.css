@@ -1,0 +1,8 @@
+.schema-layout[data-spacing-compression="2"] .ppt-capability-cards {
+  gap: 8px;
+}
+
+.schema-layout[data-spacing-compression="2"] .ppt-capability-cards__list {
+  gap: 8px;
+}
+

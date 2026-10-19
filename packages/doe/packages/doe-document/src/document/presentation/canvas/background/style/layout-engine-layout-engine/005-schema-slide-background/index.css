@@ -1,0 +1,23 @@
+.schema-slide__background {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.schema-slide__background-image,
+.schema-slide__background-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.schema-slide__background-image {
+  background-repeat: no-repeat;
+}
+
+.schema-slide__background-overlay {
+  background-repeat: no-repeat;
+}
+

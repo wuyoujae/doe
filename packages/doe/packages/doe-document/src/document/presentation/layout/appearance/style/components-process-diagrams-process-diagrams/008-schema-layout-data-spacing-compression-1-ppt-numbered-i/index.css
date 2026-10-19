@@ -1,0 +1,8 @@
+.schema-layout[data-spacing-compression="1"] .ppt-numbered-icon-cards__title {
+  margin-bottom: 12px;
+}
+
+.schema-layout[data-spacing-compression="2"] .ppt-numbered-icon-cards__title {
+  margin-bottom: 8px;
+}
+

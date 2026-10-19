@@ -1,0 +1,154 @@
+.lucide-picker {
+  display: grid;
+  gap: 10px;
+  min-width: min(520px, calc(100vw - 48px));
+  color: var(--text-primary, #111827);
+}
+
+.lucide-picker-search {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--line, #d8dde8);
+  border-radius: 6px;
+  background: var(--surface, #ffffff);
+}
+
+.lucide-picker-search:focus-within {
+  border-color: #176d88;
+  box-shadow: 0 0 0 3px rgba(23, 109, 136, 0.12);
+}
+
+.lucide-picker-search svg {
+  width: 18px;
+  height: 18px;
+  color: #667085;
+}
+
+.lucide-picker-search input {
+  width: 100%;
+  min-width: 0;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.lucide-picker-categories {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: thin;
+}
+
+.lucide-picker-categories button {
+  flex: 0 0 auto;
+  min-height: 30px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: #667085;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.lucide-picker-categories button:hover,
+.lucide-picker-categories button:focus-visible {
+  background: #f2f5f8;
+  color: #111827;
+  outline: none;
+}
+
+.lucide-picker-categories button.active {
+  border-color: rgba(23, 109, 136, 0.24);
+  background: rgba(23, 109, 136, 0.1);
+  color: #176d88;
+}
+
+.lucide-picker-viewport,
+.lucide-picker-state {
+  height: min(360px, 48vh);
+  min-height: 216px;
+  border-top: 1px solid var(--line, #e5e7eb);
+}
+
+.lucide-picker-viewport {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.lucide-picker-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #667085;
+  font-size: 13px;
+}
+
+.lucide-picker-spacer {
+  position: relative;
+  width: 100%;
+}
+
+.lucide-picker-grid {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: grid;
+  grid-auto-rows: 72px;
+  will-change: transform;
+}
+
+.lucide-picker-grid > button {
+  display: grid;
+  grid-template-rows: 1fr;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  gap: 4px;
+  min-width: 0;
+  padding: 6px 4px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: #344054;
+  cursor: pointer;
+}
+
+.lucide-picker-grid > button:hover,
+.lucide-picker-grid > button:focus-visible {
+  border-color: rgba(23, 109, 136, 0.22);
+  background: rgba(23, 109, 136, 0.08);
+  color: #176d88;
+  outline: none;
+}
+
+.lucide-picker-grid svg {
+  width: 28px;
+  height: 28px;
+}
+
+.lucide-picker-spinner {
+  width: 18px;
+  height: 18px;
+  animation: lucide-picker-spin 0.8s linear infinite;
+}
+
+@keyframes lucide-picker-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lucide-picker-spinner { animation: none; }
+}

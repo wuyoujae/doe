@@ -1,0 +1,3 @@
+.item-cards[data-contents-presentation="timeline-dot-cards"] { --contents-marker-y: 50%; }
+.item-cards[data-contents-presentation="timeline-dot-cards"] [data-side] .item-cards__surface { background: var(--yrkie-color-secondary); border: 1px solid var(--yrkie-line-strong-solid); padding: var(--space-18pt); border-radius: var(--yrkie-radius-component); }
+.item-cards[data-contents-presentation="timeline-dot-cards"] .contents-marker { width: calc(var(--space-6pt) * 1.5); height: calc(var(--space-6pt) * 1.5); }

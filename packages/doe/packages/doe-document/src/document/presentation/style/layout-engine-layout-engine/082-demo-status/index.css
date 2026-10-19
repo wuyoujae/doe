@@ -1,0 +1,36 @@
+#demo-status {
+  min-width: 0;
+  max-width: 360px;
+  flex: 0 1 360px;
+  overflow: hidden;
+  padding: 0 5px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .demo-toolbar__gesture-guide {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  #demo-toolbar {
+    width: calc(100vw - 28px);
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .demo-toolbar__buttons,
+  #demo-status {
+    width: 100%;
+    max-width: none;
+  }
+
+  .demo-toolbar__gesture-guide {
+    max-width: none;
+    border-left: 0;
+  }
+}

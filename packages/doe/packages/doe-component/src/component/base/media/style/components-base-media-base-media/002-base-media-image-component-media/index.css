@@ -1,0 +1,2 @@
+.base-media__image.component-media { margin: 0; width: 13.75rem; height: 13.75rem; max-width: 100%; border-radius: var(--yrkie-radius-component); overflow: hidden; }
+.base-media__image .component-media__image { width: 100%; height: 100%; object-fit: contain; }

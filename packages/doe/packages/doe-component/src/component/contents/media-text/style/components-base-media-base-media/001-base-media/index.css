@@ -1,0 +1,10 @@
+.base-media { min-width: 0; }
+.base-media__title { margin: var(--space-12pt) 0 var(--space-6pt); color: var(--yrkie-color-title); }
+.base-media__text { margin: 0; color: var(--yrkie-color-body); }
+.base-media[data-surface="soft"],
+.item-cards[data-contents-presentation="image-text"] .item-cards__surface[data-image-surface="soft"] {
+  box-sizing: border-box;
+  padding: var(--space-18pt);
+  border-radius: var(--yrkie-radius-component);
+  background: var(--yrkie-color-secondary);
+}

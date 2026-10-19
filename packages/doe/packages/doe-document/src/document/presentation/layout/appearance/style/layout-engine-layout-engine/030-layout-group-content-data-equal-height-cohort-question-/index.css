@@ -1,0 +1,5 @@
+.layout-group__content[data-equal-height-cohort="question-card"] {
+  grid-auto-rows: minmax(min-content, 1fr) !important;
+  align-items: stretch !important;
+}
+

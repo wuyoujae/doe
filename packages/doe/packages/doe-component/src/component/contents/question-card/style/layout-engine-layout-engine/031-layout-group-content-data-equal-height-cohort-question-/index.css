@@ -1,0 +1,12 @@
+.layout-group__content[data-equal-height-cohort="question-card"]
+  > .group-item,
+.layout-group__content[data-equal-height-cohort="question-card"]
+  > .group-item
+  > .block-content,
+.layout-group__content[data-equal-height-cohort="question-card"]
+  > .group-item
+  > .block-content
+  > .component-question-card {
+  height: 100%;
+}
+

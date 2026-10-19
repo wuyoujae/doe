@@ -1,0 +1,39 @@
+[package]
+name = "otherone-storage"
+version = "0.6.0-yrkie.1"
+edition = "2021"
+license = "MIT"
+readme = "../../README.md"
+documentation = "https://docs.rs/otherone-storage"
+repository = "https://github.com/wuyoujae/otherone-agent"
+keywords = ["ai", "agent", "storage"]
+categories = ["database", "filesystem"]
+description = "存储层 — 支持本地文件、PostgreSQL、MySQL、MongoDB、Redis 多种存储方式"
+
+[features]
+default = ["localfile", "postgres"]
+localfile = ["dep:aes-gcm", "dep:base64", "dep:rand"]
+postgres = [
+    "dep:sqlx-core",
+    "dep:sqlx-postgres",
+    "sqlx-core/_rt-tokio",
+    "sqlx-core/_tls-rustls-ring-webpki",
+    "sqlx-postgres/uuid",
+    "sqlx-postgres/chrono",
+]
+
+[dependencies]
+tokio = { workspace = true }
+sqlx-core = { workspace = true, optional = true }
+sqlx-postgres = { workspace = true, optional = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+futures = { workspace = true }
+aes-gcm = { workspace = true, optional = true }
+base64 = { workspace = true, optional = true }
+rand = { workspace = true, optional = true }

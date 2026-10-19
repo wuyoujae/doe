@@ -1,0 +1,50 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/otherone",
+    "crates/otherone-ai",
+    "crates/otherone-agent",
+    "crates/otherone-context",
+    "crates/otherone-memory",
+    "crates/otherone-tools",
+    "crates/otherone-storage",
+    "crates/otherone-skills",
+    "crates/otherone-mcp",
+]
+
+[workspace.dependencies]
+# 异步运行时
+tokio = { version = "1", features = ["full"] }
+tokio-util = { version = "0.7", features = ["rt"] }
+# HTTP 客户端（用于 OpenAI/Anthropic/Fetch 的 HTTP 通信）
+reqwest = { version = "0.12", features = ["json", "socks", "stream"] }
+# JSON 序列化
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# PostgreSQL + MySQL 异步驱动
+sqlx-core = { version = "=0.8.6", default-features = false }
+sqlx-postgres = { version = "=0.8.6", default-features = false }
+# Redis 异步客户端
+# MongoDB 异步驱动
+# UUID 生成
+uuid = { version = "1", features = ["v4", "serde"] }
+# 日期时间处理
+chrono = { version = "0.4", features = ["serde"] }
+# 错误处理
+thiserror = "2"
+anyhow = "1"
+# 异步 trait
+async-trait = "0.1"
+# 流处理
+tokio-stream = "0.1"
+futures = "0.3"
+# 日志
+tracing = "0.1"
+# 字节缓冲（SSE 流式处理）
+bytes = "1"
+# 加密 (AES-GCM)
+aes-gcm = "0.10"
+# base64 编码（加密密钥编码）
+base64 = "0.22"
+# 随机数生成
+rand = "0.8"

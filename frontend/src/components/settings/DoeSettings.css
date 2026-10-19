@@ -1,0 +1,38 @@
+.settings-dialog .doe-settings { min-width: 0; }
+.settings-dialog .doe-settings-intro { margin: 0 0 1.25rem; color: var(--yrkie-color-ink-muted); font-size: var(--yrkie-text-label); line-height: 1.65; }
+.settings-dialog .doe-config-workspace { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+.settings-dialog .doe-entry-list { display: flex; flex-direction: column; gap: .25rem; max-height: 30rem; overflow-y: auto; scrollbar-width: thin; padding: .125rem .375rem .125rem .125rem; }
+.settings-dialog .doe-entry-button { display: flex; flex-direction: column; gap: .25rem; width: 100%; min-height: 2.75rem; padding: .625rem .75rem; border: var(--yrkie-border-width) solid transparent; border-radius: var(--yrkie-radius-control); background: transparent; color: var(--yrkie-color-ink-muted); font: inherit; font-size: var(--yrkie-text-label); line-height: 1.5; text-align: start; cursor: pointer; overflow-wrap: anywhere; transition: background-color 220ms ease, border-color 220ms ease; }
+.settings-dialog .doe-entry-button:hover { background: var(--yrkie-color-hover); }
+.settings-dialog .doe-entry-button.active { background: var(--yrkie-color-page); border-color: var(--yrkie-color-control-border); color: var(--yrkie-color-ink); }
+.settings-dialog .doe-entry-button small { font-size: var(--yrkie-text-caption); color: var(--yrkie-color-ink-muted); }
+.settings-dialog .doe-entry-mobile-picker { display: none; min-width: 0; }
+.settings-dialog .doe-entry-editor { min-width: 0; padding-inline-start: 1.5rem; border-inline-start: var(--yrkie-border-width) solid var(--settings-panel-border); }
+.settings-dialog .doe-entry-heading { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: .75rem; }
+.settings-dialog .doe-entry-heading > div { display: flex; flex-direction: column; gap: .5rem; min-width: 0; }
+.settings-dialog .doe-entry-heading h3 { margin: .375rem 0 0; color: var(--yrkie-color-ink); font-size: var(--yrkie-text-body); font-weight: var(--yrkie-weight-bold); line-height: 1.5; overflow-wrap: anywhere; }
+.settings-dialog .doe-entry-badge { font-size: var(--yrkie-text-caption); color: var(--yrkie-color-ink-muted); }
+.settings-dialog .doe-reset-btn { min-height: 2.25rem; padding: .5rem .625rem; font-size: var(--yrkie-text-caption); }
+.settings-dialog .doe-entry-description { margin: 1rem 0; color: var(--yrkie-color-ink-muted); font-size: var(--yrkie-text-label); line-height: 1.65; overflow-wrap: anywhere; }
+.settings-dialog .doe-skill-enabled { display: flex; align-items: center; gap: .625rem; margin: 1rem 0; color: var(--yrkie-color-ink); font-size: var(--yrkie-text-label); cursor: pointer; }
+.settings-dialog .doe-skill-enabled input { appearance: none; flex-shrink: 0; width: 2.125rem; height: 1.25rem; margin: 0; padding: .125rem; border: var(--yrkie-border-width) solid var(--yrkie-color-control-border); border-radius: 2rem; background: var(--yrkie-color-hover); cursor: pointer; transition: background-color 220ms ease; }
+.settings-dialog .doe-skill-enabled input::before { content: ''; display: block; width: .875rem; height: .875rem; border-radius: 50%; background: var(--yrkie-color-white); box-shadow: 0 .0625rem .125rem rgb(15 23 42 / 16%); transition: transform 220ms var(--settings-ease); }
+.settings-dialog .doe-skill-enabled input:checked { background: var(--yrkie-color-primary); border-color: var(--yrkie-color-primary); }
+.settings-dialog .doe-skill-enabled input:checked::before { transform: translateX(.875rem); }
+.settings-dialog .doe-skill-enabled input:disabled { opacity: .5; cursor: default; }
+.settings-dialog .doe-content-label { display: flex; justify-content: space-between; gap: .5rem; margin-bottom: .5rem; color: var(--yrkie-color-ink-muted); font-size: var(--yrkie-text-label); line-height: 1.5; }
+.settings-dialog .doe-content-label > span { font-size: var(--yrkie-text-caption); }
+.settings-dialog .model-input.doe-content-input { display: block; min-height: 18rem; height: clamp(18rem, 38dvh, 28rem); resize: vertical; padding: 1rem; tab-size: 2; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, var(--yrkie-cjk-fallback), monospace; font-size: .8125rem; font-weight: var(--yrkie-weight-regular); line-height: 1.75; scrollbar-width: thin; white-space: pre-wrap; overflow-wrap: anywhere; }
+@media (max-width: 62rem) {
+  .settings-dialog .doe-config-workspace { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .settings-dialog .doe-entry-list { display: none; }
+  .settings-dialog .doe-entry-mobile-picker { display: block; }
+  .settings-dialog .doe-entry-mobile-picker .ui-select, .settings-dialog .doe-entry-mobile-picker .ui-select-trigger { width: 100%; }
+  .settings-dialog .doe-entry-editor { padding: 0; border: 0; }
+}
+@media (max-width: 45rem) {
+  .settings-dialog .model-input.doe-content-input { min-height: 18rem; height: 24rem; font-size: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .settings-dialog :is(.doe-entry-button, .doe-skill-enabled input, .doe-skill-enabled input::before) { transition: none; }
+}

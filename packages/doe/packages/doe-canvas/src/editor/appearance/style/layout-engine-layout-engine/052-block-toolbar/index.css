@@ -1,0 +1,22 @@
+.block-toolbar {
+  position: absolute;
+  z-index: 15;
+  top: -46px;
+  left: 0;
+  display: none;
+  max-width: min(1000px, calc(100vw - 48px));
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: var(--space-6pt);
+  padding: 6px;
+  color: #24364b;
+  border: 1px solid #d9dee7;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(23, 32, 51, 0.16);
+  font-family: var(--font-sans-cn);
+  overflow-x: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI PPT Preview</title>
+
+    <!-- 引入 Tailwind CSS -->
+    <script src="./tailwind.css.css"></script>
+    <script src="lucide.min.js"></script>
+    <style id="ethera-async-image-style">
+      :root {
+        /* 统一字体变量（避免依赖 Tailwind 编译产物） */
+        --font-default: "Outfit", "Noto Sans SC", system-ui, -apple-system,
+          "Segoe UI", Arial, sans-serif;
+        --font-sans-cn: "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
+          system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+        --font-serif-cn: "Source Han Serif", "Songti SC", "STSong", serif;
+        --font-sans-en: "Outfit", "Arial", "Helvetica", sans-serif;
+      }
+
+      /* 基础布局 */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #1a1a1a;
+        overflow: hidden;
+      }
+      /* 缩放器 */
+      #slide-scaler {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform-origin: center center;
+        transition: transform 0.1s ease-out;
+        will-change: transform;
+      }
+      /* 强制定义尺寸，双重保险，防止 Tailwind 加载延迟导致布局错乱 */
+      #slide-content {
+        width: 1920px;
+        height: 1080px;
+        font-family: var(--font-default);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: geometricPrecision;
+      }
+
+      /* 供 Slide Agent 使用的"字体工具类"（不依赖 Tailwind 配置） */
+      .font-sans-cn {
+        font-family: var(--font-sans-cn);
+      }
+      .font-serif-cn {
+        font-family: var(--font-serif-cn);
+      }
+      .font-sans-en {
+        font-family: var(--font-sans-en);
+      }
+      .font-fraunces {
+        font-family: "Fraunces", serif;
+      }
+      .font-manrope {
+        font-family: "Manrope", sans-serif;
+      }
+      .font-infaxis,
+      .font-infaxiswield-humanist {
+        font-family: "Infaxiswield Humanist", serif;
+      }
+      .font-lora {
+        font-family: "Lora", serif;
+      }
+      .font-source-han-serif {
+        font-family: "Source Han Serif", serif;
+      }
+      .font-noto-sans-sc {
+        font-family: "Noto Sans SC", sans-serif;
+      }
+      .font-outfit {
+        font-family: "Outfit", sans-serif;
+      }
+
+      .wrapper,
+      .ethera-imagegen-wrapper {
+        width: 100%;
+        max-width: 560px;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        margin: 10px 0 18px 0;
+        background: #0a0a0a;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+      }
+      .img,
+      .ethera-imagegen-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .errorOverlay,
+      .ethera-imagegen-error,
+      .ethera-imagegen-error-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        background: rgba(0, 0, 0, 0.55);
+      }
+      .errorText,
+      .ethera-imagegen-error-text {
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 13px;
+        line-height: 1.6;
+        text-align: center;
+        max-width: 90%;
+      }
+      .loader,
+      .ethera-imagegen-loader {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0a0a0a;
+      }
+      .blob,
+      .ethera-imagegen-blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(50px);
+        opacity: 0.9;
+      }
+      .blob1,
+      .ethera-imagegen-blob1 {
+        width: 120%;
+        height: 120%;
+        background: radial-gradient(circle, #ff00cc, #bd00ff);
+        top: -35%;
+        left: -35%;
+        animation: fastMove1 3s infinite alternate ease-in-out;
+      }
+      .blob2,
+      .ethera-imagegen-blob2 {
+        width: 120%;
+        height: 120%;
+        background: radial-gradient(circle, #00f2ff, #0044ff);
+        bottom: -35%;
+        right: -35%;
+        animation: fastMove2 4s infinite alternate ease-in-out;
+      }
+      .blob3,
+      .ethera-imagegen-blob3 {
+        width: 60%;
+        height: 60%;
+        background: #ffe600;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: fastPulse 2s infinite alternate;
+        mix-blend-mode: overlay;
+        filter: blur(40px);
+      }
+      .glassLayer,
+      .ethera-imagegen-glass,
+      .ethera-imagegen-glass-layer {
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        z-index: 10;
+      }
+      .iconWrapper,
+      .ethera-imagegen-icon,
+      .ethera-imagegen-icon-wrapper {
+        position: relative;
+        z-index: 20;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: dampedSpin 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+      }
+      .geminiStar,
+      .ethera-imagegen-star,
+      .ethera-imagegen-gemini-star {
+        width: 60px;
+        height: 60px;
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+      }
+      @keyframes fastMove1 {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        100% { transform: translate(18%, 12%) rotate(90deg); }
+      }
+      @keyframes fastMove2 {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        100% { transform: translate(-18%, -12%) rotate(-90deg); }
+      }
+      @keyframes fastPulse {
+        0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+        100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.9; }
+      }
+      @keyframes dampedSpin {
+        0% { transform: rotate(0deg); }
+        15% { transform: rotate(0deg); }
+        85% { transform: rotate(180deg); }
+        100% { transform: rotate(180deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 缩放容器 -->
+    <div id="slide-scaler">
+      <!-- 内容容器 -->
+      <div
+        id="slide-content"
+        class="relative overflow-hidden bg-white shadow-2xl"
+      >
+        <!-- ================= REPLACE HERE ================= -->
+      </div>
+    </div>
+
+    <script>
+      // 配置
+      const DESIGN_WIDTH = 1920;
+      const DESIGN_HEIGHT = 1080;
+      const scaler = document.getElementById("slide-scaler");
+
+      function resizeSlide() {
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        // 计算缩放比例
+        const scale = Math.min(
+          windowWidth / DESIGN_WIDTH,
+          windowHeight / DESIGN_HEIGHT
+        );
+
+        // 应用缩放 (注意：这里去掉了反斜杠)
+        scaler.style.transform = `translate(-50%, -50%) scale(${scale})`;
+      }
+
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      window.addEventListener("resize", resizeSlide);
+      window.addEventListener("load", resizeSlide);
+      resizeSlide();
+      requestAnimationFrame(() => {
+        requestAnimationFrame(resizeSlide);
+      });
+      setTimeout(resizeSlide, 60);
+      setTimeout(resizeSlide, 220);
+      if (document.fonts && typeof document.fonts.ready?.then === "function") {
+        document.fonts.ready.then(() => {
+          resizeSlide();
+        });
+      }
+      window.scrollTo(0, 0);
+      if (window.lucide && typeof window.lucide.createIcons === "function") {
+        window.lucide.createIcons();
+      }
+    </script>
+  </body>
+</html>

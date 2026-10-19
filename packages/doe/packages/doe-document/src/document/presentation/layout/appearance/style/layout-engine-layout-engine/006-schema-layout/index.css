@@ -1,0 +1,37 @@
+.schema-layout {
+  --page-padding: var(--space-36pt);
+  --page-bottom-padding: var(--page-padding);
+  --section-gap: var(--space-18pt);
+  --group-gap: var(--space-18pt);
+  --component-gap: var(--space-12pt);
+  --component-padding: var(--space-18pt);
+  --hero-title-size: var(--typography-h1-size);
+  --emphasis-size: var(--typography-h2-size);
+  --slide-title-size: var(--typography-h1-size);
+  --hero-subtitle-size: var(--typography-large-size);
+  --eyebrow-size: var(--typography-small-size);
+  --component-title-size: var(--typography-h4-size);
+  --body-size: var(--typography-normal-size);
+  --metric-value-size: var(--typography-h1-size);
+  --metric-min-height: 96px;
+  --small-text-size: var(--typography-small-size);
+  --delta-text-size: var(--typography-small-size);
+  --question-index-size: var(--typography-h4-size);
+  --line-height: var(--yrkie-line-height);
+
+  display: flex;
+  z-index: 1;
+  align-items: stretch;
+  flex-direction: column;
+  /* Center only the slide's outer flow. Each component and nested group keeps
+     its own alignment rules. `safe` falls back to the start edge when the
+     content is taller than the available fixed-height slide. */
+  justify-content: flex-start;
+  justify-content: safe center;
+  gap: var(--section-gap);
+  padding: var(--page-padding);
+  padding-top: var(--page-top-padding, var(--page-padding));
+  padding-bottom: var(--page-bottom-padding);
+  overflow: hidden;
+}
+

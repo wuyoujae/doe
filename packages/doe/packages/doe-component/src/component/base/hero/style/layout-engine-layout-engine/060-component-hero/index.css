@@ -1,0 +1,44 @@
+.component-hero {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: var(--doe-item-inset, 3pt) 0;
+  background: transparent;
+}
+
+.component-hero__content {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  gap: var(--space-12pt);
+}
+
+.component-hero__eyebrow {
+  color: var(--demo-red);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.component-hero__title {
+  width: 100%;
+  min-width: 0;
+  max-width: 1420px;
+  line-height: 1.05;
+  letter-spacing: normal;
+}
+
+.component-hero__subtitle {
+  width: 100%;
+  min-width: 0;
+  max-width: 1280px;
+  color: var(--yrkie-color-body);
+  line-height: 1.34;
+}
+
+.component-hero[data-text-align="left"] { text-align: left; }
+.component-hero[data-text-align="center"] { text-align: center; }
+.component-hero[data-text-align="right"] { text-align: right; }
+.component-hero[data-text-align="left"] .component-hero__content > :is(h1, p, .component-hero__eyebrow) { justify-self: start; }
+.component-hero[data-text-align="center"] .component-hero__content > :is(h1, p, .component-hero__eyebrow) { justify-self: center; }
+.component-hero[data-text-align="right"] .component-hero__content > :is(h1, p, .component-hero__eyebrow) { justify-self: end; }
+

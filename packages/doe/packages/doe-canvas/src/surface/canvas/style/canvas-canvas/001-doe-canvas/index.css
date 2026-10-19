@@ -1,0 +1,17 @@
+.doe-canvas {
+  position: relative;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  aspect-ratio: var(--doe-canvas-ratio, 16 / 9);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--yrkie-radius-canvas);
+  background: transparent;
+  box-shadow:
+    0 22px 48px rgba(15, 23, 42, 0.13),
+    0 3px 8px rgba(15, 23, 42, 0.06);
+}
+
+/* A fixed canvas is a clip, not a scroll container. Caret auto-scrolling must
+   not move the scaled Slide inside its frame when Studio text receives focus. */

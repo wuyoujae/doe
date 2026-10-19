@@ -1,0 +1,26 @@
+:root {
+  --demo-navy: var(--yrkie-color-body);
+  --demo-red: var(--yrkie-color-primary);
+  --demo-red-soft: var(--yrkie-color-secondary);
+  --demo-ink: var(--yrkie-color-title);
+  --demo-muted: var(--yrkie-color-body);
+  --demo-line: var(--yrkie-line);
+  --demo-surface: var(--yrkie-color-soft-surface);
+  --editor-blue: #2878ff;
+  --editor-blue-soft: #eaf2ff;
+  --minimum-readable-font: var(--typography-normal-size);
+
+  /* Approved spacing scale. */
+  --space-6pt: 8px;
+  --space-12pt: 16px;
+  --space-18pt: 24px;
+  --space-24pt: 32px;
+  --space-30pt: 40px;
+  --space-36pt: 48px;
+  --space-48pt: 64px;
+}
+
+#slide-content {
+  background: var(--yrkie-color-light);
+}
+

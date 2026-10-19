@@ -1,0 +1,122 @@
+[
+  {
+    "name": "table-object-comma-is-not-a-field-separator",
+    "source": "# slide\n## table\ncolumns=<[header=Name],[header=Score,align=center]>\nrows=<[cells=<A,3.8>]>",
+    "error": "invalid_value"
+  },
+  {
+    "name": "table-row-reversed-closing-delimiters",
+    "source": "# slide\n## table\ncolumns=<[header=Name],[header=Score;align=center]>\nrows=<[cells=<A,3.8]>,[cells=<B,3.2]>]>",
+    "error": "invalid_value"
+  },
+  {
+    "name": "table-numeric-cells-keep-nested-structure",
+    "source": "# slide\n## table\ncolumns=<[header=Name],[header=Score;align=center]>\nrows=<[cells=<A,3.8>],[cells=<B,3.2>]>",
+    "equivalent": "# slide\n## table\n### column\nheader=Name\n### column\nheader=Score\nalign=center\n### row\ncells=A | 3.8\n### row\ncells=B | 3.2"
+  },
+  {
+    "name": "user-timeline",
+    "source": "# slide\n## layout=timeline\nitems=<\n[title=\"20XX — 20XX\";text=\"硕士 / 学士 · 专业名称\";label=\"院校名称\";icon=\"GraduationCap\"],\n[title=本科;text=专业名称;label=学校;icon=GraduationCap],\n[title=20XX;text=相关证书;label=项目名称;icon=Award]\n>",
+    "equivalent": "# slide\n## layout=timeline\n### item\ntitle=20XX — 20XX\ntext=硕士 / 学士 · 专业名称\nlabel=院校名称\nicon=GraduationCap\n### item\ntitle=本科\ntext=专业名称\nlabel=学校\nicon=GraduationCap\n### item\ntitle=20XX\ntext=相关证书\nlabel=项目名称\nicon=Award"
+  },
+  {
+    "name": "nested-table",
+    "source": "# slide\n## table\ncolumns=<[header=名称],[header=结果;align=right]>\nrows=<[cells=<\"甲\",[text=\"A;B,[C]<D>=E\";emphasis=highlight]>]>",
+    "equivalent": "# slide\n## table\n### column\nheader=名称\n### column\nheader=结果\nalign=right\n### row\n#### cell\n甲\n#### cell\ntext=A;B,[C]<D>=E\nemphasis=highlight"
+  },
+  {
+    "name": "chart-series",
+    "source": "# slide\n## bars\ncategories=<\"2023\",\"2024\">\nseries=<[name=Core;data=<248,309>],[name=Growth;data=<162,170>]>",
+    "equivalent": "# slide\n## bars\ncategories=2023 | 2024\n### series\nname=Core\ndata=248 | 309\n### series\nname=Growth\ndata=162 | 170"
+  },
+  {
+    "name": "quoted-escapes",
+    "source": "# slide\n## cards\nitems=<[title=\"He said \\\"hi\\\"\";text=\"line1\\nline2 \\\\ path\"]>",
+    "equivalent": "# slide\n## cards\n### item\ntitle=He said \"hi\"\n#### text\nline1\nline2 \\ path"
+  },
+  {
+    "name": "optional-defaults",
+    "source": "# slide\n## checklist\nitems=<[text=Task;checked=bad;unknown=<[anything=yes]>]>",
+    "equivalent": "# slide\n## checklist\n### item\ntext=Task"
+  },
+  {
+    "name": "empty-optional-array",
+    "source": "# slide\n## table\ncolumns=<[header=Name;protectedTerms=<>]>\nrows=<[cells=<A>]>",
+    "equivalent": "# slide\n## table\n### column\nheader=Name\nprotectedTerms=\n### row\ncells=A"
+  },
+  {
+    "name": "union-object-array",
+    "source": "# slide\n## donut\nitems=<[label=A;value=3],[label=B;value=2]>\ncenter=[title=<\"First\",\"Second\">;value=5]",
+    "equivalent": "# slide\n## donut\n### item\nlabel=A\nvalue=3\n### item\nlabel=B\nvalue=2\n### center\nvalue=5\n#### title\n##### item\nFirst\n##### item\nSecond"
+  },
+  {
+    "name": "optional-broken-container-keeps-next-page",
+    "source": "# slide\n## table\ncolumns=<[header=Name]>\nrows=<[cells=<A>]>\nsemanticWrap=[locale=en\n# slide\n## paragraph\nNext",
+    "equivalent": "# slide\n## table\n### column\nheader=Name\n### row\ncells=A\n# slide\n## paragraph\nNext"
+  },
+  {
+    "name": "wrong-array-shape",
+    "source": "# slide\n## cards\nitems=[title=Title;text=Text]",
+    "error": "invalid_value"
+  },
+  {
+    "name": "missing-close",
+    "source": "# slide\n## cards\nitems=<[title=Title;text=Text]",
+    "error": "invalid_value"
+  },
+  {
+    "name": "mismatched-data",
+    "source": "# slide\n## bars\ncategories=<A,B>\nseries=<[name=Series;data=<1>]>",
+    "error": "series_length"
+  },
+  {
+    "name": "group-compact-items",
+    "source": "# slide\n## group=composition\n### cards=icons\nitems=<[title=姓名;text=您的姓名;icon=User]>\n### paragraph\n欢迎联系",
+    "equivalent": "# slide\n## group=composition\n### cards=icons\n#### item\ntitle=姓名\ntext=您的姓名\nicon=User\n### paragraph\n欢迎联系"
+  },
+  {
+    "name": "json-is-not-a-text-entry",
+    "source": "# slide\n## layout=timeline\nitems=[{\"title\":\"School\",\"text\":\"Degree\"}]",
+    "error": "invalid_value"
+  },
+  {
+    "name": "hero-alignment-keeps-eyebrow",
+    "source": "# slide\n## cover\nalign=center\neyebrow=Learning journey\nsubtitle=Shared subtitle\nLeadership",
+    "equivalent": "# slide\n## hero\nalign=center\neyebrow=Learning journey\nsubtitle=Shared subtitle\nLeadership"
+  },
+  {
+    "name": "3d-funnel-compact-fields",
+    "source": "# slide\n## 3d-funnel\nitems=<[title=\"**Engine**\";text=\"Analysis\"],[title=\"Storage\";text=\"Data\"]>",
+    "equivalent": "# slide\n## 3d-funnel\n### item\ntitle=**Engine**\ntext=Analysis\n### item\ntitle=Storage\ntext=Data"
+  },
+  {
+    "name": "double-ring-invalid-sided-count",
+    "source": "# slide\n## double-ring\nitems=<[title=A;text=B;side=left],[title=C;text=D;side=left]>",
+    "error": "side_item_count"
+  },
+  {
+    "name": "double-ring-explicit-sides",
+    "source": "# slide\n## double-ring\nitems=<[title=A;text=B;side=right],[title=C;text=D;side=left]>",
+    "equivalent": "# slide\n## double-ring\n### item\ntitle=A\ntext=B\nside=right\n### item\ntitle=C\ntext=D\nside=left"
+  },
+  {
+    "name": "mind-map-skipped-level",
+    "source": "# slide\n## mind-map\nitems=<[level=0;title=A;text=B],[level=2;title=C;text=D]>",
+    "error": "mind_map_structure"
+  },
+  {
+    "name": "mind-map-valid-tree",
+    "source": "# slide\n## mind-map\nitems=<[level=0;title=A;text=B;icon=User],[level=1;title=C;text=D],[level=2;title=E;text=F]>",
+    "equivalent": "# slide\n## mind-map\n### item\nlevel=0\ntitle=A\ntext=B\nicon=User\n### item\nlevel=1\ntitle=C\ntext=D\n### item\nlevel=2\ntitle=E\ntext=F"
+  },
+  {
+    "name": "vertical-progress-decimal",
+    "source": "# slide\n## vertical-progress\nitems=<[value=65.5;text=\"Progress\"]>",
+    "equivalent": "# slide\n## vertical-progress\n### item\nvalue=65.5\ntext=Progress"
+  },
+  {
+    "name": "badge-optional-value",
+    "source": "# slide\n## badge-cards\nitems=<[title=A;text=B;icon=Star;value=\"10%\"],[title=C;text=D]>",
+    "equivalent": "# slide\n## badge-cards\n### item\ntitle=A\ntext=B\nicon=Star\nvalue=10%\n### item\ntitle=C\ntext=D"
+  }
+]

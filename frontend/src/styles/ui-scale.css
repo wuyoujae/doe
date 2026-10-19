@@ -1,0 +1,19 @@
+/* Approved UI scale; explicit Work surfaces and shared controls opt in. */
+:where([data-ui-theme], body:not(:has(.work-shell)) .release-update-banner, body:has(.public-page, .dashboard-shell, [data-ui-theme]):not(:has(.work-shell)) :is(.confirm-dialog, .toast-envelope-viewport), .dashboard-shell:not(.work-shell), [data-dashboard-theme], .dashboard-task-menu,
+  .work-shell .work-nav-bar, .work-shell .work-mobile-menu, .work-shell .work-chat-island,
+  .work-share-overlay, .feedback-compose-backdrop, .yrkie-login-page, .ui-select, .ui-primary-button, .ui-secondary-button, .ui-neutral-button, .ui-accordion, [data-public-chrome]) {
+  --yrkie-text-body: 0.875rem;
+  --yrkie-text-label: 0.84375rem;
+  --yrkie-text-title: 2.625rem;
+  --yrkie-text-body-lg: 1.17rem;
+  --yrkie-radius-control: 0.8rem;
+  --yrkie-weight-regular: 400;
+  --yrkie-weight-bold: 330;
+  --yrkie-color-body: var(--yrkie-color-ink);
+  --yrkie-color-body-secondary: var(--yrkie-color-ink-muted);
+  --yrkie-color-placeholder: var(--yrkie-color-mist);
+  --yrkie-color-border-focus: var(--yrkie-color-body-secondary);
+  --yrkie-color-title: var(--yrkie-color-ink);
+  --yrkie-color-hover: var(--yrkie-color-task-hover);
+  --dashboard-danger-text: #a52d31;
+}

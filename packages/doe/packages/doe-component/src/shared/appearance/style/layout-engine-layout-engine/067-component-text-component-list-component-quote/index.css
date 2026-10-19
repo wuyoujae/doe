@@ -1,0 +1,11 @@
+.component-text,
+.component-list,
+.component-quote {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: var(--component-gap);
+}
+

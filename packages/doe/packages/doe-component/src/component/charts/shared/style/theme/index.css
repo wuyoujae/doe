@@ -1,0 +1,44 @@
+.schema-slide[data-theme="yrkie-theme"] :is(.ppt-grouped-bar-chart, .ppt-line-chart) {
+  --chart-axis: var(--yrkie-color-body);
+  --line-chart-axis: var(--yrkie-color-body);
+}
+
+.schema-slide[data-theme="yrkie-theme"]
+  :is(
+    .ppt-line-chart__value-label, .ppt-business-chart__tick,
+    .ppt-business-chart__category, .ppt-business-chart__value,
+    .ppt-business-chart__note, .ppt-business-chart__legend,
+    .ppt-business-chart__radar-label, .ppt-business-chart__panel-meta,
+    .ppt-business-chart__panel-body, .ppt-stacked-bar-chart__axis-label,
+    .ppt-stacked-bar-chart__category-label,
+    .ppt-stacked-bar-chart__annotation-label,
+    .ppt-waterfall-chart__axis-label, .ppt-waterfall-chart__category-label,
+    .ppt-waterfall-chart__comparison-label, .ppt-waterfall-chart__callout-text,
+    .ppt-waterfall-chart__footnote, .ppt-insight-card__axis-label,
+    .ppt-insight-card__category-label, .ppt-insight-card__value-label,
+    .ppt-insight-card__callout-label, .ppt-risk-matrix__axis-label,
+    .ppt-risk-matrix__note-text, .ppt-competitive-landscape__axis-label,
+    .ppt-competitive-landscape__x-label,
+    .ppt-competitive-landscape__callout-text,
+    .ppt-channel-comparison__period,
+    .ppt-donut-chart__center-subtitle, .ppt-donut-chart__footnote
+  ) {
+  fill: var(--yrkie-color-body);
+}
+
+.schema-slide[data-theme="yrkie-theme"]
+  :is(.ppt-donut-chart__center-title, .ppt-donut-chart__center-value) {
+  fill: var(--yrkie-color-title);
+}
+
+.schema-slide[data-theme="yrkie-theme"] .ppt-math-formula {
+  --math-color: var(--yrkie-color-body);
+}
+
+.schema-slide[data-theme="yrkie-theme"]
+  :is( .ppt-capability-cards__icon,
+      .ppt-metric-card-group--mosaic .ppt-metric-card-group__icon,
+      .ppt-metric-card-group--narrative .ppt-metric-card-group__icon) {
+  color: var(--yrkie-color-body);
+}
+

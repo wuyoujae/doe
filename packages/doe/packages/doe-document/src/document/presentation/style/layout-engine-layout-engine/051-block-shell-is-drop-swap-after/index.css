@@ -1,0 +1,104 @@
+.block-shell.is-drop-swap::after {
+  position: absolute;
+  z-index: 22;
+  top: 50%;
+  left: 50%;
+  padding: 8px 12px;
+  content: "松开以切换贴边位置";
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  border-radius: 5px;
+  background: var(--editor-blue);
+  box-shadow: 0 8px 20px rgba(24, 78, 163, 0.24);
+  font: 800 14px/1 var(--font-sans-cn);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.block-shell.is-drop-rejected {
+  cursor: not-allowed;
+}
+
+.block-shell.is-drop-rejected::after {
+  position: absolute;
+  z-index: 24;
+  top: 50%;
+  left: 50%;
+  max-width: calc(100% - 32px);
+  padding: 8px 12px;
+  content: attr(data-drop-reason);
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  border-radius: 5px;
+  background: #b42318;
+  box-shadow: 0 8px 20px rgba(122, 31, 23, 0.25);
+  font: 800 14px/1.2 var(--font-sans-cn);
+  text-align: center;
+  pointer-events: none;
+}
+
+.composition-drop-preview {
+  position: absolute;
+  z-index: 23;
+  inset: 8px;
+  display: none;
+  min-width: 0;
+  min-height: 0;
+  gap: 12px;
+  padding: 12px;
+  border: 2px solid var(--editor-blue);
+  border-radius: 6px;
+  background: rgba(234, 242, 255, 0.94);
+  box-shadow: 0 12px 32px rgba(24, 78, 163, 0.2);
+  pointer-events: none;
+}
+
+.block-shell.is-drop-compose > .composition-drop-preview {
+  display: grid;
+}
+
+.composition-drop-preview[data-direction="row"] {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.block-shell.is-drop-compose-left
+  > .composition-drop-preview[data-direction="row"] {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+}
+
+.composition-drop-preview[data-direction="stack"] {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.composition-drop-preview__cell {
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  place-items: center;
+  padding: 8px;
+  color: #1e4f91;
+  border: 1px solid #7eb0ff;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.82);
+  font: 700 11pt/1.2 var(--font-sans-cn);
+  text-align: center;
+}
+
+.composition-drop-preview__label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: calc(100% - 32px);
+  padding: 7px 10px;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  border-radius: 5px;
+  background: var(--editor-blue);
+  box-shadow: 0 6px 16px rgba(24, 78, 163, 0.24);
+  font: 800 11pt/1.2 var(--font-sans-cn);
+  text-align: center;
+  white-space: nowrap;
+}
+

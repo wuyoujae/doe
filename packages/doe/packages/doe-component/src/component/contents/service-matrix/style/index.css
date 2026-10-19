@@ -1,0 +1,86 @@
+.ppt-service-matrix {
+  width: 760px;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: var(--yrkie-color-body);
+  background: var(--yrkie-color-surface);
+  font-family: var(--font-sans-cn);
+}
+
+.ppt-service-matrix__title {
+  margin: 0 0 10px;
+  flex: none;
+  color: var(--yrkie-color-title);
+  font-size: var(--typography-h4-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 1.08;
+}
+
+.ppt-service-matrix__rows {
+  min-height: 0;
+  display: grid;
+  gap: 10px;
+  flex: 1;
+}
+
+.ppt-service-matrix__row {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(115px, 0.72fr) minmax(280px, 1.55fr) minmax(190px, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.ppt-service-matrix__label,
+.ppt-service-matrix__right {
+  display: flex;
+  align-items: center;
+  font-size: var(--typography-normal-size);
+  font-weight: var(--yrkie-font-weight-regular);
+  line-height: 1.25;
+}
+
+.ppt-service-matrix__label {
+  justify-content: flex-start;
+}
+
+.ppt-service-matrix__visual {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background-color: var(--yrkie-color-secondary);
+  background-position: center;
+  background-size: cover;
+}
+
+.ppt-service-matrix__visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--yrkie-color-mask) 42%, transparent);
+}
+
+.ppt-service-matrix__overlay {
+  position: relative;
+  z-index: 1;
+  padding: 14px;
+  color: var(--yrkie-color-on-image);
+  font-size: var(--typography-normal-size);
+  line-height: 1.25;
+  text-align: center;
+}
+
+.ppt-service-matrix__headline {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: var(--yrkie-font-weight-semibold);
+}
+
+.ppt-service-matrix__description {
+  display: block;
+  font-weight: var(--yrkie-font-weight-regular);
+}

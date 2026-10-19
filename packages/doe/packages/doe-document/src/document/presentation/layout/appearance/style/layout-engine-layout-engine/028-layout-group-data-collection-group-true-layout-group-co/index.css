@@ -1,0 +1,22 @@
+.layout-group[data-collection-group="true"]
+  > .layout-group__content {
+  grid-auto-rows: max-content;
+}
+
+.layout-group__content[data-equal-height-phase="measuring"]
+  > .group-item,
+.layout-group__content[data-equal-height-phase="measuring"]
+  > .group-item
+  > .block-content,
+.layout-group__content[data-equal-height-phase="measuring"]
+  > .group-item
+  > .block-content
+  > .component-card {
+  height: auto !important;
+}
+
+.layout-group__content[data-equal-height-phase="equalized"]
+  > .group-item[data-equal-height-item="true"] {
+  min-height: var(--equal-item-height, 0px);
+}
+

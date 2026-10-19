@@ -1,0 +1,153 @@
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="fade"][data-media-position="right"]
+  > [data-layout-region="media"]
+  > .block-content {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 13%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 13%);
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="fade"][data-media-position="left"]
+  > [data-layout-region="media"]
+  > .block-content {
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, #000 13%);
+  mask-image: linear-gradient(to left, transparent 0%, #000 13%);
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="fade"][data-media-position="bottom"]
+  > [data-layout-region="media"]
+  > .block-content {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 13%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 13%);
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="fade"][data-media-position="top"]
+  > [data-layout-region="media"]
+  > .block-content {
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 13%);
+  mask-image: linear-gradient(to top, transparent 0%, #000 13%);
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="diagonal"][data-media-position="right"]
+  > [data-layout-region="media"]
+  > .block-content {
+  clip-path: polygon(13% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="diagonal"][data-media-position="left"]
+  > [data-layout-region="media"]
+  > .block-content {
+  clip-path: polygon(0 0, 87% 0, 100% 100%, 0 100%);
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="diagonal"][data-media-position="bottom"]
+  > [data-layout-region="media"]
+  > .block-content {
+  clip-path: polygon(13% 0, 100% 13%, 100% 100%, 0 100%, 0 0);
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="diagonal"][data-media-position="top"]
+  > [data-layout-region="media"]
+  > .block-content {
+  clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="circle"][data-media-position="right"]
+  > [data-layout-region="media"]
+  > .block-content {
+  -webkit-mask-image:
+    linear-gradient(#000, #000),
+    radial-gradient(ellipse 30% 75% at 30% 28%, #000 99%, transparent 100%);
+  mask-image:
+    linear-gradient(#000, #000),
+    radial-gradient(ellipse 30% 75% at 30% 28%, #000 99%, transparent 100%);
+  -webkit-mask-position: right top, left top;
+  mask-position: right top, left top;
+  -webkit-mask-size: 70% 100%, 100% 100%;
+  mask-size: 70% 100%, 100% 100%;
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="circle"][data-media-position="left"]
+  > [data-layout-region="media"]
+  > .block-content {
+  -webkit-mask-image:
+    linear-gradient(#000, #000),
+    radial-gradient(ellipse 30% 75% at 70% 28%, #000 99%, transparent 100%);
+  mask-image:
+    linear-gradient(#000, #000),
+    radial-gradient(ellipse 30% 75% at 70% 28%, #000 99%, transparent 100%);
+  -webkit-mask-position: left top, left top;
+  mask-position: left top, left top;
+  -webkit-mask-size: 70% 100%, 100% 100%;
+  mask-size: 70% 100%, 100% 100%;
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="circle"][data-media-position="bottom"]
+  > [data-layout-region="media"]
+  > .block-content {
+  -webkit-mask-image:
+    linear-gradient(#000, #000),
+    radial-gradient(ellipse 75% 30% at 28% 30%, #000 99%, transparent 100%);
+  mask-image:
+    linear-gradient(#000, #000),
+    radial-gradient(ellipse 75% 30% at 28% 30%, #000 99%, transparent 100%);
+  -webkit-mask-position: left bottom, left top;
+  mask-position: left bottom, left top;
+  -webkit-mask-size: 100% 70%, 100% 100%;
+  mask-size: 100% 70%, 100% 100%;
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="circle"][data-media-position="top"]
+  > [data-layout-region="media"]
+  > .block-content {
+  -webkit-mask-image:
+    linear-gradient(#000, #000),
+    radial-gradient(ellipse 75% 30% at 28% 70%, #000 99%, transparent 100%);
+  mask-image:
+    linear-gradient(#000, #000),
+    radial-gradient(ellipse 75% 30% at 28% 70%, #000 99%, transparent 100%);
+  -webkit-mask-position: left top, left top;
+  mask-position: left top, left top;
+  -webkit-mask-size: 100% 70%, 100% 100%;
+  mask-size: 100% 70%, 100% 100%;
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="inner-circle"][data-media-position="right"]
+  > [data-layout-region="media"]
+  > .block-content {
+  -webkit-mask-image: radial-gradient(ellipse 30% 75% at 0 28%, transparent 99%, #000 100%);
+  mask-image: radial-gradient(ellipse 30% 75% at 0 28%, transparent 99%, #000 100%);
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="inner-circle"][data-media-position="left"]
+  > [data-layout-region="media"]
+  > .block-content {
+  -webkit-mask-image: radial-gradient(ellipse 30% 75% at 100% 28%, transparent 99%, #000 100%);
+  mask-image: radial-gradient(ellipse 30% 75% at 100% 28%, transparent 99%, #000 100%);
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="inner-circle"][data-media-position="bottom"]
+  > [data-layout-region="media"]
+  > .block-content {
+  -webkit-mask-image: radial-gradient(ellipse 75% 30% at 28% 0, transparent 99%, #000 100%);
+  mask-image: radial-gradient(ellipse 75% 30% at 28% 0, transparent 99%, #000 100%);
+}
+
+.layout-group__content[data-layout-variant="edge-media"][data-media-shape="inner-circle"][data-media-position="top"]
+  > [data-layout-region="media"]
+  > .block-content {
+  -webkit-mask-image: radial-gradient(ellipse 75% 30% at 28% 100%, transparent 99%, #000 100%);
+  mask-image: radial-gradient(ellipse 75% 30% at 28% 100%, transparent 99%, #000 100%);
+}
+
+.schema-slide[data-edge-media="true"]
+  [data-layout-region="media"]
+  > .block-content
+  > .component-media,
+.schema-slide[data-edge-media="true"]
+  [data-layout-region="media"]
+  .component-media__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+

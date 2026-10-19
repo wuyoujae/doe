@@ -1,0 +1,58 @@
+// Ordered assembly of independently owned DOE modules.
+import { scope as __doeScope } from "../context/index.js";
+import { install as installTextPanel } from '../../../../component/base/text-panel/index.js';
+import { install as installFunnel } from '../../../../component/diagrams/3d-funnel/index.js';
+import { install as installDiagrams } from '../../../../component/diagrams/install.js';
+import { initialize as unit0 } from "../../../library/initialization/engine/index.js";
+import { initialize as unit1 } from "../../../library/initialization/library/index.js";
+import { initialize as unit2 } from "../../../library/initialization/step-002/index.js";
+import { initialize as unit3 } from "../../../library/initialization/step-003/index.js";
+import { initialize as unit4 } from "../../../library/initialization/density-scale/index.js";
+import { initialize as unit5 } from "../../../library/initialization/typography-styles/index.js";
+import { initialize as unit6 } from "../../../library/initialization/typography-minimum/index.js";
+import { initialize as unit7 } from "../../../library/initialization/typography-default-px/index.js";
+import { initialize as unit8 } from "../../../library/initialization/small-min-pt/index.js";
+import { initialize as unit9 } from "../../../library/initialization/normal-min-pt/index.js";
+import { initialize as unit11 } from "../../../library/initialization/row-surface-selector/index.js";
+import { initialize as unit46 } from "../../../library/initialization/step-046/index.js";
+import { initialize as unit54 } from "../../../library/initialization/step-054/index.js";
+import { initialize as unit55 } from "../../../library/initialization/step-055/index.js";
+import { initialize as unit56 } from "../../../library/initialization/step-056/index.js";
+import { initialize as unit57 } from "../../../library/initialization/step-057/index.js";
+import { initialize as unit58 } from "../../../library/initialization/step-058/index.js";
+import { initialize as unit59 } from "../../../library/initialization/step-059/index.js";
+import { initialize as unit60 } from "../../../library/initialization/step-060/index.js";
+import { initialize as unit63 } from "../../../library/initialization/step-063/index.js";
+import { initialize as unit64 } from "../../../library/initialization/step-064/index.js";
+import { initialize as unit66 } from "../../../library/initialization/step-066/index.js";
+
+import { install as installMindMap } from '../../../../component/charts/mind-map/index.js';
+export function install(global = window) {
+  __doeScope.global = global;
+  if (unit0()?.stop) return;
+  if (unit1()?.stop) return;
+  if (unit2()?.stop) return;
+  if (unit3()?.stop) return;
+  if (unit4()?.stop) return;
+  if (unit5()?.stop) return;
+  if (unit6()?.stop) return;
+  if (unit7()?.stop) return;
+  if (unit8()?.stop) return;
+  if (unit9()?.stop) return;
+  if (unit11()?.stop) return;
+  if (unit46()?.stop) return;
+  if (unit54()?.stop) return;
+  if (unit55()?.stop) return;
+  if (unit56()?.stop) return;
+  if (unit57()?.stop) return;
+  if (unit58()?.stop) return;
+  if (unit59()?.stop) return;
+  if (unit60()?.stop) return;
+  if (unit63()?.stop) return;
+  if (unit64()?.stop) return;
+  if (unit66()?.stop) return;
+  installTextPanel(global.SlideEngine);
+  installFunnel(global.SlideEngine);
+  installDiagrams(global.SlideEngine);
+  installMindMap(global);
+}

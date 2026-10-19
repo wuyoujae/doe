@@ -1,0 +1,38 @@
+.doe-formatted-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+/* A text selection owns the toolbar layer, including ancestor/group toolbars. */
+body:has(.doe-text-selection-toolbar:not([hidden])) .block-toolbar:not(.doe-text-selection-toolbar),
+body:has(.doe-text-selection-toolbar:not([hidden])) .text-edit-toolbar__align-menu {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Appearance and controls come from the existing text-edit-toolbar classes. */
+.doe-text-selection-toolbar {
+  position: fixed;
+  z-index: 12000;
+  display: flex;
+  bottom: auto;
+  transform: none;
+  max-width: calc(100vw - 1rem);
+}
+.doe-toolbar-preview-layer .doe-text-selection-toolbar.doe-toolbar-preview[hidden] { display: none; }
+
+.doe-text-color { position: relative; display: flex; }
+.doe-text-color__trigger > span { font-weight: 600; line-height: 1; border-bottom: .2rem solid; padding: 0 .15rem .1rem; }
+.doe-text-color__trigger[data-mixed="true"] > span { border-bottom-style: dotted; }
+.doe-text-color__panel {
+  position: absolute; top: calc(100% + .5rem); left: 0; width: 14rem;
+  max-width: calc(100vw - 1rem); box-sizing: border-box; padding: .75rem;
+  border: 1px solid var(--yrkie-color-secondary); border-radius: .5rem;
+  background: var(--yrkie-color-light); color: var(--yrkie-color-title);
+  box-shadow: 0 .25rem 1rem color-mix(in srgb, var(--yrkie-color-title) 18%, transparent);
+  max-height: calc(100vh - 3rem); overflow: auto;
+}
+.doe-text-color__panel[hidden] { display: none; }
+.doe-text-color__label { margin: 0 0 .5rem; font-size: .75rem; }
+.doe-text-color__grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: .3rem; margin-bottom: .75rem; }
+.doe-text-color__swatch { aspect-ratio: 1; border: 1px solid color-mix(in srgb, var(--yrkie-color-title) 25%, transparent); border-radius: .25rem; cursor: pointer; padding: 0; }
+.doe-text-color__swatch[aria-pressed="true"] { outline: 2px solid var(--yrkie-color-primary); outline-offset: 2px; }
+.doe-text-color__swatch:focus-visible { outline: 2px solid var(--yrkie-color-title); outline-offset: 2px; }
+.doe-text-color__reset { width: 100%; justify-content: center; }

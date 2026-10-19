@@ -1,0 +1,30 @@
+/* Shared modal lifecycle styles; feature surfaces define their own geometry. */
+.ui-dialog, .ui-dialog::backdrop { --ui-dialog-overlay: rgb(32 30 39 / 24%); }
+.ui-dialog {
+  width: min(36rem, calc(100% - var(--yrkie-gap-layout)));
+  max-width: none;
+  max-height: calc(100dvh - var(--yrkie-gap-layout));
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: var(--yrkie-border-width) solid var(--yrkie-color-control-border);
+  border-radius: var(--yrkie-radius-control);
+  background: var(--yrkie-color-page);
+  box-shadow: var(--yrkie-shadow-select);
+}
+.ui-dialog[open] { display: flex; flex-direction: column; animation: ui-dialog-enter var(--yrkie-motion-panel) var(--yrkie-ease-control) both; }
+.ui-dialog::backdrop { background: var(--ui-dialog-overlay); animation: ui-dialog-fade var(--yrkie-motion-panel) ease both; }
+.ui-dialog.is-closing { animation: ui-dialog-exit var(--yrkie-motion-panel) var(--yrkie-ease-control) both; }
+.ui-dialog.is-closing::backdrop { animation: ui-dialog-fade var(--yrkie-motion-panel) ease reverse both; }
+.ui-dialog-close { display: grid; place-items: center; width: var(--yrkie-gap-layout); height: var(--yrkie-gap-layout); padding: 0; border: 0; border-radius: var(--yrkie-radius-control); background: transparent; color: inherit; }
+.ui-dialog-close svg { width: 1.125rem; height: 1.125rem; }
+.ui-dialog-content { overflow-y: auto; overscroll-behavior: contain; min-height: 0; padding: 0 var(--yrkie-gap-section) var(--yrkie-gap-section); }
+.ui-dialog :focus-visible { outline: calc(var(--yrkie-border-width) * 2) solid var(--yrkie-color-primary); outline-offset: calc(var(--yrkie-border-width) * 2); }
+@media (hover: hover) { .ui-dialog-close:hover { background: var(--yrkie-color-hover); } }
+@media (max-width: 30rem) {
+  .ui-dialog-content { padding: 0 var(--yrkie-gap-content) var(--yrkie-gap-content); }
+}
+@keyframes ui-dialog-enter { from { opacity: 0; transform: translateY(var(--yrkie-gap-icon)) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes ui-dialog-exit { to { opacity: 0; transform: translateY(var(--yrkie-gap-icon)) scale(.98); } }
+@keyframes ui-dialog-fade { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .ui-dialog[open], .ui-dialog::backdrop { animation: none; } }

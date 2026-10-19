@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Yrkie 幻灯片编辑器</title>
+    <link
+      rel="preload"
+      href="../core/fonts/misans/MiSansVF.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="../core/fonts/alexandria/Alexandria-wght.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="../core/slide.css?v=20260901-10" />
+    <link rel="stylesheet" href="../components/grouped-bar-chart/grouped-bar-chart.css?v=20260906-1" />
+    <link rel="stylesheet" href="../components/line-chart/line-chart.css?v=20260906-1" />
+    <link rel="stylesheet" href="../components/stacked-bar-chart/stacked-bar-chart.css?v=20260901-10" />
+    <link rel="stylesheet" href="../components/risk-matrix/risk-matrix.css?v=20260901-10" />
+    <link rel="stylesheet" href="../components/waterfall-chart/waterfall-chart.css?v=20260901-10" />
+    <link rel="stylesheet" href="../components/dashboard-widgets/dashboard-widgets.css?v=20260907-1" />
+    <link rel="stylesheet" href="../components/business-charts/business-charts.css?v=20260903-2" />
+    <link rel="stylesheet" href="../components/process-diagrams/process-diagrams.css?v=20260909-git-render" />
+    <link rel="stylesheet" href="../components/math-formula/math-formula.css?v=20260907-1" />
+    <link rel="stylesheet" href="../components/data-table/data-table.css?v=20260909-border-paint" />
+    <link rel="stylesheet" href="../components/item-cards/item-cards.css?v=20260909-border-paint" />
+    <link rel="stylesheet" href="../components/contents/contents.css?v=20260908-icon-text" />
+    <link rel="stylesheet" href="../components/shape-contents/shape-contents.css?v=20260908-2" />
+    <link rel="stylesheet" href="../components/base-media/base-media.css?v=20260908-1" />
+    <link rel="stylesheet" href="../layout-engine/layout-engine.css?v=20260909-border-paint" />
+    <link rel="stylesheet" href="../canvas/canvas.css?v=20260908-shared-canvas" />
+    <link rel="stylesheet" href="./work-editor.css?v=20260908-shared-canvas" />
+    <link rel="stylesheet" href="../core/theme.css?v=20260902-2" />
+  </head>
+  <body>
+    <main class="work-editor" data-renderer="yrkie-doe" aria-label="幻灯片编辑器">
+      <section class="work-editor__stage" aria-live="polite">
+        <div class="work-editor__slide-settings" id="slide-settings">
+          <button class="work-editor__settings-backdrop" id="slide-settings-backdrop" type="button" tabindex="-1" aria-label="关闭" hidden></button>
+          <button
+            class="work-editor__slide-settings-trigger"
+            id="slide-settings-trigger"
+            type="button"
+            aria-label="页面设置"
+            aria-expanded="false"
+            aria-controls="slide-settings-panel"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7h10" /><path d="M18 7h2" /><circle cx="16" cy="7" r="2" />
+              <path d="M4 17h2" /><path d="M10 17h10" /><circle cx="8" cy="17" r="2" />
+            </svg>
+            <span>页面设置</span>
+            <svg class="work-editor__slide-settings-chevron" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="m4 6 4 4 4-4" />
+            </svg>
+          </button>
+
+          <section
+            class="work-editor__slide-settings-panel"
+            id="slide-settings-panel"
+            aria-label="当前幻灯片属性"
+            aria-hidden="true"
+            tabindex="-1"
+          >
+            <header class="work-editor__settings-header">
+              <h2 id="slide-settings-title">Theme</h2>
+              <button type="button" id="slide-settings-close" aria-label="关闭">×</button>
+            </header>
+            <div class="work-editor__settings-accordion">
+              <div id="settings-theme-options" data-settings-section="theme"></div>
+              <div class="work-editor__accordion-item" data-settings-section="page-number">
+                <button
+                  class="work-editor__accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="settings-page-number-panel"
+                >
+                  <span data-settings-label="pageNumber">页码</span>
+                  <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+                </button>
+                <div class="work-editor__accordion-panel" id="settings-page-number-panel" aria-hidden="true">
+                  <div class="work-editor__accordion-panel-inner">
+                    <div class="work-editor__settings-row">
+                      <div class="work-editor__settings-copy">
+                        <span data-settings-label="showPageNumber">显示页码</span>
+                        <small data-settings-label="pageNumberHint">在安全区底部显示当前页</small>
+                      </div>
+                      <button class="work-editor__switch" id="page-number-enabled" type="button" role="switch" aria-checked="true">
+                        <span></span>
+                      </button>
+                    </div>
+                    <div class="work-editor__settings-field" id="page-number-format-field">
+                      <label data-settings-label="pageNumberType">页码类型</label>
+                      <div class="work-editor__custom-select" data-slide-select="page-number-format">
+                        <button class="work-editor__custom-select-trigger" type="button" aria-expanded="false">
+                          <span data-select-label>纯数字</span>
+                          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+                        </button>
+                        <div class="work-editor__custom-select-menu" role="listbox" aria-hidden="true">
+                          <button type="button" role="option" data-value="number" aria-selected="true"><span data-settings-label="number">纯数字</span> <small>3</small></button>
+                          <button type="button" role="option" data-value="fraction" aria-selected="false"><span data-settings-label="fraction">页数分式</span> <small>3 / 12</small></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="work-editor__accordion-item" data-settings-section="background">
+                <button
+                  class="work-editor__accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="settings-background-panel"
+                >
+                  <span data-settings-label="background">页面背景</span>
+                  <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+                </button>
+                <div class="work-editor__accordion-panel" id="settings-background-panel" aria-hidden="true">
+                  <div class="work-editor__accordion-panel-inner">
+                    <small class="work-editor__settings-note" id="slide-background-note" data-settings-label="bleedBackgroundHint" hidden>贴边布局由贴边图片控制，不叠加整页背景。</small>
+
+                    <div class="work-editor__settings-grid" id="slide-background-options">
+                <div class="work-editor__settings-field">
+                  <label data-settings-label="imageFit">图片填充</label>
+                  <div class="work-editor__custom-select" data-slide-select="background-fit">
+                    <button class="work-editor__custom-select-trigger" type="button" aria-expanded="false">
+                      <span data-select-label>铺满裁切</span>
+                      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+                    </button>
+                    <div class="work-editor__custom-select-menu" role="listbox" aria-hidden="true">
+                      <button type="button" role="option" data-value="cover" data-settings-label="cover" aria-selected="true">铺满裁切</button>
+                      <button type="button" role="option" data-value="contain" data-settings-label="contain" aria-selected="false">完整显示</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-editor__settings-field">
+                  <label data-settings-label="imagePosition">图片位置</label>
+                  <div class="work-editor__custom-select" data-slide-select="background-position">
+                    <button class="work-editor__custom-select-trigger" type="button" aria-expanded="false">
+                      <span data-select-label>居中</span>
+                      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+                    </button>
+                    <div class="work-editor__custom-select-menu" role="listbox" aria-hidden="true">
+                      <button type="button" role="option" data-value="50% 50%" data-settings-label="center" aria-selected="true">居中</button>
+                      <button type="button" role="option" data-value="50% 0%" data-settings-label="top" aria-selected="false">顶部</button>
+                      <button type="button" role="option" data-value="50% 100%" data-settings-label="bottom" aria-selected="false">底部</button>
+                      <button type="button" role="option" data-value="0% 50%" data-settings-label="left" aria-selected="false">左侧</button>
+                      <button type="button" role="option" data-value="100% 50%" data-settings-label="right" aria-selected="false">右侧</button>
+                    </div>
+                  </div>
+                </div>
+                    </div>
+
+                    <div class="work-editor__settings-field work-editor__settings-field--range" id="background-content-width-field">
+                      <div class="work-editor__settings-range-label">
+                        <label for="slide-background-content-width" data-settings-label="contentWidth">内容宽度</label>
+                        <output id="slide-background-content-width-output">100%</output>
+                      </div>
+                      <input id="slide-background-content-width" type="range" min="20" max="100" step="any" value="100" />
+                    </div>
+
+                    <div class="work-editor__settings-field" id="background-content-align-field">
+                      <label data-settings-label="contentPosition">内容位置</label>
+                      <div class="work-editor__custom-select" data-slide-select="background-content-align">
+                        <button class="work-editor__custom-select-trigger" type="button" aria-expanded="false">
+                          <span data-select-label>居中</span>
+                          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+                        </button>
+                        <div class="work-editor__custom-select-menu" role="listbox" aria-hidden="true">
+                          <button type="button" role="option" data-value="left" data-settings-label="left" aria-selected="false">左侧</button>
+                          <button type="button" role="option" data-value="center" data-settings-label="center" aria-selected="true">居中</button>
+                          <button type="button" role="option" data-value="right" data-settings-label="right" aria-selected="false">右侧</button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="work-editor__settings-field" id="background-text-surface-field">
+                      <label data-settings-label="textSurface">文字阅读底</label>
+                      <div class="work-editor__custom-select" data-slide-select="background-text-surface">
+                        <button class="work-editor__custom-select-trigger" type="button" aria-expanded="false">
+                          <span data-select-label>跟随主题</span>
+                          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+                        </button>
+                        <div class="work-editor__custom-select-menu" role="listbox" aria-hidden="true">
+                          <button type="button" role="option" data-value="auto" data-settings-label="followTheme" aria-selected="true">跟随主题</button>
+                          <button type="button" role="option" data-value="none" data-settings-label="directOverlay" aria-selected="false">直接叠图</button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="work-editor__settings-field work-editor__settings-field--range" id="background-opacity-field">
+                      <div class="work-editor__settings-range-label">
+                        <label for="slide-background-opacity" data-settings-label="overlayOpacity">遮罩透明度</label>
+                        <output id="slide-background-opacity-output">0%</output>
+                      </div>
+                      <input id="slide-background-opacity" type="range" min="0" max="90" step="2" value="0" />
+                    </div>
+
+                    <div class="work-editor__settings-field" id="background-direction-field">
+                      <label data-settings-label="overlayDirection">遮罩方向</label>
+                      <div class="work-editor__custom-select" data-slide-select="background-direction">
+                        <button class="work-editor__custom-select-trigger" type="button" aria-expanded="false">
+                          <span data-select-label>从左到右</span>
+                          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+                        </button>
+                        <div class="work-editor__custom-select-menu" role="listbox" aria-hidden="true">
+                          <button type="button" role="option" data-value="to-right" aria-selected="true"><span data-settings-label="toRight">从左到右</span> <small>→</small></button>
+                          <button type="button" role="option" data-value="to-left" aria-selected="false"><span data-settings-label="toLeft">从右到左</span> <small>←</small></button>
+                          <button type="button" role="option" data-value="to-bottom" aria-selected="false"><span data-settings-label="toBottom">从上到下</span> <small>↓</small></button>
+                          <button type="button" role="option" data-value="to-top" aria-selected="false"><span data-settings-label="toTop">从下到上</span> <small>↑</small></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="work-editor__background-actions">
+                      <button class="work-editor__settings-remove" id="slide-background-remove" data-settings-label="removeBackground" type="button">移除背景图片</button>
+                      <button class="work-editor__settings-apply" id="slide-background-replace" data-settings-label="replaceImage" type="button">更换图片</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <doe-canvas class="work-editor__canvas-frame" id="active-frame">
+          <div class="work-editor__canvas-scale" id="active-scale" data-canvas-scale>
+            <div class="work-editor__canvas" id="active-canvas" data-canvas-mount></div>
+          </div>
+          <div class="work-editor__loading" id="active-loading">正在准备幻灯片…</div>
+        </doe-canvas>
+      </section>
+
+      <footer class="work-editor__filmstrip-shell">
+        <button class="work-editor__nav" id="previous-slide" type="button" aria-label="上一页">‹</button>
+        <div class="work-editor__filmstrip" id="filmstrip" aria-label="幻灯片缩略图">
+          <button class="work-editor__add" id="add-slide" type="button" aria-label="添加幻灯片">
+            <span class="work-editor__add-number-space" aria-hidden="true"></span>
+            <span class="work-editor__add-frame">
+              <span class="work-editor__add-icon" aria-hidden="true">＋</span>
+              <small>新建</small>
+            </span>
+          </button>
+        </div>
+        <button class="work-editor__nav" id="next-slide" type="button" aria-label="下一页">›</button>
+      </footer>
+    </main>
+
+    <script src="../core/contents-layout.js?v=20260907-1"></script>
+    <script src="../core/chart-utils.js?v=20260906-1"></script>
+    <script src="../core/schema-json-recovery.js?v=20260816-3"></script>
+    <script src="../core/semantic-text-layout.js?v=20260906-10"></script>
+    <script src="../core/theme.js?v=20260909-border-paint"></script>
+    <script src="../vendor/lucide.min.js"></script>
+    <script src="../components/grouped-bar-chart/grouped-bar-chart.js?v=20260906-12"></script>
+    <script src="../components/line-chart/line-chart.js?v=20260906-1"></script>
+    <script src="../components/stacked-bar-chart/stacked-bar-chart.js?v=20260906-1"></script>
+    <script src="../components/risk-matrix/risk-matrix.js?v=20260901-10"></script>
+    <script src="../components/waterfall-chart/waterfall-chart.js?v=20260906-1"></script>
+    <script src="../components/dashboard-widgets/dashboard-widgets.js?v=20260909-donut-center"></script>
+    <script src="../components/business-charts/business-charts.js?v=20260906-1"></script>
+    <script src="../components/process-diagrams/process-diagrams.js?v=20260909-git-render"></script>
+    <script src="../components/math-formula/math-formula.js?v=20260907-1"></script>
+    <script src="../components/data-table/data-table.js?v=20260901-10"></script>
+    <script src="../layout-engine/layout-engine.js?v=20260909-share-assets"></script>
+    <script src="../layout-engine/text-fields.js?v=20260909-git-render"></script>
+    <script src="../layout-engine/icon-fields.js?v=20260908-contents-1"></script>
+    <script src="../layout-engine/components.js?v=20260909-overflow-repair"></script>
+    <script src="../components/item-cards/item-cards.js?v=20260908-1"></script>
+    <script src="../components/shape-contents/shape-contents.js?v=20260908-2"></script>
+    <script src="../components/base-media/base-media.js?v=20260908-1"></script>
+    <script src="../layout-engine/library-components.js?v=20260909-git-render"></script>
+    <script src="../core/contents-model.js?v=20260908-icon-text"></script>
+    <script src="../components/contents/contents.js?v=20260908-icon-text"></script>
+    <script src="../layout-engine/ai-layout-compiler.js?v=20260909-git-render"></script>
+    <script src="./component-gallery.js?v=20260908-5"></script>
+    <script src="./thumbnail-coordinator.js?v=20260820-2"></script>
+    <script src="../canvas/canvas.js?v=20260909-share-assets"></script>
+    <script src="./work-editor.js?v=20260908-agent-edit"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+:where(.schema-slide[data-editor="true"]) .doe-selectable-item { position: relative; outline: none; }
+:where(.schema-slide[data-editor="true"]) .doe-selectable-item.is-item-selected > .doe-item-handle,
+:where(.schema-slide[data-editor="true"]) .doe-selectable-item:hover > .doe-item-handle,
+:where(.schema-slide[data-editor="true"]) .doe-item-handle:focus-visible { opacity: 1; pointer-events: auto; touch-action: none; }
+:where(.schema-slide[data-editor="true"]) .block-shell.has-selected-item > .block-toolbar:not(.text-edit-toolbar) { display: none; }
+:where(.schema-slide[data-editor="true"]) .block-shell.has-item-selection > .block-handle--group { pointer-events: auto; }
+
+.schema-slide { --doe-item-inset: calc(var(--space-6pt) / 2); }
+.schema-slide[data-editor="true"] .doe-selectable-item.is-item-selected > .doe-item-delete-toolbar { display: flex; }

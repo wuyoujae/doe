@@ -1,0 +1,123 @@
+.work-editor__theme-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.875rem 0.75rem;
+}
+
+.work-editor__theme-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+  gap: 0.375rem;
+  padding: 0.25rem;
+  border: 0.125rem solid transparent;
+  border-radius: 0.625rem;
+  background: transparent;
+  color: var(--editor-ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.work-editor__theme-card:hover:not(:disabled) {
+  background: var(--editor-bg);
+}
+
+.work-editor__theme-card[aria-pressed="true"] {
+  border-color: var(--editor-blue);
+}
+
+.work-editor__theme-card:disabled {
+  cursor: wait;
+}
+
+.work-editor__theme-preview {
+  display: grid;
+  min-width: 0;
+  aspect-ratio: 4 / 3;
+  align-items: center;
+  padding: 0.75rem;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  background: var(--yrkie-color-studio-stage);
+}
+
+.work-editor__theme-page {
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 0.875rem 0.75rem;
+  border: 0.0625rem solid var(--yrkie-line);
+  border-radius: var(--yrkie-radius-canvas);
+  background: var(--yrkie-color-light);
+  box-shadow: 0 0.125rem 0.25rem var(--yrkie-shadow-soft);
+}
+
+.work-editor__theme-title {
+  color: var(--yrkie-color-title);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: var(--typography-h1-weight);
+  line-height: 1.15;
+  letter-spacing: var(--yrkie-letter-spacing-heading);
+}
+
+.work-editor__theme-body {
+  color: var(--yrkie-color-body);
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: var(--typography-normal-weight);
+  line-height: 1.4;
+  letter-spacing: var(--yrkie-letter-spacing-body);
+  white-space: nowrap;
+}
+
+.work-editor__theme-link {
+  color: var(--yrkie-color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.125rem;
+}
+
+.work-editor__theme-palette {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0.125rem;
+}
+
+.work-editor__theme-palette > i {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 0.0625rem solid var(--yrkie-line);
+  border-radius: 50%;
+  background: var(--yrkie-color-primary);
+}
+
+.work-editor__theme-palette > i:nth-child(2) { background: var(--yrkie-color-secondary); }
+.work-editor__theme-palette > i:nth-child(3) { background: var(--yrkie-color-title); }
+.work-editor__theme-palette > i:nth-child(4) { background: var(--yrkie-color-auxiliary); }
+
+.work-editor__theme-caption {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.375rem;
+  padding: 0 0.125rem 0.125rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.work-editor__theme-name {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.work-editor__theme-check {
+  flex: none;
+  color: var(--editor-blue);
+  visibility: hidden;
+}
+
+.work-editor__theme-card[aria-pressed="true"] .work-editor__theme-check {
+  visibility: visible;
+}

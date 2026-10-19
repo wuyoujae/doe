@@ -1,0 +1,7 @@
+.component-title {
+  color: var(--demo-navy);
+  font-size: var(--component-title-size);
+  line-height: 1.14;
+  font-weight: var(--yrkie-font-weight-semibold);
+}
+

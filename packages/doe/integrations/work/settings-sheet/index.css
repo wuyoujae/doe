@@ -1,0 +1,7 @@
+.doe-work-settings-frame {
+  display: block;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  border: 0;
+}

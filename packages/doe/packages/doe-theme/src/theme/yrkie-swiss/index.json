@@ -1,0 +1,203 @@
+{
+  "id": "yrkie-swiss",
+  "label": "Swiss · 红白秩序",
+  "fonts": {
+    "latin": "Alexandria",
+    "cjk": "MiSans",
+    "stack": "\"Alexandria\", \"MiSans\", Arial, sans-serif",
+    "headingStack": "\"Alexandria\", \"MiSans\", Arial, sans-serif",
+    "codeStack": "\"IBM Plex Mono\", \"MiSans\", Consolas, monospace"
+  },
+  "typography": {
+    "sizeModes": [
+      "compact",
+      "default",
+      "expanded"
+    ],
+    "weights": {
+      "regular": 300,
+      "semibold": 600,
+      "bold": 600
+    },
+    "styles": {
+      "small": {
+        "sizes": {
+          "compact": 9.5,
+          "default": 10.5,
+          "expanded": 11.5
+        },
+        "defaultWeight": "regular",
+        "allowedWeights": [
+          "regular"
+        ]
+      },
+      "normal": {
+        "sizes": {
+          "compact": 12.5,
+          "default": 13.5,
+          "expanded": 14.5
+        },
+        "defaultWeight": "regular",
+        "allowedWeights": [
+          "regular"
+        ]
+      },
+      "large": {
+        "sizes": {
+          "compact": 14.5,
+          "default": 15.5,
+          "expanded": 16.5
+        },
+        "defaultWeight": "regular",
+        "allowedWeights": [
+          "regular"
+        ]
+      },
+      "h4": {
+        "sizes": {
+          "compact": 14.5,
+          "default": 15.5,
+          "expanded": 16.5
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "h3": {
+        "sizes": {
+          "compact": 18,
+          "default": 20,
+          "expanded": 22
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "h2": {
+        "sizes": {
+          "compact": 21,
+          "default": 24,
+          "expanded": 27
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "h1": {
+        "sizes": {
+          "compact": 32,
+          "default": 36,
+          "expanded": 42
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "xl": {
+        "sizes": {
+          "compact": 45,
+          "default": 52,
+          "expanded": 59
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "2xl": {
+        "sizes": {
+          "compact": 65,
+          "default": 75,
+          "expanded": 85
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      },
+      "3xl": {
+        "sizes": {
+          "compact": 97,
+          "default": 112.5,
+          "expanded": 129
+        },
+        "defaultWeight": "semibold",
+        "allowedWeights": [
+          "semibold",
+          "bold"
+        ]
+      }
+    },
+    "lineHeight": 1.4,
+    "letterSpacing": {
+      "body": "0",
+      "heading": "-0.045em",
+      "eyebrow": "0.12em"
+    },
+    "heroSizePt": 80
+  },
+  "radius": {
+    "canvas": "0",
+    "component": "0",
+    "pill": "999px",
+    "circle": "50%"
+  },
+  "colors": {
+    "primary": "#C52327",
+    "secondary": "#E7D5D2",
+    "title": "#171717",
+    "body": "#383838",
+    "auxiliary": "#4F4F4B",
+    "dark": "#171717",
+    "light": "#FAFAF6",
+    "surface": "#FFFFFF",
+    "softSurface": "#EEEEE8",
+    "onPrimary": "#FFFFFF",
+    "mask": "#171717",
+    "onImage": "#FFFFFF",
+    "studioStage": "#DFDFDA",
+    "chart": [
+      "#C52327",
+      "#292929",
+      "#356487",
+      "#697344",
+      "#8F5679"
+    ],
+    "code": {
+      "background": "#171717",
+      "border": "#5C5C58",
+      "text": "#F7F6EF",
+      "comment": "#B6B6AC",
+      "string": "#D8CA8D",
+      "number": "#ADD4DE",
+      "keyword": "#F39C92",
+      "builtin": "#BBC6ED",
+      "operator": "#DFDFD7"
+    }
+  },
+  "lineAlpha": {
+    "normal": 35,
+    "grid": 20,
+    "strong": 58
+  },
+  "shadow": {
+    "color": "#171717",
+    "softAlpha": 0,
+    "mediumAlpha": 0,
+    "strongAlpha": 0
+  },
+  "icon": {
+    "strokeWidth": 2
+  },
+  "heroReadingSurface": false
+}

@@ -1,0 +1,37 @@
+/* Original history-only attachment chip declarations. */
+.message-attachment-chip {
+  max-width: min(100%, 26.25rem);
+  min-width: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5625rem 0.6875rem;
+  border: 0.0625rem solid var(--border-user);
+  border-radius: 0.625rem;
+  background: color-mix(in srgb, var(--bg-user-msg) 88%, var(--bg-panel));
+  color: var(--text-primary);
+}
+
+.message-attachment-chip-name {
+  overflow: hidden;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.message-attachment-chip-size {
+  color: var(--text-muted);
+  font-size: 0.625rem;
+  white-space: nowrap;
+}
+
+
+.message-attachment-chip .prompt-attachment-kind-icon {
+  width: 1.1875rem;
+  height: 1.1875rem;
+  flex: 0 0 auto;
+  color: var(--text-secondary, #71717a);
+}

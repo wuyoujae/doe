@@ -1,0 +1,1 @@
+.item-cards[data-contents-presentation="timeline-dots"] .contents-marker { width: calc(var(--space-6pt) * 1.5); height: calc(var(--space-6pt) * 1.5); }

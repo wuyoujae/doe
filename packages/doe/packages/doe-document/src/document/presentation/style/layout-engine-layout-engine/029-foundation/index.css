@@ -1,0 +1,5 @@
+/* Explicit `variant: stack` question-card groups are common in AI-authored
+   schemas. Equal fractional implicit rows use the tallest card's min-content
+   height as the shared row size. Unlike the old generic collection rule, the
+   min-content floor prevents a constrained parent from collapsing the cards
+   before the slide solver has evaluated the cohort. */

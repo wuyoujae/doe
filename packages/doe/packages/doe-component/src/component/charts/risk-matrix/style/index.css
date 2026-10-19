@@ -1,0 +1,107 @@
+.ppt-risk-matrix {
+  width: 520px;
+  height: 540px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  color: var(--yrkie-color-body);
+  font-family: var(--font-sans-cn);
+}
+
+.ppt-risk-matrix__title {
+  margin: 0 0 8px;
+  flex: none;
+  font-size: var(--typography-h4-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 1.1;
+  text-align: center;
+}
+
+.ppt-risk-matrix__subtitle {
+  margin: 0 0 8px;
+  flex: none;
+  font-size: var(--typography-normal-size);
+  font-style: italic;
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 1.1;
+  text-align: center;
+}
+
+.ppt-risk-matrix__svg {
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+  overflow: visible;
+}
+
+.ppt-risk-matrix__plot-border {
+  fill: none;
+  stroke: var(--yrkie-line-strong);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-risk-matrix__axis {
+  fill: none;
+  stroke: var(--yrkie-color-primary);
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-risk-matrix__axis-label {
+  fill: var(--yrkie-color-body);
+  font-family: var(--font-sans-cn);
+  font-size: var(--typography-normal-size);
+  font-style: italic;
+  font-weight: var(--yrkie-font-weight-semibold);
+}
+
+.ppt-risk-matrix__priority-zone {
+  fill: none;
+  stroke: var(--yrkie-color-on-primary);
+  stroke-width: 3;
+  stroke-dasharray: 12 9;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-risk-matrix__priority-label {
+  fill: var(--yrkie-color-on-primary);
+  font-family: var(--font-sans-cn);
+  font-size: var(--typography-normal-size);
+  font-style: italic;
+  font-weight: var(--yrkie-font-weight-semibold);
+  text-anchor: middle;
+}
+
+.ppt-risk-matrix__note-line {
+  stroke: var(--yrkie-line-strong);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-risk-matrix__note-box {
+  fill: var(--yrkie-color-surface);
+  stroke: var(--yrkie-line-strong);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.ppt-risk-matrix__note-text {
+  fill: var(--yrkie-color-body);
+  font-family: var(--font-sans-cn);
+  font-size: var(--typography-normal-size);
+  text-anchor: middle;
+}
+
+.ppt-risk-matrix__node {
+  fill: var(--yrkie-color-primary);
+}
+
+.ppt-risk-matrix__node-label {
+  fill: var(--yrkie-color-on-primary);
+  font-family: var(--font-sans-cn);
+  font-size: var(--typography-normal-size);
+  text-anchor: middle;
+}

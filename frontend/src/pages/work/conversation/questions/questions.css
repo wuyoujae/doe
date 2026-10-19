@@ -1,0 +1,47 @@
+.doe-questions {
+  width: 100%;
+  min-width: 0;
+  color: var(--yrkie-color-ink);
+  background: var(--yrkie-color-page);
+  border: var(--yrkie-border-width) solid var(--yrkie-color-control-border);
+  border-radius: var(--yrkie-radius-panel);
+  padding: var(--yrkie-gap-section);
+  font-size: var(--yrkie-text-label);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.doe-questions-header h3 { margin: 0; font-size: var(--yrkie-text-body); font-weight: var(--yrkie-weight-heading); }
+.doe-questions-header p,
+.doe-questions-instruction,
+.doe-questions-upload-hint,
+.doe-questions-status { margin: var(--yrkie-gap-micro) 0 0; color: var(--yrkie-color-ink-muted); }
+.doe-questions-field { min-width: 0; border: 0; padding: 0; margin: var(--yrkie-gap-section) 0 0; }
+.doe-questions-field legend { display: flex; align-items: baseline; gap: var(--yrkie-gap-icon); padding: 0; font-weight: var(--yrkie-weight-heading); white-space: pre-wrap; }
+.doe-questions-number { color: var(--yrkie-color-mist); font-variant-numeric: tabular-nums; }
+.doe-questions-options { display: grid; gap: var(--yrkie-gap-icon); margin-top: var(--yrkie-gap-control); }
+.doe-questions-option { display: flex; align-items: flex-start; gap: var(--yrkie-gap-control); padding: var(--yrkie-gap-control); border: var(--yrkie-border-width) solid var(--yrkie-color-control-border); border-radius: var(--yrkie-radius-panel-sm); cursor: pointer; }
+.doe-questions-option:hover { background: var(--yrkie-color-primary-soft); }
+.doe-questions-option.is-selected { border-color: var(--yrkie-color-primary); background: var(--yrkie-color-primary-soft); }
+.doe-questions-option input { flex-shrink: 0; width: 1rem; height: 1rem; margin: 0.1875rem 0 0; accent-color: var(--yrkie-color-primary); }
+.doe-questions-option-copy { min-width: 0; flex: 1; }
+.doe-questions-option-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--yrkie-gap-icon); font-weight: var(--yrkie-weight-heading); }
+.doe-questions-description { display: block; color: var(--yrkie-color-ink-muted); margin-top: var(--yrkie-gap-micro); white-space: pre-wrap; }
+.doe-questions-clear { border: 0; background: transparent; color: var(--yrkie-color-ink-muted); font: inherit; min-height: 2.75rem; padding: var(--yrkie-gap-icon) 0; cursor: pointer; text-decoration: underline; text-underline-offset: 0.1875rem; }
+.doe-questions-recommended { color: var(--yrkie-color-primary-text); font-size: var(--yrkie-text-caption, 0.75rem); font-weight: var(--yrkie-weight-heading); }
+.doe-questions-custom { display: grid; gap: var(--yrkie-gap-icon); margin-top: var(--yrkie-gap-control); color: var(--yrkie-color-ink-muted); }
+.doe-questions-custom textarea { box-sizing: border-box; width: 100%; min-height: 4rem; resize: vertical; border: var(--yrkie-border-width) solid var(--yrkie-color-control-border); border-radius: var(--yrkie-radius-panel-sm); background: var(--yrkie-color-white); color: var(--yrkie-color-ink); font: inherit; padding: var(--yrkie-gap-control); }
+.doe-questions input:focus-visible,
+.doe-questions textarea:focus-visible,
+.doe-questions button:focus-visible { outline: 0.125rem solid var(--yrkie-color-primary); outline-offset: 0.1875rem; }
+.doe-questions-field:disabled .doe-questions-option { cursor: default; }
+.doe-questions-field:disabled .doe-questions-option:hover { background: inherit; }
+.doe-questions-footer { margin-top: var(--yrkie-gap-section); }
+.doe-questions-actions { display: flex; gap: var(--yrkie-gap-control); justify-content: flex-end; flex-wrap: wrap; margin-top: var(--yrkie-gap-control); }
+.doe-questions-actions button { font: inherit; min-height: 2.75rem; border-radius: var(--yrkie-radius-panel-sm); padding: var(--yrkie-gap-icon) var(--yrkie-gap-content); cursor: pointer; }
+.doe-questions-upload { color: var(--yrkie-color-ink); border: var(--yrkie-border-width) solid var(--yrkie-color-control-border); background: var(--yrkie-color-page); }
+.doe-questions-submit { color: var(--yrkie-color-on-primary); background: var(--yrkie-color-primary); border: var(--yrkie-border-width) solid var(--yrkie-color-primary); }
+.doe-questions-actions button:disabled { opacity: 0.5; cursor: not-allowed; }
+@media (max-width: 40rem) {
+  .doe-questions { padding: var(--yrkie-gap-content); }
+  .doe-questions-actions > button { flex: 1; }
+}

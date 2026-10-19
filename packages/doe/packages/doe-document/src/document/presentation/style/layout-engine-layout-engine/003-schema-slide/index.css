@@ -1,0 +1,7 @@
+.schema-slide {
+  overflow: hidden;
+  color: var(--demo-ink);
+  border-radius: var(--yrkie-radius-canvas);
+  background: var(--yrkie-color-light);
+}
+

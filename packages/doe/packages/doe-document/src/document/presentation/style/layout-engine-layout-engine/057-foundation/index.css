@@ -1,0 +1,43 @@
+/* Authored fields use the same wrapping before, during and after editing. */
+[data-semantic-wrap][data-semantic-render="plaintext"] {
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  text-wrap: wrap !important;
+}
+
+.doe-text-content,
+.doe-text-field {
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  text-wrap: wrap !important;
+}
+
+.doe-text-field { cursor: text; }
+
+/* Semantic breaks are fixed before whole-surface painting. CSS zoom must not
+   add platform-dependent soft breaks; editing retains normal wrapping. */
+:is([data-flow-paint-scale], [data-flow-paint-scale] *)[data-semantic-wrap][data-semantic-render="plaintext"]:is([data-semantic-wrap-status="preserved"], [data-semantic-wrap-status="scaled"]):not([data-semantic-editing="true"]) {
+  white-space: pre !important;
+  text-wrap: nowrap !important;
+}
+
+.doe-text-field[contenteditable="plaintext-only"] {
+  caret-color: var(--editor-blue);
+  outline: none;
+}
+
+.doe-text-field[contenteditable="plaintext-only"]:empty { min-height: 1em; }
+
+.doe-text-field--inline[contenteditable="plaintext-only"] {
+  display: inline;
+}
+
+.doe-text-field__copy { min-width: 0; }
+.doe-text-field__copy:empty { min-width: 1ch; min-height: 1em; }
+
+.block-shell.is-field-editing > .block-handle {
+  pointer-events: none;
+}
+

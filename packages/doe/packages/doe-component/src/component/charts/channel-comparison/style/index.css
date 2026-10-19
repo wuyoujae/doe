@@ -1,0 +1,68 @@
+.ppt-channel-comparison {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: var(--yrkie-color-body);
+  background: var(--yrkie-color-surface);
+  border: 0;
+  font-family: var(--font-sans-cn, Arial, Helvetica, sans-serif);
+  font-variant-numeric: tabular-nums;
+}
+
+.ppt-channel-comparison__title {
+  margin: 0 0 7px;
+  flex: none;
+  color: var(--yrkie-color-title);
+  font-size: var(--typography-h4-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+  line-height: 1.08;
+}
+
+.ppt-channel-comparison__svg {
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+  overflow: visible;
+}
+
+.ppt-channel-comparison__badge,
+.ppt-channel-comparison__value,
+.ppt-channel-comparison__detail,
+.ppt-channel-comparison__period,
+.ppt-channel-comparison__note {
+  font-family: var(--font-sans-cn, Arial, Helvetica, sans-serif);
+  text-anchor: middle;
+}
+
+.ppt-channel-comparison__badge {
+  font-size: var(--typography-normal-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+}
+
+.ppt-channel-comparison__value {
+  font-size: var(--typography-normal-size);
+  font-weight: var(--yrkie-font-weight-semibold);
+}
+
+.ppt-channel-comparison__detail {
+  font-size: var(--typography-small-size);
+  font-weight: var(--yrkie-font-weight-regular);
+}
+
+.ppt-channel-comparison__period {
+  fill: var(--yrkie-color-body);
+  font-size: var(--typography-normal-size);
+  font-weight: var(--yrkie-font-weight-regular);
+}
+
+.ppt-channel-comparison__note {
+  fill: var(--yrkie-color-body);
+  font-size: var(--typography-normal-size);
+}
+
+.ppt-channel-comparison__guide {
+  stroke: var(--yrkie-color-auxiliary);
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+  vector-effect: non-scaling-stroke;
+}

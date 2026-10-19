@@ -1,0 +1,17 @@
+.doe-item-add {
+  position: absolute; z-index: 9; display: grid; place-items: center;
+  width: 1.5rem; height: 1.5rem; min-width: 1.5rem; padding: 0;
+  border: 1px solid var(--editor-blue); border-radius: 50%;
+  color: var(--editor-blue); background: #fff; cursor: pointer;
+  opacity: 0; visibility: hidden; pointer-events: none;
+}
+.doe-item-add svg { width: 1rem; height: 1rem; pointer-events: none; }
+.schema-slide[data-editor="true"] .block-shell:is(:hover, .is-selected, .has-selected-item) .doe-item-add,
+.schema-slide[data-editor="true"] .doe-selectable-item:focus-within > .doe-item-add {
+  opacity: 1; visibility: visible; pointer-events: auto;
+}
+.doe-item-add:disabled { cursor: not-allowed; color: var(--yrkie-line-strong-solid); border-color: currentColor; }
+.doe-item-add:focus-visible { outline: 2px solid var(--editor-blue); outline-offset: 2px; }
+.doe-item-add-hint { position: absolute; z-index: 10; right: 0; bottom: 0; max-width: 20rem; padding: .375rem .5rem; font: .75rem/1.4 sans-serif; background: #fff; color: var(--editor-blue); border: 1px solid currentColor; border-radius: .375rem; pointer-events: none; }
+.is-measuring-columns :is(.doe-item-add, .doe-item-add-hint),
+.schema-slide:not([data-editor="true"]) :is(.doe-item-add, .doe-item-add-hint) { display: none; }

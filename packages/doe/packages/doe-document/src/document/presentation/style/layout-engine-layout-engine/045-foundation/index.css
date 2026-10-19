@@ -1,0 +1,3 @@
+/* Bleed media paints over its content shell, so selection chrome must live in
+   a dedicated foreground layer. Keeping the stroke inside that layer makes
+   all four edges visible without expanding beyond the fixed slide canvas. */

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext", "moduleResolution": "Bundler", "jsx": "react-jsx",
+    "strict": true, "skipLibCheck": true, "allowJs": true, "checkJs": false,
+    "resolveJsonModule": true, "allowImportingTsExtensions": true,
+    "esModuleInterop": true, "isolatedModules": true, "noEmit": true,
+    "types": ["vite/client"], "baseUrl": ".",
+    "paths": {
+      "@yrkie/application/components/LucideIconPicker.tsx": ["src/pages/work/components/LucideIconPicker.tsx"],
+      "@yrkie/application/lib/pptxPreview/lucideIcons.ts": ["src/pages/work/adapters/lucideIcons.ts"],
+      "@yrkie/application/services/platform/webApi.ts": ["src/pages/work/adapters/webApi.ts"],
+      "@yrkie/doe/*": ["../packages/doe/*"], "@yrkie/application/*": ["src/*"]
+    }
+  },
+  "include": ["src"]
+}

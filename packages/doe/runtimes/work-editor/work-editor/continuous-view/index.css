@@ -1,0 +1,18 @@
+html[data-runtime-surface="work"][data-canvas-view="continuous"] .work-editor__stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  padding-block: 5rem 2rem;
+}
+html[data-runtime-surface="work"][data-canvas-view="continuous"] .work-editor .work-editor__canvas-frame {
+  position: relative;
+  flex: none;
+  width: 96%;
+  max-height: none;
+  margin-bottom: 3.75rem;
+}
+.work-editor__continuous-page[hidden] { display: none; }

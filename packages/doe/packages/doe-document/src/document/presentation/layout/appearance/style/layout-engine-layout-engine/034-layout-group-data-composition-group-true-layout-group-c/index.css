@@ -1,0 +1,5 @@
+.layout-group[data-composition-group="true"]
+  > .layout-group__content[data-composition-direction="stack"] {
+  align-content: start;
+}
+

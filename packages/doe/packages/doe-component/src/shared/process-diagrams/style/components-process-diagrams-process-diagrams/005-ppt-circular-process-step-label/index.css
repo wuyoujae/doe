@@ -1,0 +1,105 @@
+.ppt-capability-cards {
+  --capability-card-primary: var(--yrkie-color-body);
+  --capability-card-on-primary: var(--yrkie-color-on-primary);
+  --capability-card-icon: var(--yrkie-color-body);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ppt-capability-cards__list {
+  min-height: 0;
+  display: grid;
+  grid-auto-rows: minmax(max-content, 1fr);
+  align-items: stretch;
+  gap: 12px;
+  flex: none;
+}
+
+.ppt-capability-cards { overflow: visible; }
+
+.ppt-capability-cards__card {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  grid-template-rows: max-content max-content;
+  column-gap: 14px;
+  align-items: center;
+  align-self: stretch;
+  box-sizing: border-box;
+  overflow: visible;
+  border: 1px solid var(--yrkie-line);
+  border-radius: var(--yrkie-radius-component);
+}
+
+.ppt-capability-cards__label {
+  grid-column: 1 / -1;
+  justify-self: start;
+  min-width: min(138px, 100%);
+  max-width: 100%;
+  padding: 5px 14px;
+  overflow-wrap: anywhere;
+  color: var(--yrkie-color-body);
+  border-radius: var(--yrkie-radius-component) 0 var(--yrkie-radius-component) 0;
+  background: var(--yrkie-color-secondary);
+  font-size: var(--typography-normal-size);
+  font-weight: var(--yrkie-font-weight-regular);
+  line-height: 1;
+  text-align: center;
+}
+
+.ppt-capability-cards__icon {
+  grid-column: 1;
+  grid-row: 2;
+  display: grid;
+  place-items: center;
+  justify-content: start;
+  padding: 10px 0 10px 14px;
+  color: var(--capability-card-icon);
+  font-size: var(--typography-h2-size);
+  font-weight: var(--yrkie-font-weight-regular);
+  text-align: center;
+}
+
+.ppt-capability-cards__icon-svg {
+  width: 42px;
+  height: 42px;
+}
+
+.ppt-capability-cards__icon-fallback {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+}
+
+.ppt-capability-cards__text {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  padding: 10px 12px 10px 0;
+  overflow-wrap: anywhere;
+  color: var(--capability-card-primary);
+  font-size: var(--typography-normal-size);
+  font-weight: var(--yrkie-font-weight-regular);
+  line-height: 1.34;
+}
+
+.ppt-capability-cards__list[data-columns="3"] .ppt-capability-cards__text,
+.ppt-capability-cards__list[data-columns="4"] .ppt-capability-cards__text {
+  text-align: left;
+}
+
+.ppt-capability-cards__list[data-columns="4"] .ppt-capability-cards__label {
+  min-width: 0;
+}
+
+.ppt-capability-cards__list[data-columns="4"] .ppt-capability-cards__icon-svg,
+.ppt-capability-cards__list[data-columns="4"] .ppt-capability-cards__icon-fallback {
+  width: 34px;
+  height: 34px;
+}
+
+/* Spacing is part of adaptive typography. When the page solver has entered
+   its tight spacing pass, compress the two purely decorative card gaps before
+   touching readable text. */

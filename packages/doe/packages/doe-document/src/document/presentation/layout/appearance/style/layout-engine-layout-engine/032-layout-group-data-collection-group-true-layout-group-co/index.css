@@ -1,0 +1,12 @@
+.layout-group[data-collection-group="true"]
+  > .layout-group__content
+  > .group-item
+  > .block-content,
+.layout-group[data-collection-group="true"]
+  > .layout-group__content
+  > .group-item
+  > .block-content
+  > .component-card {
+  height: 100%;
+}
+

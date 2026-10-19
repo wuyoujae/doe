@@ -1,0 +1,4 @@
+.component-notice { box-sizing: border-box; display: flex; align-items: flex-start; gap: var(--space-18pt); width: 100%; padding: var(--space-18pt) var(--space-24pt); border-radius: var(--yrkie-radius-component); background: var(--yrkie-color-secondary); color: var(--yrkie-color-body); }
+.component-notice__icon { flex: none; width: 1.25em; height: 1.25em; margin-top: 0.125em; color: var(--yrkie-color-primary); fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.component-notice__text { flex: 1; min-width: 0; color: var(--yrkie-color-body); }
+

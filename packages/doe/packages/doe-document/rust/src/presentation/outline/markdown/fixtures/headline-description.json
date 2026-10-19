@@ -1,0 +1,23 @@
+{
+  "title": "Recovery review",
+  "page_count": 2,
+  "body": [
+    {
+      "index": 1,
+      "page": 1,
+      "contents": [
+        "Collection results",
+        "Collection volume increased across both reporting months.\nApril: 120 kg; May: 150 kg.",
+        "GENRATEIMG[type=content,ratio=4:3](A complete reusable collection bin, isolated subject.)"
+      ]
+    },
+    {
+      "index": 2,
+      "page": 2,
+      "contents": [
+        "Next steps",
+        "Keep reusable bins at the collection points.\nReview collection volume at the next monthly meeting."
+      ]
+    }
+  ]
+}

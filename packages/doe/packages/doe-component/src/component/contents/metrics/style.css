@@ -1,0 +1,10 @@
+.item-cards[data-contents-presentation="metrics"] .item-cards__surface {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.item-cards[data-contents-presentation="metrics"][data-metric-emphasis="single"] .component-stat__value {
+  font-size: var(--yrkie-metric-single-size, var(--typography-h1-size));
+  color: var(--yrkie-metric-single-color, var(--demo-navy));
+}

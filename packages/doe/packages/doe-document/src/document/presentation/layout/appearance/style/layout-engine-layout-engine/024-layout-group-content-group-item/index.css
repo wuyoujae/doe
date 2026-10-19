@@ -1,0 +1,74 @@
+.layout-group__content > .group-item {
+  align-self: stretch;
+}
+
+.layout-group[data-composition-group="true"] > .layout-group__content,
+.layout-group[data-compression-group="true"] > .layout-group__content {
+  grid-auto-rows: minmax(min-content, auto);
+}
+
+.layout-group[data-composition-group="true"]
+  > .layout-group__content
+  > .group-item,
+.layout-group[data-compression-group="true"]
+  > .layout-group__content
+  > .group-item {
+  display: flex;
+  min-height: 0;
+}
+
+.layout-group[data-composition-group="true"]
+  > .layout-group__content
+  > .group-item
+  > .block-content,
+.layout-group[data-compression-group="true"]
+  > .layout-group__content
+  > .group-item
+  > .block-content {
+  display: flex;
+  min-height: 0;
+}
+
+.layout-group[data-composition-group="true"]
+  > .layout-group__content
+  > .group-item
+  > .block-content
+  > .component-card:not([data-flow-surface]),
+.layout-group[data-compression-group="true"]
+  > .layout-group__content
+  > .group-item
+  > .block-content
+  > .component-card:not([data-flow-surface]) {
+  flex: 1 1 auto;
+  height: auto;
+}
+
+.layout-group[data-composition-group="true"]
+  .component-card:not(.component-heading),
+.layout-group[data-compression-group="true"]
+  .component-card:not(.component-heading) {
+  font-size: max(
+    var(--body-size),
+    var(--composition-font-floor, var(--minimum-readable-font))
+  );
+}
+
+.layout-group[data-composition-group="true"]
+  > .layout-group__content
+  > .group-item.layout-group {
+  flex-direction: column;
+}
+
+.layout-group[data-composition-group="true"]
+  > .layout-group__content
+  > .group-item.layout-group
+  > .layout-group__content {
+  flex: 1 1 auto;
+}
+
+.layout-group[data-composition-group="true"]
+  > .layout-group__content[data-composition-direction="row"]
+  > .group-item {
+  height: 100%;
+}
+

@@ -1,0 +1,3 @@
+/* A vertical bleed already contributes the upper or lower visual field. Keep
+   the narrative region's horizontal safe area, but use compact block padding
+   so the same content can rotate without crossing the fixed canvas edge. */

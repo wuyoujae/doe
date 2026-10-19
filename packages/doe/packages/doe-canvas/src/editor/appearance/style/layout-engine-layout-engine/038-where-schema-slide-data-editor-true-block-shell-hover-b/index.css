@@ -1,0 +1,8 @@
+:where(.schema-slide[data-editor="true"]) .block-shell:hover > .block-handle,
+.block-shell.is-handle-hovered > .block-handle,
+.block-shell:focus-within > .block-handle,
+:where(.schema-slide[data-editor="true"]) .block-shell.is-selected > .block-handle {
+  opacity: 1;
+  pointer-events: auto;
+}
+

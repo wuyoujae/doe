@@ -1,0 +1,35 @@
+/* Original light application shell, scoped to the standalone Work page. */
+.app-shell.open-source-work {
+  --bg-app: #ffffff;
+  --bg-sidebar: #f7f7f8;
+  --bg-panel: #ffffff;
+  --bg-hover: #ecececf0;
+  --bg-user-msg: #f9f9f9;
+  --bg-code: #f1f1f1;
+  --text-primary: #111111;
+  --text-secondary: #666666;
+  --text-muted: #999999;
+  --text-inverse: #ffffff;
+  --border-color: #e5e5e5;
+  --border-focus: #bbbbbb;
+  --border-user: #dddddd;
+  --btn-primary-bg: #111111;
+  --btn-primary-hover: #333333;
+  --shadow-input: rgba(0, 0, 0, 0.08);
+  --work-panel-radius: 0.875rem;
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-app);
+  color: var(--text-primary);
+}
+.open-source-work > .app-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  overflow: hidden;
+}

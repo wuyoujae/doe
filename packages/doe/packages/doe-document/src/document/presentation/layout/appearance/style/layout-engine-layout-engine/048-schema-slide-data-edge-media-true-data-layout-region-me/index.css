@@ -1,0 +1,6 @@
+.schema-slide[data-edge-media="true"]
+  [data-layout-region="media"]
+  > .block-handle--element {
+  display: none;
+}
+

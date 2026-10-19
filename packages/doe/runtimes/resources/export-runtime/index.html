@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Yrkie-doe Server Export Runtime</title>
+    <link rel="stylesheet" href="../core/slide.css?v=20260901-10" />
+    <link rel="stylesheet" href="../components/grouped-bar-chart/grouped-bar-chart.css?v=20260906-1" />
+    <link rel="stylesheet" href="../components/line-chart/line-chart.css?v=20260906-1" />
+    <link rel="stylesheet" href="../components/stacked-bar-chart/stacked-bar-chart.css?v=20260901-10" />
+    <link rel="stylesheet" href="../components/risk-matrix/risk-matrix.css?v=20260901-10" />
+    <link rel="stylesheet" href="../components/waterfall-chart/waterfall-chart.css?v=20260901-10" />
+    <link rel="stylesheet" href="../components/dashboard-widgets/dashboard-widgets.css?v=20260907-1" />
+    <link rel="stylesheet" href="../components/business-charts/business-charts.css?v=20260903-2" />
+    <link rel="stylesheet" href="../components/process-diagrams/process-diagrams.css?v=20260909-git-render" />
+    <link rel="stylesheet" href="../components/math-formula/math-formula.css?v=20260907-1" />
+    <link rel="stylesheet" href="../components/data-table/data-table.css?v=20260909-border-paint" />
+    <link rel="stylesheet" href="../components/item-cards/item-cards.css?v=20260909-border-paint" />
+    <link rel="stylesheet" href="../components/contents/contents.css?v=20260908-icon-text" />
+    <link rel="stylesheet" href="../components/shape-contents/shape-contents.css?v=20260908-2" />
+    <link rel="stylesheet" href="../components/base-media/base-media.css?v=20260908-1" />
+    <link rel="stylesheet" href="../layout-engine/layout-engine.css?v=20260909-border-paint" />
+    <link rel="stylesheet" href="../core/theme.css?v=20260902-2" />
+    <style>
+      .schema-slide[data-export-snapshot="true"][data-overflow="true"]::after {
+        display: none !important;
+      }
+      html,
+      body {
+        width: var(--doe-canvas-width, 1280px);
+        height: var(--doe-canvas-height, 720px);
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: transparent;
+      }
+
+      #export-slide-root,
+      #export-slide-root > .schema-slide {
+        width: var(--doe-canvas-width, 1280px);
+        height: var(--doe-canvas-height, 720px);
+        margin: 0;
+      }
+
+      #export-slide-root > .schema-slide {
+        font-family: var(--font-sans-cn);
+        font-synthesis: none;
+        -webkit-font-smoothing: auto;
+        -moz-osx-font-smoothing: auto;
+        text-rendering: optimizeLegibility;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="export-slide-root" aria-label="Server export slide"></div>
+
+    <script src="../core/contents-layout.js?v=20260907-1"></script>
+    <script src="../core/chart-utils.js?v=20260906-1"></script>
+    <script src="../core/schema-json-recovery.js?v=20260817-1"></script>
+    <script src="../core/semantic-text-layout.js?v=20260906-10"></script>
+    <script src="../core/theme.js?v=20260909-border-paint"></script>
+    <script src="../vendor/lucide.min.js"></script>
+    <script src="../components/grouped-bar-chart/grouped-bar-chart.js?v=20260906-12"></script>
+    <script src="../components/line-chart/line-chart.js?v=20260906-1"></script>
+    <script src="../components/stacked-bar-chart/stacked-bar-chart.js?v=20260906-1"></script>
+    <script src="../components/risk-matrix/risk-matrix.js?v=20260901-10"></script>
+    <script src="../components/waterfall-chart/waterfall-chart.js?v=20260906-1"></script>
+    <script src="../components/dashboard-widgets/dashboard-widgets.js?v=20260909-donut-center"></script>
+    <script src="../components/business-charts/business-charts.js?v=20260906-1"></script>
+    <script src="../components/process-diagrams/process-diagrams.js?v=20260909-git-render"></script>
+    <script src="../components/math-formula/math-formula.js?v=20260907-1"></script>
+    <script src="../components/data-table/data-table.js?v=20260901-10"></script>
+    <script src="../layout-engine/layout-engine.js?v=20260909-share-assets"></script>
+    <script src="../layout-engine/text-fields.js?v=20260909-git-render"></script>
+    <script src="../layout-engine/icon-fields.js?v=20260908-contents-1"></script>
+    <script src="../layout-engine/components.js?v=20260909-overflow-repair"></script>
+    <script src="../components/item-cards/item-cards.js?v=20260908-1"></script>
+    <script src="../components/shape-contents/shape-contents.js?v=20260908-2"></script>
+    <script src="../components/base-media/base-media.js?v=20260908-1"></script>
+    <script src="../layout-engine/library-components.js?v=20260909-git-render"></script>
+    <script src="../core/contents-model.js?v=20260908-icon-text"></script>
+    <script src="../components/contents/contents.js?v=20260908-icon-text"></script>
+    <script src="../layout-engine/ai-layout-compiler.js?v=20260909-git-render"></script>
+    <script src="./export-runtime.js?v=20260908-canvas"></script>
+  </body>
+</html>

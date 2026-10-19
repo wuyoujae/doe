@@ -1,0 +1,68 @@
+// Origin: app/backend/core/src/slide_agent_output_contract.rs::validate_work_editor_root
+use super::*;
+
+
+pub(super) fn validate_work_editor_root(
+    value: &Value,
+    expectations: SlideDeckExpectations,
+) -> Result<(), String> {
+    let root = object(value, "root")?;
+    if root.get("version").and_then(Value::as_i64) != Some(4) {
+        return mismatch("root.version must equal 4");
+    }
+
+    let page_number_path = "root.pageNumber";
+    let page_number = object(required(root, "pageNumber", "root")?, page_number_path)?;
+    if !required(page_number, "enabled", page_number_path)?.is_boolean() {
+        return mismatch("root.pageNumber.enabled must be a boolean");
+    }
+    match required(page_number, "format", page_number_path)?.as_str() {
+        Some("number" | "fraction") => {}
+        _ => return mismatch("root.pageNumber.format must equal number or fraction"),
+    }
+
+    let deck = object(required(root, "deck", "root")?, "root.deck")?;
+    let title = nonempty_text(required(deck, "title", "root.deck")?, "root.deck.title")?;
+    if title.chars().count() > crate::presentation::schema::limits::MAX_SESSION_TITLE_CHARS {
+        return mismatch(format!(
+            "root.deck.title cannot exceed {} characters",
+            crate::presentation::schema::limits::MAX_SESSION_TITLE_CHARS
+        ));
+    }
+    if required(deck, "theme", "root.deck")?.as_str() != Some(registered_theme_id(required(deck, "theme", "root.deck")?.as_str())) {
+        return mismatch("root.deck.theme must name a registered theme");
+    }
+
+    let slides = array(required(deck, "slides", "root.deck")?, "root.deck.slides")?;
+    if slides.len() != expectations.slide_count {
+        return mismatch(format!(
+            "root.deck.slides must contain exactly {} slides",
+            expectations.slide_count
+        ));
+    }
+
+    let mut slide_ids = HashSet::new();
+    for (index, value) in slides.iter().enumerate() {
+        let path = format!("root.deck.slides[{index}]");
+        let slide = object(value, &path)?;
+        let id = nonempty_text(required(slide, "id", &path)?, &format!("{path}.id"))?;
+        if !slide_ids.insert(id.to_string()) {
+            return mismatch(format!("{path}.id must be unique within the Deck"));
+        }
+
+        let size_path = format!("{path}.size");
+        let size = object(required(slide, "size", &path)?, &size_path)?;
+        if size.get("width").and_then(Value::as_i64) != Some(960)
+            || size.get("height").and_then(Value::as_i64) != Some(540)
+            || size.get("unit").and_then(Value::as_str) != Some("pt")
+        {
+            return mismatch(format!("{size_path} must equal 960 x 540 pt"));
+        }
+
+        let blocks = array(required(slide, "blocks", &path)?, &format!("{path}.blocks"))?;
+        if blocks.is_empty() {
+            return mismatch(format!("{path}.blocks must not be empty"));
+        }
+    }
+    Ok(())
+}

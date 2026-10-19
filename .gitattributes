@@ -1,0 +1,4 @@
+# Embedded DOE resources carry SHA-256 fingerprints of their exact source bytes.
+# Do not rewrite line endings on Windows checkouts.
+backend/resources/doe/** -text
+packages/doe/** -text

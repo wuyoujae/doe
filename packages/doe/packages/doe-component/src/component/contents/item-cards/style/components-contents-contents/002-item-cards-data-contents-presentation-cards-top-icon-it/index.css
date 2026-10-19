@@ -1,0 +1,10 @@
+.item-cards[data-contents-presentation="cards:top-icon"] .item-cards__surface:not(:has(.item-cards__icon)) { padding-top: var(--space-18pt); }
+.item-cards[data-contents-presentation="cards:top-icon"] .item-cards__item:not(:has(.item-cards__icon)) { padding-top: 0; }
+.item-cards[data-contents-presentation] .item-cards__title:has(+ [hidden]) { margin-bottom: 0; }
+.item-cards[data-contents-presentation="image-text"] .item-cards__surface,
+.item-cards[data-contents-presentation="icon-text"] .item-cards__surface,
+.item-cards[data-contents-presentation="columns"] .item-cards__surface,
+.item-cards[data-contents-presentation="question"] .item-cards__surface,
+.item-cards[data-contents-presentation="quotation"] .item-cards__surface { background: transparent; border: 0; padding: var(--doe-item-inset, 3pt) 0; border-radius: 0; }
+.item-cards[data-contents-presentation="columns"] .item-cards__icon { display: none; }
+

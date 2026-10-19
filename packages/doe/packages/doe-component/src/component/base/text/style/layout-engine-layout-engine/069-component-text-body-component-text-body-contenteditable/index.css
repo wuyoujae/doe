@@ -1,0 +1,11 @@
+.component-text__body,
+.component-text__body[contenteditable="plaintext-only"] {
+  width: 100%;
+  min-width: 0;
+  color: var(--yrkie-color-body);
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal;
+  text-wrap: wrap !important;
+}
+

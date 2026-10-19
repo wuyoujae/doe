@@ -1,0 +1,7 @@
+.doe-canvas__mount .schema-slide,
+.doe-canvas__mount .schema-layout {
+  position: absolute;
+  inset: 0;
+}
+
+

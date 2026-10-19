@@ -1,0 +1,19 @@
+.component-text-panel {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 15rem;
+  padding: var(--space-24pt);
+  border-radius: var(--yrkie-radius-component);
+  background: var(--yrkie-color-primary);
+  color: var(--yrkie-color-on-primary);
+}
+.component-text-panel__body {
+  width: 100%;
+  min-width: 0;
+  color: var(--yrkie-color-on-primary);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.schema-slide[data-flow-model="flow-v1"] .component-text-panel[data-flow-surface] {
+  min-height: 0;
+}

@@ -1,0 +1,14 @@
+.app-header { position: absolute; z-index: 20; top: max(1rem, env(safe-area-inset-top)); inset-inline: var(--yrkie-gap-section); display: flex; align-items: center; justify-content: space-between; gap: var(--yrkie-gap-content); pointer-events: none; }
+.app-header-brand, .app-header-actions { pointer-events: auto; }
+.app-header-brand { display: flex; align-items: center; flex-shrink: 0; }
+.app-header-brand .yrkie-wordmark { display: block; width: 6.125rem; height: auto; }
+.app-header-actions { display: flex; align-items: center; gap: var(--yrkie-gap-micro); min-width: 0; }
+.app-header-icon-button { display: grid; place-items: center; flex-shrink: 0; width: calc(var(--yrkie-space-unit) * 11); height: calc(var(--yrkie-space-unit) * 11); padding: 0; border: 0; border-radius: var(--yrkie-radius-control); background: transparent; color: var(--yrkie-color-body); transition: background-color var(--yrkie-motion-control) var(--yrkie-ease-control), color var(--yrkie-motion-control) var(--yrkie-ease-control); }
+.app-header-icon-button svg { width: 1.125rem; height: 1.125rem; stroke-width: 1.5; }
+@media (hover: hover) { .app-header-icon-button:hover { background: var(--yrkie-color-hover); } }
+@media (max-width: 40rem) {
+  .app-header { inset-inline: var(--yrkie-gap-content); gap: var(--yrkie-gap-icon); }
+  .app-header-actions .service-support-link { width: 2.125rem; padding: 0; }
+  .app-header-actions .service-support-link > span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .app-header-icon-button { transition: none; } }

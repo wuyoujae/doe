@@ -1,0 +1,29 @@
+[package]
+name = "otherone-context"
+version = "0.6.0-yrkie.1"
+edition = "2021"
+license = "MIT"
+readme = "../../README.md"
+documentation = "https://docs.rs/otherone-context"
+repository = "https://github.com/wuyoujae/otherone-agent"
+keywords = ["ai", "agent", "context"]
+categories = ["asynchronous"]
+description = "上下文管理 — 会话历史加载、Token 估算、上下文压缩"
+
+[features]
+default = ["localfile", "postgres"]
+localfile = ["otherone-storage/localfile"]
+postgres = ["otherone-storage/postgres"]
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+async-trait = { workspace = true }
+tracing = { workspace = true }
+otherone-ai = { version = "0.6.0", path = "../otherone-ai" }
+otherone-storage = { version = "0.6.0-yrkie.1", path = "../otherone-storage", default-features = false }
+
+[dev-dependencies]
+tokio = { workspace = true }

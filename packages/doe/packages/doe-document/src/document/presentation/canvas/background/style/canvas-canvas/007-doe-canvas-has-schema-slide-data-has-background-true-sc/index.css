@@ -1,0 +1,7 @@
+.doe-canvas:has(.schema-slide[data-has-background="true"])
+  .schema-slide__background {
+  inset: -1px;
+  overflow: visible;
+  border-radius: 0;
+}
+

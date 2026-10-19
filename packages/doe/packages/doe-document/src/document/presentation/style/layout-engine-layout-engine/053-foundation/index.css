@@ -1,0 +1,3 @@
+/* Leaf-specific controls can contain many focal-point choices. Keep the
+   editor chrome inside the selected component so it never participates in
+   slide overflow measurement; the toolbar itself scrolls horizontally. */

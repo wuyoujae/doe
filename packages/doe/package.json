@@ -1,0 +1,7 @@
+{
+  "name": "@yrkie/doe",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Yrkie October 12 presentation editor source, extracted by dependency closure."
+}

@@ -1,0 +1,54 @@
+.component-heading[data-text-align="left"],
+.component-text[data-text-align="left"] {
+  text-align: left;
+}
+
+.component-heading[data-text-align="center"],
+.component-text[data-text-align="center"] {
+  text-align: center;
+}
+
+.component-heading[data-text-align="right"],
+.component-text[data-text-align="right"] {
+  text-align: right;
+}
+
+.component-heading[data-text-bold="true"],
+.component-text[data-text-bold="true"] .component-text__body {
+  font-weight: var(--yrkie-font-weight-bold) !important;
+}
+
+.component-heading[data-text-bold="false"],
+.component-text[data-text-bold="false"] .component-text__body {
+  font-weight: var(--yrkie-font-weight-regular) !important;
+}
+
+.component-heading[data-text-italic="true"],
+.component-text[data-text-italic="true"] .component-text__body {
+  font-style: italic;
+}
+
+.component-heading[data-text-italic="false"],
+.component-text[data-text-italic="false"] .component-text__body {
+  font-style: normal;
+}
+
+.component-heading[data-text-underline="true"],
+.component-text[data-text-underline="true"] .component-text__body {
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.075em;
+  text-underline-offset: 0.13em;
+}
+
+.component-heading[data-text-strikethrough="true"],
+.component-text[data-text-strikethrough="true"] .component-text__body {
+  text-decoration-line: line-through;
+  text-decoration-thickness: 0.075em;
+}
+
+.component-heading[data-text-underline="true"][data-text-strikethrough="true"],
+.component-text[data-text-underline="true"][data-text-strikethrough="true"]
+  .component-text__body {
+  text-decoration-line: underline line-through;
+}
+
