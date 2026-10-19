@@ -16,6 +16,12 @@
   无需本地部署，即可在线体验 DOE 的功能。
 </p>
 
+<p>
+  <a href="https://yrkie.com">
+    <img src="resources/readme/yrkie-editor.jpg" alt="基于 DOE 构建的 Yrkie 演示文稿编辑器" width="960" />
+  </a>
+</p>
+
 [English](./README.md) · **简体中文**
 
 <p>

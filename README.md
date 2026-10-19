@@ -15,6 +15,12 @@ and export to PDF or genuinely editable PowerPoint.
   Try DOE's features online without setting up a local environment.
 </p>
 
+<p>
+  <a href="https://yrkie.com">
+    <img src="resources/readme/yrkie-editor.jpg" alt="Yrkie's DOE-powered presentation editor" width="960" />
+  </a>
+</p>
+
 **English** · [简体中文](./README.zh-CN.md)
 
 <p>
